@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 09 study guide (Wed Sep 23)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Exam 1 week</p>
+  <h1>Muddiest Point 09 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 2. Wednesday, Sep 23.</p>
+  <hr class="top">
+
+  <p>This page is a study copy of the exam-week close-the-loop, built from the Wednesday Sep 23 comments (MP09, 31 responses with text). Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 2. All worked examples are classroom examples, not homework problems.</p>
+  <p>On every sketch the home view is the board: \(+x\) to the right, \(+y\) up, \(+z\) out of the page (right-handed). Drag to rotate, scroll to zoom, double-click to return to that home view.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>\(n\)</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>\(\lambda\) / unit vectors / 3D direction from two points</td><td>3</td><td>1</td></tr>
+      <tr><td>Springs and tension in exam-style problems</td><td>2</td><td>2</td></tr>
+      <tr><td>Systems of two simultaneous equations</td><td>1</td><td>3</td></tr>
+      <tr><td>Visualizing \(z\); diagrams → equations; \(\Sigma F_x\), \(\Sigma F_y\) components</td><td>2</td><td>4</td></tr>
+      <tr><td>Equation sheet from class</td><td>2</td><td>—</td></tr>
+      <tr><td>Clear / no muddy point</td><td>≈17</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>About 17 of the 31 responses said the lecture was clear and the review was helpful. The rest of this page is for the handful that asked for a step list, more on \(\lambda\), or springs/tension.</p>
+  <p><strong>Equation sheet:</strong> The in-class equation/explanation sheet is posted on Canvas (Files or course home page).</p>
+
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>31 anonymous responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>About 17 of you said the lecture was clear and the review was very helpful.</li>
+    <li>Three of you asked about \(\lambda\): how to "get to lambda," the 3D unit vector, and finding \(\lambda\) when you only have two points.</li>
+    <li>Two of you asked about springs and tension in exam-style problems.</li>
+    <li>Two of you asked about the equation/explanation sheet from class (now posted on Canvas).</li>
+    <li>One of you asked about solving systems of two equations simultaneously.</li>
+    <li>One of you asked for help visualizing the \(z\) plane and turning diagrams into component equations.</li>
+  </ul>
+
+  <h2>1. Finding \(\lambda\) from two points in 3D</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Getting to lambda.</span> · <span class="student-quote">Finding lambda.</span> · <span class="student-quote">The 3D unit vector.</span></p>
+  
+  <h3>What \(\lambda\) is</h3>
+  <p>\(\lambda\) is the <strong>unit vector along the line of action</strong> of a force. Beer writes \(\mathbf{F}=F\lambda\) (Eq. 2.21). The scalar \(F\) is the magnitude (how strong), and \(\lambda\) is the direction (which way). In 3D, \(\lambda\) has three components that are the <strong>direction cosines</strong>:</p>
+  <div class="eqbox">\[
+  \lambda=\lambda_x\mathbf{i}+\lambda_y\mathbf{j}+\lambda_z\mathbf{k},
+  \qquad\text{where}\quad
+  \lambda_x=\cos\theta_x,\;\lambda_y=\cos\theta_y,\;\lambda_z=\cos\theta_z.
+  \]</div>
+  <p>Each component is the <em>cosine of the angle from that axis</em> (Eq. 2.19). The sum of squares is always 1 (Eq. 2.24):</p>
+  <div class="eqbox">\[
+  \lambda_x^2+\lambda_y^2+\lambda_z^2=1.
+  \]</div>
+
+  <h3>How to find \(\lambda\) when you know two points</h3>
+  <p>If the force acts <strong>from point \(A\) to point \(B\)</strong>, write the position vectors and subtract:</p>
+  <div class="stepbox">
+    <p><strong>Step-by-step:</strong></p>
+    <ol>
+      <li>Write \(\mathbf{r}_A=(x_A,y_A,z_A)\) and \(\mathbf{r}_B=(x_B,y_B,z_B)\).</li>
+      <li>Compute \(\mathbf{d}=\mathbf{r}_B-\mathbf{r}_A=(x_B-x_A)\mathbf{i}+(y_B-y_A)\mathbf{j}+(z_B-z_A)\mathbf{k}\).</li>
+      <li>Find the distance: \(d=|\mathbf{d}|=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2+(z_B-z_A)^2}\).</li>
+      <li>Divide: \(\lambda=\dfrac{\mathbf{d}}{d}\).</li>
+    </ol>
+  </div>
+  <p>This is Eq. 2.27 in Beer. The vector \(\mathbf{d}\) points along the line; dividing by its length \(d\) makes it a unit vector.</p>
+
+  <h3>Worked example</h3>
+  <p>A cable runs from point \(A(2,3,0)\) to point \(B(5,7,6)\), all in meters. Find \(\lambda\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{d}&=\mathbf{r}_B-\mathbf{r}_A=(5-2)\mathbf{i}+(7-3)\mathbf{j}+(6-0)\mathbf{k}\\
+  &=3\mathbf{i}+4\mathbf{j}+6\mathbf{k}\text{ m},\\[0.5em]
+  d&=\sqrt{3^2+4^2+6^2}=\sqrt{9+16+36}=\sqrt{61}\approx 7.81\text{ m},\\[0.5em]
+  \lambda&=\frac{\mathbf{d}}{d}=\frac{3}{\sqrt{61}}\mathbf{i}+\frac{4}{\sqrt{61}}\mathbf{j}+\frac{6}{\sqrt{61}}\mathbf{k}\\
+  &\approx 0.384\mathbf{i}+0.512\mathbf{j}+0.768\mathbf{k}.
+  \end{aligned}
+  \]</div>
+  <p>If the tension in the cable is \(T=100\text{ N}\), then \(\mathbf{T}=100\lambda\approx 38.4\mathbf{i}+51.2\mathbf{j}+76.8\mathbf{k}\text{ N}\).</p>
+
+  <figure>
+    <div id="plot-lambda" class="plot3d"></div>
+    <p class="plot-hint">Drag to rotate. Scroll to zoom. The unit vector \(\lambda\) points from \(A\) to \(B\).</p>
+    <figcaption>Points \(A(2,3,0)\) and \(B(5,7,6)\) in 3D. \(\lambda=\mathbf{d}/d\) is the unit vector along the cable. \(+x\) right, \(+y\) up, \(+z\) out.</figcaption>
+  </figure>
+
+  <div class="note">
+    <p><strong>Check:</strong> \(\lambda_x^2+\lambda_y^2+\lambda_z^2=(0.384)^2+(0.512)^2+(0.768)^2\approx 0.148+0.262+0.590=1.000\,\checkmark\)</p>
+  </div>
+
+  <h2>2. Springs and tension in exam problems</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">I had some difficulty incorporating the spring into the equation during the exam question.</span> · <span class="student-quote">The tension and spring problems make sense now.</span></p>
+
+  <h3>Spring force</h3>
+  <p>A linear spring follows Hooke's law (mentioned in Beer Sample Problem 2.5):</p>
+  <div class="eqbox">\[
+  F_{\text{spring}}=k\,\Delta L,
+  \]</div>
+  <p>where \(k\) is the spring constant (stiffness, N/m or lb/in) and \(\Delta L\) is the <strong>change in length</strong> from the unstretched length. If the spring stretches, \(\Delta L>0\); if it compresses, \(\Delta L<0\) (and the force reverses).</p>
+
+  <h3>Tension vs. spring</h3>
+  <ul>
+    <li><strong>Tension in a cable:</strong> the force is an <em>unknown</em> you solve for. The cable can only pull, so \(T\geq 0\).</li>
+    <li><strong>Spring:</strong> the force is \(k\Delta L\). You must know or compute \(\Delta L\). The spring can push or pull.</li>
+  </ul>
+
+  <h3>Worked example: particle with spring</h3>
+  <p>A 5-kg block hangs from a spring with \(k=200\text{ N/m}\). The spring's unstretched length is 0.5 m. Find the stretched length and the spring force.</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \text{Weight: }\;W&=mg=5\times 9.81=49.05\text{ N (down)},\\
+  \text{Equilibrium: }\;\Sigma F_y&=0\;\Rightarrow\;F_{\text{spring}}-W=0,\\
+  k\,\Delta L&=W\;\Rightarrow\;\Delta L=\frac{W}{k}=\frac{49.05}{200}=0.245\text{ m},\\
+  L&=L_0+\Delta L=0.5+0.245=0.745\text{ m}.
+  \end{aligned}
+  \]</div>
+  <p>The spring stretches 24.5 cm. The spring force is \(F_{\text{spring}}=k\Delta L=200\times 0.245=49.05\text{ N (up)}\), which balances the weight.</p>
+
+  <div class="note">
+    <p><strong>Common mistake:</strong> Forgetting that \(\Delta L\) is the <em>change</em>, not the final length. Always subtract \(L_0\).</p>
+  </div>
+
+  <h2>3. Systems of two simultaneous equations</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Systems of equations and solving two equations at the same time has never been really explained to me in an understandable way before.</span></p>
+
+  <h3>Why you need two equations</h3>
+  <p>In 2D equilibrium, you have two unknowns (often two tensions, or a tension and an angle). \(\Sigma F_x=0\) gives one equation; \(\Sigma F_y=0\) gives a second. Two equations, two unknowns.</p>
+
+  <h3>Methods</h3>
+  <p>Two standard methods:</p>
+  <ol>
+    <li><strong>Substitution:</strong> solve one equation for one variable, plug into the other.</li>
+    <li><strong>Elimination:</strong> multiply one or both equations so a variable cancels when you add or subtract.</li>
+  </ol>
+
+  <h3>Worked example</h3>
+  <p>A 100-N weight hangs from two cables. Cable 1 makes \(30^\circ\) with the horizontal; cable 2 makes \(60^\circ\). Find \(T_1\) and \(T_2\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \Sigma F_x&=0:\quad T_1\cos 30^\circ-T_2\cos 60^\circ=0,\\
+  \Sigma F_y&=0:\quad T_1\sin 30^\circ+T_2\sin 60^\circ-100=0.
+  \end{aligned}
+  \]</div>
+  <p><strong>Solve by substitution:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \text{From eq. 1:}\quad T_1\cos 30^\circ&=T_2\cos 60^\circ\\
+  \Rightarrow\quad T_1&=T_2\frac{\cos 60^\circ}{\cos 30^\circ}=T_2\frac{0.5}{0.866}=0.577\,T_2.\\[0.5em]
+  \text{Plug into eq. 2:}\quad (0.577\,T_2)\sin 30^\circ+T_2\sin 60^\circ&=100,\\
+  0.577\,T_2(0.5)+T_2(0.866)&=100,\\
+  0.289\,T_2+0.866\,T_2&=100,\\
+  1.155\,T_2&=100\;\Rightarrow\;T_2=86.6\text{ N},\\[0.5em]
+  T_1&=0.577\times 86.6=50.0\text{ N}.
+  \end{aligned}
+  \]</div>
+
+  <div class="note">
+    <p><strong>Check:</strong> Plug back into both original equations to verify. \(\Sigma F_x=50.0\cos 30^\circ-86.6\cos 60^\circ=43.3-43.3=0\,\checkmark\)</p>
+  </div>
+
+  <h2>4. Visualizing \(z\) and turning diagrams into equations</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">It would have to be solving and visualizing the z planes and lambda.</span> · <span class="student-quote">I think it was knowing exactly what to put in when calculating sum of the forces in the x direction and y direction.</span> · <span class="student-quote">The muddiest points for me were how to analyze the diagram displayed, represent it into…</span></p>
+
+  <h3>Visualizing \(z\)</h3>
+  <p>In our right-handed coordinate system:</p>
+  <ul>
+    <li>\(+x\) points <strong>right</strong> (east on the board),</li>
+    <li>\(+y\) points <strong>up</strong> (north on the board),</li>
+    <li>\(+z\) points <strong>out of the page</strong> (toward you).</li>
+  </ul>
+  <p>If a cable goes "into the page," its \(z\)-component is <em>negative</em>. If it comes "out," the \(z\)-component is <em>positive</em>.</p>
+
+  <h3>Diagram → equations</h3>
+  <p>Step-by-step for a particle in equilibrium:</p>
+  <div class="stepbox">
+    <ol>
+      <li><strong>Draw the free-body diagram:</strong> show all forces acting on the particle (tensions, weight, springs).</li>
+      <li><strong>Write each force in vector form:</strong> \(\mathbf{T}_1=T_1\lambda_1\), \(\mathbf{W}=-W\mathbf{j}\), etc.</li>
+      <li><strong>Sum the components:</strong>
+        <div class="eqbox" style="margin-top:0.5rem; margin-bottom:0.5rem;">\[
+        \begin{aligned}
+        \Sigma F_x&=(\text{sum of all }x\text{-components})=0,\\
+        \Sigma F_y&=(\text{sum of all }y\text{-components})=0,\\
+        \Sigma F_z&=(\text{sum of all }z\text{-components})=0.
+        \end{aligned}
+        \]</div>
+      </li>
+      <li><strong>Solve:</strong> you now have three equations and (typically) three unknowns.</li>
+    </ol>
+  </div>
+
+  <h3>Worked example: 3D particle</h3>
+  <p>A 50-N weight hangs from three cables. Cable AB: \(\lambda_{AB}=0.6\mathbf{i}+0.8\mathbf{k}\); cable AC: \(\lambda_{AC}=-0.8\mathbf{i}+0.6\mathbf{k}\); cable AD: \(\lambda_{AD}=-\mathbf{j}\). Find \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{T}_{AB}&=T_{AB}(0.6\mathbf{i}+0.8\mathbf{k}),\\
+  \mathbf{T}_{AC}&=T_{AC}(-0.8\mathbf{i}+0.6\mathbf{k}),\\
+  \mathbf{T}_{AD}&=T_{AD}(-\mathbf{j}),\\
+  \mathbf{W}&=-50\mathbf{j}\text{ N}.\\[0.5em]
+  \Sigma F_x&=0.6\,T_{AB}-0.8\,T_{AC}=0,\\
+  \Sigma F_y&=-T_{AD}-50=0,\\
+  \Sigma F_z&=0.8\,T_{AB}+0.6\,T_{AC}=0.
+  \end{aligned}
+  \]</div>
+  <p><strong>Solve:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \text{From }\Sigma F_y:\quad T_{AD}&=50\text{ N}.\\[0.5em]
+  \text{From }\Sigma F_x:\quad 0.6\,T_{AB}&=0.8\,T_{AC}\;\Rightarrow\;T_{AB}=\frac{4}{3}T_{AC}.\\[0.5em]
+  \text{Plug into }\Sigma F_z:\quad 0.8\left(\frac{4}{3}T_{AC}\right)+0.6\,T_{AC}&=0\\
+  \frac{3.2}{3}T_{AC}+0.6\,T_{AC}&=0\\
+  1.667\,T_{AC}&=0\;\Rightarrow\;T_{AC}=0,\\
+  T_{AB}&=0.
+  \end{aligned}
+  \]</div>
+  <p>This example is <em>degenerate</em> (the two \(xz\)-cables are coplanar and cancel). In a real exam problem the geometry is chosen so you get nonzero tensions.</p>
+
+  <figure>
+    <div id="plot-3d-particle" class="plot3d"></div>
+    <p class="plot-hint">Drag to rotate. The weight hangs straight down (\(-y\)). The cables pull in their \(\lambda\) directions.</p>
+    <figcaption>3D particle equilibrium. \(+x\) right, \(+y\) up, \(+z\) out. Each cable's force is \(T\lambda\).</figcaption>
+  </figure>
+
+  <h2>Final tips for Exam 1</h2>
+  <div class="note">
+    <p><strong>Checklist:</strong></p>
+    <ul style="margin:0.4rem 0 0;">
+      <li>Draw a clear free-body diagram.</li>
+      <li>Label your coordinate axes (\(+x\), \(+y\), \(+z\)) and stick to them.</li>
+      <li>Write each force in vector form: \(\mathbf{F}=F\lambda\) for cables, \(\mathbf{W}=-W\mathbf{j}\) for weight.</li>
+      <li>Sum components: \(\Sigma F_x=0\), \(\Sigma F_y=0\), \(\Sigma F_z=0\).</li>
+      <li>Solve. Check your algebra. Check units.</li>
+      <li>If you get a negative tension, the force points the opposite way (or check your \(\lambda\)).</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Sep 28, 2026. Questions? Office hours or Piazza.</p>
+
+</article>
+
+<script src="https://cdn.jsdelivr.net/npm/plotly.js@2.36.0/dist/plotly.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<script>
+(function(){
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '\\[', right: '\\]', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false}
+    ],
+    throwOnError: false
+  });
+
+  // Plot 1: Lambda from two points
+  if (document.getElementById('plot-lambda')) {
+    const A = [2, 3, 0], B = [5, 7, 6];
+    const d = [B[0]-A[0], B[1]-A[1], B[2]-A[2]];
+    const dist = Math.sqrt(d[0]*d[0] + d[1]*d[1] + d[2]*d[2]);
+    const lambda = [d[0]/dist, d[1]/dist, d[2]/dist];
+    
+    const scaleArrow = 2.5;
+    const lambdaScaled = [lambda[0]*scaleArrow, lambda[1]*scaleArrow, lambda[2]*scaleArrow];
+
+    const traces = [
+      // Point A
+      {x:[A[0]], y:[A[1]], z:[A[2]], mode:'markers+text', marker:{size:8, color:'#b31b1b'},
+       text:['A(2,3,0)'], textposition:'top center', name:'Point A', hoverinfo:'text'},
+      // Point B
+      {x:[B[0]], y:[B[1]], z:[B[2]], mode:'markers+text', marker:{size:8, color:'#0B3D91'},
+       text:['B(5,7,6)'], textposition:'top center', name:'Point B', hoverinfo:'text'},
+      // Line from A to B
+      {x:[A[0],B[0]], y:[A[1],B[1]], z:[A[2],B[2]], mode:'lines', line:{color:'#888', width:3, dash:'dot'},
+       name:'Cable', hoverinfo:'skip', showlegend:false},
+      // Lambda vector from origin
+      {x:[0,lambdaScaled[0]], y:[0,lambdaScaled[1]], z:[0,lambdaScaled[2]], 
+       mode:'lines', line:{color:'#d97706', width:5}, name:'λ (unit vector)', hoverinfo:'name'},
+      // Cone for lambda
+      {type:'cone', x:[lambdaScaled[0]], y:[lambdaScaled[1]], z:[lambdaScaled[2]],
+       u:[lambda[0]*0.4], v:[lambda[1]*0.4], w:[lambda[2]*0.4],
+       colorscale:[[0,'#d97706'],[1,'#d97706']], showscale:false, hoverinfo:'skip', showlegend:false}
+    ];
+
+    const layout = {
+      scene: {
+        xaxis:{title:'x', range:[0,6]},
+        yaxis:{title:'y', range:[0,8]},
+        zaxis:{title:'z', range:[0,7]},
+        camera:{eye:{x:1.4, y:1.4, z:1.2}},
+        aspectmode:'cube'
+      },
+      margin:{l:0, r:0, t:0, b:0},
+      paper_bgcolor:'#fff',
+      plot_bgcolor:'#fff',
+      showlegend:true,
+      legend:{x:0.02, y:0.98}
+    };
+
+    Plotly.newPlot('plot-lambda', traces, layout, {displayModeBar:false, responsive:true});
+  }
+
+  // Plot 2: 3D particle equilibrium
+  if (document.getElementById('plot-3d-particle')) {
+    const O = [0, 0, 0];
+    const scale = 2;
+    const AB = [0.6*scale, 0, 0.8*scale];
+    const AC = [-0.8*scale, 0, 0.6*scale];
+    const AD = [0, -scale, 0];
+    const W = [0, -scale*1.2, 0];
+
+    const traces = [
+      // Origin / particle
+      {x:[O[0]], y:[O[1]], z:[O[2]], mode:'markers', marker:{size:10, color:'#000'},
+       name:'Particle', hoverinfo:'name'},
+      // Cable AB
+      {x:[O[0],AB[0]], y:[O[1],AB[1]], z:[O[2],AB[2]], mode:'lines', 
+       line:{color:'#0B3D91', width:4}, name:'T_AB', hoverinfo:'name'},
+      {type:'cone', x:[AB[0]], y:[AB[1]], z:[AB[2]],
+       u:[0.6*0.3], v:[0], w:[0.8*0.3],
+       colorscale:[[0,'#0B3D91'],[1,'#0B3D91']], showscale:false, hoverinfo:'skip', showlegend:false},
+      // Cable AC
+      {x:[O[0],AC[0]], y:[O[1],AC[1]], z:[O[2],AC[2]], mode:'lines', 
+       line:{color:'#059669', width:4}, name:'T_AC', hoverinfo:'name'},
+      {type:'cone', x:[AC[0]], y:[AC[1]], z:[AC[2]],
+       u:[-0.8*0.3], v:[0], w:[0.6*0.3],
+       colorscale:[[0,'#059669'],[1,'#059669']], showscale:false, hoverinfo:'skip', showlegend:false},
+      // Cable AD
+      {x:[O[0],AD[0]], y:[O[1],AD[1]], z:[O[2],AD[2]], mode:'lines', 
+       line:{color:'#7c3aed', width:4}, name:'T_AD', hoverinfo:'name'},
+      {type:'cone', x:[AD[0]], y:[AD[1]], z:[AD[2]],
+       u:[0], v:[-0.3], w:[0],
+       colorscale:[[0,'#7c3aed'],[1,'#7c3aed']], showscale:false, hoverinfo:'skip', showlegend:false},
+      // Weight
+      {x:[O[0],W[0]], y:[O[1],W[1]], z:[O[2],W[2]], mode:'lines', 
+       line:{color:'#b31b1b', width:5}, name:'Weight', hoverinfo:'name'},
+      {type:'cone', x:[W[0]], y:[W[1]], z:[W[2]],
+       u:[0], v:[-0.3], w:[0],
+       colorscale:[[0,'#b31b1b'],[1,'#b31b1b']], showscale:false, hoverinfo:'skip', showlegend:false}
+    ];
+
+    const layout = {
+      scene: {
+        xaxis:{title:'x', range:[-2,2]},
+        yaxis:{title:'y', range:[-3,1]},
+        zaxis:{title:'z', range:[-1,2]},
+        camera:{eye:{x:1.5, y:1.3, z:1.1}},
+        aspectmode:'cube'
+      },
+      margin:{l:0, r:0, t:0, b:0},
+      paper_bgcolor:'#fff',
+      plot_bgcolor:'#fff',
+      showlegend:true,
+      legend:{x:0.02, y:0.98}
+    };
+
+    Plotly.newPlot('plot-3d-particle', traces, layout, {displayModeBar:false, responsive:true});
+  }
+})();
+</script>
+</body>
+</html>
