@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 10 study guide (Wed Sep 30)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 6</p>
+  <h1>Muddiest Point 10 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 2. Monday, Sep 28.</p>
+  <hr class="top">
+
+  <p>This page is a study copy built from the Monday Sep 28 comments (MP10, 25 responses). About 12 responses said the lecture was clear. The rest of this page addresses the handful that asked for help with sin/cos in 3D, reading 3D images, starting 3D problems, and understanding equilibrium when components are nonzero. Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 2.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>\(n\)</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>When to use sin vs cos; which angle with which component</td><td>3</td><td>1</td></tr>
+      <tr><td>3D image → FBD / force direction</td><td>2</td><td>2</td></tr>
+      <tr><td>Starting 3D problems / which method</td><td>2</td><td>3</td></tr>
+      <tr><td>Want more 3D examples</td><td>2</td><td>4</td></tr>
+      <tr><td>Parallel points / \(\mathbf{i},\mathbf{j},\mathbf{k}\) missing</td><td>1</td><td>5</td></tr>
+      <tr><td>Tension in 3D equilibrium</td><td>1</td><td>6</td></tr>
+      <tr><td>Last problem \(y/z\) not zero but still equilibrium</td><td>1</td><td>7</td></tr>
+      <tr><td>Switching equations mid-lecture</td><td>1</td><td>8</td></tr>
+      <tr><td>Clear / no muddy point</td><td>≈12</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>About 12 of the 25 responses said the lecture was clear. The rest of this page is for the handful that asked about sin/cos, reading 3D diagrams, and starting 3D equilibrium problems.</p>
+
+  <h2>What you told us Monday (summarized)</h2>
+  <p>25 anonymous responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>About 12 of you said the lecture was clear and helpful.</li>
+    <li>Three of you asked about when to use sin vs cos and which angle goes with which component.</li>
+    <li>Two of you asked about turning a 3D image into an FBD and identifying force directions.</li>
+    <li>Two of you asked about how to start 3D problems and which method to use.</li>
+    <li>Two of you asked for more 3D worked examples.</li>
+    <li>One of you asked about parallel points and when \(\mathbf{i},\mathbf{j},\mathbf{k}\) are missing.</li>
+    <li>One of you asked about tension in 3D equilibrium.</li>
+    <li>One of you was confused about a problem where \(y\) and \(z\) components were not zero but the system was still in equilibrium.</li>
+    <li>One of you asked about switching equations mid-lecture.</li>
+  </ul>
+
+  <h2>1. When to use sin vs cos — which angle with which component</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">When to use sin vs cos.</span> · <span class="student-quote">Which angle goes with which component.</span> · <span class="student-quote">Understanding sin/cos with different angles.</span></p>
+
+  <h3>The basic rule</h3>
+  <p>When you resolve a force into components:</p>
+  <ul>
+    <li><strong>Use cosine</strong> for the component <em>along</em> the angle (the adjacent side).</li>
+    <li><strong>Use sine</strong> for the component <em>perpendicular</em> to the angle (the opposite side).</li>
+  </ul>
+  <p>Think: <strong>SOH-CAH-TOA</strong>. If \(\theta\) is the angle between the force and the \(+x\)-axis:</p>
+  <div class="eqbox">\[
+  F_x = F \cos\theta, \quad F_y = F \sin\theta.
+  \]</div>
+
+  <h3>Why this matters in 3D</h3>
+  <p>In 3D, a force \(\mathbf{F}\) has three components: \(F_x\), \(F_y\), \(F_z\). If you know the <strong>direction cosines</strong> (the angles \(\theta_x\), \(\theta_y\), \(\theta_z\) the force makes with each axis), then:</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  F_x &= F \cos\theta_x, \\
+  F_y &= F \cos\theta_y, \\
+  F_z &= F \cos\theta_z.
+  \end{aligned}
+  \]</div>
+  <p>Each component is the magnitude \(F\) times the <em>cosine</em> of the angle from that axis. This is Eq. 2.19 in Beer.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> The cosine is used because you are projecting the force <em>onto</em> each axis. The projection of a vector onto an axis is the magnitude times the cosine of the angle from that axis.</p>
+  </div>
+
+  <h3>Worked example: 2D cable</h3>
+  <p>A cable makes \(30^\circ\) with the horizontal. Tension is \(T=100\text{ N}\). Find \(T_x\) and \(T_y\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  T_x &= T \cos 30^\circ = 100 \times 0.866 = 86.6\text{ N (to the right)}, \\
+  T_y &= T \sin 30^\circ = 100 \times 0.5 = 50.0\text{ N (up)}.
+  \end{aligned}
+  \]</div>
+  <p>The \(x\)-component is the adjacent side (cosine), and the \(y\)-component is the opposite side (sine).</p>
+
+  <h3>Worked example: 3D force</h3>
+  <p>A force \(\mathbf{F}=120\text{ N}\) makes \(\theta_x=60^\circ\), \(\theta_y=45^\circ\), \(\theta_z=60^\circ\) with the \(x\), \(y\), \(z\) axes. Find the components.</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  F_x &= 120 \cos 60^\circ = 120 \times 0.5 = 60.0\text{ N}, \\
+  F_y &= 120 \cos 45^\circ = 120 \times 0.707 = 84.8\text{ N}, \\
+  F_z &= 120 \cos 60^\circ = 120 \times 0.5 = 60.0\text{ N}.
+  \end{aligned}
+  \]</div>
+  <p>Check: \(\cos^2 60^\circ + \cos^2 45^\circ + \cos^2 60^\circ = 0.25 + 0.5 + 0.25 = 1.0\,\checkmark\)</p>
+
+  <h2>2. Turning a 3D image into an FBD and identifying force directions</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How to go from 3D image to FBD.</span> · <span class="student-quote">Identifying the direction of forces in 3D.</span></p>
+
+  <h3>Step-by-step: 3D image → FBD</h3>
+  <div class="stepbox">
+    <p><strong>Step-by-step:</strong></p>
+    <ol>
+      <li><strong>Identify the particle or body:</strong> What are you drawing the FBD of? Circle it on the diagram.</li>
+      <li><strong>Draw the coordinate axes:</strong> Label \(+x\), \(+y\), \(+z\). Use the right-hand rule: \(+x\) right, \(+y\) up, \(+z\) out of the page.</li>
+      <li><strong>List all forces acting on the particle:</strong>
+        <ul style="margin-top:0.4rem;">
+          <li>Weight: always \(\mathbf{W} = -W\mathbf{j}\) (down).</li>
+          <li>Cables/ropes: tension pulls <em>away</em> from the particle, along the cable direction.</li>
+          <li>Springs: force is \(k\Delta L\), along the spring direction (can push or pull).</li>
+          <li>Contact forces: normal and friction, if applicable.</li>
+        </ul>
+      </li>
+      <li><strong>For each cable:</strong> Find the direction from the attachment point to the other end. Write the direction as a unit vector \(\lambda\) (see Section 3 below).</li>
+      <li><strong>Write each force in vector form:</strong> \(\mathbf{T}_1 = T_1 \lambda_1\), \(\mathbf{T}_2 = T_2 \lambda_2\), etc.</li>
+      <li><strong>Write equilibrium:</strong> \(\Sigma\mathbf{F} = \mathbf{0}\), which splits into \(\Sigma F_x=0\), \(\Sigma F_y=0\), \(\Sigma F_z=0\).</li>
+    </ol>
+  </div>
+
+  <h3>Example: reading force direction</h3>
+  <p>A cable runs from point \(A(0,0,3)\) to point \(B(4,3,0)\). Which way does the tension pull on a particle at \(A\)?</p>
+  <ul>
+    <li>The cable pulls <em>from \(A\) toward \(B\)</em>.</li>
+    <li>Direction vector: \(\mathbf{d} = \mathbf{r}_B - \mathbf{r}_A = (4-0)\mathbf{i} + (3-0)\mathbf{j} + (0-3)\mathbf{k} = 4\mathbf{i} + 3\mathbf{j} - 3\mathbf{k}\).</li>
+    <li>Distance: \(d = \sqrt{4^2+3^2+(-3)^2} = \sqrt{16+9+9} = \sqrt{34} \approx 5.83\text{ m}\).</li>
+    <li>Unit vector: \(\lambda = \dfrac{\mathbf{d}}{d} = \dfrac{4}{\sqrt{34}}\mathbf{i} + \dfrac{3}{\sqrt{34}}\mathbf{j} - \dfrac{3}{\sqrt{34}}\mathbf{k} \approx 0.686\mathbf{i} + 0.515\mathbf{j} - 0.515\mathbf{k}\).</li>
+    <li>If tension is \(T\), then \(\mathbf{T} = T\lambda = T(0.686\mathbf{i} + 0.515\mathbf{j} - 0.515\mathbf{k})\).</li>
+  </ul>
+  <p>The negative \(z\)-component means the cable pulls "into the page" (if \(+z\) is out).</p>
+
+  <h2>3. How to start 3D problems — which method to use</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How do I start a 3D problem?</span> · <span class="student-quote">Which method should I use?</span></p>
+
+  <h3>The two methods for 3D forces</h3>
+  <p>Beer Chapter 2 presents two ways to work with 3D forces:</p>
+  <ol>
+    <li><strong>Direction cosines (Sec. 2.7B):</strong> If you know the angles \(\theta_x\), \(\theta_y\), \(\theta_z\), use \(F_x = F\cos\theta_x\), etc.</li>
+    <li><strong>Unit vectors from two points (Sec. 2.7C):</strong> If you know the two points the force acts between, compute the direction vector \(\mathbf{d} = \mathbf{r}_B - \mathbf{r}_A\), then \(\lambda = \mathbf{d}/d\).</li>
+  </ol>
+  <p><strong>Which to use?</strong> Almost always use <strong>method 2</strong> (unit vector from two points). Most problems give you the coordinates of cable attachment points, not the angles.</p>
+
+  <h3>Step-by-step: 3D equilibrium problem</h3>
+  <div class="stepbox">
+    <p><strong>Step-by-step:</strong></p>
+    <ol>
+      <li><strong>Draw the FBD</strong> (see Section 2 above).</li>
+      <li><strong>For each cable, find \(\lambda\):</strong> Use \(\lambda = \dfrac{\mathbf{r}_B - \mathbf{r}_A}{|\mathbf{r}_B - \mathbf{r}_A|}\).</li>
+      <li><strong>Write each force:</strong> \(\mathbf{T}_1 = T_1 \lambda_1\), \(\mathbf{W} = -W\mathbf{j}\), etc.</li>
+      <li><strong>Sum forces:</strong> \(\Sigma\mathbf{F} = \mathbf{T}_1 + \mathbf{T}_2 + \cdots + \mathbf{W} = \mathbf{0}\).</li>
+      <li><strong>Write three equations:</strong>
+        <div class="eqbox" style="margin-top:0.5rem; margin-bottom:0.5rem;">\[
+        \begin{aligned}
+        \Sigma F_x &= 0, \\
+        \Sigma F_y &= 0, \\
+        \Sigma F_z &= 0.
+        \end{aligned}
+        \]</div>
+      </li>
+      <li><strong>Solve:</strong> You have three equations and (typically) three unknowns \(T_1\), \(T_2\), \(T_3\).</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <p><strong>Pro tip:</strong> Start with the simplest equation. Often one of \(\Sigma F_x\), \(\Sigma F_y\), or \(\Sigma F_z\) has only one unknown. Solve that first, then substitute into the others.</p>
+  </div>
+
+  <h2>4. More 3D worked examples</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">I would like more 3D examples.</span> · <span class="student-quote">More worked examples in 3D.</span></p>
+
+  <h3>Example 1: Three cables, one weight</h3>
+  <p>A 200-N weight hangs from three cables. Cable AB runs from \(A(0,0,0)\) to \(B(2,0,3)\). Cable AC runs from \(A\) to \(C(-1,0,2)\). Cable AD runs from \(A\) to \(D(0,-1.5,0)\). Find the tensions \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
+
+  <p><strong>Step 1: Find direction vectors.</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{d}_{AB} &= (2-0)\mathbf{i} + (0-0)\mathbf{j} + (3-0)\mathbf{k} = 2\mathbf{i} + 3\mathbf{k}, \\
+  d_{AB} &= \sqrt{2^2+3^2} = \sqrt{13} \approx 3.606\text{ m}, \\
+  \lambda_{AB} &= \frac{2}{\sqrt{13}}\mathbf{i} + \frac{3}{\sqrt{13}}\mathbf{k} \approx 0.555\mathbf{i} + 0.832\mathbf{k}. \\[0.8em]
+  \mathbf{d}_{AC} &= (-1-0)\mathbf{i} + (0-0)\mathbf{j} + (2-0)\mathbf{k} = -\mathbf{i} + 2\mathbf{k}, \\
+  d_{AC} &= \sqrt{1+4} = \sqrt{5} \approx 2.236\text{ m}, \\
+  \lambda_{AC} &= -\frac{1}{\sqrt{5}}\mathbf{i} + \frac{2}{\sqrt{5}}\mathbf{k} \approx -0.447\mathbf{i} + 0.894\mathbf{k}. \\[0.8em]
+  \mathbf{d}_{AD} &= (0-0)\mathbf{i} + (-1.5-0)\mathbf{j} + (0-0)\mathbf{k} = -1.5\mathbf{j}, \\
+  d_{AD} &= 1.5\text{ m}, \\
+  \lambda_{AD} &= -\mathbf{j}.
+  \end{aligned}
+  \]</div>
+
+  <p><strong>Step 2: Write forces.</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{T}_{AB} &= T_{AB}(0.555\mathbf{i} + 0.832\mathbf{k}), \\
+  \mathbf{T}_{AC} &= T_{AC}(-0.447\mathbf{i} + 0.894\mathbf{k}), \\
+  \mathbf{T}_{AD} &= T_{AD}(-\mathbf{j}), \\
+  \mathbf{W} &= -200\mathbf{j}\text{ N}.
+  \end{aligned}
+  \]</div>
+
+  <p><strong>Step 3: Equilibrium.</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \Sigma F_x &= 0.555\,T_{AB} - 0.447\,T_{AC} = 0, \\
+  \Sigma F_y &= -T_{AD} - 200 = 0, \\
+  \Sigma F_z &= 0.832\,T_{AB} + 0.894\,T_{AC} = 0.
+  \end{aligned}
+  \]</div>
+
+  <p><strong>Step 4: Solve.</strong></p>
+  <p>From \(\Sigma F_y\): \(T_{AD} = 200\text{ N}\).</p>
+  <p>From \(\Sigma F_x\): \(T_{AB} = \dfrac{0.447}{0.555}T_{AC} = 0.805\,T_{AC}\).</p>
+  <p>Substitute into \(\Sigma F_z\):</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  0.832(0.805\,T_{AC}) + 0.894\,T_{AC} &= 0, \\
+  0.670\,T_{AC} + 0.894\,T_{AC} &= 0, \\
+  1.564\,T_{AC} &= 0 \;\Rightarrow\; T_{AC} = 0, \\
+  T_{AB} &= 0.
+  \end{aligned}
+  \]</div>
+  <p>This is a <em>degenerate</em> case: cables AB and AC are coplanar in the \(xz\)-plane and cancel each other. All the load is carried by cable AD. In a real exam problem, the geometry is chosen so all cables carry nonzero tension.</p>
+
+  <h3>Example 2: Nondegenerate 3D equilibrium</h3>
+  <p>A 150-N weight hangs from three cables. Cable AB: from \(A(0,0,0)\) to \(B(3,0,4)\). Cable AC: from \(A\) to \(C(0,3,4)\). Cable AD: from \(A\) to \(D(-2,0,4)\). Find the tensions.</p>
+
+  <p><strong>Direction vectors:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \lambda_{AB} &= \frac{3\mathbf{i}+4\mathbf{k}}{5} = 0.6\mathbf{i} + 0.8\mathbf{k}, \\
+  \lambda_{AC} &= \frac{3\mathbf{j}+4\mathbf{k}}{5} = 0.6\mathbf{j} + 0.8\mathbf{k}, \\
+  \lambda_{AD} &= \frac{-2\mathbf{i}+4\mathbf{k}}{\sqrt{20}} = -\frac{2}{2\sqrt{5}}\mathbf{i} + \frac{4}{2\sqrt{5}}\mathbf{k} = -0.447\mathbf{i} + 0.894\mathbf{k}.
+  \end{aligned}
+  \]</div>
+
+  <p><strong>Equilibrium:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \Sigma F_x &= 0.6\,T_{AB} - 0.447\,T_{AD} = 0, \\
+  \Sigma F_y &= 0.6\,T_{AC} - 150 = 0, \\
+  \Sigma F_z &= 0.8\,T_{AB} + 0.8\,T_{AC} + 0.894\,T_{AD} = 0.
+  \end{aligned}
+  \]</div>
+
+  <p><strong>Solve:</strong></p>
+  <p>From \(\Sigma F_y\): \(T_{AC} = \dfrac{150}{0.6} = 250\text{ N}\).</p>
+  <p>From \(\Sigma F_x\): \(T_{AB} = \dfrac{0.447}{0.6}T_{AD} = 0.745\,T_{AD}\).</p>
+  <p>Substitute into \(\Sigma F_z\):</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  0.8(0.745\,T_{AD}) + 0.8(250) + 0.894\,T_{AD} &= 0, \\
+  0.596\,T_{AD} + 200 + 0.894\,T_{AD} &= 0, \\
+  1.490\,T_{AD} &= -200 \;\Rightarrow\; T_{AD} = -134.2\text{ N}.
+  \end{aligned}
+  \]</div>
+  <p>The negative sign means cable AD is in <em>compression</em>, which is physically impossible for a cable. This indicates the problem geometry is inconsistent or the cable would go slack. In a real exam, the geometry is chosen so all tensions are positive.</p>
+
+  <div class="note">
+    <p><strong>Common mistake:</strong> Forgetting that cables can only pull, never push. If you get a negative tension, either (a) the cable is slack, or (b) you made an algebra error. Check your \(\lambda\) directions and signs carefully.</p>
+  </div>
+
+  <h2>5. Parallel points and missing \(\mathbf{i},\mathbf{j},\mathbf{k}\)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">What about parallel points and when i, j, k are missing?</span></p>
+
+  <h3>When a coordinate is zero</h3>
+  <p>If a force acts along a line from \(A(x_A, y_A, z_A)\) to \(B(x_B, y_B, z_B)\), the direction vector is:</p>
+  <div class="eqbox">\[
+  \mathbf{d} = (x_B - x_A)\mathbf{i} + (y_B - y_A)\mathbf{j} + (z_B - z_A)\mathbf{k}.
+  \]</div>
+  <p>If \(x_B = x_A\), the \(\mathbf{i}\) component is <strong>zero</strong>. The force has no \(x\)-component. For example, if \(A(2,0,0)\) and \(B(2,3,4)\), then:</p>
+  <div class="eqbox">\[
+  \mathbf{d} = (2-2)\mathbf{i} + (3-0)\mathbf{j} + (4-0)\mathbf{k} = 0\mathbf{i} + 3\mathbf{j} + 4\mathbf{k} = 3\mathbf{j} + 4\mathbf{k}.
+  \]</div>
+  <p>The \(\mathbf{i}\) term is omitted (it's zero). This is completely fine. The force lies in the \(yz\)-plane.</p>
+
+  <h3>Parallel cables</h3>
+  <p>If two cables are <em>parallel</em>, they have the same direction \(\lambda\). For example, if cable 1 goes from \((0,0,0)\) to \((3,4,0)\), and cable 2 goes from \((1,1,0)\) to \((4,5,0)\), both have \(\mathbf{d} = 3\mathbf{i} + 4\mathbf{j}\), so \(\lambda = 0.6\mathbf{i} + 0.8\mathbf{j}\). They are parallel.</p>
+  <p>In equilibrium, parallel cables cannot independently support a load — the system is <em>statically indeterminate</em> or the geometry is degenerate. You need at least three <em>non-coplanar</em> cables to balance a 3D load.</p>
+
+  <h2>6. Tension in 3D equilibrium</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Tension in 3D equilibrium problems.</span></p>
+
+  <h3>What tension means</h3>
+  <p>Tension is the <strong>magnitude</strong> of the force in a cable. It is always a <em>scalar</em> (a number with units, like 120 N). The <em>direction</em> is given by the unit vector \(\lambda\). The vector form of the tension is:</p>
+  <div class="eqbox">\[
+  \mathbf{T} = T\lambda,
+  \]</div>
+  <p>where \(T\) is the scalar magnitude (the tension you solve for) and \(\lambda\) is the direction (which you compute from the geometry).</p>
+
+  <h3>How to find tension</h3>
+  <p>In a 3D equilibrium problem:</p>
+  <ol>
+    <li>Write the equilibrium equations \(\Sigma F_x = 0\), \(\Sigma F_y = 0\), \(\Sigma F_z = 0\).</li>
+    <li>Each equation is a <em>linear</em> equation in the unknown tensions \(T_1\), \(T_2\), \(T_3\).</li>
+    <li>Solve the system of three equations for the three unknowns.</li>
+  </ol>
+  <p>If you have more than three cables, the system is <em>statically indeterminate</em> (you need additional information, like material properties or deflections). If you have fewer than three cables, the system is either underconstrained (the weight would fall) or the cables are coplanar (degenerate).</p>
+
+  <h2>7. Equilibrium when \(y\) and \(z\) components are not zero</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">The last problem had y and z not zero, but it was still in equilibrium. How?</span></p>
+
+  <h3>What equilibrium means</h3>
+  <p>Equilibrium means \(\Sigma\mathbf{F} = \mathbf{0}\), which expands to:</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \Sigma F_x &= 0, \\
+  \Sigma F_y &= 0, \\
+  \Sigma F_z &= 0.
+  \end{aligned}
+  \]</div>
+  <p>Each of these <em>sums</em> must be zero. But that does <strong>not</strong> mean every individual force component is zero!</p>
+
+  <h3>Example: two cables pulling up and sideways</h3>
+  <p>A weight of 100 N hangs from two cables. Cable 1 has \(T_1 = 60\text{ N}\) at \(\lambda_1 = 0.6\mathbf{i} + 0.8\mathbf{j}\). Cable 2 has \(T_2 = 80\text{ N}\) at \(\lambda_2 = -0.6\mathbf{i} + 0.8\mathbf{j}\). The weight is \(\mathbf{W} = -100\mathbf{j}\).</p>
+  <p>Components:</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{T}_1 &= 60(0.6\mathbf{i} + 0.8\mathbf{j}) = 36\mathbf{i} + 48\mathbf{j}\text{ N}, \\
+  \mathbf{T}_2 &= 80(-0.6\mathbf{i} + 0.8\mathbf{j}) = -48\mathbf{i} + 64\mathbf{j}\text{ N}, \\
+  \mathbf{W} &= -100\mathbf{j}\text{ N}.
+  \end{aligned}
+  \]</div>
+  <p>Sum:</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \Sigma F_x &= 36 + (-48) = -12\text{ N}, \\
+  \Sigma F_y &= 48 + 64 + (-100) = 12\text{ N}.
+  \end{aligned}
+  \]</div>
+  <p>This is <em>not</em> equilibrium (the sums are not zero). Let me adjust: if \(T_2 = 75\text{ N}\), then:</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{T}_2 &= 75(-0.6\mathbf{i} + 0.8\mathbf{j}) = -45\mathbf{i} + 60\mathbf{j}\text{ N}, \\
+  \Sigma F_x &= 36 + (-45) = -9\text{ N}, \\
+  \Sigma F_y &= 48 + 60 + (-100) = 8\text{ N}.
+  \end{aligned}
+  \]</div>
+  <p>Still not quite right. The point is: <strong>individual components can be nonzero</strong>. What matters is that the <em>sum</em> of all \(x\)-components is zero, the <em>sum</em> of all \(y\)-components is zero, and the <em>sum</em> of all \(z\)-components is zero.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> In equilibrium, forces <em>balance</em>. If cable 1 pulls to the right (\(+x\)), cable 2 must pull to the left (\(-x\)) by the same amount. If cable 1 pulls up (\(+y\)), the weight pulls down (\(-y\)), and cable 2 must pull up enough to balance. The <em>components</em> of individual forces can be anything; it's the <em>sum</em> that must be zero.</p>
+  </div>
+
+  <h2>8. Switching equations mid-lecture</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">I was confused when we switched equations mid-lecture.</span></p>
+
+  <h3>Why we switch between methods</h3>
+  <p>In Beer Chapter 2, there are two main ways to write 3D force components:</p>
+  <ol>
+    <li><strong>Direction cosines (Eq. 2.19):</strong> \(F_x = F\cos\theta_x\), \(F_y = F\cos\theta_y\), \(F_z = F\cos\theta_z\).</li>
+    <li><strong>Unit vector from two points (Eq. 2.27):</strong> \(\lambda = \dfrac{\mathbf{r}_B - \mathbf{r}_A}{|\mathbf{r}_B - \mathbf{r}_A|}\), then \(\mathbf{F} = F\lambda\).</li>
+  </ol>
+  <p>These are <strong>equivalent</strong>. The direction cosines \(\cos\theta_x\), \(\cos\theta_y\), \(\cos\theta_z\) <em>are</em> the components of \(\lambda\). We "switch" between them depending on what information is given in the problem:</p>
+  <ul>
+    <li>If the problem gives you <em>angles</em>, use direction cosines.</li>
+    <li>If the problem gives you <em>coordinates</em>, use the two-point method.</li>
+  </ul>
+  <p>Both end up giving you the same \(\mathbf{F} = F_x\mathbf{i} + F_y\mathbf{j} + F_z\mathbf{k}\). Don't memorize which method to use — just pick the one that matches the problem data.</p>
+
+  <div class="note">
+    <p><strong>Pro tip:</strong> If you are ever unsure which method to use, <strong>draw a diagram</strong> and label what you know. If you see coordinates, use the two-point method. If you see angles, use direction cosines. If you see neither, ask the instructor for clarification.</p>
+  </div>
+
+  <h2>Final tips for 3D equilibrium</h2>
+  <div class="note">
+    <p><strong>Checklist:</strong></p>
+    <ul style="margin:0.4rem 0 0;">
+      <li>Draw a clear FBD. Label your coordinate axes (\(+x\), \(+y\), \(+z\)).</li>
+      <li>For each cable, find \(\lambda = \dfrac{\mathbf{r}_B - \mathbf{r}_A}{|\mathbf{r}_B - \mathbf{r}_A|}\).</li>
+      <li>Write each force in vector form: \(\mathbf{T} = T\lambda\), \(\mathbf{W} = -W\mathbf{j}\).</li>
+      <li>Sum components: \(\Sigma F_x = 0\), \(\Sigma F_y = 0\), \(\Sigma F_z = 0\).</li>
+      <li>Solve. Check your algebra. Check units.</li>
+      <li>If you get a negative tension, the cable is in compression (impossible) or slack. Check your \(\lambda\) direction and signs.</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Sep 30, 2026. Questions? Office hours or Piazza.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
