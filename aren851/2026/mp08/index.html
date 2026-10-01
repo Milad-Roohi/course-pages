@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Muddiest Point 08 study guide (Tue Sep 29)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Module 4</p>
+  <h1>Muddiest Point 08 study guide: span ratings, APA loads, and the deflection check</h1>
+  <p class="subtitle">Your comments plus NDS / APA panel practice and Lecture 4. Tuesday, Sep 29.</p>
+  <hr class="top">
+  <p>This page is a study copy of the close-the-loop for the Tuesday Sep 29 comments (MP08, 8 responses with text). Answers below follow Prof. Feldman’s responses. Check the NDS edition your assignment names; cite Table C9.2.3 by name in the manual rather than inventing table contents here.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>\(n\)</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Pros of dual floor/roof span-rated sheathing</td><td>1</td><td>1</td></tr>
+      <tr><td>Meaning of span-rating names (e.g. 24/0)</td><td>1</td><td>2</td></tr>
+      <tr><td>Deflection check felt rushed</td><td>1</td><td>3</td></tr>
+      <tr><td>Loads behind APA ratings (40/24, 48/24)</td><td>1</td><td>4</td></tr>
+      <tr><td>Clear / thanks / N/A</td><td>4</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Tuesday (summarized)</h2>
+  <p>Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>8 responses with text; four of you said the lecture was clear or had no muddy point, and several found the example helpful.</li>
+    <li>One of you asked whether dual floor/roof span-rated sheathing has pros beyond economy.</li>
+    <li>One of you asked what span-rating names mean (e.g. what 24/0 looks like / implies).</li>
+    <li>One of you said the deflection check felt rushed and was unsure how the answer was obtained.</li>
+    <li>One of you asked what loads grading agencies base 40/24 or 48/24 ratings on.</li>
+  </ul>
+
+  <h2>1. Pros of dual floor/roof span-rated sheathing</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">“Is dual floor/roof span-rated sheathing just more economical, or are there other pros?”</span></p>
+  <p><strong>Cost is the primary driver</strong> for selecting sheathing that can be used for both roof and floor. Dual-rated panels also make it easier for the contractor to <strong>stock a single material</strong> and — perhaps — benefit from <strong>bulk pricing</strong>.</p>
+  <p>Not every span rating is readily available in every thickness. Reference <strong>Table C9.2.3</strong> in the NDS for availability notes tied to span ratings and thicknesses.</p>
+
+  <h2>2. Meaning of span-rating names (e.g. 24/0)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">“What do the span-rating names mean (for example, what does 24/0 imply)?”</span></p>
+  <p>In a <strong>two-digit</strong> sheathing span rating:</p>
+  <ul>
+    <li><strong>First digit</strong> = maximum centerline spacing (inches) between supporting members for a <strong>roof</strong> application.</li>
+    <li><strong>Second digit</strong> = maximum centerline spacing (inches) for a <strong>floor</strong> application.</li>
+  </ul>
+  <p>A <strong>single-digit</strong> label such as 16oc means the maximum centerline spacing for a <strong>floor</strong> application.</p>
+  <p>In <strong>24/0</strong>, the “0” means the sheathing <strong>cannot</strong> be used for a floor application.</p>
+  <p>Sheathing looks very similar across span ratings; the main visible differences are <strong>number of plies (layers)</strong> and <strong>thickness</strong>.</p>
+
+  <h2>3. Deflection check</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">“The deflection check felt rushed; unsure how we got the answer.”</span></p>
+  <p>Prof. Feldman will <strong>revisit the example</strong> and walk the steps to solution in class. Use that revisit (Example 4 steps) as the authoritative walkthrough. This study guide does not invent deflection numbers off the slide.</p>
+  <div class="note">If you still feel stuck after the in-class revisit, bring the specific step where you lost the thread to office hours or the next muddiest survey.</div>
+
+  <h2>4. Loads behind APA span ratings (40/24, 48/24)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">“Do grading agencies spell out the loads behind ratings like 40/24 or 48/24?”</span></p>
+  <p>APA span ratings are <strong>not</strong> based on a single uniform design load (psf). They are developed for acceptable performance under a <strong>combination</strong> of uniform loads, concentrated loads, impact loads, deflection limits, and floor vibration / serviceability criteria.</p>
+  <p>For typical <strong>code-conforming</strong> construction, APA states that a panel installed at its rated span will support at least:</p>
+  <ul>
+    <li><strong>Roof sheathing:</strong> 30 psf live + 10 psf dead</li>
+    <li><strong>Floor sheathing:</strong> 40 psf live + 10 psf dead</li>
+  </ul>
+  <p>So the rating is a performance package at the stated span, not “designed for one PSF number.”</p>
+
+  <h2>FYI — HW3 Problem 4 chords</h2>
+  <div class="fyi">
+    <p><strong>Not a muddiest theme</strong> — a short clarification from Prof. Feldman on HW3 Problem 4.</p>
+    <p>The problem says the chords use <strong>two 2× members</strong>. Because of the building dimensions, a <strong>splice is required</strong>. At the splice, only <strong>one</strong> member resists tension, so chord size is based on the capacity of a <strong>single</strong> member. Connection details are not involved in that size check.</p>
+  </div>
+
+  <h2>Where to read</h2>
+  <ul>
+    <li>NDS: panel / sheathing span-rating discussion and <strong>Table C9.2.3</strong> (availability notes).</li>
+    <li>APA / panel design aids used with M9.2-1-style span ratings (roof digit / floor digit; 0 = not for floor).</li>
+    <li>Breyer 8e: Ch. 8 (wood structural panels), Module 4 lecture examples (including Example 4 deflection revisit).</li>
+  </ul>
+
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
