@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · 3D Equilibrium Practice Examples</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 1rem 0 0.3rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  .problem-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .solution-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .download-box {
+    background: #e8f4f8;
+    border: 1px solid #b3d9e8;
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .download-box a {
+    color: #0B3D91;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .download-box a:hover {
+    text-decoration: underline;
+  }
+  .katex { font-size: 1.05em; }
+  .katex-display { margin: 0.8em 0; }
+  strong { font-weight: 700; }
+  .step-label {
+    color: var(--rule);
+    font-weight: 700;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false}
+    ],
+    throwOnError: false
+  });
+});
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<div class="article">
+
+<div class="kicker">MECH 223 · Engineering Statics</div>
+<h1>3D Equilibrium Practice Examples</h1>
+<p class="subtitle">Particle equilibrium and cable tension problems with complete solutions</p>
+<hr class="top">
+
+<div class="download-box">
+  📥 <a href="Practice_Examples_MECH223.pdf" download>Download PDF version</a>
+</div>
+
+<p><strong>About these examples:</strong> This practice set contains worked problems on 3D particle equilibrium with cables under tension. Each problem includes complete solution steps with position vectors, unit vectors, equilibrium equations, and final numerical answers. These examples complement lecture material and homework assignments.</p>
+
+<hr>
+
+<h2>Problem 1: Weather Balloon Tethered by Three Cables</h2>
+
+<div class="problem-box">
+<p>A weather balloon is tethered at point $A = (0, 12.0, 0)~\text{m}$ above the origin by three cables attached to ground anchors B, C, and D on the horizontal ground plane ($y = 0~\text{m}$):</p>
+
+<ul>
+<li><strong>Anchor B:</strong> Located at $(-4.00, 0, 0)~\text{m}$ (along the negative x-axis)</li>
+<li><strong>Anchor C:</strong> Located at $(3.00, 0, 5.00)~\text{m}$</li>
+<li><strong>Anchor D:</strong> Located at $(0, 0, -6.00)~\text{m}$ (along the negative z-axis)</li>
+</ul>
+
+<p>Knowing that the tension in cable AD is $T_{AD} = 900.0~\text{N}$, determine:</p>
+<ol type="a">
+<li>The tensions in cables AB and AC ($T_{AB}$ and $T_{AC}$)</li>
+<li>The total vertical buoyant lift force P exerted by the balloon at point A</li>
+</ol>
+</div>
+
+<div class="solution-box">
+<h3>Solution</h3>
+
+<h4><span class="step-label">❖</span> Position Vectors and Cable Lengths</h4>
+
+<p>Finding the vectors pointing from tether node $A(0, 12.0, 0)~\text{m}$ to each anchor point:</p>
+
+<p><strong>Vector AB:</strong></p>
+$$\vec{AB} = (-4.00 - 0)\hat{i} + (0 - 12.0)\hat{j} + (0 - 0)\hat{k} = -4.00\hat{i} - 12.0\hat{j}~\text{m}$$
+$$|\vec{AB}| = \sqrt{(-4.00)^2 + (-12.0)^2} = 12.65~\text{m}$$
+
+<p><strong>Vector AC:</strong></p>
+$$\vec{AC} = (3.00 - 0)\hat{i} + (0 - 12.0)\hat{j} + (5.00 - 0)\hat{k} = 3.00\hat{i} - 12.0\hat{j} + 5.00\hat{k}~\text{m}$$
+$$|\vec{AC}| = \sqrt{(3.00)^2 + (-12.0)^2 + (5.00)^2} = 13.34~\text{m}$$
+
+<p><strong>Vector AD:</strong></p>
+$$\vec{AD} = (0 - 0)\hat{i} + (0 - 12.0)\hat{j} + (-6.00 - 0)\hat{k} = -12.0\hat{j} - 6.00\hat{k}~\text{m}$$
+$$|\vec{AD}| = \sqrt{(-12.0)^2 + (-6.00)^2} = 13.42~\text{m}$$
+
+<h4><span class="step-label">❖</span> Unit Vectors & Force Vector Representations</h4>
+
+<p>Dividing each position vector by its length to get direction unit vectors ($\hat{\lambda} = \vec{r}/|\vec{r}|$):</p>
+
+$$\hat{\lambda}_{AB} = -\frac{4.00}{12.65}\hat{i} - \frac{12.0}{12.65}\hat{j} = -0.316\hat{i} - 0.949\hat{j}$$
+
+$$\hat{\lambda}_{AC} = \frac{3.00}{13.34}\hat{i} - \frac{12.0}{13.34}\hat{j} + \frac{5.00}{13.34}\hat{k} = 0.225\hat{i} - 0.899\hat{j} + 0.375\hat{k}$$
+
+$$\hat{\lambda}_{AD} = -\frac{12.0}{13.42}\hat{j} - \frac{6.00}{13.42}\hat{k} = -0.894\hat{j} - 0.447\hat{k}$$
+
+<p>The vertical balloon lift force acts straight up along the +y axis: $\vec{P} = P\hat{j}$</p>
+
+<h4><span class="step-label">❖</span> Static Equilibrium Equations ($\sum \vec{F} = 0$)</h4>
+
+<p>Setting the sum of components in all three coordinate directions to zero:</p>
+
+<p><strong>Horizontal x-axis</strong> ($\sum F_x = 0$):</p>
+$$-0.316T_{AB} + 0.225T_{AC} = 0 \quad \Rightarrow \quad T_{AC} = \left(\frac{0.316}{0.225}\right)T_{AB} = 1.406T_{AB}$$
+
+<p><strong>Transverse z-axis</strong> ($\sum F_z = 0$):</p>
+$$0.375T_{AC} - 0.447T_{AD} = 0$$
+
+<p><strong>Vertical y-axis</strong> ($\sum F_y = 0$):</p>
+$$-0.949T_{AB} - 0.899T_{AC} - 0.894T_{AD} + P = 0$$
+$$P = 0.949T_{AB} + 0.899T_{AC} + 0.894T_{AD}$$
+
+<h4><span class="step-label">❖</span> Cable Tension and Lift Evaluations</h4>
+
+<p>Given $T_{AD} = 900.0~\text{N}$:</p>
+
+<p><strong>Evaluating $T_{AC}$ from $\sum F_z = 0$:</strong></p>
+$$0.375T_{AC} = 0.447 \times 900.0 = 402.5$$
+$$T_{AC} = \frac{402.5}{0.375} = 1074~\text{N}$$
+
+<p><strong>Evaluating $T_{AB}$ from $\sum F_x = 0$:</strong></p>
+$$1074 = 1.406T_{AB} \quad \Rightarrow \quad T_{AB} = 763.8~\text{N}$$
+
+<p><strong>Evaluating vertical lift P from $\sum F_y = 0$:</strong></p>
+$$P = 0.949 \times 763.8 + 0.899 \times 1074 + 0.894 \times 900 = 2495~\text{N}$$
+
+<p style="margin-top: 1.5rem;"><strong>Final Answers:</strong></p>
+<ul>
+<li>$T_{AB} = 763.8~\text{N}$</li>
+<li>$T_{AC} = 1074~\text{N}$</li>
+<li>$P = 2495~\text{N}$</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>Problem 2: Vertical Communications Mast with Guy Cables</h2>
+
+<div class="problem-box">
+<p>A vertical communications mast is fixed at the ground origin $O(0, 0, 0)~\text{m}$ and supported at a top collar $A(0, 10.0, 0)~\text{m}$ by three guy cables anchored to ground supports at points B, C, and D ($y = 0~\text{m}$):</p>
+
+<ul>
+<li><strong>Anchor B:</strong> Located at $(-5.00, 0, 0)~\text{m}$ (along the negative x-axis)</li>
+<li><strong>Anchor C:</strong> Located at $(4.00, 0, 6.00)~\text{m}$</li>
+<li><strong>Anchor D:</strong> Located at $(0, 0, -5.00)~\text{m}$ (along the negative z-axis)</li>
+</ul>
+
+<p>A downward load and wind gust create an equivalent upward axial support reaction $\vec{P} = P\hat{j}$ applied at top node A. Knowing that the maximum allowable tension capacity in cable AD is $T_{AD} = 1100~\text{N}$, determine:</p>
+<ol>
+<li>The required tension in cables AB and AC</li>
+<li>The required magnitude of reaction force P to maintain static equilibrium</li>
+</ol>
+</div>
+
+<div class="solution-box">
+<h3>Solution</h3>
+
+<h4><span class="step-label">❖</span> Coordinates and Position Vectors</h4>
+
+<p>Finding the direction vectors pointing from top collar $A(0, 10.0, 0)~\text{m}$ down to each ground anchor:</p>
+
+<p><strong>Vector AB:</strong></p>
+$$\vec{AB} = (-5.00 - 0)\hat{i} + (0 - 10.0)\hat{j} + (0 - 0)\hat{k} = -5.00\hat{i} - 10.0\hat{j}~\text{m}$$
+$$|\vec{AB}| = \sqrt{(-5.00)^2 + (-10.0)^2} = 11.18~\text{m}$$
+
+<p><strong>Vector AC:</strong></p>
+$$\vec{AC} = (4.00 - 0)\hat{i} + (0 - 10.0)\hat{j} + (6.00 - 0)\hat{k} = 4.00\hat{i} - 10.0\hat{j} + 6.00\hat{k}~\text{m}$$
+$$|\vec{AC}| = \sqrt{(4.00)^2 + (-10.0)^2 + (6.00)^2} = 12.33~\text{m}$$
+
+<p><strong>Vector AD:</strong></p>
+$$\vec{AD} = (0 - 0)\hat{i} + (0 - 10.0)\hat{j} + (-5.00 - 0)\hat{k} = -10.0\hat{j} - 5.00\hat{k}~\text{m}$$
+$$|\vec{AD}| = \sqrt{(-10.0)^2 + (-5.00)^2} = 11.18~\text{m}$$
+
+<h4><span class="step-label">❖</span> Unit Vectors & Force Vector Representations</h4>
+
+<p>Dividing each vector by its length to determine direction unit vectors ($\hat{\lambda} = \vec{r}/|\vec{r}|$):</p>
+
+$$\hat{\lambda}_{AB} = -\frac{5.00}{11.18}\hat{i} - \frac{10.0}{11.18}\hat{j} = -0.447\hat{i} - 0.894\hat{j}$$
+
+$$\hat{\lambda}_{AC} = \frac{4.00}{12.33}\hat{i} - \frac{10.0}{12.33}\hat{j} + \frac{6.00}{12.33}\hat{k} = 0.324\hat{i} - 0.811\hat{j} + 0.487\hat{k}$$
+
+$$\hat{\lambda}_{AD} = -\frac{10.0}{11.18}\hat{j} - \frac{5.00}{11.18}\hat{k} = -0.894\hat{j} - 0.447\hat{k}$$
+
+<h4><span class="step-label">❖</span> Static Equilibrium Equations ($\sum \vec{F} = 0$)</h4>
+
+<p>Summing the components along each principal coordinate axis to zero:</p>
+
+<p><strong>I. Horizontal x-axis</strong> ($\sum F_x = 0$):</p>
+$$-0.447T_{AB} + 0.324T_{AC} = 0 \quad \Rightarrow \quad T_{AC} = 1.379T_{AB}$$
+
+<p><strong>II. Transverse z-axis</strong> ($\sum F_z = 0$):</p>
+$$0.487T_{AC} - 0.447T_{AD} = 0$$
+
+<p><strong>III. Vertical y-axis</strong> ($\sum F_y = 0$):</p>
+$$-0.894T_{AB} - 0.811T_{AC} - 0.894T_{AD} + P = 0$$
+$$P = 0.894T_{AB} + 0.811T_{AC} + 0.894T_{AD}$$
+
+<h4><span class="step-label">❖</span> Tension and Support Reaction Calculations</h4>
+
+<p>Given $T_{AD} = 1100~\text{N}$:</p>
+
+<p><strong>Evaluating $T_{AC}$ from $\sum F_z = 0$:</strong></p>
+$$0.487T_{AC} = 0.447 \times 1100 = 492.92 \quad \Rightarrow \quad T_{AC} = 1010.7~\text{N}$$
+
+<p><strong>Evaluating $T_{AB}$ from $\sum F_x = 0$:</strong></p>
+$$1010.7 = 1.379T_{AB} \quad \Rightarrow \quad T_{AB} = 733.2~\text{N}$$
+
+<p><strong>Evaluating vertical reaction force P from $\sum F_y = 0$:</strong></p>
+$$P = 0.894 \times 733.2 + 0.811 \times 1010.7 + 0.894 \times 1100 = 2459.4~\text{N}$$
+
+<p style="margin-top: 1.5rem;"><strong>Final Answers:</strong></p>
+<ul>
+<li>$T_{AB} = 733.2~\text{N}$</li>
+<li>$T_{AC} = 1010.7~\text{N}$</li>
+<li>$P = 2459.4~\text{N}$</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>Problem 3: Orbital Assembly Mission Tether System</h2>
+
+<div class="problem-box">
+<p>During an orbital assembly mission, a central structural connector node at position $A(0, 10.0, 0)~\text{m}$ is held in position relative to a space station module by three high-strength tether cables attached to anchor brackets on the module's hull at B, C, and D:</p>
+
+<ul>
+<li><strong>Anchor B:</strong> Located at $(-6.00, 2.00, 0)~\text{m}$</li>
+<li><strong>Anchor C:</strong> Located at $(4.00, 0, 5.00)~\text{m}$</li>
+<li><strong>Anchor D:</strong> Located at $(1.00, -2.00, -4.00)~\text{m}$</li>
+</ul>
+
+<p>During a thruster maneuver, a satellite tether applies an external pulling force $\vec{F}_{\text{ext}}$ to node A directed along the vector $\vec{u}_{\text{ext}} = 4\hat{i} + 3\hat{j} - 2\hat{k}$.</p>
+
+<p>If the maximum tension capacity any individual tether cable can support before snapping is $T_{\max} = 1600~\text{N}$, determine:</p>
+<ol>
+<li>Which tether cable reaches its maximum tension capacity first</li>
+<li>The maximum allowable magnitude of the thruster pulling force $F_{\text{ext}}$</li>
+</ol>
+</div>
+
+<div class="solution-box">
+<h3>Solution</h3>
+
+<h4><span class="step-label">❖</span> Position Vectors and Cable Lengths</h4>
+
+<p>Calculating the position vectors pointing from the central node $A(0, 10.0, 0)~\text{m}$ to each anchor point:</p>
+
+<p><strong>Vector AB:</strong></p>
+$$\vec{AB} = (-6.00 - 0)\hat{i} + (2.00 - 10.0)\hat{j} + (0 - 0)\hat{k} = -6.00\hat{i} - 8.00\hat{j}~\text{m}$$
+$$|\vec{AB}| = \sqrt{(-6.00)^2 + (-8.00)^2} = 10.0~\text{m}$$
+
+<p><strong>Vector AC:</strong></p>
+$$\vec{AC} = (4.00 - 0)\hat{i} + (0 - 10.0)\hat{j} + (5.00 - 0)\hat{k} = 4.00\hat{i} - 10.0\hat{j} + 5.00\hat{k}~\text{m}$$
+$$|\vec{AC}| = \sqrt{(4.00)^2 + (-10.0)^2 + (5.00)^2} = 11.87~\text{m}$$
+
+<p><strong>Vector AD:</strong></p>
+$$\vec{AD} = (1.00 - 0)\hat{i} + (-2.00 - 10.0)\hat{j} + (-4.00 - 0)\hat{k} = 1.00\hat{i} - 12.0\hat{j} - 4.00\hat{k}~\text{m}$$
+$$|\vec{AD}| = \sqrt{(1.00)^2 + (-12.0)^2 + (-4.00)^2} = 12.69~\text{m}$$
+
+<h4><span class="step-label">❖</span> Unit Vectors & Force Representations</h4>
+
+<p>Dividing each vector by its length to determine direction unit vectors ($\hat{\lambda} = \vec{r}/|\vec{r}|$):</p>
+
+$$\hat{\lambda}_{AB} = -\frac{6.0}{10}\hat{i} - \frac{8.0}{10}\hat{j} = -0.60\hat{i} - 0.80\hat{j}$$
+
+$$\hat{\lambda}_{AC} = \frac{4.00}{11.87}\hat{i} - \frac{10.0}{11.87}\hat{j} + \frac{5.00}{11.87}\hat{k} = 0.337\hat{i} - 0.842\hat{j} + 0.421\hat{k}$$
+
+$$\hat{\lambda}_{AD} = \frac{1.00}{12.69}\hat{i} - \frac{12.0}{12.69}\hat{j} - \frac{4.00}{12.69}\hat{k} = 0.079\hat{i} - 0.946\hat{j} - 0.315\hat{k}$$
+
+<p><strong>External force unit vector</strong> ($\hat{\lambda}_{\text{ext}}$):</p>
+$$|\vec{u}_{\text{ext}}| = \sqrt{4^2 + 3^2 + (-2)^2} = 5.385$$
+$$\hat{\lambda}_{\text{ext}} = \frac{4}{5.385}\hat{i} + \frac{3}{5.385}\hat{j} - \frac{2}{5.385}\hat{k} = 0.743\hat{i} + 0.557\hat{j} - 0.371\hat{k}$$
+
+<h4><span class="step-label">❖</span> Static Equilibrium Equations ($\sum \vec{F} = 0$)</h4>
+
+<p>Summing components along all three Cartesian axes:</p>
+
+<p><strong>I. Horizontal x-axis</strong> ($\sum F_x = 0$):</p>
+$$-0.60T_{AB} + 0.337T_{AC} + 0.079T_{AD} + 0.743F_{\text{ext}} = 0 \quad [\text{Equation 1}]$$
+
+<p><strong>II. Vertical y-axis</strong> ($\sum F_y = 0$):</p>
+$$-0.800T_{AB} - 0.842T_{AC} - 0.946T_{AD} + 0.557F_{\text{ext}} = 0 \quad [\text{Equation 2}]$$
+
+<p><strong>III. Transverse z-axis</strong> ($\sum F_z = 0$):</p>
+$$0.421T_{AC} - 0.315T_{AD} - 0.371F_{\text{ext}} = 0 \quad [\text{Equation 3}]$$
+
+<h4><span class="step-label">❖</span> Linear System Solution</h4>
+
+<p><strong>Expressing $T_{AC}$ in terms of $T_{AD}$ and $F_{\text{ext}}$ from [Equation 3]:</strong></p>
+$$T_{AC} = \frac{0.315T_{AD} + 0.371F_{\text{ext}}}{0.421} = 0.749T_{AD} + 0.882F_{\text{ext}} \quad [\text{Equation 4}]$$
+
+<p><strong>Substituting [Equation 4] into [Equation 1] to express $T_{AB}$:</strong></p>
+$$0.6T_{AB} = 0.337(0.749T_{AD} + 0.882F_{\text{ext}}) + 0.079T_{AD} + 0.743F_{\text{ext}}$$
+$$0.6T_{AB} = 0.331T_{AD} + 1.04F_{\text{ext}}$$
+$$T_{AB} = 0.552T_{AD} + 1.733F_{\text{ext}} \quad [\text{Equation 5}]$$
+
+<p><strong>Substituting [Equation 4] and [Equation 5] into [Equation 2] to isolate $T_{AD}$:</strong></p>
+$$-0.8(0.552T_{AD} + 1.733F_{\text{ext}}) - 0.842(0.749T_{AD} + 0.882F_{\text{ext}}) - 0.946T_{AD} + 0.557F_{\text{ext}} = 0$$
+$$(-0.442 - 0.631 - 0.946)T_{AD} + (-1.386 - 0.743 + 0.557)F_{\text{ext}} = 0$$
+$$-2.019T_{AD} - 1.572F_{\text{ext}} = 0 \quad \Rightarrow \quad T_{AD} = -0.779F_{\text{ext}}$$
+
+<p><strong>Physical Interpretation Note:</strong> The mathematical negative sign indicates that a pulling force along direction vector $\vec{u}_{\text{ext}} = 4\hat{i} + 3\hat{j} - 2\hat{k}$ puts cable AD into compression (which cables cannot support, meaning cable AD goes slack: $T_{AD} = 0$).</p>
+
+<p>Setting $T_{AD} = 0$ in the remaining active cable balance system ([Equation 1] and [Equation 3]):</p>
+
+<p><strong>From [Equation 3]:</strong></p>
+$$0.421T_{AC} = 0.371F_{\text{ext}} \quad \Rightarrow \quad T_{AC} = 0.882F_{\text{ext}}$$
+
+<p><strong>From [Equation 1]:</strong></p>
+$$0.6T_{AB} = 0.337(0.882F_{\text{ext}}) + 0.743F_{\text{ext}} = 1.04F_{\text{ext}}$$
+$$T_{AB} = 1.733F_{\text{ext}}$$
+
+<h4><span class="step-label">❖</span> Critical Tether Identification & Maximum Force</h4>
+
+<p><strong>1. Limiting Cable:</strong></p>
+<p>Comparing the proportional load factors ($T_{AB} = 1.733F_{\text{ext}}$ vs. $T_{AC} = 0.882F_{\text{ext}}$), Tether AB carries the largest proportion of the external load and will reach maximum capacity first.</p>
+
+<p><strong>2. Maximum Allowable Force $F_{\text{ext}}$:</strong></p>
+<p>Setting $T_{AB} = T_{\max} = 1600~\text{N}$:</p>
+$$1600 = 1.733F_{\text{ext}} \quad \Rightarrow \quad F_{\text{ext}} = 923.2~\text{N}$$
+
+<p>Checking remaining active cable:</p>
+$$T_{AC} = 0.882 \times 923.2 = 814.2~\text{N} < 1600~\text{N} \quad \text{(Safe)}$$
+
+<p style="margin-top: 1.5rem;"><strong>Final Answers:</strong></p>
+<ul>
+<li>Critical cable: <strong>Tether AB</strong></li>
+<li>Maximum allowable force: $F_{\text{ext}} = 923.2~\text{N}$</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>Problem 4: Offshore Mooring Support System</h2>
+
+<div class="problem-box">
+<p>An offshore mooring support node located at $A(0, 12.0, 0)~\text{m}$ is anchored to the seabed ($y = 0~\text{m}$) by three mooring cables attached at points B, C, and D:</p>
+
+<ul>
+<li><strong>Anchor B:</strong> Located at $(-8.00, 0, 0)~\text{m}$ (along the negative x-axis)</li>
+<li><strong>Anchor C:</strong> Located at $(5.00, 0, 4.00)~\text{m}$</li>
+<li><strong>Anchor D:</strong> Located at $(0, 0, -9.00)~\text{m}$ (along the negative z-axis)</li>
+</ul>
+
+<p>An ocean current creates a horizontal wave drag force at node A:</p>
+$$\vec{F}_w = 2.00\hat{i} - 3.00\hat{k}~\text{kN}$$
+
+<p>The central spud column provides a downward axial thrust force at A acting along the negative y-axis ($\vec{R}_y = -R_y\hat{j}$). Each mooring cable has a maximum safe operating tension capacity of $T_{\max} = 20.0~\text{kN}$.</p>
+
+<p>Knowing that cable AD carries a measured tension of $T_{AD} = 6.00~\text{kN}$:</p>
+<ol>
+<li>Evaluate the tensions in cables AB and AC ($T_{AB}$, $T_{AC}$) and the required downward thrust $R_y$</li>
+<li>Determine which cable is critical and evaluate system safety under $T_{\max} = 20.0~\text{kN}$</li>
+<li>Calculate the Maximum Safe Load Factor ($k = T_{\max}/T_{\text{critical}}$) and the required percentage reduction in wave drag force for safe operation</li>
+</ol>
+</div>
+
+<div class="solution-box">
+<h3>Solution</h3>
+
+<h4><span class="step-label">❖</span> Position Vectors & Cable Lengths</h4>
+
+<p>Finding vectors pointing from node $A(0, 12.0, 0)~\text{m}$ to each anchor point:</p>
+
+<p><strong>Vector AB:</strong></p>
+$$\vec{AB} = (-8.00 - 0)\hat{i} + (0 - 12.0)\hat{j} + (0 - 0)\hat{k} = -8.00\hat{i} - 12.0\hat{j}~\text{m}$$
+$$|\vec{AB}| = \sqrt{(-8.00)^2 + (-12.0)^2} = 14.42~\text{m}$$
+
+<p><strong>Vector AC:</strong></p>
+$$\vec{AC} = (5.00 - 0)\hat{i} + (0 - 12.0)\hat{j} + (4.00 - 0)\hat{k} = 5.00\hat{i} - 12.0\hat{j} + 4.00\hat{k}~\text{m}$$
+$$|\vec{AC}| = \sqrt{(5.00)^2 + (-12.0)^2 + (4.00)^2} = 13.60~\text{m}$$
+
+<p><strong>Vector AD:</strong></p>
+$$\vec{AD} = (0 - 0)\hat{i} + (0 - 12.0)\hat{j} + (-9.00 - 0)\hat{k} = -12.0\hat{j} - 9.00\hat{k}~\text{m}$$
+$$|\vec{AD}| = \sqrt{(-12.0)^2 + (-9.00)^2} = 15.0~\text{m}$$
+
+<h4><span class="step-label">❖</span> Unit Vectors</h4>
+
+<p>Dividing position vectors by their respective lengths:</p>
+
+$$\hat{\lambda}_{AB} = -\frac{8.00}{14.42}\hat{i} - \frac{12.0}{14.42}\hat{j} = -0.555\hat{i} - 0.832\hat{j}$$
+
+$$\hat{\lambda}_{AC} = \frac{5.00}{13.60}\hat{i} - \frac{12.0}{13.60}\hat{j} + \frac{4.00}{13.60}\hat{k} = 0.368\hat{i} - 0.882\hat{j} + 0.294\hat{k}$$
+
+$$\hat{\lambda}_{AD} = -\frac{12.0}{15.0}\hat{j} - \frac{9.00}{15.0}\hat{k} = -0.80\hat{j} - 0.60\hat{k}$$
+
+<h4><span class="step-label">❖</span> Static Equilibrium Equations ($\sum \vec{F} = 0$)</h4>
+
+<p>Summing forces along coordinate axes including $\vec{F}_w = 2.00\hat{i} - 3.00\hat{k}~\text{kN}$:</p>
+
+<p><strong>I. Horizontal x-axis</strong> ($\sum F_x = 0$):</p>
+$$-0.555T_{AB} + 0.368T_{AC} + 2.00 = 0$$
+
+<p><strong>II. Transverse z-axis</strong> ($\sum F_z = 0$):</p>
+$$0.294T_{AC} - 0.60T_{AD} - 3.00 = 0$$
+
+<p><strong>III. Vertical y-axis</strong> ($\sum F_y = 0$):</p>
+$$-0.832T_{AB} - 0.882T_{AC} - 0.80T_{AD} - R_y = 0$$
+
+<h4><span class="step-label">❖</span> Tension & Structural Load Calculations</h4>
+
+<p>Given $T_{AD} = 6.00~\text{kN}$:</p>
+
+<p><strong>Evaluating $T_{AC}$ from $\sum F_z = 0$:</strong></p>
+$$0.294T_{AC} - 0.60(6.00) - 3.00 = 0$$
+$$T_{AC} = \frac{3.60 + 3.00}{0.294} = 22.44~\text{kN}$$
+
+<p><strong>Evaluating $T_{AB}$ from $\sum F_x = 0$:</strong></p>
+$$-0.555T_{AB} + 0.368(22.44) + 2.00 = 0$$
+$$T_{AB} = \frac{8.258 + 2.00}{0.555} = 18.48~\text{kN}$$
+
+<p><strong>Evaluating downward reaction force $R_y$ from $\sum F_y = 0$:</strong></p>
+$$R_y = 0.832(18.48) + 0.882(22.44) + 0.80(6.00)$$
+$$R_y = 15.38 + 19.79 + 4.80 = 39.98~\text{kN}$$
+
+<h4><span class="step-label">❖</span> Safety Evaluation & Load Reduction</h4>
+
+<p><strong>Critical Member:</strong> Cable AC carries the highest tension ($T_{AC} = 22.44~\text{kN}$).</p>
+
+<p><strong>Safety Status:</strong> Since $T_{AC} = 22.44~\text{kN} > T_{\max} = 20.0~\text{kN}$, the capacity limit is exceeded (unsafe).</p>
+
+<p><strong>Maximum Safe Load Factor ($k$):</strong></p>
+$$k = \frac{T_{\max}}{T_{AC}} = \frac{20.0~\text{kN}}{22.44~\text{kN}} = 0.89$$
+
+<p><strong>Required Drag Force Reduction Percentage:</strong></p>
+$$\text{Reduction} = (1 - k) \times 100 = (1 - 0.89) \times 100 = 10.88\%$$
+
+<p style="margin-top: 1.5rem;"><strong>Final Answers:</strong></p>
+<ul>
+<li>$T_{AB} = 18.48~\text{kN}$</li>
+<li>$T_{AC} = 22.44~\text{kN}$ (critical cable)</li>
+<li>$R_y = 39.98~\text{kN}$</li>
+<li>System is <strong>unsafe</strong> — Cable AC exceeds capacity</li>
+<li>Maximum Safe Load Factor: $k = 0.89$</li>
+<li>Required reduction in wave drag: <strong>10.88%</strong></li>
+</ul>
+</div>
+
+<hr>
+
+<div class="download-box">
+  📥 <a href="Practice_Examples_MECH223.pdf" download>Download PDF version</a>
+</div>
+
+<footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem;">
+<p><em>Practice examples prepared for MECH 223 Engineering Statics. These worked problems illustrate the solution approach for 3D particle equilibrium with cable systems under tension.</em></p>
+</footer>
+
+</div>
+
+</body>
+</html>
