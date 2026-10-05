@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 11 study guide (Wed Sep 30)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 6</p>
+  <h1>Muddiest Point 11 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 3. Wednesday, Sep 30.</p>
+  <hr class="top">
+
+  <p>This page is a study copy built from the Wednesday Sep 30 comments (MP11, 27 responses). About 19 responses said the lecture was clear. The rest of this page addresses the handful that asked for help with moment sign conventions, finding perpendicular distance $d$, how force location affects the moment equation, handling multiple forces, and checking distances with angles. Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 3.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>\(n\)</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Moment direction convention / sign</td><td>1</td><td>1</td></tr>
+      <tr><td>Finding perpendicular distance \(d\)</td><td>1</td><td>2</td></tr>
+      <tr><td>How force location changes the equation</td><td>1</td><td>3</td></tr>
+      <tr><td>Multiple forces on rigid body</td><td>1</td><td>4</td></tr>
+      <tr><td>Check distances with angles</td><td>1</td><td>5</td></tr>
+      <tr><td>Cross product practice</td><td>1</td><td>6</td></tr>
+      <tr><td>Telling +/− difference</td><td>1</td><td>7</td></tr>
+      <tr><td>Clear / no muddy point</td><td>≈19</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p>About 19 of the 27 responses said the lecture was clear and helpful. The rest of this page is for the handful that asked about moment sign conventions, finding perpendicular distances, and working with multiple forces.</p>
+
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>27 anonymous responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>About 19 of you said the lecture was clear, helpful, and that everything made sense.</li>
+    <li>One of you asked about the convention for writing moment direction (whether to use negative for clockwise or write "CW").</li>
+    <li>One of you asked about how to find the perpendicular distance $d$ when it is not given directly.</li>
+    <li>One of you asked about how the moment equation changes depending on where you apply the force.</li>
+    <li>One of you asked about handling multiple forces acting on the same rigid body.</li>
+    <li>One of you asked about how to check that distances are correct when combining distances with angles.</li>
+    <li>One of you asked for more practice with cross products.</li>
+    <li>One of you asked about telling the difference between positive and negative moments.</li>
+  </ul>
+
+  <h2>1. Moment direction convention — sign and notation</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">What is the convention for writing the moment's direction? Should I put a negative if it is clockwise? Should I write "CW" next to each magnitude?</span></p>
+
+  <h3>The sign convention</h3>
+  <p>In 2D problems (forces and moments in the \(xy\)-plane):</p>
+  <ul>
+    <li><strong>Counterclockwise (CCW) is positive</strong> by our convention (right-hand rule: \(+z\) out of the page).</li>
+    <li><strong>Clockwise (CW) is negative</strong>.</li>
+  </ul>
+  <p>This matches the right-hand rule: curl your fingers in the direction of rotation, and your thumb points in the direction of the moment vector. If your thumb points out of the page (\(+z\)), the moment is positive (CCW). If your thumb points into the page (\(-z\)), the moment is negative (CW).</p>
+
+  <h3>How to write it</h3>
+  <p>You have two options when reporting a moment:</p>
+  <ol>
+    <li><strong>Magnitude with sign:</strong> \(M = -50\text{ N·m}\) means 50 N·m clockwise.</li>
+    <li><strong>Magnitude and direction separately:</strong> "50 N·m CW" or "50 N·m clockwise."</li>
+  </ol>
+  <p>Both are correct. When you sum moments in equilibrium (\(\Sigma M = 0\)), use the signed form (option 1) so clockwise and counterclockwise moments cancel algebraically. When the problem asks for "magnitude and direction," use option 2.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> The sign tells you the direction. A negative moment is clockwise (by our convention). A positive moment is counterclockwise. You do not need to write "CW" if you use the signed form \(M = -50\text{ N·m}\); the negative sign <em>is</em> the direction.</p>
+  </div>
+
+  <h3>Example: summing moments</h3>
+  <p>A beam has three moments about point \(A\): \(M_1 = +30\text{ N·m}\) (CCW), \(M_2 = -50\text{ N·m}\) (CW), \(M_3 = +20\text{ N·m}\) (CCW). Find \(\Sigma M_A\).</p>
+  <div class="eqbox">\[
+  \Sigma M_A = M_1 + M_2 + M_3 = 30 + (-50) + 20 = 0\text{ N·m}.
+  \]</div>
+  <p>The beam is in rotational equilibrium (sum is zero). The clockwise moment \(M_2 = -50\text{ N·m}\) exactly balances the two counterclockwise moments.</p>
+
+  <h2>2. Finding perpendicular distance \(d\)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How to find \(d\) when it is not given directly.</span></p>
+
+  <h3>The scalar formula for moment</h3>
+  <p>The magnitude of the moment of a force \(\mathbf{F}\) about a point \(A\) is:</p>
+  <div class="eqbox">\[
+  M_A = F \cdot d,
+  \]</div>
+  <p>where \(F\) is the magnitude of the force and \(d\) is the <strong>perpendicular distance</strong> from point \(A\) to the <em>line of action</em> of the force (not to the point where the force is applied).</p>
+
+  <h3>How to find \(d\) when it is not given</h3>
+  <p>If the geometry does not give \(d\) directly, use one of these methods:</p>
+  <ol>
+    <li><strong>Draw a right triangle:</strong> Drop a perpendicular from point \(A\) to the line of action of \(\mathbf{F}\). The perpendicular is \(d\). Use trigonometry to find \(d\).</li>
+    <li><strong>Resolve the position vector:</strong> If the force acts at point \(B\), and \(\mathbf{r} = \overrightarrow{AB}\), then \(d = r \sin\theta\), where \(\theta\) is the angle between \(\mathbf{r}\) and \(\mathbf{F}\). (This is the cross product form: \(|\mathbf{r} \times \mathbf{F}| = r F \sin\theta = F d\), so \(d = r \sin\theta\).)</li>
+    <li><strong>Use vector methods:</strong> Compute \(\mathbf{M}_A = \mathbf{r} \times \mathbf{F}\) directly. The magnitude is \(M_A = |\mathbf{M}_A|\), and \(d = M_A / F\).</li>
+  </ol>
+
+  <h3>Example 1: \(d\) from trigonometry</h3>
+  <p>A force \(F = 100\text{ N}\) acts at point \(B\), which is 2 m from point \(A\). The force makes an angle of \(30^\circ\) with the line \(AB\). Find the moment about \(A\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  d &= r \sin\theta = 2 \sin 30^\circ = 2 \times 0.5 = 1.0\text{ m}, \\
+  M_A &= F \cdot d = 100 \times 1.0 = 100\text{ N·m}.
+  \end{aligned}
+  \]</div>
+  <p>The perpendicular distance is the component of \(\mathbf{r}\) perpendicular to \(\mathbf{F}\), which is \(r \sin\theta\).</p>
+
+  <h3>Example 2: \(d\) from a right triangle</h3>
+  <p>A horizontal force \(F = 50\text{ N}\) acts at point \(B(3,2)\). Find the moment about the origin \(A(0,0)\).</p>
+  <p>The force is horizontal (along \(+x\)). The line of action is the horizontal line through \(B\), which is \(y = 2\). The perpendicular distance from \(A(0,0)\) to the line \(y = 2\) is \(d = 2\text{ m}\).</p>
+  <div class="eqbox">\[
+  M_A = F \cdot d = 50 \times 2 = 100\text{ N·m (CCW)}.
+  \]</div>
+  <p>The force pushes to the right above the origin, which tends to rotate the body counterclockwise, so the moment is positive.</p>
+
+  <div class="note">
+    <p><strong>Pro tip:</strong> When angles are involved, always check whether the given angle is between the force and the position vector, or between the force and a coordinate axis. Draw a diagram and label what you know. If the angle is between \(\mathbf{r}\) and \(\mathbf{F}\), use \(d = r \sin\theta\). If the angle is between \(\mathbf{F}\) and the \(x\)-axis, decompose \(\mathbf{F}\) into components and take the cross product.</p>
+  </div>
+
+  <h2>3. How force location changes the moment equation</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Depending on where you apply the force, how does the equation change?</span></p>
+
+  <h3>The principle of transmissibility</h3>
+  <p>A force is a <strong>sliding vector</strong>: you can move it along its line of action without changing the moment about any point. The moment depends only on:</p>
+  <ul>
+    <li>The magnitude and direction of the force \(\mathbf{F}\).</li>
+    <li>The perpendicular distance \(d\) from the point to the <em>line of action</em> of the force.</li>
+  </ul>
+  <p>If you move the force to a different point <em>on the same line</em>, \(d\) does not change, so the moment does not change.</p>
+
+  <h3>What changes the moment</h3>
+  <p>The moment <em>does</em> change if you move the force to a <em>different line of action</em>. Moving the force to a parallel line changes \(d\), which changes the moment.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> The moment of a force about a point depends on the <em>line</em> along which the force acts, not the specific point where you draw the force arrow. Two forces with the same magnitude and direction but different lines of action have different moments.</p>
+  </div>
+
+  <h3>Example: same force, different lines</h3>
+  <p>A force \(F = 100\text{ N}\) acts horizontally to the right. Case 1: the force acts along the line \(y = 2\text{ m}\). Case 2: the force acts along the line \(y = 3\text{ m}\). Find the moment about the origin in each case.</p>
+
+  <p><strong>Case 1:</strong> \(d = 2\text{ m}\), so \(M_A = 100 \times 2 = 200\text{ N·m (CCW)}\).</p>
+  <p><strong>Case 2:</strong> \(d = 3\text{ m}\), so \(M_A = 100 \times 3 = 300\text{ N·m (CCW)}\).</p>
+
+  <p>The force is the same (100 N to the right), but the moment is different because the line of action moved.</p>
+
+  <h3>The vector form: \(\mathbf{M}_A = \mathbf{r} \times \mathbf{F}\)</h3>
+  <p>When you write \(\mathbf{M}_A = \mathbf{r} \times \mathbf{F}\), the position vector \(\mathbf{r}\) runs from point \(A\) (the moment center) to <em>any</em> point on the line of action of \(\mathbf{F}\). If you pick a different point on the same line, \(\mathbf{r}\) changes, but the cross product \(\mathbf{r} \times \mathbf{F}\) stays the same (because the perpendicular component of \(\mathbf{r}\) is the same). If you pick a point on a <em>different</em> line, \(\mathbf{r} \times \mathbf{F}\) changes.</p>
+
+  <h2>4. Multiple forces on a rigid body</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">If we have multiple forces acting on the same rigid body.</span></p>
+
+  <h3>The superposition principle for moments</h3>
+  <p>When multiple forces act on a rigid body, the total moment about any point \(A\) is the <strong>sum</strong> of the moments of each force about that point:</p>
+  <div class="eqbox">\[
+  \mathbf{M}_A = \mathbf{M}_{A,1} + \mathbf{M}_{A,2} + \cdots + \mathbf{M}_{A,n} = \sum_{i=1}^{n} \mathbf{r}_i \times \mathbf{F}_i,
+  \]</div>
+  <p>where \(\mathbf{r}_i\) is the position vector from \(A\) to any point on the line of action of \(\mathbf{F}_i\).</p>
+
+  <h3>Step-by-step: summing moments</h3>
+  <div class="stepbox">
+    <p><strong>Step-by-step:</strong></p>
+    <ol>
+      <li><strong>Pick a moment center \(A\).</strong> (Often you pick a point where an unknown force acts, so that force contributes zero moment.)</li>
+      <li><strong>For each force, find its moment about \(A\):</strong>
+        <ul style="margin-top:0.4rem;">
+          <li>Scalar method: \(M_{A,i} = F_i \cdot d_i\) (with sign: CCW positive, CW negative).</li>
+          <li>Vector method: \(\mathbf{M}_{A,i} = \mathbf{r}_i \times \mathbf{F}_i\).</li>
+        </ul>
+      </li>
+      <li><strong>Sum the moments:</strong> \(\Sigma M_A = M_{A,1} + M_{A,2} + \cdots\).</li>
+      <li><strong>For equilibrium:</strong> \(\Sigma M_A = 0\).</li>
+    </ol>
+  </div>
+
+  <h3>Example: beam with two forces</h3>
+  <p>A beam of length 4 m lies along the \(x\)-axis. Force \(F_1 = 100\text{ N}\) acts downward at \(x = 1\text{ m}\). Force \(F_2 = 150\text{ N}\) acts downward at \(x = 3\text{ m}\). Find the total moment about the left end \(A\) (at \(x = 0\)).</p>
+
+  <p><strong>Moment of \(F_1\):</strong> \(d_1 = 1\text{ m}\), \(M_{A,1} = 100 \times 1 = 100\text{ N·m (CW)}\), so \(M_{A,1} = -100\text{ N·m}\).</p>
+  <p><strong>Moment of \(F_2\):</strong> \(d_2 = 3\text{ m}\), \(M_{A,2} = 150 \times 3 = 450\text{ N·m (CW)}\), so \(M_{A,2} = -450\text{ N·m}\).</p>
+  <p><strong>Total moment:</strong></p>
+  <div class="eqbox">\[
+  \Sigma M_A = M_{A,1} + M_{A,2} = -100 + (-450) = -550\text{ N·m (CW)}.
+  \]</div>
+  <p>The beam tends to rotate clockwise about \(A\) under these two downward forces.</p>
+
+  <div class="note">
+    <p><strong>Common mistake:</strong> Forgetting to include all forces when summing moments. Every force that does not pass through the moment center contributes a moment. If a force passes through the moment center (\(d = 0\)), its moment is zero.</p>
+  </div>
+
+  <h2>5. Check distances with angles</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How to double-check that the distances are correct when you have to combine distances with angles.</span></p>
+
+  <h3>The basic check: \(d = r \sin\theta\)</h3>
+  <p>When you use \(d = r \sin\theta\), you can check your work by:</p>
+  <ol>
+    <li><strong>Draw the diagram:</strong> Label the moment center \(A\), the point where the force acts \(B\), the distance \(r = |AB|\), and the angle \(\theta\) between \(\mathbf{r}\) and \(\mathbf{F}\).</li>
+    <li><strong>Check the angle:</strong> Is \(\theta\) the angle between the position vector \(\mathbf{r}\) and the force \(\mathbf{F}\)? If the problem gives you the angle between \(\mathbf{F}\) and a coordinate axis, you may need to subtract from \(90^\circ\) or \(180^\circ\) to get \(\theta\).</li>
+    <li><strong>Check the magnitude:</strong> Is \(d < r\)? The perpendicular distance \(d\) is the projection of \(\mathbf{r}\) perpendicular to \(\mathbf{F}\), so \(d \le r\) always. If you get \(d > r\), you made an error.</li>
+    <li><strong>Check limiting cases:</strong>
+      <ul style="margin-top:0.4rem;">
+        <li>If \(\theta = 90^\circ\) (force perpendicular to \(\mathbf{r}\)), then \(d = r \sin 90^\circ = r\). The full distance \(r\) is perpendicular.</li>
+        <li>If \(\theta = 0^\circ\) (force along \(\mathbf{r}\)), then \(d = r \sin 0^\circ = 0\). The moment is zero (force passes through the moment center along its line).</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Example: checking \(d\) with angles</h3>
+  <p>A force \(F = 200\text{ N}\) acts at point \(B\), which is 3 m from point \(A\). The angle between \(\overrightarrow{AB}\) and the force is \(40^\circ\). Find \(d\) and check it.</p>
+  <div class="eqbox">\[
+  d = r \sin\theta = 3 \sin 40^\circ = 3 \times 0.643 = 1.93\text{ m}.
+  \]</div>
+  <p>Checks:</p>
+  <ul>
+    <li>\(d = 1.93 < 3 = r\,\checkmark\) (perpendicular distance is less than the full distance).</li>
+    <li>If \(\theta\) were \(90^\circ\), \(d = 3\text{ m}\). Since \(\theta = 40^\circ < 90^\circ\), \(d < 3\,\checkmark\).</li>
+    <li>If \(\theta\) were \(0^\circ\), \(d = 0\). Since \(\theta = 40^\circ > 0^\circ\), \(d > 0\,\checkmark\).</li>
+  </ul>
+
+  <div class="note">
+    <p><strong>Pro tip:</strong> When you compute \(d\) from angles, always sketch the geometry and label \(r\), \(\theta\), and \(d\). If your sketch and your calculation disagree, revisit the problem statement to confirm which angle is given.</p>
+  </div>
+
+  <h2>6. Cross product practice</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Practice cross product vectors again.</span></p>
+
+  <h3>The cross product formula</h3>
+  <p>For two vectors \(\mathbf{A} = A_x\mathbf{i} + A_y\mathbf{j} + A_z\mathbf{k}\) and \(\mathbf{B} = B_x\mathbf{i} + B_y\mathbf{j} + B_z\mathbf{k}\), the cross product is:</p>
+  <div class="eqbox">\[
+  \mathbf{A} \times \mathbf{B} = \begin{vmatrix}
+  \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+  A_x & A_y & A_z \\
+  B_x & B_y & B_z
+  \end{vmatrix} = (A_y B_z - A_z B_y)\mathbf{i} - (A_x B_z - A_z B_x)\mathbf{j} + (A_x B_y - A_y B_x)\mathbf{k}.
+  \]</div>
+  <p>The magnitude is \(|\mathbf{A} \times \mathbf{B}| = |\mathbf{A}||\mathbf{B}|\sin\theta\), where \(\theta\) is the angle between \(\mathbf{A}\) and \(\mathbf{B}\).</p>
+
+  <h3>The right-hand rule</h3>
+  <p>Point your fingers in the direction of \(\mathbf{A}\), curl them toward \(\mathbf{B}\), and your thumb points in the direction of \(\mathbf{A} \times \mathbf{B}\).</p>
+
+  <h3>Example 1: 2D cross product (moment in the plane)</h3>
+  <p>A force \(\mathbf{F} = 50\mathbf{i} - 30\mathbf{j}\) (N) acts at point \(B(2,3)\). Find the moment about the origin \(A(0,0)\).</p>
+
+  <p><strong>Position vector:</strong> \(\mathbf{r} = 2\mathbf{i} + 3\mathbf{j}\) (m).</p>
+  <p><strong>Cross product:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{M}_A = \mathbf{r} \times \mathbf{F} &= \begin{vmatrix}
+  \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+  2 & 3 & 0 \\
+  50 & -30 & 0
+  \end{vmatrix} \\
+  &= (3 \cdot 0 - 0 \cdot (-30))\mathbf{i} - (2 \cdot 0 - 0 \cdot 50)\mathbf{j} + (2 \cdot (-30) - 3 \cdot 50)\mathbf{k} \\
+  &= 0\mathbf{i} - 0\mathbf{j} + (-60 - 150)\mathbf{k} \\
+  &= -210\mathbf{k}\text{ N·m}.
+  \end{aligned}
+  \]</div>
+  <p>The moment is \(-210\mathbf{k}\) N·m (clockwise, or into the page). The magnitude is \(M_A = 210\text{ N·m}\).</p>
+
+  <h3>Example 2: 3D cross product</h3>
+  <p>A force \(\mathbf{F} = 10\mathbf{i} + 20\mathbf{j} - 15\mathbf{k}\) (N) acts at point \(B(1,2,3)\). Find the moment about the origin.</p>
+
+  <p><strong>Position vector:</strong> \(\mathbf{r} = 1\mathbf{i} + 2\mathbf{j} + 3\mathbf{k}\) (m).</p>
+  <p><strong>Cross product:</strong></p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{M}_A = \mathbf{r} \times \mathbf{F} &= \begin{vmatrix}
+  \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+  1 & 2 & 3 \\
+  10 & 20 & -15
+  \end{vmatrix} \\
+  &= (2 \cdot (-15) - 3 \cdot 20)\mathbf{i} - (1 \cdot (-15) - 3 \cdot 10)\mathbf{j} + (1 \cdot 20 - 2 \cdot 10)\mathbf{k} \\
+  &= (-30 - 60)\mathbf{i} - (-15 - 30)\mathbf{j} + (20 - 20)\mathbf{k} \\
+  &= -90\mathbf{i} + 45\mathbf{j} + 0\mathbf{k}\text{ N·m}.
+  \end{aligned}
+  \]</div>
+  <p>The moment vector is \(\mathbf{M}_A = -90\mathbf{i} + 45\mathbf{j}\) N·m. The magnitude is \(|\mathbf{M}_A| = \sqrt{(-90)^2 + 45^2} = \sqrt{8100 + 2025} = \sqrt{10125} \approx 100.6\text{ N·m}\).</p>
+
+  <div class="note">
+    <p><strong>Pro tip:</strong> When computing the cross product, write out the determinant formula step-by-step. Check each component (\(\mathbf{i}\), \(\mathbf{j}\), \(\mathbf{k}\)) separately. The middle term (\(\mathbf{j}\)) has a <em>minus</em> sign in front of the determinant.</p>
+  </div>
+
+  <h2>7. Telling the difference between + and −</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Telling the difference between − and +.</span></p>
+
+  <h3>The sign of a moment in 2D</h3>
+  <p>In 2D problems (forces in the \(xy\)-plane), the moment is a scalar (or a vector in the \(z\)-direction). The sign tells you the direction of rotation:</p>
+  <ul>
+    <li><strong>Positive moment (\(M > 0\)):</strong> Counterclockwise (CCW) rotation. The moment vector points out of the page (\(+z\)).</li>
+    <li><strong>Negative moment (\(M < 0\)):</strong> Clockwise (CW) rotation. The moment vector points into the page (\(-z\)).</li>
+  </ul>
+
+  <h3>The right-hand rule</h3>
+  <p>Curl the fingers of your right hand in the direction the force tends to rotate the body. Your thumb points in the direction of the moment vector. If your thumb points out of the page, the moment is positive. If your thumb points into the page, the moment is negative.</p>
+
+  <h3>Example: determining the sign</h3>
+  <p>A horizontal force of 100 N acts to the right at a point 2 m above the origin. Find the moment about the origin and determine the sign.</p>
+
+  <p>The force is \(\mathbf{F} = 100\mathbf{i}\) N. The position vector is \(\mathbf{r} = 2\mathbf{j}\) m. The cross product is:</p>
+  <div class="eqbox">\[
+  \mathbf{M}_A = \mathbf{r} \times \mathbf{F} = (2\mathbf{j}) \times (100\mathbf{i}) = 2 \times 100 (\mathbf{j} \times \mathbf{i}) = 200(-\mathbf{k}) = -200\mathbf{k}\text{ N·m}.
+  \]</div>
+  <p>The moment is \(-200\mathbf{k}\) N·m (into the page), which is <strong>clockwise</strong>. The sign is <strong>negative</strong>.</p>
+
+  <p>Visual check: the force pushes to the right above the origin. Imagine a door hinged at the origin: the force would close the door (rotate clockwise). So the moment is clockwise (negative). \(\checkmark\)</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> The sign of the moment comes from the cross product. If you compute \(\mathbf{M} = \mathbf{r} \times \mathbf{F}\) correctly, the sign is automatic. If you use the scalar method (\(M = Fd\)), you must assign the sign based on whether the force tends to rotate the body clockwise (negative) or counterclockwise (positive).</p>
+  </div>
+
+  <h2>Final tips for moments and couples</h2>
+  <div class="note">
+    <p><strong>Checklist:</strong></p>
+    <ul style="margin:0.4rem 0 0;">
+      <li>Draw a clear diagram. Label the moment center, the force, and the position vector (or the perpendicular distance \(d\)).</li>
+      <li>Use the right-hand rule to determine the sign of the moment (CCW positive, CW negative).</li>
+      <li>When you have multiple forces, sum their moments with signs: \(\Sigma M = M_1 + M_2 + \cdots\).</li>
+      <li>For equilibrium: \(\Sigma M = 0\) (the total moment about any point is zero).</li>
+      <li>Check your algebra. Check units (N·m for moments).</li>
+      <li>If you get a nonsensical result (e.g., moment in the wrong direction), revisit your \(d\) calculation and sign.</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Oct 5, 2026. Questions? Office hours or Piazza.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
