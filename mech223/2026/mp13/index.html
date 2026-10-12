@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 13 study guide (Wed Oct 7)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 7</p>
+  <h1>Muddiest Point 13 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 3. Wednesday, Oct 7 (shortened class).</p>
+  <hr class="top">
+
+  <p>This page is a study copy built from the Wednesday Oct 7 comments (MP13, 20 responses). Class was short that day because of the Options Conference. 13 of the 20 responses said nothing was unclear. The rest asked for help setting up the cross-product determinant, finding the moment of a force about a line, and getting more practice with 3D moments. Two of you had questions about Exam 1. Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 3.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP13 theme counts by section</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Which numbers go in which row of the determinant</td><td>1</td><td>1</td></tr>
+      <tr><td>Moment of a force about a line (axis)</td><td>1</td><td>2</td></tr>
+      <tr><td>More practice: 3D moments and resultant moment of several forces</td><td>3</td><td>3</td></tr>
+      <tr><td>Exam 1 follow-up</td><td>2</td><td>4</td></tr>
+      <tr><td>Clear / no muddy point</td><td>13</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>20 anonymous responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>13 of you said nothing was confusing. A few of you said you appreciated how the exam averaging works.</li>
+    <li>Three of you asked for more practice with moments in 3D, including the resultant moment of forces that do not share a line of action.</li>
+    <li>One of you found the moment of a force about a line hard.</li>
+    <li>One of you was unsure which numbers go in which row when setting up the determinant.</li>
+    <li>Two of you had follow-up questions on Exam 1 (the free-body diagram in problem 3, and reviewing your own mistakes).</li>
+  </ul>
+
+  <h2>1. Setting up the determinant (Sec. 3.1)</h2>
+  <p><strong>Theme:</strong> which numbers go in which row of the determinant.</p>
+  <p>For the moment of \(\mathbf{F}\) about point \(O\), \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\). The rows always follow the order of the product:</p>
+  <div class="eqbox">\[
+  \mathbf{M}_O=\mathbf{r}\times\mathbf{F}=
+  \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ r_x & r_y & r_z\\ F_x & F_y & F_z\end{vmatrix}
+  =(r_yF_z-r_zF_y)\,\mathbf{i}-(r_xF_z-r_zF_x)\,\mathbf{j}+(r_xF_y-r_yF_x)\,\mathbf{k}
+  \]</div>
+  <ul>
+    <li><strong>Row 1:</strong> the unit vectors \(\mathbf{i},\mathbf{j},\mathbf{k}\).</li>
+    <li><strong>Row 2:</strong> the <em>first</em> vector, \(\mathbf{r}\): from \(O\) to <em>any</em> point on the line of action of \(\mathbf{F}\) (units: m).</li>
+    <li><strong>Row 3:</strong> the <em>second</em> vector, \(\mathbf{F}\) (units: N).</li>
+  </ul>
+  <div class="note"><p><strong>Order matters.</strong> Swapping rows 2 and 3 flips every sign: \(\mathbf{F}\times\mathbf{r}=-(\mathbf{r}\times\mathbf{F})\). Also watch the minus sign in front of the \(\mathbf{j}\) term.</p></div>
+
+  <h3>Worked example</h3>
+  <p>\(\mathbf{r}=(2\,\mathbf{i}-1\,\mathbf{j}+3\,\mathbf{k})\) m and \(\mathbf{F}=(4\,\mathbf{i}+2\,\mathbf{j}-5\,\mathbf{k})\) N.</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  M_x&=r_yF_z-r_zF_y=(-1)(-5)-(3)(2)=5-6=-1\\
+  M_y&=-(r_xF_z-r_zF_x)=-[(2)(-5)-(3)(4)]=-(-22)=22\\
+  M_z&=r_xF_y-r_yF_x=(2)(2)-(-1)(4)=4+4=8
+  \end{aligned}
+  \qquad\Rightarrow\qquad \mathbf{M}_O=(-1\,\mathbf{i}+22\,\mathbf{j}+8\,\mathbf{k})\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p><strong>Self-check:</strong> \(\mathbf{r}=(1\,\mathbf{i}+2\,\mathbf{j})\) m, \(\mathbf{F}=10\,\mathbf{k}\) N. Find \(\mathbf{r}\times\mathbf{F}\).</p>
+  <details><summary>Answer: self-check 1 (cross product)</summary>\((20\,\mathbf{i}-10\,\mathbf{j})\) N·m. (\(M_x=(2)(10)-0=20\); \(M_y=-[(1)(10)-0]=-10\); \(M_z=0\).)</details>
+
+  <h2>2. Moment of a force about a line (Sec. 3.2C)</h2>
+  <p><strong>Theme:</strong> finding the moment of a force about a line.</p>
+  <p>The moment of \(\mathbf{F}\) about an axis \(OL\) is the part of \(\mathbf{M}_O\) that lies along the axis. It is a scalar, found with the mixed triple product:</p>
+  <div class="eqbox">\[
+  M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})=
+  \begin{vmatrix}\lambda_x & \lambda_y & \lambda_z\\ r_x & r_y & r_z\\ F_x & F_y & F_z\end{vmatrix}
+  \]</div>
+  <ul>
+    <li>\(\boldsymbol{\lambda}\): <strong>unit</strong> vector along the line (divide by its length first).</li>
+    <li>\(\mathbf{r}\): from <em>any</em> point on the line to <em>any</em> point on the line of action of \(\mathbf{F}\).</li>
+    <li>Sign: positive means the moment points along \(+\boldsymbol{\lambda}\); negative means opposite. The vector form is \(\mathbf{M}_{OL}=M_{OL}\,\boldsymbol{\lambda}\).</li>
+  </ul>
+
+  <h3>Worked example</h3>
+  <p>The axis runs from \(O(0,0,0)\) to \(B(0,3,4)\) m. A force \(\mathbf{F}=(200\,\mathbf{i}-100\,\mathbf{j}+50\,\mathbf{k})\) N acts at \(A(2,0,0)\) m. Find the moment of \(\mathbf{F}\) about line \(OB\).</p>
+  <ol>
+    <li>Unit vector: \(\overrightarrow{OB}=(0,3,4)\) m, length 5 m, so \(\boldsymbol{\lambda}=(0,\,0.6,\,0.8)\).</li>
+    <li>Position vector from a point on the line (\(O\)) to any point on the line of action of \(\mathbf{F}\) (here \(A\)): \(\mathbf{r}=(2,0,0)\) m.</li>
+    <li>Triple product:
+    <div class="eqbox">\[
+    M_{OB}=\begin{vmatrix}0 & 0.6 & 0.8\\ 2 & 0 & 0\\ 200 & -100 & 50\end{vmatrix}
+    =0-0.6\,[(2)(50)-(0)(200)]+0.8\,[(2)(-100)-(0)(200)]=-60-160=-220\ \text{N}{\cdot}\text{m}
+    \]</div></li>
+    <li>Vector form: \(\mathbf{M}_{OB}=-220\,\boldsymbol{\lambda}=(-132\,\mathbf{j}-176\,\mathbf{k})\) N·m. The minus sign means the moment points from \(B\) toward \(O\).</li>
+  </ol>
+  <p><strong>Check:</strong> \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}=(0\,\mathbf{i}-100\,\mathbf{j}-200\,\mathbf{k})\) N·m, and \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=0.6(-100)+0.8(-200)=-220\) N·m. Same answer.</p>
+
+  <h2>3. More practice: resultant moment in 3D (Sec. 3.1 and 3.4)</h2>
+  <p><strong>Theme:</strong> more practice with 3D moments, including the resultant moment of forces that do not share a line of action.</p>
+  <p>Recipe: pick one point \(O\). For each force, write \(\mathbf{r}_i\) (from \(O\) to any point on the line of action of \(\mathbf{F}_i\)) and \(\mathbf{F}_i\) in components, take \(\mathbf{r}_i\times\mathbf{F}_i\), then add the vectors:</p>
+  <div class="eqbox">\[
+  \mathbf{R}=\sum\mathbf{F}_i,\qquad \mathbf{M}^R_O=\sum\mathbf{r}_i\times\mathbf{F}_i
+  \]</div>
+  <h3>Worked example</h3>
+  <p>\(\mathbf{F}_1=-300\,\mathbf{k}\) N acts at \(A(2,0,0)\) m. \(\mathbf{F}_2=150\,\mathbf{j}\) N acts at \(C(1,0,2)\) m. Find the resultant force and the resultant moment about \(O\).</p>
+  <div class="eqbox">\[
+  \begin{aligned}
+  \mathbf{r}_A\times\mathbf{F}_1&=\begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\2&0&0\\0&0&-300\end{vmatrix}=0\,\mathbf{i}-[(2)(-300)-0]\,\mathbf{j}+0\,\mathbf{k}=600\,\mathbf{j}\ \text{N}{\cdot}\text{m}\\
+  \mathbf{r}_C\times\mathbf{F}_2&=\begin{vmatrix}\mathbf{i}&\mathbf{j}&\mathbf{k}\\1&0&2\\0&150&0\end{vmatrix}=[0-(2)(150)]\,\mathbf{i}-[0-0]\,\mathbf{j}+[(1)(150)-0]\,\mathbf{k}=-300\,\mathbf{i}+150\,\mathbf{k}\ \text{N}{\cdot}\text{m}
+  \end{aligned}
+  \]</div>
+  <div class="eqbox">\[
+  \mathbf{R}=(150\,\mathbf{j}-300\,\mathbf{k})\ \text{N},\qquad
+  \mathbf{M}^R_O=(-300\,\mathbf{i}+600\,\mathbf{j}+150\,\mathbf{k})\ \text{N}{\cdot}\text{m},\qquad
+  |\mathbf{M}^R_O|=\sqrt{300^2+600^2+150^2}\approx 687\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p><strong>Self-check:</strong> Move \(\mathbf{F}_2\) to act at \(D(0,0,2)\) m instead. What is \(\mathbf{r}_D\times\mathbf{F}_2\)?</p>
+  <details><summary>Answer: self-check 2 (move F2 to D)</summary>\(-300\,\mathbf{i}\) N·m. (\(M_x=(0)(0)-(2)(150)=-300\); \(M_y=-[0-0]=0\); \(M_z=(0)(150)-0=0\).)</details>
+
+  <h2>4. Exam 1 follow-up</h2>
+  <ul>
+    <li>Compare your exam with the posted Exam 1 solutions on Canvas, one problem at a time.</li>
+    <li>For each lost point, label it: free-body diagram, setup (equations), algebra or arithmetic, or units and signs.</li>
+    <li>FBD checklist: isolate the body, show every support reaction and applied load, label dimensions and angles, and draw the axes.</li>
+    <li>For questions about a specific problem (for example, the FBD in problem 3), bring your exam to office hours. Times are in the Office Hours announcement on Canvas.</li>
+  </ul>
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
