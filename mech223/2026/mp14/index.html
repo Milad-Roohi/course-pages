@@ -75,8 +75,6 @@
   }
   p, li { margin: 0 0 0.72rem; }
   ol, ul { padding-left: 1.35rem; }
-  em.quote { color: inherit; font-style: italic; }
-  .student-quote { color: #0B3D91; }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -143,12 +141,13 @@
     <tbody>
       <tr><td>Mixed triple product</td><td>2</td><td>1</td></tr>
       <tr><td>Scalar vs. vector analysis / scalar analysis with one axis</td><td>2</td><td>2</td></tr>
-      <tr><td>Clockwise/counterclockwise by "looking down"</td><td>1</td><td>3</td></tr>
+      <tr><td>Clockwise/counterclockwise by looking down</td><td>1</td><td>3</td></tr>
       <tr><td>Finding force / remembering moment steps</td><td>2</td><td>4</td></tr>
-      <tr><td>Why translate moments to different planes when we have Cartesian values</td><td>1</td><td>5</td></tr>
+      <tr><td>Moments about a new point or axis vs. existing Cartesian components</td><td>1</td><td>5</td></tr>
       <tr><td>Unit vectors, projections, signs, equations</td><td>4</td><td>6</td></tr>
       <tr><td>Homework difficulty</td><td>2</td><td>7</td></tr>
       <tr><td>Clear / no muddy point</td><td>12</td><td>—</td></tr>
+      <tr><td>Other short comments (no specific question)</td><td>4</td><td>—</td></tr>
     </tbody>
   </table>
 
@@ -158,9 +157,9 @@
     <li>12 of you said nothing was confusing or that the lecture was clear.</li>
     <li>Two of you asked for more review of the mixed triple product.</li>
     <li>Two of you asked about the difference between scalar and vector analysis, and why only one axis matters in scalar analysis.</li>
-    <li>One of you was unsure about determining clockwise or counterclockwise rotation by "looking down" from a point.</li>
+    <li>One of you was unsure about determining clockwise or counterclockwise rotation by looking down from a point.</li>
     <li>Two of you asked about finding the force or remembering the steps to calculate moments.</li>
-    <li>One of you asked why we translate moments to different planes when we already have Cartesian values.</li>
+    <li>One of you asked why we recompute moments about other points or axes when we already have Cartesian components.</li>
     <li>One of you asked about unit vectors as vectors.</li>
     <li>One of you asked about unit vectors and projections.</li>
     <li>One of you asked about using different signs.</li>
@@ -180,7 +179,7 @@
     <li><strong>Row 2:</strong> \(\mathbf{r}\) is the position vector from <em>any</em> point on the line to <em>any</em> point on the line of action of \(\mathbf{F}\).</li>
     <li><strong>Row 3:</strong> \(\mathbf{F}\) is the force in component form.</li>
   </ul>
-  <p>The result \(M_{OL}\) is a <strong>scalar</strong>. Its magnitude is the moment component along the line. Its sign tells the sense: positive means the moment points along \(+\boldsymbol{\lambda}\); negative means opposite.</p>
+  <p>The result \(M_{OL}\) is a <strong>scalar</strong>. It is the signed component of \(\mathbf{M}_O\) along \(\boldsymbol{\lambda}\); \(|M_{OL}|\) is its magnitude. Its sign tells the sense: positive means the moment points along \(+\boldsymbol{\lambda}\); negative means opposite.</p>
 
   <div class="note">
     <p><strong>Key insight:</strong> The mixed triple product is the dot product of \(\boldsymbol{\lambda}\) with the full moment vector \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\). It projects the 3D moment onto the axis direction \(\boldsymbol{\lambda}\). Think of it as "how much of the moment is along this axis?"</p>
@@ -199,7 +198,7 @@
     \]</div></li>
   </ol>
   <p>The moment is \(-256\) N·m. The negative sign means the moment points from \(A\) toward \(O\) (opposite \(\boldsymbol{\lambda}\)).</p>
-  <p><strong>Check:</strong> Compute \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\) first: \((0,2,0)\times(100,50,-80)=(-160\,\mathbf{i}+0\,\mathbf{j}+0\,\mathbf{k})\) N·m. Then \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0.6)(-160)+0+0=-96\) N·m. Wait, that does not match. Let me recalculate the cross product: \(\mathbf{r}\times\mathbf{F}=[(2)(-80)-0]\,\mathbf{i}-[(0)(-80)-0]\,\mathbf{j}+[(0)(50)-(2)(100)]\,\mathbf{k}=(-160\,\mathbf{i}+0\,\mathbf{j}-200\,\mathbf{k})\) N·m. Then \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0.6)(-160)+0+(0.8)(-200)=-96-160=-256\) N·m. \(\checkmark\)</p>
+  <p><strong>Check:</strong> Compute \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\) first: \(\mathbf{r}\times\mathbf{F}=[(2)(-80)-0]\,\mathbf{i}-[(0)(-80)-0]\,\mathbf{j}+[(0)(50)-(2)(100)]\,\mathbf{k}=(-160\,\mathbf{i}+0\,\mathbf{j}-200\,\mathbf{k})\) N·m. Then \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0.6)(-160)+0+(0.8)(-200)=-96-160=-256\) N·m. \(\checkmark\)</p><p><strong>Common mistake:</strong> dropping the \(\mathbf{k}\) term of \(\mathbf{r}\times\mathbf{F}\) gives \(-96\) N·m, which does not match. Always expand all three components.</p>
 
   <p><strong>Self-check:</strong> A line runs along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A force \(\mathbf{F}=(20\,\mathbf{i}+30\,\mathbf{j})\) N acts at \(C(1,0,0)\) m. Find \(M_{OL}\).</p>
   <details><summary>Answer: self-check 1 (moment about z-axis)</summary>\(30\) N·m. (\(\mathbf{r}=(1,0,0)\), \(\mathbf{r}\times\mathbf{F}=(0\,\mathbf{i}-0\,\mathbf{j}+30\,\mathbf{k})\) N·m, \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0)(0)+(0)(0)+(1)(30)=30\) N·m.)</details>
@@ -248,34 +247,34 @@
   <p><strong>Self-check:</strong> For the same force and point, find the moment component about the \(x\)-axis.</p>
   <details><summary>Answer: self-check 2 (moment about x-axis)</summary>\(140\) N·m. (\(\boldsymbol{\lambda}=(1,0,0)\), \(M_x=(1)(140)+(0)(140)+(0)(-140)=140\) N·m.)</details>
 
-  <h2>3. Clockwise/counterclockwise by "looking down" (Sec. 3.2C)</h2>
-  <p><strong>Theme:</strong> determining sense of rotation by "looking down" from a point.</p>
+  <h2>3. Clockwise/counterclockwise by looking down (Sec. 3.2C)</h2>
+  <p><strong>Theme:</strong> determining sense of rotation by looking down from a point.</p>
   <p>When you find the moment of a force about a line, the sign of \(M_{OL}\) tells you the sense of rotation about that line. To visualize the sense, use the <strong>right-hand rule</strong>:</p>
   <ol>
     <li>Point your right thumb along the unit vector \(\boldsymbol{\lambda}\) (the positive direction of the line).</li>
-    <li>Your fingers curl in the direction of <strong>positive rotation</strong> (counterclockwise when looking from the tail toward the tip of \(\boldsymbol{\lambda}\)).</li>
-    <li>If \(M_{OL}>0\), the moment is in the positive sense (counterclockwise from the \(\boldsymbol{\lambda}\) viewpoint).</li>
-    <li>If \(M_{OL}<0\), the moment is in the negative sense (clockwise from the \(\boldsymbol{\lambda}\) viewpoint).</li>
+    <li>Your fingers curl in the direction of <strong>positive rotation</strong> (counterclockwise when \(\boldsymbol{\lambda}\) points toward you, i.e., looking from its tip back toward the line).</li>
+    <li>If \(M_{OL}>0\), the moment is in the positive sense (counterclockwise as seen with \(\boldsymbol{\lambda}\) pointing toward you).</li>
+    <li>If \(M_{OL}<0\), the moment is in the negative sense (clockwise as seen with \(\boldsymbol{\lambda}\) pointing toward you).</li>
   </ol>
 
   <div class="note">
-    <p><strong>Alternative "looking down" rule:</strong> Stand at the tail of \(\boldsymbol{\lambda}\) and look in the direction \(\boldsymbol{\lambda}\) points. If the force would rotate the body clockwise from that viewpoint, \(M_{OL}<0\). If counterclockwise, \(M_{OL}>0\). This is the same as the right-hand rule: your thumb points along \(\boldsymbol{\lambda}\), and your fingers curl counterclockwise when \(M_{OL}>0\).</p>
+    <p><strong>The "looking down" rule:</strong> Stand at the tip of \(\boldsymbol{\lambda}\) and look back along the line, so \(\boldsymbol{\lambda}\) points toward you. For \(\boldsymbol{\lambda}=+\mathbf{k}\), that means looking down from above onto the \(xy\)-plane. If the force would turn the body counterclockwise from that viewpoint, \(M_{OL}>0\); if clockwise, \(M_{OL}<0\). This is the same as the right-hand rule: thumb along \(\boldsymbol{\lambda}\), fingers curl counterclockwise when \(M_{OL}>0\).</p>
   </div>
 
   <h3>Worked example</h3>
-  <p>A vertical line runs upward along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A horizontal force \(\mathbf{F}=(50\,\mathbf{i})\) N acts at \(P(2,0,1)\) m. Find the moment about the \(z\)-axis and determine the sense of rotation.</p>
+  <p>A vertical line runs upward along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A horizontal force \(\mathbf{F}=(50\,\mathbf{i})\) N acts at \(P(2,0,1)\) m. First find the moment about the \(z\)-axis, then repeat with a second force and determine the sense of rotation.</p>
   <p>Position vector from origin (a point on the \(z\)-axis) to \(P\): \(\mathbf{r}=(2,0,1)\) m.</p>
   <div class="eqbox">\[
   M_z=\begin{vmatrix}0 & 0 & 1\\ 2 & 0 & 1\\ 50 & 0 & 0\end{vmatrix}
   =0-0+1[(2)(0)-(0)(50)]=0\ \text{N}{\cdot}\text{m}
   \]</div>
-  <p>Hmm, the moment is zero. That is because the force is radial (points away from the \(z\)-axis along the \(x\)-direction), so it produces no rotation about the \(z\)-axis. Let me try a different force.</p>
+  <p>The moment is zero: this force points straight away from the \(z\)-axis (it is radial), so it cannot turn the body about that axis. Now take a force that is not radial.</p>
   <p>Try \(\mathbf{F}=(0,50,0)\) N (force in the \(+y\)-direction) at \(P(2,0,1)\) m.</p>
   <div class="eqbox">\[
   M_z=\begin{vmatrix}0 & 0 & 1\\ 2 & 0 & 1\\ 0 & 50 & 0\end{vmatrix}
   =0-0+1[(2)(50)-(0)(0)]=100\ \text{N}{\cdot}\text{m}
   \]</div>
-  <p>The moment is \(+100\) N·m. The positive sign means the moment is counterclockwise when looking down the \(+z\)-axis (from above, looking down at the \(xy\)-plane). Visual check: the force points in the \(+y\)-direction at a point \(x=2\) (to the right of the \(z\)-axis). This would rotate the body counterclockwise (like opening a door). \(\checkmark\)</p>
+  <p>The moment is \(+100\) N·m. The positive sign means the moment is counterclockwise when viewed from the tip of \(\boldsymbol{\lambda}=+\mathbf{k}\) looking back (from above, looking down at the \(xy\)-plane). Visual check: the force points in the \(+y\)-direction at a point \(x=2\) (to the right of the \(z\)-axis). This would rotate the body counterclockwise (like opening a door). \(\checkmark\)</p>
 
   <p><strong>Self-check:</strong> Same setup, but force \(\mathbf{F}=(50,0,0)\) N at \(P(0,2,1)\) m. Find \(M_z\) and the sense.</p>
   <details><summary>Answer: self-check 3 (sense about z-axis)</summary>\(-100\) N·m, clockwise. (\(\mathbf{r}=(0,2,1)\), \(M_z=[(0)(0)-(2)(50)]=-100\) N·m. Force in \(+x\)-direction at \(y=2\) rotates clockwise when looking down from \(+z\).)</details>
@@ -303,38 +302,38 @@
   <p>A beam lies along the \(x\)-axis from \(A(0,0,0)\) to \(B(4,0,0)\) m. A cable pulls with force \(F=200\) N at point \(C(3,0,0)\) m. The cable runs from \(C\) to \(D(3,2,1)\) m. Find the moment of the cable force about point \(A\).</p>
   <ol>
     <li><strong>Moment center:</strong> \(A(0,0,0)\).</li>
-    <li><strong>Force direction:</strong> Cable runs from \(C(3,0,0)\) to \(D(3,2,1)\). Direction vector: \(\overrightarrow{CD}=(0,2,1)\), length \(\sqrt{0+4+1}=\sqrt{5}\). Unit vector: \(\mathbf{u}=(0,\,2/\sqrt{5},\,1/\sqrt{5})\). Force: \(\mathbf{F}=200\mathbf{u}=(0,\,400/\sqrt{5},\,200/\sqrt{5})\approx(0,\,178.9,\,89.4)\) N.</li>
+    <li><strong>Force direction:</strong> Cable runs from \(C(3,0,0)\) to \(D(3,2,1)\). Direction vector: \(\overrightarrow{CD}=(0,2,1)\), length \(\sqrt{0+4+1}=\sqrt{5}\). Unit vector: \(\mathbf{u}=(0,\,2/\sqrt{5},\,1/\sqrt{5})\). Force: \(\mathbf{F}=200\mathbf{u}=(0,\,400/\sqrt{5},\,200/\sqrt{5})\approx(0,\,178.89,\,89.44)\) N.</li>
     <li><strong>Position vector:</strong> From \(A\) to \(C\): \(\mathbf{r}=(3,0,0)\) m.</li>
     <li><strong>Cross product:</strong>
     <div class="eqbox">\[
     \mathbf{M}_A=\mathbf{r}\times\mathbf{F}=
-    \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 3 & 0 & 0\\ 0 & 178.9 & 89.4\end{vmatrix}
-    =[(0)(89.4)-0]\,\mathbf{i}-[(3)(89.4)-0]\,\mathbf{j}+[(3)(178.9)-0]\,\mathbf{k}
+    \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 3 & 0 & 0\\ 0 & 178.89 & 89.44\end{vmatrix}
+    =[(0)(89.44)-0]\,\mathbf{i}-[(3)(89.44)-0]\,\mathbf{j}+[(3)(178.89)-0]\,\mathbf{k}
     \]</div>
     <div class="eqbox">\[
-    =(0\,\mathbf{i}-268.2\,\mathbf{j}+536.7\,\mathbf{k})\ \text{N}{\cdot}\text{m}
+    =(0\,\mathbf{i}-268.3\,\mathbf{j}+536.7\,\mathbf{k})\ \text{N}{\cdot}\text{m}
     \]</div></li>
     <li><strong>Exact (keeping fractions):</strong> \(\mathbf{F}=(0,\,400/\sqrt{5},\,200/\sqrt{5})\) N, so \(M_y=-(3)(200/\sqrt{5})=-600/\sqrt{5}=-268.3\) N·m, \(M_z=(3)(400/\sqrt{5})=1200/\sqrt{5}=536.7\) N·m.</li>
   </ol>
   <p>Magnitude: \(|\mathbf{M}_A|=\sqrt{0+268.3^2+536.7^2}\approx 600\) N·m.</p>
 
   <p><strong>Self-check:</strong> Same problem, but find the moment about the \(x\)-axis (the beam axis).</p>
-  <details><summary>Answer: self-check 4 (moment about x-axis)</summary>\(0\) N·m. (\(\boldsymbol{\lambda}=(1,0,0)\), \(M_x=(1)(0)+(0)(-268.3)+(0)(536.7)=0\). The force acts along the beam axis, so it produces no moment about the beam.)</details>
+  <details><summary>Answer: self-check 4 (moment about x-axis)</summary>\(0\) N·m. (\(\boldsymbol{\lambda}=(1,0,0)\), \(M_x=(1)(0)+(0)(-268.3)+(0)(536.7)=0\). The cable's line of action passes through point \(C\) on the beam (\(x\)) axis, so it intersects the axis and produces no moment about it.)</details>
 
-  <h2>5. Why translate moments to different planes? (Sec. 3.3)</h2>
-  <p><strong>Theme:</strong> why we need to recalculate moments for different points or planes when we already have Cartesian components.</p>
-  <p>The Cartesian components of the moment \(\mathbf{M}_O=(M_x,M_y,M_z)\) are valid <strong>about the specific point \(O\)</strong>. If you want the moment about a <em>different</em> point \(P\), you must recalculate using \(\mathbf{M}_P=\mathbf{r}_P\times\mathbf{F}\), where \(\mathbf{r}_P\) is the position vector from \(P\) to the line of action of the force.</p>
+  <h2>5. Moments about a new point or axis (Sec. 3.1–3.2)</h2>
+  <p><strong>Theme:</strong> why we need to recalculate moments for a new point or axis when we already have Cartesian components.</p>
+  <p>The Cartesian components of the moment \(\mathbf{M}_O=(M_x,M_y,M_z)\) are valid <strong>about the specific point \(O\)</strong>. If you want the moment about a <em>different</em> point \(P\), you must recalculate using \(\mathbf{M}_P=\mathbf{r}_P\times\mathbf{F}\), where \(\mathbf{r}_P\) is the position vector from \(P\) to any point on the line of action of the force.</p>
   <p>The moment of a force depends on the <strong>moment center</strong>. Moving the moment center changes the position vector \(\mathbf{r}\), which changes the moment.</p>
 
   <div class="note">
-    <p><strong>Key insight:</strong> A moment is not a free vector; it is tied to a point. The moment \(\mathbf{M}_O\) describes the rotational effect about point \(O\). If you move to a different point \(P\), the rotational effect changes. The Cartesian components \((M_x,M_y,M_z)\) are projections of the moment onto the coordinate axes, but those components are <em>about point \(O\)</em>, not universal.</p>
+    <p><strong>Key insight:</strong> The moment of a force about a point is not a free vector; it is tied to that point. (A couple moment is the exception: it is a free vector, the same about every point.) The moment \(\mathbf{M}_O\) describes the rotational effect about point \(O\). If you move to a different point \(P\), the rotational effect changes. The Cartesian components \((M_x,M_y,M_z)\) are projections of the moment onto the coordinate axes, but those components are <em>about point \(O\)</em>, not universal.</p>
   </div>
 
   <h3>When moments are the same at different points</h3>
-  <p>If a force acts at the <em>same</em> distance from two points (measured perpendicular to its line of action), the moment magnitude is the same. But the moment <em>direction</em> may differ. In general, \(\mathbf{M}_P\neq\mathbf{M}_O\) unless the force is part of a couple (then the moment is the same at all points).</p>
+  <p>If a force acts at the <em>same</em> distance from two points (measured perpendicular to its line of action), the moment magnitude is the same. But the moment <em>direction</em> may differ. In general, \(\mathbf{M}_P\neq\mathbf{M}_O\) unless the two moment centers lie on a line parallel to \(\mathbf{F}\) (i.e., \(\mathbf{r}_P-\mathbf{r}_O\parallel\mathbf{F}\)). A couple moment, by contrast, is the same about every point.</p>
 
   <h3>The mixed triple product shortcut</h3>
-  <p>The mixed triple product \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) lets you find the moment component along <em>any</em> axis \(OL\) without first computing the full moment \(\mathbf{M}_O\) in a different coordinate system. You pick the axis direction \(\boldsymbol{\lambda}\), and the triple product projects the moment onto that axis in one step. This is why we "translate moments to different planes" — we are projecting the 3D moment onto different axes to answer different questions.</p>
+  <p>The mixed triple product \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) lets you find the moment component along <em>any</em> axis \(OL\) without first computing the full moment \(\mathbf{M}_O\) in a different coordinate system. You pick the axis direction \(\boldsymbol{\lambda}\), and the triple product projects the moment onto that axis in one step. Each rectangular component is itself a moment about an axis: \(M_x\) is the turning effect about the \(x\)-axis (rotation in the \(yz\)-plane), and so on. Projecting onto a new axis answers a new question without redoing the whole problem.</p>
 
   <h3>Worked example: moment at two different points</h3>
   <p>A force \(\mathbf{F}=(0,0,-100)\) N acts at \(B(3,2,5)\) m. Find the moment about (a) the origin \(O(0,0,0)\), (b) point \(Q(1,0,0)\) m.</p>
@@ -350,10 +349,10 @@
   \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 2 & 2 & 5\\ 0 & 0 & -100\end{vmatrix}
   =[(2)(-100)-0]\,\mathbf{i}-[(2)(-100)-0]\,\mathbf{j}+0\,\mathbf{k}=(-200\,\mathbf{i}+200\,\mathbf{j})\ \text{N}{\cdot}\text{m}
   \]</div>
-  <p>The two moments are different: \(\mathbf{M}_O\neq\mathbf{M}_Q\). The \(y\)-components differ because the perpendicular distance from the force's line of action to the \(y\)-axis changes when you move the moment center from \(O\) to \(Q\).</p>
+  <p>The two moments are different: \(\mathbf{M}_O\neq\mathbf{M}_Q\). The \(y\)-components differ because \(M_y=-r_xF_z\) here, and \(r_x\) is measured from the moment center: it is 3 m from \(O\) but 2 m from \(Q\), so \(M_y\) drops from 300 to 200 N·m. (\(M_y\) about \(Q\) is the moment about the line through \(Q\) parallel to \(y\).)</p>
 
   <p><strong>Self-check:</strong> For the same force and point \(B\), find the moment about \(R(3,0,0)\) m.</p>
-  <details><summary>Answer: self-check 5 (moment about R)</summary>\((0\,\mathbf{i}+0\,\mathbf{j}+0\,\mathbf{k})\) N·m (zero). (\(\mathbf{r}_R=(3-3,2-0,5-0)=(0,2,5)\), \(\mathbf{r}_R\times\mathbf{F}=[(2)(-100)]\,\mathbf{i}-[(0)(-100)]\,\mathbf{j}+0\,\mathbf{k}=(-200\,\mathbf{i})\ \text{N}{\cdot}\text{m}\). Wait, that is not zero. Let me recalculate: \(\mathbf{r}_R=(0,2,5)\), \(\mathbf{F}=(0,0,-100)\), \(M_x=(2)(-100)-(5)(0)=-200\), \(M_y=-[(0)(-100)-(5)(0)]=0\), \(M_z=(0)(0)-(2)(0)=0\). So \(\mathbf{M}_R=(-200\,\mathbf{i})\ \text{N}{\cdot}\text{m}\). The moment is not zero; it is \(-200\,\mathbf{i}\) N·m.)</details>
+  <details><summary>Answer: self-check 5 (moment about R)</summary>\(\mathbf{M}_R=(-200\,\mathbf{i})\) N·m. (\(\mathbf{r}_R=(3-3,\,2-0,\,5-0)=(0,2,5)\) m, \(\mathbf{F}=(0,0,-100)\) N: \(M_x=(2)(-100)-(5)(0)=-200\), \(M_y=-[(0)(-100)-(5)(0)]=0\), \(M_z=(0)(0)-(2)(0)=0\).)</details>
 
   <h2>6. Unit vectors, projections, signs, equations (Sec. 3.1–3.2)</h2>
   <p><strong>Theme:</strong> understanding unit vectors, dot products for projections, sign conventions, and when to use which equation.</p>
@@ -391,7 +390,7 @@
   \]</div>
   <p>The component is 22 N. This is the part of \(\mathbf{F}\) that lies along the direction \(\boldsymbol{\lambda}\). The projection is a scalar (with sign).</p>
 
-  <p><strong>Self-check:</strong> Same force, find the component perpendicular to \(\boldsymbol{\lambda}\).</p>
+  <p><strong>Self-check:</strong> Same force, find the magnitude of the component perpendicular to \(\boldsymbol{\lambda}\).</p>
   <details><summary>Answer: self-check 6 (perpendicular component)</summary>Use \(F_{\perp}=\sqrt{|\mathbf{F}|^2-F_{\lambda}^2}\). \(|\mathbf{F}|=\sqrt{100+400+900}=\sqrt{1400}\approx 37.4\) N. \(F_{\lambda}=22\) N. \(F_{\perp}=\sqrt{1400-484}=\sqrt{916}\approx 30.3\) N.</details>
 
   <h2>7. Homework difficulty</h2>
