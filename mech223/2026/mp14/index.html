@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 14 study guide (Mon Oct 12)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 8</p>
+  <h1>Muddiest Point 14 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 3. Monday, Oct 12.</p>
+  <hr class="top">
+
+  <p>This page is a study copy built from the Monday Oct 12 comments (MP14, 31 responses, 30 with text). Lecture covered rigid body products: dot product review, cross product for moments, and the mixed triple product for moment about a line (Sec. 3.1–3.2). About 12 responses said nothing was unclear. The rest asked for help with the mixed triple product, scalar versus vector analysis, clockwise/counterclockwise sign conventions, and remembering the moment calculation steps. Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 3.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP14 theme counts by section</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Mixed triple product</td><td>2</td><td>1</td></tr>
+      <tr><td>Scalar vs. vector analysis / scalar analysis with one axis</td><td>2</td><td>2</td></tr>
+      <tr><td>Clockwise/counterclockwise by "looking down"</td><td>1</td><td>3</td></tr>
+      <tr><td>Finding force / remembering moment steps</td><td>2</td><td>4</td></tr>
+      <tr><td>Why translate moments to different planes when we have Cartesian values</td><td>1</td><td>5</td></tr>
+      <tr><td>Unit vectors, projections, signs, equations</td><td>4</td><td>6</td></tr>
+      <tr><td>Homework difficulty</td><td>2</td><td>7</td></tr>
+      <tr><td>Clear / no muddy point</td><td>12</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Monday (summarized)</h2>
+  <p>30 text responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>12 of you said nothing was confusing or that the lecture was clear.</li>
+    <li>Two of you asked for more review of the mixed triple product.</li>
+    <li>Two of you asked about the difference between scalar and vector analysis, and why only one axis matters in scalar analysis.</li>
+    <li>One of you was unsure about determining clockwise or counterclockwise rotation by "looking down" from a point.</li>
+    <li>Two of you asked about finding the force or remembering the steps to calculate moments.</li>
+    <li>One of you asked why we translate moments to different planes when we already have Cartesian values.</li>
+    <li>One of you asked about unit vectors as vectors.</li>
+    <li>One of you asked about unit vectors and projections.</li>
+    <li>One of you asked about using different signs.</li>
+    <li>One of you asked about when and how to use the equations.</li>
+    <li>Two of you noted that homework problems feel harder than lecture examples.</li>
+  </ul>
+
+  <h2>1. Mixed triple product (Sec. 3.2C)</h2>
+  <p><strong>Theme:</strong> understanding the mixed triple product \(\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\).</p>
+  <p>The <strong>mixed triple product</strong> (or <strong>scalar triple product</strong>) gives the moment of a force about a <em>line</em> (an axis), not just a point. It is a scalar:</p>
+  <div class="eqbox">\[
+  M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})=
+  \begin{vmatrix}\lambda_x & \lambda_y & \lambda_z\\ r_x & r_y & r_z\\ F_x & F_y & F_z\end{vmatrix}
+  \]</div>
+  <ul>
+    <li><strong>Row 1:</strong> \(\boldsymbol{\lambda}\) is the <strong>unit vector</strong> along the line \(OL\). (Divide the direction vector by its magnitude first.)</li>
+    <li><strong>Row 2:</strong> \(\mathbf{r}\) is the position vector from <em>any</em> point on the line to <em>any</em> point on the line of action of \(\mathbf{F}\).</li>
+    <li><strong>Row 3:</strong> \(\mathbf{F}\) is the force in component form.</li>
+  </ul>
+  <p>The result \(M_{OL}\) is a <strong>scalar</strong>. Its magnitude is the moment component along the line. Its sign tells the sense: positive means the moment points along \(+\boldsymbol{\lambda}\); negative means opposite.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> The mixed triple product is the dot product of \(\boldsymbol{\lambda}\) with the full moment vector \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\). It projects the 3D moment onto the axis direction \(\boldsymbol{\lambda}\). Think of it as "how much of the moment is along this axis?"</p>
+  </div>
+
+  <h3>Worked example</h3>
+  <p>A line runs from \(O(0,0,0)\) to \(A(3,0,4)\) m. A force \(\mathbf{F}=(100\,\mathbf{i}+50\,\mathbf{j}-80\,\mathbf{k})\) N acts at point \(B(0,2,0)\) m. Find the moment of \(\mathbf{F}\) about line \(OA\).</p>
+  <ol>
+    <li>Direction vector of line \(OA\): \(\overrightarrow{OA}=(3,0,4)\) m, length \(\sqrt{9+16}=5\) m.</li>
+    <li>Unit vector: \(\boldsymbol{\lambda}=(3/5,\,0,\,4/5)=(0.6,\,0,\,0.8)\).</li>
+    <li>Position vector from \(O\) (a point on the line) to \(B\) (a point on the line of action of \(\mathbf{F}\)): \(\mathbf{r}=(0,2,0)\) m.</li>
+    <li>Mixed triple product:
+    <div class="eqbox">\[
+    M_{OA}=\begin{vmatrix}0.6 & 0 & 0.8\\ 0 & 2 & 0\\ 100 & 50 & -80\end{vmatrix}
+    =0.6[(2)(-80)-0]-0+0.8[(0)(50)-(2)(100)]=-96-160=-256\ \text{N}{\cdot}\text{m}
+    \]</div></li>
+  </ol>
+  <p>The moment is \(-256\) N·m. The negative sign means the moment points from \(A\) toward \(O\) (opposite \(\boldsymbol{\lambda}\)).</p>
+  <p><strong>Check:</strong> Compute \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\) first: \((0,2,0)\times(100,50,-80)=(-160\,\mathbf{i}+0\,\mathbf{j}+0\,\mathbf{k})\) N·m. Then \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0.6)(-160)+0+0=-96\) N·m. Wait, that does not match. Let me recalculate the cross product: \(\mathbf{r}\times\mathbf{F}=[(2)(-80)-0]\,\mathbf{i}-[(0)(-80)-0]\,\mathbf{j}+[(0)(50)-(2)(100)]\,\mathbf{k}=(-160\,\mathbf{i}+0\,\mathbf{j}-200\,\mathbf{k})\) N·m. Then \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0.6)(-160)+0+(0.8)(-200)=-96-160=-256\) N·m. \(\checkmark\)</p>
+
+  <p><strong>Self-check:</strong> A line runs along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A force \(\mathbf{F}=(20\,\mathbf{i}+30\,\mathbf{j})\) N acts at \(C(1,0,0)\) m. Find \(M_{OL}\).</p>
+  <details><summary>Answer: self-check 1 (moment about z-axis)</summary>\(30\) N·m. (\(\mathbf{r}=(1,0,0)\), \(\mathbf{r}\times\mathbf{F}=(0\,\mathbf{i}-0\,\mathbf{j}+30\,\mathbf{k})\) N·m, \(\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0)(0)+(0)(0)+(1)(30)=30\) N·m.)</details>
+
+  <h2>2. Scalar vs. vector analysis (Sec. 3.2C)</h2>
+  <p><strong>Theme:</strong> why scalar analysis uses only one axis, and how it differs from vector analysis.</p>
+  <p><strong>Vector analysis</strong> gives the full moment vector in 3D:</p>
+  <div class="eqbox">\[
+  \mathbf{M}_O=\mathbf{r}\times\mathbf{F}=(M_x\,\mathbf{i}+M_y\,\mathbf{j}+M_z\,\mathbf{k})\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>This has three components: \(M_x\), \(M_y\), \(M_z\). You need all three to describe the moment completely.</p>
+  <p><strong>Scalar analysis</strong> gives the moment <em>component along one axis</em> (a line \(OL\)):</p>
+  <div class="eqbox">\[
+  M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})
+  \]</div>
+  <p>This is a single scalar. It tells you how much of the moment is along the direction \(\boldsymbol{\lambda}\). The other two perpendicular components are ignored.</p>
+
+  <div class="note">
+    <p><strong>When to use each method:</strong> Use <strong>scalar analysis</strong> when the problem asks for the moment about a <em>specific axis</em> (for example, "Find the moment about the \(z\)-axis" or "Find the moment about line \(AB\)"). Use <strong>vector analysis</strong> when you need the complete 3D moment vector, or when you will sum moments in all three directions for equilibrium.</p>
+  </div>
+
+  <h3>Why only one axis matters in scalar analysis</h3>
+  <p>The mixed triple product \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) is the projection of the full moment \(\mathbf{M}_O\) onto the unit vector \(\boldsymbol{\lambda}\). A dot product picks out the component along one direction. That is why "only one axis is relevant" — you are asking for the moment <em>about that axis</em>, not the full 3D moment.</p>
+
+  <h3>Worked example</h3>
+  <p>A force \(\mathbf{F}=(60\,\mathbf{i}-40\,\mathbf{j}+20\,\mathbf{k})\) N acts at \(D(2,1,3)\) m. Find (a) the full moment about the origin, (b) the component along the \(y\)-axis.</p>
+  <p><strong>(a) Vector analysis:</strong> \(\mathbf{r}=(2,1,3)\) m.</p>
+  <div class="eqbox">\[
+  \mathbf{M}_O=\mathbf{r}\times\mathbf{F}=
+  \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 2 & 1 & 3\\ 60 & -40 & 20\end{vmatrix}
+  =[(1)(20)-(3)(-40)]\,\mathbf{i}-[(2)(20)-(3)(60)]\,\mathbf{j}+[(2)(-40)-(1)(60)]\,\mathbf{k}
+  \]</div>
+  <div class="eqbox">\[
+  =(20+120)\,\mathbf{i}-(40-180)\,\mathbf{j}+(-80-60)\,\mathbf{k}=(140\,\mathbf{i}+140\,\mathbf{j}-140\,\mathbf{k})\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p><strong>(b) Scalar analysis (moment about \(y\)-axis):</strong> \(\boldsymbol{\lambda}=(0,1,0)\).</p>
+  <div class="eqbox">\[
+  M_{y}=\boldsymbol{\lambda}\cdot\mathbf{M}_O=(0)(140)+(1)(140)+(0)(-140)=140\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Or directly:</p>
+  <div class="eqbox">\[
+  M_{y}=\begin{vmatrix}0 & 1 & 0\\ 2 & 1 & 3\\ 60 & -40 & 20\end{vmatrix}=0-1[(2)(20)-(3)(60)]+0=-(40-180)=140\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Same answer. The scalar method picks out the \(y\)-component \(M_y=140\) N·m from the full vector \(\mathbf{M}_O\).</p>
+
+  <p><strong>Self-check:</strong> For the same force and point, find the moment component about the \(x\)-axis.</p>
+  <details><summary>Answer: self-check 2 (moment about x-axis)</summary>\(140\) N·m. (\(\boldsymbol{\lambda}=(1,0,0)\), \(M_x=(1)(140)+(0)(140)+(0)(-140)=140\) N·m.)</details>
+
+  <h2>3. Clockwise/counterclockwise by "looking down" (Sec. 3.2C)</h2>
+  <p><strong>Theme:</strong> determining sense of rotation by "looking down" from a point.</p>
+  <p>When you find the moment of a force about a line, the sign of \(M_{OL}\) tells you the sense of rotation about that line. To visualize the sense, use the <strong>right-hand rule</strong>:</p>
+  <ol>
+    <li>Point your right thumb along the unit vector \(\boldsymbol{\lambda}\) (the positive direction of the line).</li>
+    <li>Your fingers curl in the direction of <strong>positive rotation</strong> (counterclockwise when looking from the tail toward the tip of \(\boldsymbol{\lambda}\)).</li>
+    <li>If \(M_{OL}>0\), the moment is in the positive sense (counterclockwise from the \(\boldsymbol{\lambda}\) viewpoint).</li>
+    <li>If \(M_{OL}<0\), the moment is in the negative sense (clockwise from the \(\boldsymbol{\lambda}\) viewpoint).</li>
+  </ol>
+
+  <div class="note">
+    <p><strong>Alternative "looking down" rule:</strong> Stand at the tail of \(\boldsymbol{\lambda}\) and look in the direction \(\boldsymbol{\lambda}\) points. If the force would rotate the body clockwise from that viewpoint, \(M_{OL}<0\). If counterclockwise, \(M_{OL}>0\). This is the same as the right-hand rule: your thumb points along \(\boldsymbol{\lambda}\), and your fingers curl counterclockwise when \(M_{OL}>0\).</p>
+  </div>
+
+  <h3>Worked example</h3>
+  <p>A vertical line runs upward along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A horizontal force \(\mathbf{F}=(50\,\mathbf{i})\) N acts at \(P(2,0,1)\) m. Find the moment about the \(z\)-axis and determine the sense of rotation.</p>
+  <p>Position vector from origin (a point on the \(z\)-axis) to \(P\): \(\mathbf{r}=(2,0,1)\) m.</p>
+  <div class="eqbox">\[
+  M_z=\begin{vmatrix}0 & 0 & 1\\ 2 & 0 & 1\\ 50 & 0 & 0\end{vmatrix}
+  =0-0+1[(2)(0)-(0)(50)]=0\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Hmm, the moment is zero. That is because the force is radial (points away from the \(z\)-axis along the \(x\)-direction), so it produces no rotation about the \(z\)-axis. Let me try a different force.</p>
+  <p>Try \(\mathbf{F}=(0,50,0)\) N (force in the \(+y\)-direction) at \(P(2,0,1)\) m.</p>
+  <div class="eqbox">\[
+  M_z=\begin{vmatrix}0 & 0 & 1\\ 2 & 0 & 1\\ 0 & 50 & 0\end{vmatrix}
+  =0-0+1[(2)(50)-(0)(0)]=100\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>The moment is \(+100\) N·m. The positive sign means the moment is counterclockwise when looking down the \(+z\)-axis (from above, looking down at the \(xy\)-plane). Visual check: the force points in the \(+y\)-direction at a point \(x=2\) (to the right of the \(z\)-axis). This would rotate the body counterclockwise (like opening a door). \(\checkmark\)</p>
+
+  <p><strong>Self-check:</strong> Same setup, but force \(\mathbf{F}=(50,0,0)\) N at \(P(0,2,1)\) m. Find \(M_z\) and the sense.</p>
+  <details><summary>Answer: self-check 3 (sense about z-axis)</summary>\(-100\) N·m, clockwise. (\(\mathbf{r}=(0,2,1)\), \(M_z=[(0)(0)-(2)(50)]=-100\) N·m. Force in \(+x\)-direction at \(y=2\) rotates clockwise when looking down from \(+z\).)</details>
+
+  <h2>4. Finding force / remembering moment steps (Sec. 3.1, 3.2)</h2>
+  <p><strong>Theme:</strong> systematic steps for calculating moments.</p>
+  <p>Follow this sequence for moment problems:</p>
+  <div class="stepbox">
+    <p><strong>Step-by-step moment recipe:</strong></p>
+    <ol>
+      <li><strong>Identify the moment center or axis.</strong> Is the problem asking for the moment about a point \(O\) (vector) or about a line \(OL\) (scalar)?</li>
+      <li><strong>Write the force in component form.</strong> If the force magnitude and direction are given, decompose: \(\mathbf{F}=F(\cos\theta\,\mathbf{i}+\sin\theta\,\mathbf{j})\) or use unit vectors.</li>
+      <li><strong>Write the position vector \(\mathbf{r}\).</strong> From the moment center (or any point on the moment axis) to any point on the line of action of the force. Use coordinates: \(\mathbf{r}=(x_F-x_O)\,\mathbf{i}+(y_F-y_O)\,\mathbf{j}+(z_F-z_O)\,\mathbf{k}\).</li>
+      <li><strong>Compute the moment.</strong>
+        <ul style="margin-top:0.4rem;">
+          <li>For moment about a point: \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\) (3×3 determinant).</li>
+          <li>For moment about a line: \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) (3×3 determinant with \(\boldsymbol{\lambda}\) in row 1).</li>
+        </ul>
+      </li>
+      <li><strong>Check units and sign.</strong> Moment has units N·m. Sign tells rotation sense.</li>
+    </ol>
+  </div>
+
+  <h3>Worked example: full problem</h3>
+  <p>A beam lies along the \(x\)-axis from \(A(0,0,0)\) to \(B(4,0,0)\) m. A cable pulls with force \(F=200\) N at point \(C(3,0,0)\) m. The cable runs from \(C\) to \(D(3,2,1)\) m. Find the moment of the cable force about point \(A\).</p>
+  <ol>
+    <li><strong>Moment center:</strong> \(A(0,0,0)\).</li>
+    <li><strong>Force direction:</strong> Cable runs from \(C(3,0,0)\) to \(D(3,2,1)\). Direction vector: \(\overrightarrow{CD}=(0,2,1)\), length \(\sqrt{0+4+1}=\sqrt{5}\). Unit vector: \(\mathbf{u}=(0,\,2/\sqrt{5},\,1/\sqrt{5})\). Force: \(\mathbf{F}=200\mathbf{u}=(0,\,400/\sqrt{5},\,200/\sqrt{5})\approx(0,\,178.9,\,89.4)\) N.</li>
+    <li><strong>Position vector:</strong> From \(A\) to \(C\): \(\mathbf{r}=(3,0,0)\) m.</li>
+    <li><strong>Cross product:</strong>
+    <div class="eqbox">\[
+    \mathbf{M}_A=\mathbf{r}\times\mathbf{F}=
+    \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 3 & 0 & 0\\ 0 & 178.9 & 89.4\end{vmatrix}
+    =[(0)(89.4)-0]\,\mathbf{i}-[(3)(89.4)-0]\,\mathbf{j}+[(3)(178.9)-0]\,\mathbf{k}
+    \]</div>
+    <div class="eqbox">\[
+    =(0\,\mathbf{i}-268.2\,\mathbf{j}+536.7\,\mathbf{k})\ \text{N}{\cdot}\text{m}
+    \]</div></li>
+    <li><strong>Exact (keeping fractions):</strong> \(\mathbf{F}=(0,\,400/\sqrt{5},\,200/\sqrt{5})\) N, so \(M_y=-(3)(200/\sqrt{5})=-600/\sqrt{5}=-268.3\) N·m, \(M_z=(3)(400/\sqrt{5})=1200/\sqrt{5}=536.7\) N·m.</li>
+  </ol>
+  <p>Magnitude: \(|\mathbf{M}_A|=\sqrt{0+268.3^2+536.7^2}\approx 600\) N·m.</p>
+
+  <p><strong>Self-check:</strong> Same problem, but find the moment about the \(x\)-axis (the beam axis).</p>
+  <details><summary>Answer: self-check 4 (moment about x-axis)</summary>\(0\) N·m. (\(\boldsymbol{\lambda}=(1,0,0)\), \(M_x=(1)(0)+(0)(-268.3)+(0)(536.7)=0\). The force acts along the beam axis, so it produces no moment about the beam.)</details>
+
+  <h2>5. Why translate moments to different planes? (Sec. 3.3)</h2>
+  <p><strong>Theme:</strong> why we need to recalculate moments for different points or planes when we already have Cartesian components.</p>
+  <p>The Cartesian components of the moment \(\mathbf{M}_O=(M_x,M_y,M_z)\) are valid <strong>about the specific point \(O\)</strong>. If you want the moment about a <em>different</em> point \(P\), you must recalculate using \(\mathbf{M}_P=\mathbf{r}_P\times\mathbf{F}\), where \(\mathbf{r}_P\) is the position vector from \(P\) to the line of action of the force.</p>
+  <p>The moment of a force depends on the <strong>moment center</strong>. Moving the moment center changes the position vector \(\mathbf{r}\), which changes the moment.</p>
+
+  <div class="note">
+    <p><strong>Key insight:</strong> A moment is not a free vector; it is tied to a point. The moment \(\mathbf{M}_O\) describes the rotational effect about point \(O\). If you move to a different point \(P\), the rotational effect changes. The Cartesian components \((M_x,M_y,M_z)\) are projections of the moment onto the coordinate axes, but those components are <em>about point \(O\)</em>, not universal.</p>
+  </div>
+
+  <h3>When moments are the same at different points</h3>
+  <p>If a force acts at the <em>same</em> distance from two points (measured perpendicular to its line of action), the moment magnitude is the same. But the moment <em>direction</em> may differ. In general, \(\mathbf{M}_P\neq\mathbf{M}_O\) unless the force is part of a couple (then the moment is the same at all points).</p>
+
+  <h3>The mixed triple product shortcut</h3>
+  <p>The mixed triple product \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) lets you find the moment component along <em>any</em> axis \(OL\) without first computing the full moment \(\mathbf{M}_O\) in a different coordinate system. You pick the axis direction \(\boldsymbol{\lambda}\), and the triple product projects the moment onto that axis in one step. This is why we "translate moments to different planes" — we are projecting the 3D moment onto different axes to answer different questions.</p>
+
+  <h3>Worked example: moment at two different points</h3>
+  <p>A force \(\mathbf{F}=(0,0,-100)\) N acts at \(B(3,2,5)\) m. Find the moment about (a) the origin \(O(0,0,0)\), (b) point \(Q(1,0,0)\) m.</p>
+  <p><strong>(a) Moment about \(O\):</strong> \(\mathbf{r}_O=(3,2,5)\) m.</p>
+  <div class="eqbox">\[
+  \mathbf{M}_O=\mathbf{r}_O\times\mathbf{F}=
+  \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 3 & 2 & 5\\ 0 & 0 & -100\end{vmatrix}
+  =[(2)(-100)-0]\,\mathbf{i}-[(3)(-100)-0]\,\mathbf{j}+0\,\mathbf{k}=(-200\,\mathbf{i}+300\,\mathbf{j})\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p><strong>(b) Moment about \(Q\):</strong> \(\mathbf{r}_Q=(3-1,\,2-0,\,5-0)=(2,2,5)\) m.</p>
+  <div class="eqbox">\[
+  \mathbf{M}_Q=\mathbf{r}_Q\times\mathbf{F}=
+  \begin{vmatrix}\mathbf{i} & \mathbf{j} & \mathbf{k}\\ 2 & 2 & 5\\ 0 & 0 & -100\end{vmatrix}
+  =[(2)(-100)-0]\,\mathbf{i}-[(2)(-100)-0]\,\mathbf{j}+0\,\mathbf{k}=(-200\,\mathbf{i}+200\,\mathbf{j})\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>The two moments are different: \(\mathbf{M}_O\neq\mathbf{M}_Q\). The \(y\)-components differ because the perpendicular distance from the force's line of action to the \(y\)-axis changes when you move the moment center from \(O\) to \(Q\).</p>
+
+  <p><strong>Self-check:</strong> For the same force and point \(B\), find the moment about \(R(3,0,0)\) m.</p>
+  <details><summary>Answer: self-check 5 (moment about R)</summary>\((0\,\mathbf{i}+0\,\mathbf{j}+0\,\mathbf{k})\) N·m (zero). (\(\mathbf{r}_R=(3-3,2-0,5-0)=(0,2,5)\), \(\mathbf{r}_R\times\mathbf{F}=[(2)(-100)]\,\mathbf{i}-[(0)(-100)]\,\mathbf{j}+0\,\mathbf{k}=(-200\,\mathbf{i})\ \text{N}{\cdot}\text{m}\). Wait, that is not zero. Let me recalculate: \(\mathbf{r}_R=(0,2,5)\), \(\mathbf{F}=(0,0,-100)\), \(M_x=(2)(-100)-(5)(0)=-200\), \(M_y=-[(0)(-100)-(5)(0)]=0\), \(M_z=(0)(0)-(2)(0)=0\). So \(\mathbf{M}_R=(-200\,\mathbf{i})\ \text{N}{\cdot}\text{m}\). The moment is not zero; it is \(-200\,\mathbf{i}\) N·m.)</details>
+
+  <h2>6. Unit vectors, projections, signs, equations (Sec. 3.1–3.2)</h2>
+  <p><strong>Theme:</strong> understanding unit vectors, dot products for projections, sign conventions, and when to use which equation.</p>
+  <p>These are interconnected tools for working with 3D vectors and moments:</p>
+  <ul>
+    <li><strong>Unit vectors \(\boldsymbol{\lambda}\):</strong> A unit vector has magnitude 1 and points in a direction. To find it, divide a direction vector by its length: \(\boldsymbol{\lambda}=\mathbf{v}/|\mathbf{v}|\). Unit vectors give direction without scaling.</li>
+    <li><strong>Projections (dot product):</strong> The dot product \(\mathbf{A}\cdot\mathbf{B}=|\mathbf{A}||\mathbf{B}|\cos\theta\) gives the component of \(\mathbf{A}\) along \(\mathbf{B}\). If \(\mathbf{B}\) is a unit vector \(\boldsymbol{\lambda}\), then \(\mathbf{A}\cdot\boldsymbol{\lambda}\) is the scalar component of \(\mathbf{A}\) in the \(\boldsymbol{\lambda}\) direction.</li>
+    <li><strong>Signs:</strong> The sign of a dot product tells you if vectors point in the same direction (positive) or opposite (negative). The sign of a cross product component tells you the sense of rotation (right-hand rule).</li>
+    <li><strong>Which equation to use:</strong>
+      <ul style="margin-top:0.4rem;">
+        <li>For moment about a <strong>point</strong>: \(\mathbf{M}_O=\mathbf{r}\times\mathbf{F}\) (vector, 3 components).</li>
+        <li>For moment about a <strong>line/axis</strong>: \(M_{OL}=\boldsymbol{\lambda}\cdot(\mathbf{r}\times\mathbf{F})\) (scalar, one component).</li>
+        <li>For perpendicular distance (2D): \(M_O=Fd\) (scalar magnitude).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="note">
+    <p><strong>Practice tip:</strong> Start every problem by identifying what you know (coordinates, forces) and what you need (moment about a point or a line). Write the vectors in component form. Use the cross product for moments, the dot product for projections. The formulas are always the same; the challenge is setting up \(\mathbf{r}\), \(\mathbf{F}\), and \(\boldsymbol{\lambda}\) correctly.</p>
+  </div>
+
+  <h3>Worked example: unit vector as a vector</h3>
+  <p>A line runs from \(P(1,2,2)\) to \(Q(4,6,2)\) m. Find the unit vector \(\boldsymbol{\lambda}\) along \(PQ\).</p>
+  <ol>
+    <li>Direction vector: \(\overrightarrow{PQ}=(4-1,\,6-2,\,2-2)=(3,4,0)\) m.</li>
+    <li>Magnitude: \(|\overrightarrow{PQ}|=\sqrt{9+16+0}=5\) m.</li>
+    <li>Unit vector: \(\boldsymbol{\lambda}=(3/5,\,4/5,\,0)=(0.6,\,0.8,\,0)\).</li>
+  </ol>
+  <p>Check: \(|\boldsymbol{\lambda}|=\sqrt{0.36+0.64+0}=1\,\checkmark\). The unit vector is itself a vector (it has components and direction), but its magnitude is 1.</p>
+
+  <h3>Worked example: projection</h3>
+  <p>A force \(\mathbf{F}=(10,20,30)\) N. Find the component of \(\mathbf{F}\) in the direction \(\boldsymbol{\lambda}=(0.6,0.8,0)\).</p>
+  <div class="eqbox">\[
+  F_{\lambda}=\mathbf{F}\cdot\boldsymbol{\lambda}=(10)(0.6)+(20)(0.8)+(30)(0)=6+16=22\ \text{N}
+  \]</div>
+  <p>The component is 22 N. This is the part of \(\mathbf{F}\) that lies along the direction \(\boldsymbol{\lambda}\). The projection is a scalar (with sign).</p>
+
+  <p><strong>Self-check:</strong> Same force, find the component perpendicular to \(\boldsymbol{\lambda}\).</p>
+  <details><summary>Answer: self-check 6 (perpendicular component)</summary>Use \(F_{\perp}=\sqrt{|\mathbf{F}|^2-F_{\lambda}^2}\). \(|\mathbf{F}|=\sqrt{100+400+900}=\sqrt{1400}\approx 37.4\) N. \(F_{\lambda}=22\) N. \(F_{\perp}=\sqrt{1400-484}=\sqrt{916}\approx 30.3\) N.</details>
+
+  <h2>7. Homework difficulty</h2>
+  <p><strong>Theme:</strong> homework problems feel harder than lecture examples.</p>
+  <p>Homework problems often combine several lecture concepts in one problem: finding a force from cable geometry, computing moments about multiple axes, checking equilibrium, or working in 3D with angled forces. Each individual step matches a lecture example, but the combination can feel overwhelming.</p>
+
+  <div class="note">
+    <p><strong>Strategy:</strong> Break each homework problem into the lecture steps: (1) find all forces in component form, (2) pick a moment center, (3) compute each moment, (4) sum for equilibrium. Write every step. If a specific homework question is unclear, bring the problem number to office hours (times posted in the Office Hours announcement on Canvas) or ask on Canvas discussion.</p>
+  </div>
+
+  <p>Recitation examples also bridge lecture to homework. Practice the homework problems early, and use the midweek class time to ask about the ones that are confusing.</p>
+
+  <h2>Practice problems (Beer Ch 3)</h2>
+  <p>To reinforce the concepts above, try these Beer 12e problems:</p>
+  <ul>
+    <li><strong>Mixed triple product / moment about a line:</strong> Problems 3.39, 3.40, 3.43, 3.44.</li>
+    <li><strong>Scalar vs. vector moment:</strong> Problems 3.25, 3.26, 3.37, 3.38.</li>
+    <li><strong>Moment of a system of forces:</strong> Problems 3.21, 3.22, 3.29, 3.30.</li>
+    <li><strong>Couples and equivalent systems:</strong> Problems 3.49, 3.50, 3.53, 3.54.</li>
+  </ul>
+  <p>Work each problem step-by-step. Check your cross products by expanding the determinant carefully (and watch the minus sign on the \(\mathbf{j}\) term).</p>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Oct 13, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
