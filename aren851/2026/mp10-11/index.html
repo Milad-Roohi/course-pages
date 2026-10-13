@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Muddiest Point 10–11 study guide (Oct 6 &amp; Oct 8)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Modules 6–7</p>
+  <h1>Muddiest Points 10–11 study guide: diaphragm factor, toenails, \(R_d\), and yield modes</h1>
+  <p class="subtitle">Your comments, answered by Prof. Feldman. Tuesday Oct 6 and Thursday Oct 8.</p>
+  <hr class="top">
+  <p>This page closes the loop on the Oct 6 (MP10) and Oct 8 (MP11) surveys. The answers follow Prof. Feldman’s responses. Comments are summarized, not quoted, because this copy is on the open web.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>Survey</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Diaphragm factor \(C_{di}\) and capacity</td><td>Oct 6</td><td>1</td></tr>
+      <tr><td>How toenails are inspected</td><td>Oct 6</td><td>2</td></tr>
+      <tr><td>The reduction term \(R_d\)</td><td>Oct 8</td><td>3</td></tr>
+      <tr><td>Meaning of the yield modes (Example 7o1, p. 5 on)</td><td>Oct 8</td><td>4</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1. Diaphragm factor \(C_{di}\)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">What is the diaphragm factor, and how does it change capacity?</span></p>
+  <p>Through the <strong>2018 NDS</strong>, \(C_{di} = 1.1\) increased the lateral (shear) design value of nails and spikes used in diaphragm construction. It reflects how wood structural panel diaphragms behave <strong>as a system</strong>: diaphragm edge nailing develops load sharing and deformation that a single isolated fastener test does not show, so the assembly reliably carries a bit more than individual nail values predict.</p>
+  <div class="eqbox">$$Z' = Z \times \cdots \times C_{di}, \qquad C_{di} = 1.1 \;\text{(NDS 2018 and earlier)}$$</div>
+  <p>The factor was <strong>removed from the 2024 NDS</strong>. It was not dropped for being unconservative or wrong. Diaphragm-specific adjustments belong in the <strong>SDPWS</strong> (Special Design Provisions for Wind and Seismic), not the general fastener provisions of the NDS.</p>
+
+  <h2>2. Toenail inspection</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How do special inspectors make sure toenails are installed properly? Are they common enough not to worry about?</span></p>
+  <p>Special inspectors do <strong>not</strong> check every toenail. They verify that the framing crew follows the approved plans and that <strong>representative connections</strong> are installed per the construction documents and code. In Prof. Feldman’s words, it is usually obvious when a framing crew doesn’t know what it is doing.</p>
+
+  <h2>3. The reduction term \(R_d\)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">The \(R_d\) reduction term was hard to follow.</span></p>
+  <p>The yield-limit equations come from the <strong>European Yield Model (EYM)</strong>. They give the load at which a connection reaches a failure mechanism: wood bearing, fastener yielding, or a combination. Those theoretical loads are relatively high. Rather than change the mechanics, the NDS <strong>divides</strong> each yield load by \(R_d\) to get the reference lateral design value \(Z\), consistent with the reliability and historical performance basis of wood connection design.</p>
+  <div class="eqbox">$$Z = \frac{\text{EYM yield load for the mode}}{R_d}$$</div>
+  <p>Some modes are predicted more accurately than others, so <strong>NDS Table 12.3.1B</strong> assigns a different \(R_d\) to each yield mode. Use the \(R_d\) for the mode you are evaluating, not one value for all.</p>
+  <div class="fyi"><p><strong>Revised Example 7o1.</strong> Prof. Feldman corrected the \(R_d\) calculation in Example 7o1 (bolt, single shear, loaded at an angle). Use the revised file posted in Module 7.</p></div>
+
+  <h2>4. What the yield modes mean</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">What do the different modes mean, starting on page 5 of the example?</span></p>
+  <p>A connection has many components with different strengths and sizes: fastener diameter, penetration, member thickness, member stiffness, fastener yield strength. Each mode is one of those components reaching its limit state.</p>
+  <table>
+    <thead><tr><th>Mode</th><th>What governs</th></tr></thead>
+    <tbody>
+      <tr><td>\(\mathrm{I_m}\)</td><td>Crushing (bearing) of the <strong>main</strong> member under the fastener over its thickness</td></tr>
+      <tr><td>\(\mathrm{I_s}\)</td><td>Crushing (bearing) of the <strong>side</strong> member under the fastener over its thickness</td></tr>
+      <tr><td>II, III, IV</td><td>The fastener is stiff relative to the members, so one or more <strong>plastic hinges</strong> form in the fastener, producing uneven bearing on the wood</td></tr>
+    </tbody>
+  </table>
+  <p>Compute every applicable mode. <strong>The lowest value controls</strong> the connection capacity.</p>
+
+  <h2>Next: working the connection examples</h2>
+  <p>Past students asked for more on connections, so Prof. Feldman plans to work through the nail and bolt examples (6o1–6o3, 7o1–7o2) in class, time permitting. Updated 6o2, 6o3 and 7o2 files and the corrected 7o1 are posted in Modules 6 and 7.</p>
+
+  <h2>Where to read</h2>
+  <ul>
+    <li>NDS 2024 Chapter 12 (dowel-type fasteners): yield-limit equations and <strong>Table 12.3.1B</strong> (reduction term \(R_d\)).</li>
+    <li>SDPWS: diaphragm provisions (where the diaphragm adjustment now lives).</li>
+    <li>Breyer 8e: nail and bolt connection chapters; Examples 6o1–6o3 and 7o1–7o2.</li>
+  </ul>
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
