@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Muddiest Point 12 study guide (Tue Oct 13)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Module 6</p>
+  <h1>Muddiest Point 12 study guide: engineered timber thresholds and wet-service \\(C_m\\)</h1>
+  <p class="subtitle">Your comments, answered by Prof. Feldman. Tuesday, Oct 13.</p>
+  <hr class="top">
+  <p>This page closes the loop on the Tuesday Oct 13 survey (MP12). The answers follow Prof. Feldman’s responses. Comments are summarized, not quoted, because this copy is drafted for eventual open-web posting.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <thead><tr><th>Theme</th><th>\\(n\\)</th><th>Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Engineered vs non-engineered timber / when a PE seal is required</td><td>1</td><td>1</td></tr>
+      <tr><td>NDS Table 11.3.3 inequalities and choosing \\(C_m\\)</td><td>1</td><td>2</td></tr>
+      <tr><td>Clear / thanks / N/A</td><td>4</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Tuesday (summarized)</h2>
+  <p>Summarized, not quoted, because this copy is meant for the open web.</p>
+  <ul class="comments">
+    <li>6 responses with text; four of you said the lecture was clear or had no muddy point.</li>
+    <li>One of you asked where the cutoff is between engineered and non-engineered timber work, given span tables, and whether every house needs a stamp.</li>
+    <li>One of you asked how to read the inequalities in Table 11.3.3 and how \\(C_m\\) was chosen for the dowel-type fastener problem.</li>
+  </ul>
+
+  <h2>1. Engineered vs non-engineered timber — when is a seal required?</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Where is the cutoff between engineered and non-engineered timber projects? Span tables exist for framing and sheathing; does every house need a PE stamp?</span></p>
+  <p><strong>Typical homes are exempt from a seal</strong> under Nebraska’s engineering and architecture practice acts. Detached one- to four-family dwellings with not more than <strong>5,000 sq ft of above-grade finished space</strong> generally do not require a professional seal.</p>
+  <p>A seal <strong>is</strong> needed when any of the following apply:</p>
+  <ul>
+    <li>The dwelling exceeds those size or unit limits (more than 5,000 sq ft above-grade finished, or more than four units).</li>
+    <li>The work includes <strong>engineered components</strong> that are not covered by a simple span-table selection — for example structural design beyond the tables, foundation design, or retaining walls.</li>
+    <li>Local rules are <strong>stricter</strong> than the state exemption (always check the AHJ).</li>
+  </ul>
+  <p>Remodels or additions to one- to four-family dwellings up to <strong>three stories</strong> can stay exempt if they do <strong>not adversely affect</strong> structural, MEP, or egress systems.</p>
+  <div class="note">Span tables let you select many common joists, rafters, and sheathing layouts without a project-specific calculation. That is still “design,” but it is <strong>prescriptive</strong>. Crossing into engineered design (or exceeding the dwelling exemptions) is what triggers a sealed set.</div>
+
+  <h2>2. Table 11.3.3 and the wet-service factor \\(C_m\\)</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How do the inequalities in Table 11.3.3 work, and how was \\(C_m\\) chosen for the dowel-type fastener problem?</span></p>
+  <p>NDS <strong>Table 11.3.3</strong> gives wet-service factors \\(C_m\\) for connections. Which row applies depends on (a) the fastener type and (b) the moisture condition of the wood <strong>in service</strong> and, in some cases, at fabrication.</p>
+  <p>For the in-class problem:</p>
+  <ul>
+    <li>The statement said moisture content <strong>in service</strong> exceeds 19% (wet service).</li>
+    <li>The fasteners were <strong>16d nails</strong>, which are <strong>dowel-type fasteners</strong>.</li>
+    <li>Therefore, for that wet-service case, <strong>\\(C_m = 0.7\\)</strong>.</li>
+  </ul>
+  <div class="eqbox">$$Z' = Z \\times \\cdots \\times C_m, \\qquad C_m = 0.7 \\;\\text{(16d nails, MC in service }&gt; 19\\%)$$</div>
+  <p>When the wood is wet in service, <strong>moisture content at fabrication does not change</strong> the wet-service \\(C_m\\) for that row. If instead the wood stays <strong>dry in service</strong> (MC \\(&lt;\\) 19%), then \\(C_m\\) depends on the moisture condition at fabrication — that is the other set of inequalities in the table.</p>
+  <div class="fyi"><p><strong>Reading tip.</strong> First decide wet vs dry <em>in service</em>. Only if the member stays dry do you walk the fabrication-MC branch of Table 11.3.3.</p></div>
+
+  <h2>Where to read</h2>
+  <ul>
+    <li>Nebraska Engineering and Architecture Practice Acts (dwelling exemptions; confirm current text and any local amendments).</li>
+    <li>NDS Chapter 11 / 12 connection provisions: <strong>Table 11.3.3</strong> (wet-service factor \\(C_m\\) for fasteners).</li>
+    <li>Breyer: nail connections / wet-service adjustments; Module 6 lecture examples.</li>
+  </ul>
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
