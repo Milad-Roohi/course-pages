@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Assignment 2 (Properties of Wood): shrinkage question answered</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+
+  .answer {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.55rem 0.9rem 0.15rem;
+    margin: 0.4rem 0 1.25rem;
+  }
+  .answer ol, .answer ul { margin-bottom: 0.6rem; }
+  p.meta { color: var(--muted); font-size: 0.9rem; margin-top: -0.2rem; }
+  em.ednote { color: var(--muted); }
+  figure.narrow img { max-width: 430px; margin: 0 auto; }
+  figure img { max-width: 800px; margin: 0 auto; }
+  a { color: #0B3D91; }
+  @media print {
+    a { color: inherit; }
+    .answer { break-inside: avoid; border-left-color: #888; }
+    h2 { break-after: avoid; }
+    p:has(+ .answer) { break-after: avoid; }
+    .toc-line { display: none; }
+  }
+  .question { border: 0.6px solid var(--line); background:#fff; padding: 0.6rem 0.9rem 0.2rem; margin: 0.4rem 0 1.1rem; }
+  .question .eqbox { margin: 0.5rem 0 0.8rem; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Assignment 2 (Properties of Wood)</p>
+  <h1>Wood shrinkage: applying the slide to Assignment 2</h1>
+  <p class="subtitle">A classmate’s question, answered by Prof. Milad Roohi. Problem 1(b) is the example; the approach applies to the whole assignment.</p>
+  <hr class="top">
+
+  <h2>The question</h2>
+  <div class="question">
+    <p>What resources can be used to find the shrinkage of wood in the radial, tangential, and longitudinal directions for different species, and how is the shrinkage rule from the early lectures (Lecture 1, slide 8) applied to the problems?</p>
+    <p>The slide: shrinkage perpendicular to grain is taken as 6% of the width from the fiber saturation point (30%) to 0% MC; shrinkage parallel to grain is negligible.</p>
+    <div class="eqbox">$$\text{shrinkage} = \frac{6\%}{30\%} = 0.0020\ \text{in/in}$$</div>
+    <p><strong>Problem 1(b), as the example:</strong> a 15 in deep glulam beam sits on a masonry ledge. The bottom connection is a \(3/4''\) bolt 3 in from the bottom; the top clip uses a \(1/2''\) bolt 3 in from the top. MC is 19% at installation and 9% in service. Find the minimum size of both holes to avoid shrinkage problems, rounded up to the next \(1/8\) in.</p>
+  </div>
+
+  <h2>Answer</h2>
+  <div class="answer">
+    <p>You are on the right track with the slide from the early lectures. For these types of calculations there are a few assumptions to implement:</p>
+    <ul>
+      <li>A simplified method is used for all species.</li>
+      <li>A constant shrinkage value is used for both the width and depth of the member.</li>
+      <li>The shrinkage along the length of the member is assumed negligible.</li>
+      <li>The shrinkage is taken as zero at a fiber saturation point (FSP) of 30%.</li>
+      <li>The full 6% shrinkage is assumed to occur at a moisture content (MC) of zero.</li>
+      <li>A linear relationship is used for MC values between 30 and 0.</li>
+    </ul>
+    <p>As shown in your equation below, the linear relationship implies a shrinkage value (SV) of \(0.0020\) in/in per 1 percent change in MC.</p>
+    <p>A MC change from 19% to 9% becomes:</p>
+    <div class="eqbox">$$SV = 0.0020 \times (19 - 9) = 0.020\ \text{in/in}$$</div>
+    <p>Multiplying the depth under consideration will provide the shrinkage (S).</p>
+    <ul>
+      <li>The bottom bolt is located 3” from the edge; thus, the anticipated shrinkage (S) is given by \(0.020 \times 3 = 0.06''\)</li>
+      <li>The top bolt is located 12” from the edge (9” + 3”); thus, the anticipated shrinkage (S) is given by \(0.020 \times 12 = 0.24''\)</li>
+    </ul>
+    <p>To avoid splitting the member, you will want to provide the noted clearances above and below the top and bottom bolts, respectively.</p>
+    <p>Hope this help!</p>
+  </div>
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
