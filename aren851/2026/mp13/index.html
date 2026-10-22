@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Muddiest Point 13 study guide (Thu Oct 15)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+
+  .answer {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.55rem 0.9rem 0.15rem;
+    margin: 0.4rem 0 1.25rem;
+  }
+  .answer ol, .answer ul { margin-bottom: 0.6rem; }
+  p.meta { color: var(--muted); font-size: 0.9rem; margin-top: -0.2rem; }
+  em.ednote { color: var(--muted); }
+  figure.narrow img { max-width: 430px; margin: 0 auto; }
+  figure img { max-width: 800px; margin: 0 auto; }
+  a { color: #0B3D91; }
+  @media print {
+    a { color: inherit; }
+    .answer { break-inside: avoid; border-left-color: #888; }
+    h2 { break-after: avoid; }
+    p:has(+ .answer) { break-after: avoid; }
+    .toc-line { display: none; }
+  }
+  .question { border: 0.6px solid var(--line); background:#fff; padding: 0.6rem 0.9rem 0.2rem; margin: 0.4rem 0 1.1rem; }
+  .question .eqbox { margin: 0.5rem 0 0.8rem; }
+  .fm h3 { margin-top: 1.1rem; }
+  .fm .lbl { font-weight: 700; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Masonry</p>
+  <h1>Muddiest Point 13 study guide: common failure modes of CMU walls</h1>
+  <p class="subtitle">Your comments, answered by Prof. Feldman. Thursday, Oct 15.</p>
+  <hr class="top">
+  <p>This page closes the loop on the Thursday Oct 15 survey (MP13). Comments are summarized, not quoted, because this copy is meant for the open web.</p>
+
+  <h2>What you told us Thursday (summarized)</h2>
+  <ul class="comments">
+    <li>4 responses with text; three of you had no muddy point (one planned to watch the recorded lecture and bring questions to class; one thanked us for the textbooks).</li>
+    <li>One of you asked what the common failure modes are for concrete masonry unit (CMU) walls.</li>
+  </ul>
+
+  <h2>Common failure modes for concrete masonry unit walls</h2>
+  <p>Prof. Feldman obtained and fact-checked the following summary (prepared with Copilot).</p>
+  <div class="answer fm">
+    <h3>1. Out-of-plane bending failure</h3>
+    <p>Occurs when wind, seismic, soil, or blast loads push the wall perpendicular to its face.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Horizontal cracking near mid-height.</li><li>Wall bulging or bowing.</li><li>Collapse of large wall panels.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Insufficient vertical reinforcement.</li><li>Excessive wall height-to-thickness ratio.</li><li>Inadequate anchorage at roof or floor diaphragms.</li></ul>
+    <h3>2. In-plane shear failure</h3>
+    <p>Occurs when lateral loads act within the plane of the wall.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Diagonal stair-step cracks through mortar joints.</li><li>X-shaped cracking patterns.</li><li>Sliding along bed joints.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Earthquake loads.</li><li>Wind shear forces.</li><li>Insufficient horizontal reinforcement.</li></ul>
+    <h3>3. Compression crushing</h3>
+    <p>Occurs when axial loads exceed masonry compressive capacity.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Crushed mortar joints.</li><li>Spalled face shells.</li><li>Vertical splitting near heavily loaded areas.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Overloaded bearing walls.</li><li>Concentrated beam or truss reactions.</li><li>Poor grout consolidation.</li></ul>
+    <h3>4. Vertical flexural cracking</h3>
+    <p>Occurs from differential movement, thermal expansion, or foundation settlement.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Vertical cracks through units and mortar joints.</li><li>Cracks near corners or openings.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Foundation settlement.</li><li>Inadequate control joints.</li><li>Shrinkage and temperature effects.</li></ul>
+    <h3>5. Stair-step cracking</h3>
+    <p>One of the most frequently observed CMU distress patterns. (Often a serviceability issue rather than an immediate structural failure.)</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Cracks follow mortar joints in a stair-step pattern.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Differential settlement.</li><li>Thermal movement.</li><li>Minor shear stresses.</li></ul>
+    <h3>6. Sliding failure</h3>
+    <p>Entire portions of wall slide along a mortar bed joint.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Horizontal crack extending across the wall.</li><li>Lateral offset of masonry courses.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Seismic loading.</li><li>Poor mortar bond.</li><li>Insufficient shear reinforcement.</li></ul>
+    <h3>7. Anchorage failure</h3>
+    <p>The wall itself remains intact, but connections fail. (This is a particularly common issue in older masonry buildings during high-wind events.)</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Separation from roof diaphragm.</li><li>Pullout of anchors.</li><li>Wall collapse at supports.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Undersized ledger or tie connections.</li><li>Corroded anchors.</li><li>Poor detailing.</li></ul>
+    <h3>8. Reinforcement corrosion</h3>
+    <p>Water infiltration causes steel reinforcement to rust. (Rust expands several times the volume of the original steel, generating tensile stresses that masonry cannot resist.)</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Longitudinal cracking.</li><li>Masonry spalling.</li><li>Rust staining.</li></ul>
+    <h3>9. Foundation settlement failure</h3>
+    <p>Movement of the supporting foundation creates stresses in the wall.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Diagonal cracks emanating from corners of openings.</li><li>Stair-step cracks.</li><li>Doors and windows becoming misaligned.</li></ul>
+    <h3>10. Bearing failure at openings</h3>
+    <p>Common above doors, windows, and garage openings.</p>
+    <p class="lbl">Indicators:</p>
+    <ul><li>Cracking at lintel ends.</li><li>Crushed masonry beneath concentrated loads.</li><li>Sagging lintels.</li></ul>
+    <p class="lbl">Common causes:</p>
+    <ul><li>Undersized steel lintels.</li><li>Corrosion of embedded steel.</li><li>Excessive roof or floor reactions.</li></ul>
+  </div>
+
+  <h2>Where to read</h2>
+  <ul>
+    <li>Module 8 and Module 9 reading: TMS / RME Handbook excerpts, Chapter 1 (Materials), Chapter 2 (Masonry Assemblage Strengths and Properties), and Chapter 4 (Distribution and Analysis for Lateral Loads).</li>
+    <li>Module 9 lecture: Masonry loads and lateral-force distribution (v2).</li>
+  </ul>
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
