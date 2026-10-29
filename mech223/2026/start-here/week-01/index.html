@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Week 1 · Start here: Before class: What statics is (and why it matters)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .meta { display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1rem; padding:0; list-style:none; }
+  .meta li { background: var(--panel); border:0.6px solid var(--line); padding:.12rem .55rem; font-size:.85rem; margin:0; }
+  figure { margin: 1rem 0 1.2rem; text-align:center; }
+  figure img { max-width:100%; height:auto; background:#fff; border:0.6px solid var(--line); }
+  figcaption { font-size:.88rem; color:var(--muted); font-style:italic; margin-top:.35rem; }
+  .attrib { font-size:.85rem; color:var(--muted); border-top:0.6px solid var(--line); margin-top:2rem; padding-top:.6rem; }
+  .crumbs { font-size:.85rem; margin:0 0 .6rem; }
+  a { color:#8a1515; }
+  .weeks td:first-child { white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="crumbs"><a href="../">← All weeks</a> · <a href="https://mynu.instructure.com/courses/20760/modules/464885" target="_top">Week 1 module on Canvas</a></p>
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 1 · Start here</p>
+  <h1>Before class: What statics is (and why it matters)</h1>
+  <p class="subtitle">Arrive ready to talk about forces, Newton’s laws, and free-body diagrams—not to finish homework.</p>
+  <ul class="meta"><li>⏱ about 10–12 minutes.</li><li>📅 Read before Lecture 2 (Statics Fundamentals).</li><li>🎯 Warm-up, not homework</li></ul>
+  <hr class="top">
+  <div class="note"><strong>Why bother?</strong> Statics is the language of things that stay up. Ten minutes here makes Lecture 2 feel like a conversation, not a scramble.</div>
+  <h2>1. Why this reading exists</h2>
+  <p>Lecture 1 covered the course logistics. Lecture 2 starts the technical story: what statics studies, what a force is, and how we decide whether something stays put. This page is a short warm-up so class can move faster on examples.</p>
+  <p>You do <em>not</em> need to memorize unit conversion tables before class. You <em>do</em> need a clear picture of equilibrium and free-body diagrams.</p>
+
+  <h2>2. Statics in one sentence</h2>
+  <p><strong>Statics</strong> is the part of mechanics that asks: <em>when forces (and moments) act on a body that is not accelerating, what must be true?</em></p>
+  <p>If an object is at rest and stays at rest, Newton’s first law applies: the net force is zero (and, for an extended body, the net moment is zero). That pair of statements is the backbone of this course.</p>
+  <ul>
+    <li><strong>Particle model:</strong> we care about force balance only (∑<em>F</em> = 0).</li>
+    <li><strong>Rigid-body model:</strong> we care about force <em>and</em> moment balance (∑<em>F</em> = 0 and ∑<em>M</em> = 0).</li>
+  </ul>
+  <p>Most of MECH 223 is learning to draw the right diagram, write those equations, and solve them carefully.</p>
+
+  <h2>3. A picture first, equations second</h2>
+  <p>Engineering problems usually start as a physical situation, not as algebra. Look at the slackline example below: a person stands on a cable. The cable pulls both ways; gravity pulls down. If the person is not accelerating, those forces must cancel as vectors.</p>
+  <figure>
+    <img src="../img/f6413543.jpg" alt="Person walking on a slackline stretched between two trees" width="420" loading="lazy">
+    <figcaption>Physical situation: person on a slackline. (Photo used in the Engineering Statics OER; see attribution at the end.)</figcaption>
+  </figure>
+  <p>The next step is not “pick a formula.” It is to replace the person-and-cable photo with a <strong>free-body diagram (FBD)</strong>: the body of interest alone, with every external force drawn as a labeled arrow.</p>
+  <figure>
+    <img src="../img/f6413544.svg" alt="Free-body diagram of the contact point on a slackline with two tensions and weight" width="320" loading="lazy">
+    <figcaption>Idealized FBD at the contact point: tensions <em>T</em><sub>1</sub>, <em>T</em><sub>2</sub> and weight <em>W</em>. (Engineering Statics OER, CC0 diagram.)</figcaption>
+  </figure>
+  <p>For a different kind of problem—internal forces in a machine arm—you still start the same way: isolate the piece you care about and show only the forces/moments that the rest of the world exerts on it.</p>
+  <figure>
+    <img src="../img/f6413546.svg" alt="Free-body diagram of an excavator arm segment with internal axial force, shear, and moment" width="360" loading="lazy">
+    <figcaption>Rigid-body style FBD on a cut: axial force, shear, and bending moment appear because we cut the member. (Engineering Statics OER, CC0 diagram.)</figcaption>
+  </figure>
+
+  <h2>4. Forces are vectors (preview for L2)</h2>
+  <p>A force has <strong>magnitude</strong>, <strong>direction</strong>, and a <strong>point of application</strong>. In statics we almost always:</p>
+  <ol>
+    <li>resolve forces into components (often <em>x</em>, <em>y</em>, later <em>z</em>),</li>
+    <li>sum components separately,</li>
+    <li>set each sum to zero for equilibrium.</li>
+  </ol>
+  <p>For the slackline FBD, equilibrium in the plane looks like:</p>
+  <p style="margin-left:1.5em">
+    ∑<em>F<sub>x</sub></em> = 0&nbsp;&nbsp;→&nbsp;&nbsp;−<em>T</em><sub>1</sub> cos α + <em>T</em><sub>2</sub> cos θ = 0<br>
+    ∑<em>F<sub>y</sub></em> = 0&nbsp;&nbsp;→&nbsp;&nbsp;<em>T</em><sub>1</sub> sin α + <em>T</em><sub>2</sub> sin θ − <em>W</em> = 0
+  </p>
+  <p>You will practice the algebra in class and on homework. For now, notice the pattern: <em>draw → label → write ∑F = 0 (and ∑M = 0 when needed) → solve</em>.</p>
+
+  <h2>5. Newton’s laws you will hear in L2</h2>
+  <ul>
+    <li><strong>1st law (equilibrium):</strong> if net force (and net moment, for a body) is zero, the body does not accelerate.</li>
+    <li><strong>2nd law:</strong> ∑<em>F</em> = <em>m</em><em>a</em>. Statics is the special case <em>a</em> = 0 (and angular acceleration = 0).</li>
+    <li><strong>3rd law:</strong> forces between two bodies come in equal-and-opposite pairs. That is why FBDs must be consistent when you split a system into parts.</li>
+  </ul>
+  <p>Weight is the gravitational force near Earth, <em>W</em> = <em>mg</em>, drawn downward through the center of mass unless the problem states otherwise.</p>
+
+  <h2>6. Check yourself (90 seconds)</h2>
+  <ol>
+    <li>In your own words, what does ∑<em>F</em> = 0 mean physically?</li>
+    <li>What is the difference between a sketch of the structure and a free-body diagram?</li>
+    <li>If a bolt pushes on a bracket, what must the bracket do to the bolt?</li>
+  </ol>
+  <p>Bring answers in your head (or a sticky note). We will use them at the start of L2.</p>
+
+  <h2>7. Before you walk into class</h2>
+  <ul>
+    <li>Skim Beer &amp; Johnston <strong>Chapter 1</strong> (intro + units) and the opening of <strong>Chapter 2</strong>.</li>
+    <li>Have the L2 slides available (<a href="https://mynu.instructure.com/courses/20760/modules/464885">Canvas → Week 1 module</a>).</li>
+    <li>Bring a calculator you can use in degrees <em>and</em> radians (we will stay in degrees unless noted).</li>
+  </ul>
+  <h2>Also in Start here (Canvas)</h2>
+  <ul><li><a href="https://mynu.instructure.com/courses/20760/pages/course-syllabus" target="_top">Course Syllabus</a></li><li><a href="https://mynu.instructure.com/courses/20760/pages/tentative-course-agenda" target="_top">Tentative Course Agenda</a></li></ul>
+  <p class="attrib"><strong>Attribution.</strong> Course text on this page is original for MECH 223-002 (UNL). Figures:
+  slackline photo and FBD diagrams from <em>Engineering Statics: Open and Interactive</em>
+  (Baker &amp; Haynes / contributors), used under the book’s open licenses (diagrams CC0; photo per Wikimedia/OER credit on the source page).
+  Live book: <a href="https://engineeringstatics.org">engineeringstatics.org</a>.</p>
+</article>
+</body>
+</html>

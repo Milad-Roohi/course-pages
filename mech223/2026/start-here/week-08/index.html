@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Week 8 · Start here: 2D rigid-body equilibrium</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .meta { display:flex; flex-wrap:wrap; gap:.4rem; margin:0 0 1rem; padding:0; list-style:none; }
+  .meta li { background: var(--panel); border:0.6px solid var(--line); padding:.12rem .55rem; font-size:.85rem; margin:0; }
+  figure { margin: 1rem 0 1.2rem; text-align:center; }
+  figure img { max-width:100%; height:auto; background:#fff; border:0.6px solid var(--line); }
+  figcaption { font-size:.88rem; color:var(--muted); font-style:italic; margin-top:.35rem; }
+  .attrib { font-size:.85rem; color:var(--muted); border-top:0.6px solid var(--line); margin-top:2rem; padding-top:.6rem; }
+  .crumbs { font-size:.85rem; margin:0 0 .6rem; }
+  a { color:#8a1515; }
+  .weeks td:first-child { white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="crumbs"><a href="../">← All weeks</a> · <a href="https://mynu.instructure.com/courses/20760/modules/464892" target="_top">Week 8 module on Canvas</a></p>
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 8 · Start here</p>
+  <h1>2D rigid-body equilibrium</h1>
+  <p class="subtitle">Arrive ready for lecture examples (or async work).</p>
+  <ul class="meta"><li>⏱ about 8–12 minutes.</li><li>📅 Week 8 — Ch 4 Equilibrium 2D</li><li>🎯 Warm-up, not homework</li></ul>
+  <hr class="top">
+  <div class="note"><strong>Why bother?</strong> Three equations. A pin, a roller, a story. 2D rigid-body equilibrium is the course’s workhorse.</div>
+  <h2>1. The full 2D toolkit</h2>
+  <p>For a rigid body in planar equilibrium: ∑<em>F<sub>x</sub></em> = 0, ∑<em>F<sub>y</sub></em> = 0, and ∑<em>M</em><sub>A</sub> = 0 about any convenient point <em>A</em>. Those three equations are your budget for unknown support reactions (in 2D).</p>
+  <h2>2. Supports you must recognize</h2>
+  <p>Pin (two force components), roller / rocker (one force, through the contact normal), fixed support (forces + moment), cable (tension), collar on a rod, etc. Wrong support model ⇒ wrong FBD ⇒ wrong exam.</p>
+  <h2>3. Figure</h2>
+  <figure><img src="../img/f6413554.svg" alt="Beam with pin and roller free-body diagram" width="480" loading="lazy"><figcaption>Pin–roller beam FBD (OER).</figcaption></figure>
+  <h2>4. Strategy tip</h2>
+  <p>Pick a moment center that eliminates unknowns (through a pin, along a roller line). Then use force equations for what remains.</p>
+  <h2>5. Check yourself</h2>
+  <ol><li>How many unknown reaction components for a pin + roller beam in 2D (ignore friction)?</li><li>Why is ∑M about the pin often the first equation you write?</li></ol>
+  <h2>6. Bring to class</h2>
+  <p>Support reaction table from the text.</p>
+  <p class="attrib"><strong>Attribution.</strong> 
+Course text is original for MECH 223-002 (UNL). Figures from 
+<em>Engineering Statics: Open and Interactive</em> (Baker &amp; Haynes et al.), 
+used under the book’s open licenses. Live book: <a href="https://engineeringstatics.org">engineeringstatics.org</a>.</p>
+</article>
+</body>
+</html>
