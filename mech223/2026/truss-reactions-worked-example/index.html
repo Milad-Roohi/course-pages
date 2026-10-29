@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MECH 223 – Truss Support Reactions: Two Ways</title>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$']]}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+body{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:860px;margin:2rem auto;padding:0 1.2rem;line-height:1.6;color:#1d2433;font-size:18px}
+h1{font-size:1.7rem;margin-bottom:.2rem}h2{font-size:1.3rem;margin-top:2.2rem;border-bottom:2px solid #d00000;padding-bottom:.2rem}
+.sub{color:#555;margin-top:0}.box{background:#f5f7fb;border-left:5px solid #2b6cb0;padding:.8rem 1.1rem;border-radius:6px;margin:1rem 0}
+.key{background:#fff7e6;border-left:5px solid #d69e2e}.ans{background:#eefaf0;border-left:5px solid #2f855a}
+table{border-collapse:collapse;margin:1rem 0;width:100%}td,th{border:1px solid #ccd;padding:.45rem .7rem;text-align:left}th{background:#eef}
+svg{display:block;margin:1rem auto;max-width:100%}footer{margin:3rem 0 1rem;color:#777;font-size:.85rem}
+</style></head><body>
+<h1>Truss Support Reactions: Two Equivalent Approaches</h1>
+<p class="sub">MECH 223 Engineering Statics · Worked example</p>
+
+<h2>Problem</h2>
+<p>Determine the reactions at the supports. A is a <b>pin</b> (reactions \(A_x, A_y\)); B is a <b>rocker</b> (vertical reaction \(B_y\) only).</p>
+<svg viewBox="0 0 640 330" width="620" aria-label="Truss free-body diagram">
+ <defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#c00"/></marker>
+ <marker id="ag" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#2f855a"/></marker></defs>
+ <g stroke="#4a90b8" stroke-width="7" stroke-linecap="round">
+  <line x1="100" y1="220" x2="520" y2="220"/><line x1="240" y1="80" x2="380" y2="80"/>
+  <line x1="100" y1="220" x2="240" y2="80"/><line x1="240" y1="80" x2="240" y2="220"/>
+  <line x1="240" y1="220" x2="380" y2="80"/><line x1="380" y1="80" x2="380" y2="220"/><line x1="380" y1="80" x2="520" y2="220"/></g>
+ <g fill="#333"><circle cx="100" cy="220" r="6"/><circle cx="240" cy="220" r="6"/><circle cx="380" cy="220" r="6"/><circle cx="520" cy="220" r="6"/><circle cx="240" cy="80" r="6"/><circle cx="380" cy="80" r="6"/></g>
+ <g stroke="#c00" stroke-width="3" fill="none" marker-end="url(#ar)">
+  <line x1="160" y1="80" x2="228" y2="80"/><line x1="240" y1="228" x2="240" y2="285"/><line x1="380" y1="228" x2="380" y2="285"/></g>
+ <g fill="#c00" font-size="16"><text x="150" y="70">5 kN</text><text x="250" y="285">6 kN</text><text x="390" y="285">8 kN</text></g>
+ <g stroke="#2f855a" stroke-width="3" fill="none" marker-end="url(#ag)">
+  <line x1="92" y1="220" x2="40" y2="220"/><line x1="100" y1="290" x2="100" y2="232"/><line x1="520" y1="290" x2="520" y2="232"/></g>
+ <g fill="#2f855a" font-size="16"><text x="30" y="210">A<tspan baseline-shift="sub" font-size="11">x</tspan></text><text x="108" y="292">A<tspan baseline-shift="sub" font-size="11">y</tspan></text><text x="528" y="292">B<tspan baseline-shift="sub" font-size="11">y</tspan></text></g>
+ <g font-size="16" fill="#222"><text x="84" y="250">A</text><text x="530" y="214">B</text></g>
+ <g stroke="#888" stroke-width="1"><line x1="100" y1="310" x2="520" y2="310"/><line x1="560" y1="80" x2="560" y2="220"/></g>
+ <g font-size="14" fill="#555"><text x="160" y="325">2 m</text><text x="300" y="325">2 m</text><text x="440" y="325">2 m</text><text x="566" y="155">2 m</text></g>
+</svg>
+<p>Coordinates (origin at A): 6 kN at \(x=2\) m, 8 kN at \(x=4\) m, B at \(x=6\) m. The 5 kN load acts horizontally at the top joint, \(y=2\) m above A.</p>
+
+<h2>Method 1: Equations of equilibrium</h2>
+<p>Sign convention: right and up positive; counterclockwise (CCW) moments positive.</p>
+$$\sum F_x = 0:\quad A_x + 5 = 0 \;\Rightarrow\; A_x = -5\ \text{kN}\ (\text{acts to the left})$$
+$$\sum M_A = 0:\quad B_y(6) - 6(2) - 8(4) - 5(2) = 0 \;\Rightarrow\; B_y = \frac{54}{6} = 9\ \text{kN}$$
+$$\sum F_y = 0:\quad A_y + 9 - 6 - 8 = 0 \;\Rightarrow\; A_y = 5\ \text{kN}$$
+<div class="box">The 5 kN force points right along a line 2 m <i>above</i> A, so it tends to rotate the truss clockwise about A: its moment is \(-(5)(2) = -10\) kN·m. Using the cross product, \(M = x F_y - y F_x = 0 - (2)(5) = -10\) kN·m.</div>
+
+<h2>Method 2: Transfer all loads to A (equivalent force–couple system)</h2>
+<p>Replace the three applied loads by one resultant force and one couple moment at A.</p>
+$$\mathbf{F}_R = \sum \mathbf{F} = (5\,\mathbf{i} - 6\,\mathbf{j} - 8\,\mathbf{j}) = (5\,\mathbf{i} - 14\,\mathbf{j})\ \text{kN}$$
+$$M_{R_A} = \sum M_A = -6(2) - 8(4) - 5(2) = -54\ \text{kN·m}\ (54\ \text{kN·m clockwise})$$
+<p>For equilibrium, the support reactions must exactly cancel this force–couple system:</p>
+<ul>
+<li>The pin at A absorbs the force: \(A_x = -5\) kN and \(A_y + B_y = 14\) kN.</li>
+<li>Only \(B_y\), acting 6 m from A, can cancel the couple: \(6B_y = 54 \Rightarrow B_y = 9\) kN, so \(A_y = 5\) kN.</li>
+</ul>
+
+<h2>Comparing the two methods</h2>
+<table><tr><th></th><th>Method 1: ΣF, ΣM = 0</th><th>Method 2: Resultant at A</th></tr>
+<tr><td>Horizontal</td><td>\(A_x + 5 = 0\)</td><td>\(A_x\) cancels \(F_{R,x} = 5\)</td></tr>
+<tr><td>Vertical</td><td>\(A_y + B_y - 14 = 0\)</td><td>\(A_y + B_y\) cancels \(F_{R,y} = -14\)</td></tr>
+<tr><td>Rotation</td><td>\(6B_y - 54 = 0\)</td><td>\(6B_y\) cancels \(M_{R_A} = -54\)</td></tr></table>
+<p>They are the <b>same three equations</b>, organized differently. \(\sum F_x\) and \(\sum F_y\) are the components of \(\mathbf{F}_R\); \(\sum M_A\) is \(M_{R_A}\) plus the moment of \(B_y\). Method 2 separates two questions: <i>what do the loads do at A?</i> and <i>how do the supports cancel it?</i></p>
+
+<h2>Student question: \(A_x\) and the 5 kN act on different lines. How is that accounted for?</h2>
+<div class="box key"><b>Short answer:</b> \(\sum F_x = 0\) only checks that the horizontal forces add up to zero, wherever they act. The fact that they are on different lines of action is captured by the <b>moment equation</b>.</div>
+<p>\(A_x\) (5 kN left, along the bottom chord) and the 5 kN load (right, 2 m higher) are equal, opposite, and <b>parallel but not collinear</b>. Together they form a <b>couple</b>:</p>
+$$M_{\text{couple}} = F\,d = 5 \times 2 = 10\ \text{kN·m (clockwise)}$$
+<p>That couple is exactly the \(-5(2)\) term in \(\sum M_A\). Since the horizontal forces cannot cancel their own turning effect, the <b>vertical</b> forces do it:</p>
+<table><tr><th>Case</th><th>\(A_y\)</th><th>\(B_y\)</th></tr>
+<tr><td>Without the 5 kN load</td><td>6.67 kN</td><td>7.33 kN</td></tr>
+<tr><td>With the 5 kN load</td><td>5.00 kN</td><td>9.00 kN</td></tr>
+<tr><td>Change</td><td>−1.67 kN</td><td>+1.67 kN</td></tr></table>
+<p>The added pair \(\pm 1.67\) kN is 6 m apart, giving \(1.67 \times 6 = 10\) kN·m CCW, which cancels the 10 kN·m clockwise couple.</p>
+<p><b>Link to Method 2:</b> sliding the 5 kN force down to A's line of action is only allowed if you add the couple it leaves behind, \(5 \times 2 = 10\) kN·m clockwise. That is the same 10 kN·m inside \(M_{R_A} = -54\) kN·m.</p>
+<div class="box key"><b>Takeaway:</b> Equal and opposite forces that are not collinear still form a couple. Balancing forces is not enough; the moment equation catches the turning effect.</div>
+
+<h2>Answer and check</h2>
+<div class="box ans">\(A_x = 5\) kN \(\leftarrow\), \(\quad A_y = 5\) kN \(\uparrow\), \(\quad B_y = 9\) kN \(\uparrow\)</div>
+<p>Check with moments about B (CCW +):</p>
+$$\sum M_B = -A_y(6) + 6(4) + 8(2) - 5(2) = -30 + 24 + 16 - 10 = 0 \quad \checkmark$$
+<footer>MECH 223 · Engineering Statics · University of Nebraska–Lincoln</footer>
+</body></html>
