@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AREN 8510 · Muddiest Point 14 study guide (Thu Oct 22)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  em.quote { color: inherit; font-style: italic; }
+  .student-quote { color: #0B3D91; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .plot3d {
+    width: 100%;
+    height: 26rem;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  .plot-hint {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin: 0.35rem 0 0;
+  }
+  .plot-fallback { display: none; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
+    .plot3d, .plot-hint { display: none !important; }
+    .plot-fallback { display: block !important; }
+  }
+
+  .plot3d.wide { height: 24rem; }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .toc { font-size: 0.92rem; columns: 2; column-gap: 2rem; }
+  .toc li { margin-bottom: 0.2rem; }
+  @media (max-width: 40rem) { .toc { columns: 1; } .plot3d { height: 22rem; } }
+
+  .fyi {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .fyi strong { color: var(--rule); }
+
+  .answer {
+    background: var(--panel);
+    border-left: 3px solid var(--rule);
+    padding: 0.55rem 0.9rem 0.15rem;
+    margin: 0.4rem 0 1.25rem;
+  }
+  .answer ol, .answer ul { margin-bottom: 0.6rem; }
+  p.meta { color: var(--muted); font-size: 0.9rem; margin-top: -0.2rem; }
+  em.ednote { color: var(--muted); }
+  figure.narrow img { max-width: 430px; margin: 0 auto; }
+  figure img { max-width: 800px; margin: 0 auto; }
+  a { color: #0B3D91; }
+  @media print {
+    a { color: inherit; }
+    .answer { break-inside: avoid; border-left-color: #888; }
+    h2 { break-after: avoid; }
+    p:has(+ .answer) { break-after: avoid; }
+    .toc-line { display: none; }
+  }
+  .question { border: 0.6px solid var(--line); background:#fff; padding: 0.6rem 0.9rem 0.2rem; margin: 0.4rem 0 1.1rem; }
+  .question .eqbox { margin: 0.5rem 0 0.8rem; }
+  .fm h3 { margin-top: 1.1rem; }
+  .fm .lbl { font-weight: 700; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">AREN 8510 · Masonry and Timber Design · Fall 2026 · Semester project</p>
+  <h1>Muddiest Point 14 study guide: how the semester project runs</h1>
+  <p class="subtitle">Responses by Todd Feldman, PE. Thursday, Oct 22.</p>
+  <hr class="top">
+  <p>This page closes the loop on the Thursday Oct 22 survey (MP14). The answers are Prof. Feldman’s responses as written. Comments are summarized, not quoted, because this copy is meant for the open web.</p>
+
+  <h2>What you told us Thursday (summarized)</h2>
+  <ul class="comments">
+    <li>9 responses with text; five of you had no muddy point.</li>
+    <li>Three questions were about how the semester project is paced and submitted, and one was about green wood and choosing a species.</li>
+  </ul>
+
+  <h2>1. Checkpoints for each project phase</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Could each phase of the project be introduced again in class, in more depth, at about the time we should be starting it, so we finish all phases by the end of the semester?</span></p>
+  <div class="answer"><ul>
+    <li>The introduction of the overall project on Thursday was intended to provide the “big picture” so that students can plan their time accordingly.</li>
+    <li>As noted last Thursday, each phase will be reintroduced for clarity and to respond to questions.</li>
+    <li>Students have information for the entire project. The expectation is that the students will be looking at the next phase and be prepared to ask for clarifications when the next phase is introduced.</li>
+    <li>It is acceptable (and perhaps even recommended) to work ahead of the assigned phases. You have a busy end to your semester and your time will become occupied with competing commitments.</li>
+  </ul></div>
+
+  <h2>2. A submission for each phase?</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Does each phase of the project have its own submission, or is everything due at the end? (We know we are expected to keep up either way.)</span></p>
+  <div class="answer"><ul>
+    <li>Yes – each phase will have a submission to ensure that the teams are staying on task.</li>
+    <li>The full project results (designs) will be presented by each team at the end of the semester.</li>
+    <li>Our goal is to provide comparative feedback to the teams so that you do not stray based on erroneous interim results.</li>
+  </ul></div>
+
+  <h2>3. Green wood and choosing a species</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">How does a designer know whether the wood supplied will be green? And how does a designer know which wood will be used on a project in a location they are not familiar with?</span></p>
+  <div class="answer"><ul>
+    <li>The wood typically used in construction will be kiln dried to an acceptable moisture content. (Green wood causes issues with shrinkage and is intentionally avoided.)</li>
+    <li>The purpose of the homework assignment with green wood is to emphasize that shrinkage can be a concern over the life of the structure depending on initial and long-term moisture conditions.</li>
+    <li>Engineers typically contact local contractors or suppliers to ascertain what wood species and grades are common in the area.</li>
+  </ul></div>
+
+  <h2>4. Are phase deadlines one week apart?</h2>
+  <p><em class="quote">What you asked:</em> <span class="student-quote">Will the submission deadlines for the project parts be one week apart?</span></p>
+  <div class="answer"><ul>
+    <li>Yes. As noted above, it is important to stay on task because competing commitments will become a common occurrence as we near the end of the semester.</li>
+  </ul></div>
+
+  <div class="fyi"><p><strong>Phase due dates on Canvas.</strong> Phase 1 Tue Nov 3, Phase 2 Tue Nov 10, Phase 3 Tue Nov 17, Phase 4 Tue Nov 24, Phase 5 Tue Dec 1, all at 11:30 PM CT; Phases 6 and 7 Thu Dec 10.</p></div>
+
+  <h2>Where to read</h2>
+  <ul>
+    <li>Canvas <strong>Project</strong> module: the phase statements, the townhouse drawings, and the phase submission links.</li>
+    <li>Assignment 2 (Properties of Wood) and the <a href="https://milad-roohi.github.io/course-pages/aren851/2026/hw2-shrinkage/" target="_blank" rel="noopener">Assignment 2 wood shrinkage Q&amp;A</a>, for moisture content and shrinkage.</li>
+  </ul>
+</article>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
