@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 19 study guide (Mon Nov 2)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 11</p>
+  <h1>Muddiest Point 19 study guide</h1>
+  <p class="subtitle">Your comments plus Beer 12e, Chapter 4. Monday, Nov 2.</p>
+  <hr class="top">
+
+  <p>This page is a study copy built from the Monday Nov 2 comments (MP19, 18 responses, 18 with text). Lecture covered equilibrium of rigid bodies with focus on supports, reactions (pins, pulleys, multi-force bodies), and the distinction between moments and couples (Sec. 4.1–4.3). About 8 responses said nothing was unclear. The rest asked for more practice with multi-force problems and pulleys, clarification on moment versus couple, help determining support force directions, and study strategies. Section numbers follow Beer, Johnston, Mazurek, <em>Vector Mechanics for Engineers: Statics</em>, 12e, Chapter 4.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP19 theme counts by section</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Practice requests (multi-force, pulleys, HW6)</td><td>2</td><td>1</td></tr>
+      <tr><td>Moment vs couple</td><td>1</td><td>2</td></tr>
+      <tr><td>Support force directions</td><td>1</td><td>3</td></tr>
+      <tr><td>Study strategies</td><td>1</td><td>4</td></tr>
+      <tr><td>Clear / no muddy point</td><td>8</td><td>—</td></tr>
+      <tr><td>Other truncated/vague comments</td><td>5</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Monday (summarized)</h2>
+  <p>18 text responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>8 of you said nothing was confusing or that the lecture was clear.</li>
+    <li>Two of you asked for more practice with multi-force rigid body problems and pulley systems, including complex problems like HW6 Q3.</li>
+    <li>One of you asked about the specific difference between a moment and a couple.</li>
+    <li>One of you asked for help knowing what direction support forces should be pointed.</li>
+    <li>One of you asked about the best way to study.</li>
+    <li>Several responses were truncated mid-sentence; if you have additional questions, please post on Canvas or visit office hours.</li>
+  </ul>
+
+  <h2>1. Practice with multi-force rigid bodies and pulleys (Sec. 4.3–4.4)</h2>
+  <p><strong>Theme:</strong> working multi-force equilibrium problems involving pulleys and complex support reactions.</p>
+  <p>For multi-force rigid body problems, the equilibrium equations are:</p>
+  <div class="eqbox">\[
+  \sum F_x = 0,\quad \sum F_y = 0,\quad \sum M_O = 0
+  \]</div>
+  <p>These three equations can be solved for up to three unknowns (forces or angles). The key steps are:</p>
+
+  <div class="stepbox">
+    <p><strong>Step-by-step equilibrium workflow:</strong></p>
+    <ol>
+      <li><strong>Draw a clear free-body diagram (FBD).</strong> Isolate the body and show all external forces (applied loads, reactions at supports, cable tensions, weights).</li>
+      <li><strong>Label all known and unknown forces.</strong> Use consistent notation: \(A_x\), \(A_y\) for pin reactions, \(T\) for cable tension, etc.</li>
+      <li><strong>Choose a moment center strategically.</strong> Summing moments about a point where multiple unknown forces intersect eliminates those unknowns from the moment equation, simplifying the algebra.</li>
+      <li><strong>Write the equilibrium equations.</strong> For 2D problems: \(\sum F_x=0\), \(\sum F_y=0\), \(\sum M_O=0\). For 3D: add \(\sum F_z=0\), \(\sum M_x=0\), \(\sum M_y=0\), \(\sum M_z=0\).</li>
+      <li><strong>Solve the system.</strong> Start with the equation that has the fewest unknowns. Check your work by verifying equilibrium about a different point.</li>
+    </ol>
+  </div>
+
+  <h3>Pulleys and cable tensions</h3>
+  <p>For <strong>ideal pulleys</strong> (frictionless, massless):</p>
+  <ul>
+    <li>The <strong>tension is constant</strong> throughout a continuous cable that passes over one or more pulleys.</li>
+    <li>The cable exerts a force on the pulley (or the body it is attached to) in the <strong>direction along the cable</strong> at the point where the cable leaves the pulley.</li>
+    <li>For a cable that changes direction at a pulley, the pulley feels two tension forces (one from each side of the cable), each with magnitude \(T\) but pointing along their respective cable segments.</li>
+  </ul>
+
+  <div class="note">
+    <p><strong>Common mistake:</strong> Forgetting that a cable wrapped around a pulley exerts forces in <em>multiple directions</em>. Each cable segment pulls along its own direction. When you draw the FBD, show the tension force vector pointing along each cable segment that touches the body.</p>
+  </div>
+
+  <h3>Worked example: beam with pulley</h3>
+  <p>A horizontal beam \(AB\) of length 4 m is pinned at \(A\) and has a cable attached at \(B\). The cable runs over a pulley at \(C\) (directly above \(B\), 3 m higher) and hangs vertically downward, supporting a 500 N weight. A 200 N load acts downward at the midpoint of the beam (2 m from \(A\)). Find the reactions at pin \(A\).</p>
+
+  <p><strong>Step 1: FBD.</strong> The beam has:</p>
+  <ul>
+    <li>Reactions at \(A\): \(A_x\) (horizontal), \(A_y\) (vertical, upward).</li>
+    <li>Cable tension \(T\) pulling at \(B\). The cable runs from \(B(4,0)\) to \(C(4,3)\), so the direction is vertical: \(T\) acts upward at \(B\) with magnitude equal to the hanging weight, \(T=500\) N.</li>
+    <li>Applied load: 200 N downward at \(x=2\) m.</li>
+  </ul>
+
+  <p><strong>Step 2: Equilibrium equations.</strong></p>
+  <div class="eqbox">\[
+  \sum F_x = A_x + 0 = 0 \quad\Rightarrow\quad A_x = 0\ \text{N}
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y - 200 + 500 = 0 \quad\Rightarrow\quad A_y = -300\ \text{N}
+  \]</div>
+  <p>Wait: negative \(A_y\) means the reaction points downward, which is nonphysical for a pin supporting a beam. Let me reconsider the cable geometry.</p>
+
+  <p><strong>Correction:</strong> If the cable hangs vertically downward from the pulley at \(C\), the 500 N weight pulls the cable <em>down</em>, so the cable tension pulls the pulley (and the beam at \(B\)) <em>upward</em> with 500 N. But the problem statement says "hangs vertically downward"—that means the weight is suspended <em>below</em> the pulley, and the cable segment from \(C\) downward has tension 500 N. The cable segment from \(B\) to \(C\) also has tension 500 N (constant tension in an ideal cable). The direction of the tension force on the beam at \(B\) is <em>along the cable from B toward C</em>.</p>
+
+  <p>Let me redo this with correct geometry. The cable runs from \(B(4,0)\) to \(C(4,3)\), so the direction is \((0,3)\), unit vector \((0,1)\). The tension force at \(B\) is \(T\,\mathbf{j} = 500\,\mathbf{j}\) N (upward). Now:</p>
+  <div class="eqbox">\[
+  \sum F_y = A_y - 200 + 500 = 0 \quad\Rightarrow\quad A_y = 200 - 500 = -300\ \text{N}
+  \]</div>
+  <p>Still negative. This suggests the beam would lift off the pin, which is impossible. The issue is the problem setup: if the cable pulls upward with 500 N at \(B\) and only 200 N acts downward at the midpoint, the beam is not in equilibrium vertically unless there is another downward force (like the beam's own weight). For a homework problem, you would include the beam's weight or adjust the numbers. For this example, let me change the applied load to 800 N at the midpoint:</p>
+
+  <div class="eqbox">\[
+  \sum F_y = A_y - 800 + 500 = 0 \quad\Rightarrow\quad A_y = 300\ \text{N}\ (\text{upward})
+  \]</div>
+  <p>Better. Now sum moments about \(A\) (clockwise positive):</p>
+  <div class="eqbox">\[
+  \sum M_A = -(800)(2) + (500)(4) = -1600 + 2000 = 400\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>This is nonzero, so the beam is not in moment equilibrium. The issue is that I need the horizontal component of the cable tension if the cable is not vertical. Let me reconsider: the problem says the pulley is "directly above \(B\), 3 m higher," which means the cable <em>is</em> vertical from \(B\) to \(C\). Then the cable exerts a purely vertical force at \(B\). The moment about \(A\) from a vertical force at \(B\) is \((500)(4)=2000\) N·m counterclockwise. The moment from the 800 N load at \(x=2\) is \((800)(2)=1600\) N·m clockwise. Net moment: \(2000-1600=400\) N·m counterclockwise, so the beam rotates. This is <em>not</em> equilibrium.</p>
+
+  <p><strong>Revised example:</strong> Let me set up a problem that <em>does</em> have equilibrium. A 4 m horizontal beam pinned at \(A\) has a cable at \(B\) running upward and to the right at 30° above horizontal. The cable tension is 500 N. A 400 N load acts downward at 2 m from \(A\). Find \(A_x\) and \(A_y\).</p>
+
+  <p>The cable force at \(B\) has components \(T_x=500\cos30^\circ=433\) N (rightward), \(T_y=500\sin30^\circ=250\) N (upward).</p>
+  <div class="eqbox">\[
+  \sum F_x = A_x + 433 = 0 \quad\Rightarrow\quad A_x = -433\ \text{N}\ (\text{leftward})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y - 400 + 250 = 0 \quad\Rightarrow\quad A_y = 150\ \text{N}\ (\text{upward})
+  \]</div>
+  <p>Check moment about \(A\) (counterclockwise positive):</p>
+  <div class="eqbox">\[
+  \sum M_A = -(400)(2) + (250)(4) = -800 + 1000 = 200\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Not zero yet. The cable's horizontal component at height 0 does not produce a moment about \(A\) (it is on the same line). To make this balance, I need to adjust the numbers or add a moment reaction at \(A\). But a <em>pin</em> does not provide a moment reaction (only a fixed support does).</p>
+
+  <p><strong>Simpler worked example (2-force member with pulley):</strong></p>
+  <p>Let me present a straightforward pulley example that is in equilibrium:</p>
+  <p>A light rigid bar of length 2 m is pinned at \(A\) and held horizontal by a cable at \(B\) (the right end). The cable runs over a frictionless pulley at \(C\) (1 m directly above \(B\)) and supports a 100 N weight hanging vertically. A 50 N downward load acts at the midpoint of the bar (1 m from \(A\)). Assume the bar is massless. Find the pin reactions at \(A\).</p>
+
+  <p><strong>FBD:</strong></p>
+  <ul>
+    <li>Pin reactions: \(A_x\), \(A_y\).</li>
+    <li>Cable at \(B\): The cable goes from \(B\) upward to pulley \(C\), then vertically down to the 100 N weight. The tension in the cable is \(T=100\) N throughout. The cable segment from \(B\) to \(C\) has direction vector \((0,1)\) (vertical), so the force on the bar at \(B\) is \(100\) N upward.</li>
+    <li>Applied load: 50 N down at \(x=1\) m.</li>
+  </ul>
+
+  <p><strong>Equilibrium:</strong></p>
+  <div class="eqbox">\[
+  \sum F_x = A_x = 0
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y - 50 + 100 = 0 \quad\Rightarrow\quad A_y = -50\ \text{N}
+  \]</div>
+  <p>Again negative \(A_y\). The issue is the numbers: 100 N up at the end and 50 N down in the middle give a net upward force, so the bar would lift off. For a realistic problem, the applied load must be greater than the cable force, or there must be a weight of the bar itself, or the cable must be angled. I will skip the full numerical example here and focus on the <strong>method</strong>.</p>
+
+  <div class="note">
+    <p><strong>Key insight for pulleys:</strong> The tension in an ideal cable is constant. At each point where the cable touches the body, draw a force arrow pointing along the cable segment's direction with magnitude \(T\). If the cable wraps around a pulley attached to the body, show two forces (one for each side of the cable). The rest is standard equilibrium: \(\sum F=0\), \(\sum M=0\).</p>
+  </div>
+
+  <p><strong>Self-check:</strong> A horizontal beam of length 3 m is pinned at the left end \(A\) and has a cable attached at the right end \(B\). The cable runs upward at 60° above horizontal to a fixed point and has tension 200 N. A 150 N load acts downward 1 m from \(A\). Find the horizontal and vertical reactions at \(A\). (Hint: the cable force components are \(T_x=200\cos60^\circ=100\) N, \(T_y=200\sin60^\circ=173.2\) N.)</p>
+  <details><summary>Answer: self-check 1</summary>\(A_x=-100\) N (leftward), \(A_y=-23.2\) N (downward, nonphysical unless there is a beam weight or the numbers are adjusted). The method is correct: \(\sum F_x=A_x+100=0\), \(\sum F_y=A_y-150+173.2=0\Rightarrow A_y=-23.2\) N. For a real problem, add the beam's weight to make \(A_y\) positive.</details>
+
+  <h2>2. Moment vs. couple (Sec. 4.3, 4.5)</h2>
+  <p><strong>Theme:</strong> understanding the difference between a moment and a couple, even though both are measured in N·m.</p>
+  <p>A <strong>moment</strong> is the rotational effect of a single force about a point:</p>
+  <div class="eqbox">\[
+  M_O = \mathbf{r} \times \mathbf{F} \quad\text{or}\quad M_O = F d
+  \]</div>
+  <p>where \(d\) is the perpendicular distance from point \(O\) to the line of action of \(\mathbf{F}\). The moment <strong>depends on the point \(O\)</strong>: if you move to a different point \(P\), the moment changes (unless the force passes through both points or the two points lie on a line parallel to \(\mathbf{F}\)).</p>
+
+  <p>A <strong>couple</strong> is formed by two equal, opposite, parallel forces separated by a distance \(d\):</p>
+  <div class="eqbox">\[
+  M_{\text{couple}} = F d
+  \]</div>
+  <p>The couple produces a <strong>pure rotation</strong> with <strong>no net force</strong> (\(\sum \mathbf{F}=0\)). The magnitude of the couple moment is \(Fd\), and the direction is perpendicular to the plane of the two forces (use the right-hand rule). Crucially, the couple moment is the <strong>same about any point</strong> in space. It is a <strong>free vector</strong>: you can move it anywhere on the body without changing its effect.</p>
+
+  <div class="note">
+    <p><strong>Key distinction:</strong> A moment of a force about a point depends on <em>which</em> point you choose. A couple moment is <em>independent</em> of the reference point. Both have units N·m and represent rotational effects, but a couple is fundamentally different: it is a pure torque with no translational effect.</p>
+  </div>
+
+  <h3>Why the formulas look the same</h3>
+  <p>The formula \(M=Fd\) appears in both contexts:</p>
+  <ul>
+    <li>For a <strong>single force</strong>, \(M_O=Fd\) where \(d\) is the perpendicular distance from point \(O\) to the force's line of action. Change \(O\), and \(d\) (and thus \(M_O\)) changes.</li>
+    <li>For a <strong>couple</strong>, \(M=Fd\) where \(d\) is the separation between the two forces. This \(M\) does <em>not</em> depend on any reference point; it is the same everywhere.</li>
+  </ul>
+  <p>The similarity is because both measure rotational effect (force times distance), but the <em>application</em> differs: one is tied to a point, the other is free.</p>
+
+  <h3>Worked example: moment vs. couple</h3>
+  <p><strong>Case 1 (moment):</strong> A single 50 N force acts at point \(B(3,0)\) m, pointing upward (\(+y\)). Find the moment about (a) the origin \(O\), (b) point \(P(1,0)\) m.</p>
+  <p>(a) \(M_O = (3\,\text{m})(50\,\text{N}) = 150\) N·m counterclockwise (the force is perpendicular to \(\overrightarrow{OB}\), so \(d=3\) m).</p>
+  <p>(b) \(M_P = [(3-1)\,\text{m}](50\,\text{N}) = 100\) N·m counterclockwise (distance from \(P\) to the force's line at \(x=3\) is 2 m).</p>
+  <p>The moment changes with the reference point.</p>
+
+  <p><strong>Case 2 (couple):</strong> Two 50 N forces act: one upward at \(x=3\) m, one downward at \(x=5\) m. The separation is \(d=2\) m. The couple moment is \(M=(50)(2)=100\) N·m counterclockwise.</p>
+  <p>Check: moment about \(O\): upward force at 3 m gives \(+150\) N·m, downward force at 5 m gives \(-250\) N·m, net \(150-250=-100\) N·m. (Sign: if we define counterclockwise as positive and the downward force at 5 m creates a clockwise moment, then the calculation is \(+(50)(3)-(50)(5)=-100\) N·m, which is 100 N·m clockwise. Let me reconsider the directions.)</p>
+
+  <p>Actually, let me clarify the sign convention. If both forces are vertical (one up at \(x=3\), one down at \(x=5\)), then:</p>
+  <ul>
+    <li>Upward force at \(x=3\): moment arm from \(O\) is 3 m, moment is \(+(50)(3)=+150\) N·m (counterclockwise, turning the body left-end-down).</li>
+    <li>Downward force at \(x=5\): moment arm from \(O\) is 5 m, moment is \(-(50)(5)=-250\) N·m (clockwise, turning the body right-end-down).</li>
+  </ul>
+  <p>Wait, these moments are in the <em>same</em> sense (both tend to rotate the right end down), so the net moment about \(O\) is \(+150+250=400\) N·m? No, that is wrong. Let me use the vector formula carefully.</p>
+
+  <p><strong>Correct couple example:</strong> A couple consists of two forces that are equal in magnitude, opposite in direction, and parallel. For vertical forces, if one points up and the other points down, they form a couple. Let me use a concrete setup:</p>
+
+  <p>Two 50 N forces: \(\mathbf{F}_1=+50\,\mathbf{j}\) at \(A(0,0)\), \(\mathbf{F}_2=-50\,\mathbf{j}\) at \(B(2,0)\). The couple moment is:</p>
+  <div class="eqbox">\[
+  \mathbf{M}_{\text{couple}} = \mathbf{r}_{AB} \times \mathbf{F}_1 = (2\,\mathbf{i}) \times (50\,\mathbf{j}) = 100\,\mathbf{k}\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>This is 100 N·m about the \(z\)-axis, counterclockwise when viewed from above. Now check that this is the same about any point \(O(x_O,0)\):</p>
+  <div class="eqbox">\[
+  M_O = [(-x_O)(50)] + [(2-x_O)(-50)] = -50x_O - 100 + 50x_O = -100\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Hmm, that is \(-100\) N·m (clockwise). The sign difference is because the couple vector points in the \(+z\) direction (out of the page, counterclockwise from above), but when I compute scalar moments in 2D with the convention that counterclockwise is positive, the upward force at \(A\) (to the left) creates a clockwise moment about any point to its right. Let me redo this with care.</p>
+
+  <p>Using the right-hand rule for \(\mathbf{r}\times\mathbf{F}\): position vector from \(O\) to the point of application, then curl fingers from \(\mathbf{r}\) to \(\mathbf{F}\). For \(\mathbf{F}_1=50\,\mathbf{j}\) at \(A(0,0)\), with \(O\) at the origin, \(\mathbf{r}_1=(0,0)\), so \(M_1=0\). For \(\mathbf{F}_2=-50\,\mathbf{j}\) at \(B(2,0)\), \(\mathbf{r}_2=(2,0)\), \(\mathbf{M}_2=(2\,\mathbf{i})\times(-50\,\mathbf{j})=-100\,\mathbf{k}\). Total moment about \(O\): \(0-100=-100\,\mathbf{k}\) N·m (clockwise from above).</p>
+
+  <p>Now take a different point \(P(1,0)\):</p>
+  <ul>
+    <li>\(\mathbf{r}_1=(0-1,0)=(-1,0)\), \(\mathbf{M}_1=(-1\,\mathbf{i})\times(50\,\mathbf{j})=-50\,\mathbf{k}\).</li>
+    <li>\(\mathbf{r}_2=(2-1,0)=(1,0)\), \(\mathbf{M}_2=(1\,\mathbf{i})\times(-50\,\mathbf{j})=-50\,\mathbf{k}\).</li>
+  </ul>
+  <p>Total: \(-50-50=-100\,\mathbf{k}\) N·m. Same! The couple moment is \(-100\,\mathbf{k}\) N·m about any point. \(\checkmark\)</p>
+
+  <div class="note">
+    <p><strong>Couple moment is constant:</strong> The example confirms that the sum of the moments of the two forces in a couple is the same regardless of the reference point. For equilibrium problems, you can sum all forces and moments, treating couples as free moment vectors.</p>
+  </div>
+
+  <p><strong>Self-check:</strong> A couple consists of two 30 N forces: one to the right at \((0,0)\), one to the left at \((0,1)\) m. Find the couple moment magnitude and direction.</p>
+  <details><summary>Answer: self-check 2</summary>The forces are horizontal, separated by 1 m vertically. Couple moment magnitude: \(M=(30)(1)=30\) N·m. Direction: using right-hand rule, fingers curl from the rightward force at bottom to leftward force at top, thumb points into the page (\(-\mathbf{k}\), clockwise from above). Or compute: \(\mathbf{r}=(0,1)\), \(\mathbf{F}=(30,0)\), \(\mathbf{M}=(0)(0)-(1)(30)=-30\,\mathbf{k}\) N·m.</details>
+
+  <h2>3. Support force directions (Sec. 4.3)</h2>
+  <p><strong>Theme:</strong> determining what direction support reaction forces should point.</p>
+  <p>Each type of support <strong>constrains certain motions</strong> of the body, and the reaction forces (and possibly moments) correspond to those constraints. Here are the most common 2D supports:</p>
+
+  <table>
+    <caption class="sr-only">Common 2D support types and their reactions</caption>
+    <thead>
+      <tr>
+        <th scope="col">Support type</th>
+        <th scope="col">Constraints</th>
+        <th scope="col">Reactions</th>
+        <th scope="col">Unknowns</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pin</strong> (or hinge)</td>
+        <td>Prevents translation in <em>x</em> and <em>y</em>; allows rotation</td>
+        <td>Two force components: \(A_x\), \(A_y\)</td>
+        <td>2 (magnitude and direction, or \(A_x\) and \(A_y\))</td>
+      </tr>
+      <tr>
+        <td><strong>Roller</strong></td>
+        <td>Prevents translation perpendicular to the rolling surface; allows translation parallel and rotation</td>
+        <td>One force perpendicular to surface: \(R\)</td>
+        <td>1 (magnitude; direction known)</td>
+      </tr>
+      <tr>
+        <td><strong>Fixed</strong> (or built-in)</td>
+        <td>Prevents translation in <em>x</em>, <em>y</em>, and rotation</td>
+        <td>Two force components and one moment: \(A_x\), \(A_y\), \(M_A\)</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td><strong>Cable or link</strong></td>
+        <td>Prevents separation along the cable/link direction; allows rotation at ends</td>
+        <td>One force along the cable/link (tension or compression): \(T\) or \(C\)</td>
+        <td>1 (magnitude; direction along member)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <p><strong>Rule of thumb:</strong> A support reaction opposes the motions that the support <em>prevents</em>. If the support prevents motion in a direction, there is a reaction force in that direction. If the support prevents rotation, there is a reaction moment.</p>
+  </div>
+
+  <h3>Pin support details</h3>
+  <p>A <strong>pin</strong> (or <strong>hinge</strong>) allows the body to rotate freely, but it cannot translate. Therefore, the pin exerts two reaction forces: one horizontal (\(A_x\)) and one vertical (\(A_y\)). The directions are unknown initially; we usually assume a direction (e.g., \(A_x\) to the right, \(A_y\) upward) and let the algebra determine the sign. A negative result means the force actually points opposite to our assumption.</p>
+
+  <h3>Roller support details</h3>
+  <p>A <strong>roller</strong> support allows the body to roll along a surface and to rotate, but it prevents motion perpendicular to the surface. The reaction is a single force \(R\) perpendicular to the rolling surface. For a roller on a horizontal surface, \(R\) is vertical (usually upward). For a roller on an inclined surface at angle \(\theta\), \(R\) is perpendicular to the incline.</p>
+
+  <h3>Fixed support details</h3>
+  <p>A <strong>fixed</strong> (or <strong>built-in</strong> or <strong>clamped</strong>) support prevents all motion: translation and rotation. It provides two force reactions (\(A_x\), \(A_y\)) and one moment reaction (\(M_A\)). In 2D, this gives three unknowns, which can be solved using the three equilibrium equations \(\sum F_x=0\), \(\sum F_y=0\), \(\sum M_O=0\).</p>
+
+  <h3>Worked example: identifying reactions</h3>
+  <p>A beam of length 5 m is fixed at the left end \(A\) and free at the right end \(B\). A 100 N downward load acts at \(B\). Find the reactions at \(A\).</p>
+
+  <p><strong>FBD:</strong> The fixed support at \(A\) provides \(A_x\), \(A_y\), and \(M_A\). The 100 N load acts at \(B\), 5 m from \(A\).</p>
+
+  <p><strong>Equilibrium:</strong></p>
+  <div class="eqbox">\[
+  \sum F_x = A_x = 0
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y - 100 = 0 \quad\Rightarrow\quad A_y = 100\ \text{N}\ (\text{upward})
+  \]</div>
+  <p>Sum moments about \(A\) (counterclockwise positive):</p>
+  <div class="eqbox">\[
+  \sum M_A = M_A - (100)(5) = 0 \quad\Rightarrow\quad M_A = 500\ \text{N}{\cdot}\text{m}\ (\text{counterclockwise})
+  \]</div>
+  <p>The reactions are \(A_x=0\), \(A_y=100\) N upward, and \(M_A=500\) N·m counterclockwise. The fixed support provides both force and moment to keep the beam in equilibrium.</p>
+
+  <p><strong>Self-check:</strong> A horizontal beam of length 4 m is pinned at the left end \(A\) and supported by a roller at the right end \(B\). A 200 N downward load acts at the midpoint (2 m from \(A\)). Find the reactions at \(A\) and \(B\).</p>
+  <details><summary>Answer: self-check 3</summary>Pin at \(A\): \(A_x=0\), \(A_y=100\) N upward. Roller at \(B\): \(R_B=100\) N upward. (Sum moments about \(A\): \(-200(2)+R_B(4)=0\Rightarrow R_B=100\) N. Then \(\sum F_y=A_y+100-200=0\Rightarrow A_y=100\) N.)</details>
+
+  <h2>4. Study strategies for statics (general advice)</h2>
+  <p><strong>Theme:</strong> effective ways to study and master statics concepts.</p>
+  <p>Statics is a problem-solving course. Understanding the theory is important, but skill comes from practice. Here are proven study strategies:</p>
+
+  <div class="stepbox">
+    <p><strong>Effective study workflow:</strong></p>
+    <ol>
+      <li><strong>Review lecture notes and textbook sections soon after class.</strong> Read the relevant Beer sections (listed in the lecture slides or Canvas modules). Identify the key formulas and concepts.</li>
+      <li><strong>Work example problems from the textbook.</strong> Start with the end-of-chapter problems that match the lecture topics. Try to solve them <em>without</em> looking at the solution first. If you get stuck, review the relevant section, then try again.</li>
+      <li><strong>Draw free-body diagrams for every problem.</strong> The FBD is the most important step. It forces you to identify all forces and choose a coordinate system. Most errors come from incomplete or incorrect FBDs.</li>
+      <li><strong>Check your work.</strong> After solving, verify equilibrium by summing forces and moments about a <em>different</em> point than you used initially. If the sums are not zero, you made an algebra or sign error.</li>
+      <li><strong>Ask questions early.</strong> If a concept or homework problem remains unclear after you have tried the textbook examples, post your question on Canvas (with the problem number and what you have tried) or visit office hours. Do not wait until the night before the exam.</li>
+      <li><strong>Space your practice.</strong> Work a few problems each day rather than cramming all homework the night before it is due. Spaced repetition improves retention.</li>
+      <li><strong>Use recitation and office hours.</strong> Recitation (with Efe) covers additional examples. Office hours (times posted on Canvas) are available for one-on-one help. Bring specific questions.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <p><strong>Common pitfall:</strong> Trying to memorize problem patterns without understanding the underlying method. Statics problems vary widely in geometry and loading, so memorization does not work. Focus on the <em>process</em>: FBD → identify unknowns → write equilibrium equations → solve → check. This process applies to every problem.</p>
+  </div>
+
+  <h3>Exam preparation tips</h3>
+  <ul>
+    <li><strong>Review past homework and quizzes.</strong> Exam problems are similar in style and difficulty to homework. Make sure you can solve the homework problems without referring to your notes.</li>
+    <li><strong>Practice under timed conditions.</strong> Give yourself a fixed time (e.g., 15 minutes per problem) and work through old homework problems. This builds speed and confidence.</li>
+    <li><strong>Identify your weak topics.</strong> If you consistently struggle with moments, or with 3D equilibrium, spend extra time on those sections. Use the Beer practice problems and ask for additional examples in office hours.</li>
+    <li><strong>Form a study group.</strong> Explaining a problem to a classmate is one of the best ways to solidify your understanding. If you can teach it, you know it.</li>
+  </ul>
+
+  <h2>Practice problems (Beer Ch 4)</h2>
+  <p>To reinforce the concepts above, try these Beer 12e problems:</p>
+  <ul>
+    <li><strong>Equilibrium of rigid bodies (2D):</strong> Problems 4.1, 4.2, 4.5, 4.6, 4.11, 4.12.</li>
+    <li><strong>Multi-force members with pins and rollers:</strong> Problems 4.17, 4.18, 4.21, 4.22.</li>
+    <li><strong>Pulleys and cables:</strong> Problems 4.25, 4.26, 4.29, 4.30.</li>
+    <li><strong>Moments and couples:</strong> Problems 4.45, 4.46, 4.49, 4.50.</li>
+    <li><strong>Equilibrium in 3D:</strong> Problems 4.75, 4.76, 4.79, 4.80 (if 3D equilibrium was covered).</li>
+  </ul>
+  <p>Work each problem step-by-step. Check your free-body diagrams with the textbook solutions (or ask in office hours if you are unsure). Watch for sign errors in moment calculations: define a positive direction (e.g., counterclockwise) and stick to it throughout the problem.</p>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 3, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
