@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MECH 223 · Solved Examples — Chapter 6 (Trusses)</title>
+<title>MECH 223 · Solved Examples Ch 6 (Trusses &amp; Frames)</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
@@ -95,586 +95,300 @@
 <body>
 <article class="article">
   <p class="kicker">MECH 223-002 · Engineering Statics · Chapter 6</p>
-  <h1>MECH 223 · Solved Examples — Chapter 6 (Trusses)</h1>
-  <p class="subtitle">Fall 2026 · Set B · 6 fully worked examples</p>
+  <h1>MECH 223 · Solved Examples Ch 6 (Trusses &amp; Frames)</h1>
+  <p class="subtitle">Fall 2026 · Rebuilt set · 6 worked examples drawn from course HW and exams</p>
   <hr class="top">
 
-  <div class="download-box">
-    📥 <a href="./MECH223_Solved_Examples_Ch6.pdf" download>Download the PDF version (with all figures)</a>
-  </div>
-
-  <p><strong>How to use these.</strong> Try each example yourself after reading only Given/Find and the figure. Then compare with the Strategy and Solution. Members are two-force members, joints are frictionless pins, and loads act at joints. Every answer states T or C with a magnitude.</p>
-
   <div class="note">
-    <p><strong>Sign convention.</strong> A member force is <strong>tension (T) when positive</strong> (the member pulls on the joint) and <strong>compression (C) when negative</strong> (the member pushes on the joint). In the joint equations, every member is assumed to be in tension unless noted, so the force arrow points away from the joint and a negative answer means compression. Axes: \(x\) right, \(y\) up. For whole-truss moments (finding reactions), counterclockwise (CCW) is positive. Numbers are new.</p>
+    <p><strong>Notice.</strong> The full tagged PDF with source figure crops is available on Canvas and the course Drive only. This page is text, KaTeX and citations only: it has no figures, so each problem states its geometry in words. Use the cited source to see the original drawing.</p>
   </div>
 
   <div class="note">
-    <p><strong>About the figures.</strong> The drawings (truss geometry, free-body diagrams, section cuts) are in the PDF. This page gives each figure's caption so the geometry is fully stated in words.</p>
+    <p><strong>Conventions.</strong> Right and up are positive. Counterclockwise (CCW) moments are positive. A member force is <strong>tension (T)</strong> if positive (it pulls on the joints at its ends) and <strong>compression (C)</strong> if negative (it pushes on them). In joint equations, a tensile force acts on a joint <em>toward</em> the other end of the member. Numbers are rounded to three significant figures.</p>
+    <p><strong>Key status.</strong> Each example says whether a typed or published key exists. Where none exists, it is marked <em>independently solved</em>, and the result was also confirmed by solving the full set of joint (or member) equations numerically.</p>
   </div>
 
   <h2 style="margin-top:1.6rem;">Contents</h2>
   <ul class="toc">
-    <li><a href="#ex1">1. Method of joints: a triangular truss with a sideways load</a></li>
-    <li><a href="#ex2">2. Zero-force members by inspection, then joints</a></li>
-    <li><a href="#ex3">3. Method of joints through several joints</a></li>
-    <li><a href="#ex4">4. Method of sections: cutting three members</a></li>
-    <li><a href="#ex5">5. Method of sections for a member far from the supports</a></li>
-    <li><a href="#ex6">6. Two methods, one member: sections checked by joints</a></li>
+    <li><a href="#ex1">1. F2022 HW9 Q1: truss on two wall pins, zero vertical reaction at C</a></li>
+    <li><a href="#ex2">2. F2022 HW9 Q2: bridge truss, members GB and GF</a></li>
+    <li><a href="#ex3">3. F2022 HW9 Q3: bridge deck truss by sections, members JI and EI</a></li>
+    <li><a href="#ex4">4. Truss support reactions, two methods (course-pages worked example)</a></li>
+    <li><a href="#ex5">5. F2022 HW10 Q1: frame with a pulley, force at C</a></li>
+    <li><a href="#ex6">6. F2024 Exam 3 P1: cantilever truss and determinacy</a></li>
   </ul>
 
 <!-- ======================= EXAMPLE 1 ======================= -->
 <section id="ex1">
-  <h2>1. Method of joints: a triangular truss with a sideways load</h2>
-  <p class="level">Level: easy. Chapter 6. Target confusion: finding reactions first, then starting at the joint that has only two unknown members.</p>
+  <h2>1. Truss on two wall pins: zero vertical reaction at C</h2>
+  <p class="level"><strong>Source:</strong> MECH 223 F2022, Homework 9, Q1. Method of joints. Independently solved; no typed key on file.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A triangular truss \(ABC\) has a pin at \(A\) and a roller at \(C\) (the roller force is vertical). Joints \(A\) and \(C\) are \(6.00~\text{m}\) apart on a horizontal line, and joint \(B\) is \(4.00~\text{m}\) above the midpoint of \(AC\), so \(AB=BC=5.00~\text{m}\). At \(B\) the truss carries a \(12.0~\text{kN}\) downward load and a \(6.00~\text{kN}\) horizontal load pointing right.</p>
-    <p><strong>Find:</strong> the support reactions, then the forces in members \(AB\) and \(AC\) by the method of joints at \(A\). Finish with member \(BC\) from joint \(C\), and confirm with joint \(B\). State T or C for each.</p>
+    <p>Determine the force in each member and state T or C. <em>Hint: the vertical component of force at \(C\) must be zero. Why?</em></p>
+    <p>Joint \(A\) carries \(6~\text{kN}\) down and joint \(E\) carries \(8~\text{kN}\) down. The truss is pinned to a wall at \(C\) (top) and \(D\) (bottom), \(2~\text{m}\) apart vertically. \(AE=1.5~\text{m}\), \(ED=2~\text{m}\), \(B\) lies directly above \(E\), and \(BC\) is horizontal. Members: \(AB, AE, ED, BE, BC, BD\).</p>
   </div>
-
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Triangular truss with a pin at \(A\) and a roller at \(C\). Joint \(B\) is \(3.00~\text{m}\) right of \(A\) and \(4.00~\text{m}\) above the line \(AC\). A \(12.0~\text{kN}\) load acts downward and a \(6.00~\text{kN}\) load acts to the right, both at \(B\).</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams (see PDF for drawing).</span> Left: free-body diagram of the whole truss with the unknown reactions \(A_x\), \(A_y\) and \(C_y\) drawn as blue dashed arrows. Right: free-body diagram of joint \(A\). The green arrows are the member forces \(F_{AB}\) and \(F_{AC}\), both drawn pulling away from the joint (assumed tension). The reaction arrows at \(A\) are drawn in the directions found in the solution, \(A_x\) to the left and \(A_y\) upward.</div>
 
   <div class="solution-box">
     <h3>Strategy</h3>
-    <p>First treat the whole truss as one rigid body and find the three reactions. The joint at \(A\) has two unknown members (\(AB\) and \(AC\)) and two known reaction components, so it can be solved with \(\sum F_x=0\) and \(\sum F_y=0\). Assume every member is in tension, so the force arrow points away from the joint. A negative answer then means compression. Unit vectors along members come from the 3-4-5 triangle: from \(A\) toward \(B\) the direction is \((3/5,\,4/5)\).</p>
-
+    <p>Only the horizontal member \(BC\) reaches \(C\), and a two-force member pushes or pulls only along its axis, so \(C_y=0\). Moments about \(D\) give \(C_x\); then walk joints \(A\), \(E\), \(B\), and keep \(D\) as a check.</p>
     <h3>Solution</h3>
-    <p><strong>Reactions.</strong> Take moments about \(A\) (CCW positive). The force \(12.0~\text{kN}\) down at \(B\) has lever arm \(3.00~\text{m}\) and the \(6.00~\text{kN}\) force to the right acts \(4.00~\text{m}\) above \(A\). Both turn the truss clockwise:</p>
+    <p>Coordinates (m), origin at \(A\): \(A(0,0)\), \(E(1.5,0)\), \(D(3.5,0)\), \(B(1.5,2)\), \(C(3.5,2)\). Member \(AB\) has length \(2.5~\text{m}\), direction cosines \((0.6,\,0.8)\). Member \(BD\) is at \(45^\circ\).</p>
     \[
     \begin{aligned}
-    \sum M_A &= C_y(6.00) - 12.0(3.00) - 6.00(4.00) = 0\\
-    C_y &= \frac{36.0+24.0}{6.00} = 10.0~\text{kN (up)}.
+    \sum M_D &= 6(3.5)+8(2)-C_x(2)=0 \Rightarrow C_x=18.5~\text{kN (right)},\\
+    \sum F_x &= C_x+D_x=0 \Rightarrow D_x=18.5~\text{kN (left)},\\
+    \sum F_y &= D_y-6-8=0 \Rightarrow D_y=14.0~\text{kN (up)}.
     \end{aligned}
     \]
+    <p><strong>Joint \(A\).</strong></p>
+    \[
+    0.8F_{AB}-6=0\Rightarrow F_{AB}=7.50~\text{kN (T)},\qquad 0.6(7.50)+F_{AE}=0\Rightarrow F_{AE}=-4.50~\text{kN (C)}.
+    \]
+    <p><strong>Joint \(E\).</strong> \(AE\) pulls \(E\) toward \(A\), so it enters as \(-F_{AE}\).</p>
+    \[
+    -F_{AE}+F_{ED}=0\Rightarrow F_{ED}=-4.50~\text{kN (C)},\qquad F_{BE}-8=0\Rightarrow F_{BE}=8.00~\text{kN (T)}.
+    \]
+    <p><strong>Joint \(B\).</strong></p>
     \[
     \begin{aligned}
-    \sum F_y &= A_y + C_y - 12.0 = 0 \;\Rightarrow\; A_y = 2.00~\text{kN (up)},\\
-    \sum F_x &= A_x + 6.00 = 0 \;\Rightarrow\; A_x = -6.00~\text{kN, i.e. }6.00~\text{kN to the left}.
+    \sum F_y &= -0.8(7.50)-8.00-\tfrac{\sqrt2}{2}F_{BD}=0 \Rightarrow F_{BD}=-14\sqrt2=-19.8~\text{kN (C)},\\
+    \sum F_x &= -0.6(7.50)+F_{BC}+\tfrac{\sqrt2}{2}(-19.8)=0 \Rightarrow F_{BC}=4.5+14=18.5~\text{kN (T)}.
     \end{aligned}
     \]
+    <p><strong>Check at joint \(D\).</strong> \(ED\) (C) pushes \(D\) right with \(4.50\); \(BD\) (C) pushes along \(B\to D\) with \((+14,-14)\); the pin gives \((-18.5,+14)\). Sum in \(x\): \(4.5+14-18.5=0\). Sum in \(y\): \(-14+14=0\). Count: \(m+r=6+4=10=2n\) with \(n=5\), determinate.</p>
+  </div>
 
-    <p><strong>Joint \(A\).</strong> With tension assumed, \(F_{AB}\) acts along \((3/5,\,4/5)\) and \(F_{AC}\) acts along \((1,\,0)\).</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 2.00 + \tfrac45 F_{AB} = 0 \;\Rightarrow\; F_{AB} = -2.50~\text{kN},\\
-    \sum F_x &= -6.00 + \tfrac35 F_{AB} + F_{AC} = 0 \;\Rightarrow\; F_{AC} = 6.00 + 1.50 = 7.50~\text{kN}.
-    \end{aligned}
-    \]
-    <p>So \(AB\) is in compression and \(AC\) is in tension.</p>
-
-    <p><strong>Joint \(C\) (member \(BC\)).</strong> From \(C\) toward \(B\) the direction is \((-3/5,\,4/5)\), and \(C_y=10.0~\text{kN}\) acts up.</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 10.0 + \tfrac45 F_{BC} = 0 \;\Rightarrow\; F_{BC} = -12.5~\text{kN},\\
-    \sum F_x &= -\tfrac35 F_{BC} - F_{AC} = 0 \;\Rightarrow\; F_{AC} = 7.50~\text{kN}.
-    \end{aligned}
-    \]
-    <p>The second equation gives the same \(F_{AC}\) found at joint \(A\), so the two joints agree.</p>
-
-    <p><strong>Joint \(B\) as a check.</strong> The member forces on \(B\) are \(F_{AB}\) along \((-3/5,-4/5)\) and \(F_{BC}\) along \((3/5,-4/5)\), plus the two applied loads:</p>
-    \[
-    \begin{aligned}
-    \sum F_x &= (-2.50)(-0.6) + (-12.5)(0.6) + 6.00 = 1.50 - 7.50 + 6.00 = 0,\\
-    \sum F_y &= (-2.50)(-0.8) + (-12.5)(-0.8) - 12.0 = 2.00 + 10.0 - 12.0 = 0.
-    \end{aligned}
-    \]
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{AB}=2.50~\text{kN (C)}},\qquad
-    \boxed{F_{AC}=7.50~\text{kN (T)}},\qquad
-    \boxed{F_{BC}=12.5~\text{kN (C)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=6.00~\text{kN}\) (left), \(A_y=2.00~\text{kN}\) (up), \(C_y=10.0~\text{kN}\) (up).</p></div>
-
-    <h3>Sanity check</h3>
-    <p>Joint \(B\) balances in both directions, which is an equation set that was not used to find any of the three forces. The bottom member \(AC\) is in tension and the two inclined members are in compression, as expected for a triangle loaded from above with a push at the apex. The right inclined member carries the most force because the roller at \(C\) takes most of the vertical load (\(10.0\) of \(12.0~\text{kN}\)).</p>
+  <div class="answerbox">
+    <table>
+      <caption style="display:none">Example 1 member forces</caption>
+      <thead><tr><th scope="col">Member</th><th scope="col">Force (kN)</th><th scope="col">Type</th></tr></thead>
+      <tbody>
+        <tr><td>\(AB\)</td><td>7.50</td><td>T</td></tr>
+        <tr><td>\(AE\)</td><td>4.50</td><td>C</td></tr>
+        <tr><td>\(ED\)</td><td>4.50</td><td>C</td></tr>
+        <tr><td>\(BE\)</td><td>8.00</td><td>T</td></tr>
+        <tr><td>\(BC\)</td><td>18.5</td><td>T</td></tr>
+        <tr><td>\(BD\)</td><td>19.8 (\(14\sqrt2\))</td><td>C</td></tr>
+      </tbody>
+    </table>
+    \[ \boxed{C_y=0,\quad C_x=18.5~\text{kN}\ (\rightarrow),\quad D_x=18.5~\text{kN}\ (\leftarrow),\quad D_y=14.0~\text{kN}\ (\uparrow)} \]
   </div>
 </section>
 
 <!-- ======================= EXAMPLE 2 ======================= -->
 <section id="ex2">
-  <h2>2. Zero-force members by inspection, then joints</h2>
-  <p class="level">Level: easy to medium. Chapter 6. Target confusion: a zero-force member is not a useless member. It is a member that carries no load for this particular loading.</p>
+  <h2>2. Bridge truss: members GB and GF</h2>
+  <p class="level"><strong>Source:</strong> MECH 223 F2022, Homework 9, Q2. Method of joints. Independently solved; no typed key on file.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A truss has a pin at \(A\) and a roller at \(C\) (vertical reaction). Joints \(A\), \(B\) and \(C\) lie on a horizontal line with \(AB=BC=4.00~\text{m}\). Joint \(D\) is \(3.00~\text{m}\) directly above \(B\). Joint \(E\) is the midpoint of \(AD\), so \(AE\) and \(ED\) are collinear. Members are \(AB\), \(BC\), \(AE\), \(ED\), \(DC\), \(BD\) and \(BE\). At \(D\) the truss carries a \(12.0~\text{kN}\) downward load and an \(8.00~\text{kN}\) horizontal load pointing right. Nothing is applied at \(E\) or \(B\).</p>
-    <p><strong>Find:</strong> (a) which members carry zero force, using inspection only; (b) the reactions; (c) the forces in \(AE\), \(ED\), \(AB\), \(BC\) and \(DC\). State T or C for each.</p>
+    <p>Find the force in members \(GB\) and \(GF\) and state T or C. Pin at \(A\), roller at \(D\), span \(AD=10+4+4+10=28~\text{ft}\), truss height \(10~\text{ft}\). Bottom joints \(A, B, C, D\) at \(x=0,10,18,28\); top joints \(G, F, E\) at \(x=10,14,18\). \(600~\text{lb}\) down at \(B\) and \(800~\text{lb}\) down at \(C\).</p>
   </div>
-
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Truss with joints \(A\), \(B\), \(C\) on a horizontal line, apex \(D\) directly above \(B\), and joint \(E\) at the midpoint of \(AD\). Member \(BE\) joins \(B\) to \(E\). A pin supports \(A\) and a roller supports \(C\). At \(D\) a \(12.0~\text{kN}\) load acts downward and an \(8.00~\text{kN}\) load acts to the right.</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams (see PDF for drawing).</span> Left: free-body diagram of the whole truss with the unknown reactions as blue dashed arrows. The two members found to be zero-force by inspection, \(BE\) and \(BD\), are drawn as grey dashed lines. Right: joint \(A\) with member forces drawn in tension (green) and the reactions in the directions found in the solution (\(A_x\) to the left, \(A_y\) upward).</div>
 
   <div class="solution-box">
     <h3>Strategy</h3>
-    <p>Two inspection rules do most of the work. (i) At an unloaded joint where three members meet and two of them are collinear, the third member carries zero force. (ii) At an unloaded joint where only two non-collinear members meet, both carry zero force. Apply them in order, because removing one zero-force member can create another. After that, solve the reactions on the whole truss and the remaining forces with joints \(A\) and \(C\).</p>
-
+    <p>Get the reactions. Joint \(A\) has two unknown members (\(AG\), \(AB\)). Joint \(G\) then has three members (\(GA\), \(GB\), \(GF\)) with \(GA\) known, so two equations give \(GB\) and \(GF\).</p>
     <h3>Solution</h3>
-    <p><strong>(a) Zero-force members.</strong></p>
-    <ul>
-      <li><em>Joint \(E\).</em> No load acts at \(E\). Members \(AE\) and \(ED\) lie on the same line, so the component of forces perpendicular to that line comes only from \(BE\). Hence \(F_{BE}=0\), and \(F_{AE}=F_{ED}\) because the two collinear forces must balance.</li>
-      <li><em>Joint \(B\).</em> No load acts at \(B\). Members \(AB\) and \(BC\) are collinear horizontal members, and \(BE\) is now known to be zero. The only vertical force on \(B\) is \(F_{BD}\), so \(\sum F_y=0\) gives \(F_{BD}=0\). Since \(AB\) and \(BC\) are then the only members carrying force at \(B\), \(\sum F_x=0\) gives \(F_{AB}=F_{BC}\).</li>
-    </ul>
-    <p>The zero-force members are \(BE\) and \(BD\). They are not removed from the structure, since they keep \(B\) and \(E\) in position and would carry load if the loading changed.</p>
-
-    <p><strong>(b) Reactions.</strong> Moments about \(A\), CCW positive. The load at \(D\) has lever arm \(4.00~\text{m}\) for the vertical part and \(3.00~\text{m}\) for the horizontal part:</p>
     \[
     \begin{aligned}
-    \sum M_A &= C_y(8.00) - 12.0(4.00) - 8.00(3.00) = 0\\
-    C_y &= \frac{48.0+24.0}{8.00} = 9.00~\text{kN (up)}.
+    \sum M_A &= D_y(28)-600(10)-800(18)=0 \Rightarrow D_y=\tfrac{20400}{28}=728.6~\text{lb},\\
+    \sum F_y &= 0 \Rightarrow A_y=1400-728.6=671.4~\text{lb},\qquad A_x=0.
     \end{aligned}
     \]
+    <p><strong>Joint \(A\)</strong> (\(AG\) rises at \(45^\circ\)).</p>
     \[
-    \begin{aligned}
-    \sum F_y &= A_y + 9.00 - 12.0 = 0 \;\Rightarrow\; A_y = 3.00~\text{kN (up)},\\
-    \sum F_x &= A_x + 8.00 = 0 \;\Rightarrow\; A_x = -8.00~\text{kN, i.e. }8.00~\text{kN to the left}.
-    \end{aligned}
+    671.4+\tfrac{\sqrt2}{2}F_{AG}=0\Rightarrow F_{AG}=-949.5~\text{lb (C)},\qquad F_{AB}+\tfrac{\sqrt2}{2}(-949.5)=0\Rightarrow F_{AB}=671.4~\text{lb (T)}.
     \]
-
-    <p><strong>(c) Joint \(A\).</strong> Member \(AE\) rises \(1.50~\text{m}\) over a run of \(2.00~\text{m}\) with length \(2.50~\text{m}\), so its direction from \(A\) is \((0.8,\,0.6)\). Member \(AB\) points along \((1,\,0)\).</p>
+    <p><strong>Joint \(G\).</strong> \(GA\) in compression pushes \(G\) up and right with \((+671.4,+671.4)\). \(GB\) hangs straight down; \(GF\) runs right along the top chord.</p>
     \[
-    \begin{aligned}
-    \sum F_y &= 3.00 + 0.6\,F_{AE} = 0 \;\Rightarrow\; F_{AE} = -5.00~\text{kN},\\
-    \sum F_x &= -8.00 + 0.8\,F_{AE} + F_{AB} = 0 \;\Rightarrow\; F_{AB} = 8.00 + 4.00 = 12.0~\text{kN}.
-    \end{aligned}
+    671.4-F_{GB}=0\Rightarrow F_{GB}=671.4~\text{lb (T)},\qquad 671.4+F_{GF}=0\Rightarrow F_{GF}=-671.4~\text{lb (C)}.
     \]
-    <p>From (a), \(F_{ED}=F_{AE}=-5.00~\text{kN}\) and \(F_{BC}=F_{AB}=12.0~\text{kN}\).</p>
+    <p><strong>Sense check.</strong> The top chord of a simply supported truss under downward loads is in compression, and a vertical member hanging a loaded lower joint from the top is in tension. A full solve of all 14 joint equations (11 members, 3 reactions) agrees.</p>
+    <div class="note"><p><strong>Sign flag.</strong> An earlier draft of this set listed \(GB\) as compression and \(GF\) as tension. The magnitudes match, but the labels are reversed relative to the derivation above: the vertical component of the compressive force in \(GA\) must be balanced by a downward pull from \(GB\), so \(GB\) is in tension. This page uses the derived signs.</p></div>
+  </div>
 
-    <p><strong>Joint \(C\).</strong> Member \(CD\) points from \(C\) along \((-0.8,\,0.6)\), and \(C_y=9.00~\text{kN}\) acts up.</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 9.00 + 0.6\,F_{CD} = 0 \;\Rightarrow\; F_{CD} = -15.0~\text{kN},\\
-    \sum F_x &= -0.8\,F_{CD} - F_{BC} = 12.0 - F_{BC} = 0 \;\Rightarrow\; F_{BC} = 12.0~\text{kN}.
-    \end{aligned}
-    \]
-    <p>This matches \(F_{BC}\) from joint \(A\).</p>
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{BE}=F_{BD}=0},\qquad
-    \boxed{F_{AE}=F_{ED}=5.00~\text{kN (C)}},\qquad
-    \boxed{F_{AB}=F_{BC}=12.0~\text{kN (T)}},\qquad
-    \boxed{F_{CD}=15.0~\text{kN (C)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=8.00~\text{kN}\) (left), \(A_y=3.00~\text{kN}\) (up), \(C_y=9.00~\text{kN}\) (up).</p></div>
-
-    <h3>Sanity check</h3>
-    <p>Joint \(D\) was not used to find any force, so it makes a clean test. The member forces on \(D\) are \(F_{DE}\) along \((-0.8,-0.6)\), \(F_{DC}\) along \((0.8,-0.6)\) and \(F_{DB}=0\), plus the applied loads:</p>
-    \[
-    \begin{aligned}
-    \sum F_x &= (-5.00)(-0.8) + (-15.0)(0.8) + 8.00 = 4.00 - 12.0 + 8.00 = 0,\\
-    \sum F_y &= (-5.00)(-0.6) + (-15.0)(-0.6) - 12.0 = 3.00 + 9.00 - 12.0 = 0.
-    \end{aligned}
-    \]
-    <p>Both balance. With \(BE\) and \(BD\) removed, the truss behaves as a plain triangle \(ADC\) with a loaded apex, which explains why the two inclined members are in compression and the bottom chord is in tension.</p>
+  <div class="answerbox">
+    \[ \boxed{F_{GB}=671~\text{lb (T)},\quad F_{GF}=671~\text{lb (C)}}\qquad (A_x=0,\ A_y=671~\text{lb},\ D_y=729~\text{lb}) \]
   </div>
 </section>
 
 <!-- ======================= EXAMPLE 3 ======================= -->
 <section id="ex3">
-  <h2>3. Method of joints through several joints</h2>
-  <p class="level">Level: medium. Chapter 6. Target confusion: choosing the next joint. Each joint is only solvable when it has at most two unknown member forces, so the order matters.</p>
+  <h2>3. Bridge deck truss: members JI and EI</h2>
+  <p class="level"><strong>Source:</strong> MECH 223 F2022, Homework 9, Q3. Method of sections, then joint \(E\). Independently solved; no typed key on file.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A Warren truss has bottom joints \(A\), \(C\), \(E\) and top joints \(B\), \(D\). The joints \(A\), \(C\), \(E\) lie on a horizontal line at \(x=0\), \(6.00\) and \(12.00~\text{m}\). The top joints \(B\) and \(D\) are \(4.00~\text{m}\) above the line, at \(x=3.00\) and \(9.00~\text{m}\), so every inclined member is \(5.00~\text{m}\) long (a 3-4-5 triangle). The members are \(AB\), \(BD\), \(DE\), \(AC\), \(CE\), \(BC\) and \(CD\). A pin supports \(A\) and a roller supports \(E\) (vertical reaction). Downward loads act at three joints: \(10.0~\text{kN}\) at \(B\), \(6.00~\text{kN}\) at \(C\) and \(6.00~\text{kN}\) at \(D\).</p>
-    <p><strong>Find:</strong> the support reactions, then the force in every member by working from joint to joint. Finish with a table of member forces, each marked T or C.</p>
+    <p>Find the force in members \(EI\) and \(JI\) and state T or C. Six panels of \(9~\text{ft}\) (total \(54~\text{ft}\)), height \(12~\text{ft}\), pin at \(A\), roller at \(G\). Top joints \(A\) to \(G\) at \(x=0,9,\dots,54\); bottom joints \(L,K,J,I,H\) at \(x=9,18,27,36,45\). Loads: \(4000~\text{lb}\) down at \(B\), \(8000~\text{lb}\) at \(C\), \(5000~\text{lb}\) at \(F\).</p>
   </div>
-
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Warren truss with a pin at \(A\) and a roller at \(E\). Horizontal spacing between neighbouring joints is \(3.00~\text{m}\) and the top joints are \(4.00~\text{m}\) above the bottom chord. Downward loads: \(10.0~\text{kN}\) at \(B\), \(6.00~\text{kN}\) at \(C\), \(6.00~\text{kN}\) at \(D\).</div>
-  <div class="note fig"><span class="figtag">Free-body diagram, whole truss (see PDF for drawing).</span> The pin at \(A\) supplies \(A_x\) and \(A_y\) and the roller at \(E\) supplies \(E_y\), all drawn as blue dashed arrows. The solution gives \(A_x=0\), \(A_y=12.0~\text{kN}\) and \(E_y=10.0~\text{kN}\), both upward.</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams, joints (see PDF for drawing).</span> Joints \(A\), \(B\) and \(C\) (loads in kN). Every member force is drawn pulling away from the joint, which assumes tension. Joint \(A\) shows its reaction \(A_y\) in the direction found in the solution; \(A_x=0\) so it is not drawn.</div>
 
   <div class="solution-box">
     <h3>Strategy</h3>
-    <p>Find the three reactions from the whole truss. Then pick a joint with at most two unknown member forces. Joint \(A\) qualifies, because it has the reaction \(A_y\) and only members \(AB\) and \(AC\). Solving it makes \(F_{AB}\) and \(F_{AC}\) known, which leaves joint \(B\) with only two unknowns (\(BC\) and \(BD\)), then joint \(C\) with two unknowns (\(CD\) and \(CE\)), then joint \(E\) with one unknown (\(DE\)). The last joint, \(D\), uses none of its equations to find a force, so it becomes the check. Assume tension everywhere (arrow away from the joint). Unit vectors: an inclined member rising to the right has direction \((0.6,\,0.8)\), and one falling to the right has direction \((0.6,\,-0.8)\).</p>
-
+    <p>A section between \(D\) and \(E\) cuts exactly three members (\(DE\), \(EJ\), \(JI\)). A moment equation about \(E\) isolates \(JI\). \(EI\) is not cut, so finish with joint \(E\), where \(DE\) and \(EF\) are both horizontal and one vertical equation gives \(EI\).</p>
     <h3>Solution</h3>
-    <p><strong>Reactions.</strong> Moments about \(A\) (CCW positive). All three loads are downward and produce clockwise moments:</p>
+    <p>Diagonals have run 9 and rise 12, so they are 3-4-5 members with direction cosines \((0.6,\,0.8)\).</p>
     \[
     \begin{aligned}
-    \sum M_A &= E_y(12.0) - 10.0(3.00) - 6.00(6.00) - 6.00(9.00) = 0\\
-    E_y &= \frac{30.0+36.0+54.0}{12.0} = 10.0~\text{kN (up)}.
+    \sum M_A &= G_y(54)-4000(9)-8000(18)-5000(45)=0 \Rightarrow G_y=\tfrac{405\,000}{54}=7500~\text{lb},\\
+    A_y &= 17\,000-7500=9500~\text{lb},\qquad A_x=0.
     \end{aligned}
     \]
+    <p><strong>Section, right free body</strong> (\(E,F,G,H,I\); assume all cut members in tension). \(DE\) and \(EJ\) pass through \(E\):</p>
     \[
-    \begin{aligned}
-    \sum F_y &= A_y + 10.0 - 22.0 = 0 \;\Rightarrow\; A_y = 12.0~\text{kN (up)},\\
-    \sum F_x &= A_x = 0.
-    \end{aligned}
+    \sum M_E=G_y(18)-5000(9)-T_{JI}(12)=0\Rightarrow 135\,000-45\,000=12\,T_{JI}\Rightarrow F_{JI}=7500~\text{lb (T)}.
     \]
-
-    <p><strong>Joint \(A\)</strong> (unknowns \(F_{AB}\), \(F_{AC}\)). Member \(AB\) points along \((0.6,\,0.8)\) and \(AC\) along \((1,\,0)\).</p>
+    <p>Vertical equation on the same free body (\(EJ\) pulls toward \(J\), vertical component \(-0.8F_{EJ}\)):</p>
     \[
-    \begin{aligned}
-    \sum F_y &= 12.0 + 0.8\,F_{AB} = 0 \;\Rightarrow\; F_{AB} = -15.0~\text{kN},\\
-    \sum F_x &= 0.6\,F_{AB} + F_{AC} = 0 \;\Rightarrow\; F_{AC} = 9.00~\text{kN}.
-    \end{aligned}
+    7500-5000-0.8F_{EJ}=0\Rightarrow F_{EJ}=3125~\text{lb (T)}.
     \]
-    <p>\(AB\) is in compression and \(AC\) is in tension.</p>
-
-    <p><strong>Joint \(B\)</strong> (unknowns \(F_{BC}\), \(F_{BD}\)). From \(B\), member \(BA\) points along \((-0.6,\,-0.8)\), \(BC\) along \((0.6,\,-0.8)\) and \(BD\) along \((1,\,0)\). The \(10.0~\text{kN}\) load acts downward.</p>
+    <p><strong>Joint \(E\).</strong></p>
     \[
-    \begin{aligned}
-    \sum F_y &= -0.8(-15.0) - 0.8\,F_{BC} - 10.0 = 12.0 - 10.0 - 0.8\,F_{BC} = 0 \;\Rightarrow\; F_{BC} = 2.50~\text{kN},\\
-    \sum F_x &= -0.6(-15.0) + 0.6(2.50) + F_{BD} = 9.00 + 1.50 + F_{BD} = 0 \;\Rightarrow\; F_{BD} = -10.5~\text{kN}.
-    \end{aligned}
+    \sum F_y=-F_{EI}-0.8(3125)=0\Rightarrow F_{EI}=-2500~\text{lb (C)}.
     \]
-    <p>\(BC\) is in tension and \(BD\) is in compression.</p>
+    <p><strong>Check.</strong> \(\sum F_x=0\) on the free body gives \(F_{DE}=-9375~\text{lb}\) (C): top chord in compression, bottom chord in tension. Count: \(m+r=21+3=24=2n\) with \(n=12\). A full solve of the 24 joint equations gives \(F_{JI}=+7500\) and \(F_{EI}=-2500~\text{lb}\).</p>
+  </div>
 
-    <p><strong>Joint \(C\)</strong> (unknowns \(F_{CD}\), \(F_{CE}\)). From \(C\), member \(CA\) points along \((-1,\,0)\), \(CB\) along \((-0.6,\,0.8)\), \(CD\) along \((0.6,\,0.8)\) and \(CE\) along \((1,\,0)\). The \(6.00~\text{kN}\) load acts downward.</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 0.8(2.50) + 0.8\,F_{CD} - 6.00 = 0 \;\Rightarrow\; F_{CD} = \frac{6.00-2.00}{0.8} = 5.00~\text{kN},\\
-    \sum F_x &= -9.00 - 0.6(2.50) + 0.6\,F_{CD} + F_{CE} = -9.00 - 1.50 + 3.00 + F_{CE} = 0 \;\Rightarrow\; F_{CE} = 7.50~\text{kN}.
-    \end{aligned}
-    \]
-    <p>Both \(CD\) and \(CE\) are in tension.</p>
-
-    <p><strong>Joint \(E\)</strong> (unknown \(F_{DE}\), with \(F_{CE}\) already known). From \(E\), member \(ED\) points along \((-0.6,\,0.8)\) and \(EC\) along \((-1,\,0)\). The reaction \(E_y=10.0~\text{kN}\) acts up.</p>
-    \[
-    \sum F_y = 10.0 + 0.8\,F_{DE} = 0 \;\Rightarrow\; F_{DE} = -12.5~\text{kN}.
-    \]
-    <p>\(DE\) is in compression. The \(x\) equation was not needed, so it checks the work: \(-0.6(-12.5) - F_{CE} = 7.50 - 7.50 = 0\).</p>
-
-    <p><strong>Member force table</strong> (tension positive):</p>
-    <table>
-      <caption style="display:none">Member forces for the Warren truss</caption>
-      <thead><tr><th scope="col">Member</th><th scope="col">Force (kN)</th><th scope="col">Magnitude (kN)</th><th scope="col">T or C</th></tr></thead>
-      <tbody>
-        <tr><td>\(AB\)</td><td>\(-15.0\)</td><td>\(15.0\)</td><td>C</td></tr>
-        <tr><td>\(BD\)</td><td>\(-10.5\)</td><td>\(10.5\)</td><td>C</td></tr>
-        <tr><td>\(DE\)</td><td>\(-12.5\)</td><td>\(12.5\)</td><td>C</td></tr>
-        <tr><td>\(AC\)</td><td>\(+9.00\)</td><td>\(9.00\)</td><td>T</td></tr>
-        <tr><td>\(CE\)</td><td>\(+7.50\)</td><td>\(7.50\)</td><td>T</td></tr>
-        <tr><td>\(BC\)</td><td>\(+2.50\)</td><td>\(2.50\)</td><td>T</td></tr>
-        <tr><td>\(CD\)</td><td>\(+5.00\)</td><td>\(5.00\)</td><td>T</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{AB}=15.0~\text{kN (C)}},\;
-    \boxed{F_{BD}=10.5~\text{kN (C)}},\;
-    \boxed{F_{DE}=12.5~\text{kN (C)}},
-    \]
-    \[
-    \boxed{F_{AC}=9.00~\text{kN (T)}},\;
-    \boxed{F_{CE}=7.50~\text{kN (T)}},\;
-    \boxed{F_{BC}=2.50~\text{kN (T)}},\;
-    \boxed{F_{CD}=5.00~\text{kN (T)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=0\), \(A_y=12.0~\text{kN}\) (up), \(E_y=10.0~\text{kN}\) (up).</p></div>
-
-    <h3>Sanity check</h3>
-    <p>Joint \(D\) was never used to find a force. The member forces on \(D\) are \(F_{DB}=-10.5\) along \((-1,\,0)\), \(F_{DC}=5.00\) along \((-0.6,\,-0.8)\) and \(F_{DE}=-12.5\) along \((0.6,\,-0.8)\), with the \(6.00~\text{kN}\) load downward:</p>
-    \[
-    \begin{aligned}
-    \sum F_x &= (-10.5)(-1) + 5.00(-0.6) + (-12.5)(0.6) = 10.5 - 3.00 - 7.50 = 0,\\
-    \sum F_y &= 5.00(-0.8) + (-12.5)(-0.8) - 6.00 = -4.00 + 10.0 - 6.00 = 0.
-    \end{aligned}
-    \]
-    <p>Both balance. The pattern is also physical: the top chord and the two end members are in compression and the bottom chord is in tension, as for a beam loaded downward. The two end members carry the largest forces because they pass the full reaction into the supports (\(12.0/0.8=15.0\) and \(10.0/0.8=12.5~\text{kN}\)).</p>
+  <div class="answerbox">
+    \[ \boxed{F_{JI}=7500~\text{lb (T)},\quad F_{EI}=2500~\text{lb (C)}}\qquad (A_x=0,\ A_y=9500~\text{lb},\ G_y=7500~\text{lb}) \]
   </div>
 </section>
 
 <!-- ======================= EXAMPLE 4 ======================= -->
 <section id="ex4">
-  <h2>4. Method of sections: cutting three members</h2>
-  <p class="level">Level: medium to hard. Chapter 6. Target confusion: where to put the moment center. Pick the point where two of the three cut members cross, and the third force is the only unknown left in that moment equation.</p>
+  <h2>4. Truss support reactions, two methods</h2>
+  <p class="level"><strong>Source:</strong> course-pages published worked example, “Truss Support Reactions: Two Equivalent Approaches” (<code>mech223/2026/truss-reactions-worked-example</code>). The numbers below were compared with that page; it is the key.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A Pratt truss has bottom joints \(A\), \(B\), \(C\), \(D\), \(E\) on a horizontal line, spaced \(3.00~\text{m}\) apart. The top joints \(F\), \(G\), \(H\) lie \(4.00~\text{m}\) directly above \(B\), \(C\), \(D\). The members are the bottom chord \(AB\), \(BC\), \(CD\), \(DE\), the top chord \(FG\), \(GH\), the end posts \(AF\) and \(HE\), the verticals \(BF\), \(CG\), \(DH\), and the diagonals \(FC\) and \(HC\). A pin supports \(A\) and a roller supports \(E\) (vertical reaction). Downward loads act on the bottom joints: \(8.00~\text{kN}\) at \(B\), \(12.0~\text{kN}\) at \(C\) and \(4.00~\text{kN}\) at \(D\).</p>
-    <p><strong>Find:</strong> the reactions, then the forces in members \(FG\), \(FC\) and \(BC\) by the method of sections, using one section through the panel between \(B\) and \(C\). Do not solve the truss joint by joint. State T or C for each member.</p>
+    <p>Find the reactions. \(A\) is a pin (\(A_x\), \(A_y\)); \(B\) is a rocker (\(B_y\) only). Origin at \(A\): \(B\) at \(x=6~\text{m}\). A \(6~\text{kN}\) load acts down at \(x=2\), an \(8~\text{kN}\) load acts down at \(x=4\), and a \(5~\text{kN}\) load acts horizontally to the right at the top joint, \(2~\text{m}\) above \(A\). The member layout does not affect the reactions.</p>
   </div>
 
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Pratt truss with a pin at \(A\) and a roller at \(E\). Loads in kN act downward at \(B\), \(C\) and \(D\). The orange dashed line marks section \(s\)–\(s\), which passes through the three members \(FG\), \(FC\) and \(BC\) only.</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams (see PDF for drawing).</span> Left: whole-truss free-body diagram with \(A_x\), \(A_y\), \(E_y\) as blue dashed arrows. Right: the part of the truss to the left of section \(s\)–\(s\). It contains \(A\), \(B\), \(F\) and members \(AB\), \(AF\), \(BF\), plus the cut ends of \(FG\), \(FC\) and \(BC\). The three cut-member forces (green) are drawn pulling away from the body, which assumes tension. \(A_y=13.0~\text{kN}\) upward comes from the whole-truss solution and \(A_x=0\).</div>
-
   <div class="solution-box">
-    <h3>Strategy</h3>
-    <p>Find the reactions first. Then pass section \(s\)–\(s\) through the panel between \(B\) and \(C\). It cuts exactly three members: the top chord \(FG\), the diagonal \(FC\) and the bottom chord \(BC\). Keep the left part. Three independent equations are available, and the best choice is a moment center that kills two unknowns at once:</p>
-    <ul>
-      <li>About \(C\): members \(FC\) and \(BC\) both pass through \(C\), so only \(F_{FG}\) appears.</li>
-      <li>About \(F\): members \(FG\) and \(FC\) both pass through \(F\), so only \(F_{BC}\) appears.</li>
-      <li>\(\sum F_y=0\): the two chords are horizontal, so only the diagonal enters, giving \(F_{FC}\).</li>
-    </ul>
-    <p>The remaining equation, \(\sum F_x=0\), is saved for the check. The diagonal runs from \(F(3,4)\) to \(C(6,0)\), so its direction from \(F\) is \((0.6,\,-0.8)\).</p>
-
-    <h3>Solution</h3>
-    <p><strong>Reactions.</strong> Moments about \(A\) (CCW positive), loads at \(x=3.00\), \(6.00\), \(9.00~\text{m}\):</p>
+    <h3>Method 1: equations of equilibrium</h3>
     \[
     \begin{aligned}
-    \sum M_A &= E_y(12.0) - 8.00(3.00) - 12.0(6.00) - 4.00(9.00) = 0\\
-    E_y &= \frac{24.0+72.0+36.0}{12.0} = 11.0~\text{kN (up)}.
+    \sum F_x &= A_x+5=0 \Rightarrow A_x=-5~\text{kN (5 kN left)},\\
+    \sum M_A &= B_y(6)-6(2)-8(4)-5(2)=0 \Rightarrow B_y=\tfrac{54}{6}=9~\text{kN},\\
+    \sum F_y &= A_y+9-6-8=0 \Rightarrow A_y=5~\text{kN}.
     \end{aligned}
     \]
+    <h3>Method 2: equivalent force-couple system at \(A\)</h3>
+    <p>Replace the three loads by one force and one couple at \(A\):</p>
     \[
-    \begin{aligned}
-    \sum F_y &= A_y + 11.0 - 24.0 = 0 \;\Rightarrow\; A_y = 13.0~\text{kN (up)},\\
-    \sum F_x &= A_x = 0.
-    \end{aligned}
+    \mathbf F_R=(5\,\mathbf i-14\,\mathbf j)~\text{kN},\qquad M_{R_A}=-6(2)-8(4)-5(2)=-54~\text{kN·m}.
     \]
+    <p>The supports must cancel this exactly. The pin cancels the horizontal part, so \(A_x=-5\); \(A_y+B_y=14\); only \(B_y\), acting \(6~\text{m}\) from \(A\), cancels the couple: \(6B_y=54\), so \(B_y=9\) and \(A_y=5~\text{kN}\).</p>
+    <p><strong>Why they agree.</strong> The two methods are the same three equations: horizontal \(A_x+5=0\), vertical \(A_y+B_y-14=0\), rotation \(6B_y-54=0\). The \(5~\text{kN}\) load and \(A_x\) are equal, opposite, parallel and \(2~\text{m}\) apart, so they form a \(10~\text{kN·m}\) clockwise couple that the vertical reactions must counter.</p>
+    <p><strong>Check.</strong> Moments about \(B\): \(-5(6)+6(4)+8(2)-5(2)=-30+24+16-10=0\).</p>
+  </div>
 
-    <p><strong>Section, left part.</strong> Forces on the left part: \(A_y=13.0~\text{kN}\) up at \(A\), \(8.00~\text{kN}\) down at \(B\), and the three cut forces, assumed tension. \(F_{FG}\) and \(F_{BC}\) act in the \(+x\) direction on the left part, and \(F_{FC}\) acts along \((0.6,\,-0.8)\).</p>
-
-    <p><em>Moments about \(C\)</em> \((6,\,0)\) eliminate \(F_{FC}\) and \(F_{BC}\). The top-chord force acts \(4.00~\text{m}\) above \(C\) and pulls to the right, which gives a clockwise moment for a positive (tensile) value:</p>
-    \[
-    \begin{aligned}
-    \sum M_C &= -13.0(6.00) + 8.00(3.00) - F_{FG}(4.00) = 0\\
-    -78.0 + 24.0 &= 4.00\,F_{FG} \;\Rightarrow\; F_{FG} = -13.5~\text{kN}.
-    \end{aligned}
-    \]
-
-    <p><em>Moments about \(F\)</em> \((3,\,4)\) eliminate \(F_{FG}\) and \(F_{FC}\). The \(8.00~\text{kN}\) load at \(B\) passes straight below \(F\) and has zero lever arm. The bottom-chord force acts \(4.00~\text{m}\) below \(F\), and a positive value pulls right, which gives a counterclockwise moment:</p>
-    \[
-    \begin{aligned}
-    \sum M_F &= -13.0(3.00) + 0 + F_{BC}(4.00) = 0\\
-    F_{BC} &= \frac{39.0}{4.00} = 9.75~\text{kN}.
-    \end{aligned}
-    \]
-
-    <p><em>Vertical forces.</em> Only \(A_y\), the \(8.00~\text{kN}\) load and the vertical part of \(F_{FC}\) act vertically:</p>
-    \[
-    \sum F_y = 13.0 - 8.00 - 0.8\,F_{FC} = 0 \;\Rightarrow\; F_{FC} = \frac{5.00}{0.8} = 6.25~\text{kN}.
-    \]
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{FG}=13.5~\text{kN (C)}},\qquad
-    \boxed{F_{FC}=6.25~\text{kN (T)}},\qquad
-    \boxed{F_{BC}=9.75~\text{kN (T)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=0\), \(A_y=13.0~\text{kN}\) (up), \(E_y=11.0~\text{kN}\) (up).</p></div>
-
-    <h3>Sanity check</h3>
-    <p><strong>Horizontal balance (unused equation).</strong> On the left part,</p>
-    \[
-    \sum F_x = F_{FG} + F_{BC} + 0.6\,F_{FC} = -13.5 + 9.75 + 3.75 = 0.
-    \]
-    <p><strong>Right-hand part.</strong> Take moments about \(C\) for the part to the right of the section, which contains \(C\), \(D\), \(E\), \(G\), \(H\). The cut forces of \(FC\) and \(BC\) pass through \(C\), and the \(12.0~\text{kN}\) load at \(C\) has zero lever arm. The top-chord cut force on this part points left when \(F_{FG}\) is a tension, so it acts \(4.00~\text{m}\) above \(C\) and pulls to the left, which is a counterclockwise moment of \(+4.00\,F_{FG}\):</p>
-    \[
-    \sum M_C = 11.0(6.00) - 4.00(3.00) + 4.00\,F_{FG} = 66.0 - 12.0 + 4.00\,F_{FG} = 0 \;\Rightarrow\; F_{FG} = -13.5~\text{kN},
-    \]
-    <p>the same compressive value found from the left part. The pattern is physical: the top chord is squeezed and the bottom chord is stretched, as in a beam bending under downward loads, and the diagonal in the left panel is in tension, as expected for a Pratt truss.</p>
+  <div class="answerbox">
+    \[ \boxed{A_x=5~\text{kN}\ (\leftarrow),\quad A_y=5~\text{kN}\ (\uparrow),\quad B_y=9~\text{kN}\ (\uparrow)} \]
   </div>
 </section>
 
 <!-- ======================= EXAMPLE 5 ======================= -->
 <section id="ex5">
-  <h2>5. Method of sections for a member far from the supports</h2>
-  <p class="level">Level: hard. Chapter 6. Target confusion: believing you must work in from the supports. A member in the middle of a long truss needs one cut and one equation, because the cut can be placed right next to it.</p>
+  <h2>5. Frame with a pulley: force at C</h2>
+  <p class="level"><strong>Source:</strong> MECH 223 F2022, Homework 10, Q1, compared with the instructor key <code>22_FA_MECH223_HW10_Sol</code>. Frames, multi-member equilibrium.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A Pratt truss has six equal panels, each \(1.80~\text{m}\) wide. The bottom joints \(A\), \(B\), \(C\), \(D\), \(E\), \(F\), \(G\) lie on a horizontal line. The top joints \(H\), \(I\), \(J\), \(K\), \(L\) lie \(2.40~\text{m}\) directly above \(B\), \(C\), \(D\), \(E\), \(F\). The members are the bottom chord \(AB\), \(BC\), \(CD\), \(DE\), \(EF\), \(FG\), the top chord \(HI\), \(IJ\), \(JK\), \(KL\), the end posts \(AH\) and \(GL\), the verticals \(BH\), \(CI\), \(DJ\), \(EK\), \(FL\), and the diagonals \(HC\), \(ID\), \(KD\), \(LE\). A pin supports \(A\) and a roller supports \(G\) (vertical reaction). Downward loads act on the bottom joints: \(2.00~\text{kN}\) at \(B\), \(9.00~\text{kN}\) at \(C\), \(11.0~\text{kN}\) at \(D\), \(4.00~\text{kN}\) at \(E\) and \(3.00~\text{kN}\) at \(F\).</p>
-    <p><strong>Find:</strong> the reactions, then the force in the single diagonal \(ID\), using one section and one equation. State T or C. Also state how many joints you would have had to solve to reach \(ID\) without a section.</p>
+    <p>Find the horizontal and vertical components of the force at \(C\) that member \(ABC\) exerts on member \(CEF\). The frame is pinned at \(A\) and on a roller at \(F\). Pins \(B\), \(C\), \(E\) join members \(ABC\), \(BED\), \(CEF\). A pulley of radius \(1~\text{ft}\) sits on pin \(D\) at the end of \(BED\). A cable runs from a ring on \(CEF\), horizontally to the top of the pulley, around it, and down, with \(300~\text{lb}\) tension on the hanging side.</p>
+    <p>Coordinates (ft), origin at \(A\): \(A(0,0)\), \(B(3,4)\), \(C(6,8)\), \(E(6,4)\), \(F(6,0)\), \(D(9,4)\); the ring is on \(CEF\) at \((6,5)\).</p>
   </div>
-
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Six-panel Pratt truss with a pin at \(A\) and a roller at \(G\). Loads in kN act downward at \(B\) to \(F\). The orange dashed line marks section \(s\)–\(s\), which lies in the panel between \(C\) and \(D\) and passes through only \(IJ\), \(ID\) and \(CD\). The diagonal \(ID\) is three panels from \(A\) and is the member to find.</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams (see PDF for drawing).</span> Left: whole-truss free-body diagram with the unknown reactions \(A_x\), \(A_y\), \(G_y\) as blue dashed arrows. Right: the part of the truss to the left of section \(s\)–\(s\). It contains \(A\), \(B\), \(C\), \(H\), \(I\) and the members between them, plus the cut ends of \(IJ\), \(ID\) and \(CD\). The three cut-member forces (green) are drawn pulling away from the body, which assumes tension. \(A_y=15.0~\text{kN}\) upward comes from the whole-truss solution.</div>
 
   <div class="solution-box">
     <h3>Strategy</h3>
-    <p>Find the reactions first. Then place section \(s\)–\(s\) in the panel between \(C\) and \(D\), directly beside the diagonal \(ID\). A vertical line there crosses exactly three members: the top chord \(IJ\), the diagonal \(ID\) and the bottom chord \(CD\). Keep the left part; it has only \(A_y\) and two loads on it.</p>
-    <p>Both chords are horizontal, so neither contributes to a vertical force balance. That leaves one unknown in one equation:</p>
-    <ul>
-      <li>\(\sum F_y=0\) on the left part involves only \(A_y\), the loads at \(B\) and \(C\), and the vertical component of \(F_{ID}\).</li>
-    </ul>
-    <p>The diagonal runs from \(I(3.60,\,2.40)\) to \(D(5.40,\,0)\) in metres measured from \(A\), so its length is \(\sqrt{1.80^2+2.40^2}=3.00~\text{m}\) and its direction from \(I\) is \((0.6,\,-0.8)\).</p>
-    <p><strong>What the joint method would cost.</strong> Without the section, a joint must have at most two unknown members. Starting from the pin end, the order is \(A\), \(B\), \(H\), \(C\), \(I\). That is <strong>five joint free-body diagrams</strong>, up to ten equations, and any arithmetic slip in joint \(A\) is carried through all the rest. Starting from the roller end is worse: \(G\), \(F\), \(L\), \(E\), \(K\), \(J\), \(D\), which is <strong>seven joints</strong>. The section replaces all of this with a single equation.</p>
-
+    <p>Three members and three pins give nine equations in nine unknowns (two components at each of \(A,B,C,E\), plus \(F_y\)). The cable pulls the pulley with \(300~\text{lb}\) along each segment leaving it, so pin \(D\) carries \(300~\text{lb}\) left and \(300~\text{lb}\) down. The same cable also pulls the <em>ring</em> on \(CEF\) with \(300~\text{lb}\) to the right. That load is easy to miss and is required for \(E_x\).</p>
     <h3>Solution</h3>
-    <p><strong>Reactions.</strong> Moments about \(A\) (CCW positive), loads at \(x=1.80\), \(3.60\), \(5.40\), \(7.20\), \(9.00~\text{m}\) and the roller at \(x=10.8~\text{m}\):</p>
+    <p><strong>Member \(BED\)</strong> (loads at \(D\): \(300\) left, \(300\) down).</p>
     \[
     \begin{aligned}
-    \sum M_A &= G_y(10.8) - 2.00(1.80) - 9.00(3.60) - 11.0(5.40) - 4.00(7.20) - 3.00(9.00) = 0\\
-    G_y &= \frac{3.60+32.4+59.4+28.8+27.0}{10.8} = \frac{151.2}{10.8} = 14.0~\text{kN (up)}.
+    \sum M_B &= E_y(3)-300(6)=0 \Rightarrow E_y=600~\text{lb},\\
+    \sum F_y &= B_y+600-300=0 \Rightarrow B_y=-300~\text{lb (300 lb down at B)},\\
+    \sum F_x &= B_x+E_x-300=0. \quad (1)
     \end{aligned}
     \]
+    <p><strong>Member \(CEF\)</strong> (at \(E\): \(-E_x\), \(-600\) from \(BED\); \(300~\text{lb}\) right at the ring). Moments about \(C\) remove \(C_x\), \(C_y\) and the vertical forces on \(x=6\):</p>
     \[
-    \begin{aligned}
-    \sum F_y &= A_y + 14.0 - 29.0 = 0 \;\Rightarrow\; A_y = 15.0~\text{kN (up)},\\
-    \sum F_x &= A_x = 0.
-    \end{aligned}
+    \sum M_C=300(3)-E_x(4)=0\Rightarrow E_x=225~\text{lb},\qquad \sum F_x=C_x-225+300=0\Rightarrow C_x=-75~\text{lb}.
     \]
+    <p>From (1): \(B_x=300-225=75~\text{lb}\).</p>
+    <p><strong>Member \(ABC\)</strong> (at \(B\): \((-75,+300)\); at \(C\): \((+75,-C_y)\)). Moments about \(A\):</p>
+    \[
+    3(300)-4(-75)+6(-C_y)-8(75)=0\Rightarrow 900+300-6C_y-600=0\Rightarrow C_y=100~\text{lb}.
+    \]
+    <p><strong>Independent check.</strong> Whole frame, moments about \(A\), cable counted once as \(300~\text{lb}\) down at \(x=10\): \(6F_y=3000\), \(F_y=500~\text{lb}\). Member \(CEF\) vertical: \(C_y-600+F_y=0\Rightarrow C_y=100\). Member \(ABC\): \(A_y=-200~\text{lb}\), \(A_x=0\); and \(A_y+F_y=300\), equal to the hanging load.</p>
+    <p><strong>Match to the key.</strong> The typed instructor key gives \(E_y=600\), \(B_y=300\), \(E_x=225\), \(B_x=75\), \(C_x=75\), \(C_y=100~\text{lb}\). All agree.</p>
+  </div>
 
-    <p><strong>Section, left part.</strong> The forces on the left part are \(A_y=15.0~\text{kN}\) up, \(2.00~\text{kN}\) down at \(B\), \(9.00~\text{kN}\) down at \(C\), and the three cut forces, assumed tension. A tensile \(F_{ID}\) pulls the left part toward \(D\), so it acts along \((0.6,\,-0.8)\) and has a downward component \(0.8\,F_{ID}\). The two chord forces are horizontal and drop out:</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 15.0 - 2.00 - 9.00 - 0.8\,F_{ID} = 0\\
-    4.00 &= 0.8\,F_{ID} \;\Rightarrow\; F_{ID} = \frac{4.00}{0.8} = 5.00~\text{kN}.
-    \end{aligned}
-    \]
-    <p>The result is positive, so the assumed tension is correct.</p>
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{ID}=5.00~\text{kN (T)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=0\), \(A_y=15.0~\text{kN}\) (up), \(G_y=14.0~\text{kN}\) (up). Reaching \(ID\) by joints alone would have taken five joints from \(A\) (seven from \(G\)); the section took one equation.</p></div>
-
-    <h3>Sanity check</h3>
-    <p><strong>Shear argument.</strong> The left part carries \(15.0~\text{kN}\) up from the support and \(11.0~\text{kN}\) down from the loads, so \(4.00~\text{kN}\) of vertical shear must cross the panel. Only the diagonal can carry vertical force there, and \(0.8\times5.00=4.00~\text{kN}\). A diagonal that slopes down toward the middle of a Pratt truss under downward loads is in tension, as found.</p>
-    <p><strong>Right-hand part.</strong> It contains \(D\), \(E\), \(F\), \(G\) and the members between them. The roller force is \(14.0~\text{kN}\) up, the loads at \(D\), \(E\), \(F\) total \(18.0~\text{kN}\) down, and a tensile \(F_{ID}\) pulls the right part toward \(I\), along \((-0.6,\,+0.8)\):</p>
-    \[
-    \sum F_y = 14.0 - 18.0 + 0.8\,F_{ID} = 0 \;\Rightarrow\; F_{ID} = 5.00~\text{kN (T)},
-    \]
-    <p>the same value from the other side.</p>
-    <p><strong>Horizontal balance (unused equation).</strong> Moments for the two chords on the left part give independent values. About \(I\) (the cut forces \(IJ\) and \(ID\) pass through \(I\); \(CD\) acts \(2.40~\text{m}\) below it):</p>
-    \[
-    \sum M_I = -15.0(3.60) + 2.00(1.80) + 2.40\,F_{CD} = 0 \;\Rightarrow\; F_{CD} = 21.0~\text{kN (T)}.
-    \]
-    <p>About \(D\) (\(CD\) and \(ID\) pass through \(D\); \(IJ\) acts \(2.40~\text{m}\) above it):</p>
-    \[
-    \sum M_D = -15.0(5.40) + 2.00(3.60) + 9.00(1.80) - 2.40\,F_{IJ} = 0 \;\Rightarrow\; F_{IJ} = -24.0~\text{kN (C)}.
-    \]
-    <p>Then, on the left part,</p>
-    \[
-    \sum F_x = F_{IJ} + F_{CD} + 0.6\,F_{ID} = -24.0 + 21.0 + 3.00 = 0,
-    \]
-    <p>which uses \(F_{ID}\) and confirms it. The pattern is again beam-like: top chord squeezed, bottom chord stretched.</p>
+  <div class="answerbox">
+    \[ \boxed{\text{ABC on CEF at C:}\quad C_x=75~\text{lb}\ (\leftarrow),\quad C_y=100~\text{lb}\ (\uparrow)} \]
   </div>
 </section>
 
 <!-- ======================= EXAMPLE 6 ======================= -->
 <section id="ex6">
-  <h2>6. Two methods, one member: sections checked by joints</h2>
-  <p class="level">Level: exam style. Chapter 6. Target confusion: choosing the method. Use a section to get a few members quickly, then use joints from a support as an independent check on one of them.</p>
+  <h2>6. Cantilever truss from a wall: all member forces and determinacy</h2>
+  <p class="level"><strong>Source:</strong> MECH 223 F2024 exam, Problem 1 (regular paper, not a makeup), file <code>Exam3-2024.pdf</code>. Independently solved; no key on file.</p>
 
   <div class="problem-box">
     <h3>Given / Find</h3>
-    <p>A Warren truss spans \(9.00~\text{m}\). The bottom joints \(A\), \(C\), \(E\), \(G\) are \(3.00~\text{m}\) apart, and the top joints \(B\), \(D\), \(F\) lie \(2.00~\text{m}\) above the bottom line at \(x=1.50\), \(4.50\), \(7.50~\text{m}\) measured from \(A\). The members are the bottom chord \(AC\), \(CE\), \(EG\), the top chord \(BD\), \(DF\), and the diagonals \(AB\), \(BC\), \(CD\), \(DE\), \(EF\), \(FG\). A pin supports \(A\) and a roller supports \(G\) (vertical reaction). The loads on the top joints are: at \(B\), \(6.00~\text{kN}\) downward and \(6.00~\text{kN}\) horizontally to the right; at \(D\), \(10.0~\text{kN}\) downward; at \(F\), \(8.00~\text{kN}\) downward.</p>
-    <p><strong>Find:</strong></p>
-    <ol>
-      <li>the reactions;</li>
-      <li>by the method of sections with one cut at \(x=3.75~\text{m}\), the forces in \(BD\), \(CD\) and \(CE\);</li>
-      <li>an independent check of \(F_{CD}\) by the method of joints, starting at the pin \(A\);</li>
-      <li>a short comparison of the two methods.</li>
-    </ol>
-    <p>State T or C for every member force.</p>
+    <p><strong>(a)</strong> Find the force in each member and state T or C. <strong>(b)</strong> Decide whether the truss is statically determinate (\(m+r=2n\)) or indeterminate (\(m+r>2n\)).</p>
+    <p>Pins at \(A\) (top) and \(E\) (bottom) on a wall, \(4~\text{m}\) apart. Top chord \(A\)–\(B\)–\(C\), \(3~\text{m}+3~\text{m}\). Loads: \(3~\text{kN}\) down at \(B\), \(2~\text{kN}\) down at \(C\). Members: \(AB, BC, BD, AD, ED, DC\).</p>
   </div>
 
-  <div class="note fig"><span class="figtag">Figure (see PDF for drawing).</span> Warren truss with a pin at \(A\) and a roller at \(G\). Loads in kN: \(6.00\) down and \(6.00\) to the right at \(B\), \(10.0\) down at \(D\), \(8.00\) down at \(F\). The orange dashed line marks section \(s\)–\(s\) at \(x=3.75~\text{m}\), which passes through only \(BD\), \(CD\) and \(CE\).</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams, whole truss and section (see PDF for drawing).</span> Left: whole-truss free-body diagram. Right: the part to the left of section \(s\)–\(s\), containing \(A\), \(B\), \(C\) and members \(AB\), \(AC\), \(BC\), plus the cut ends of \(BD\), \(CD\) and \(CE\), drawn as tension. The horizontal reaction comes out negative, so \(A_x\) acts to the left and is drawn that way (\(6.00~\text{kN}\)); \(A_y=10.0~\text{kN}\) is up.</div>
-  <div class="note fig"><span class="figtag">Free-body diagrams, joints (see PDF for drawing).</span> Joint free-body diagrams for the check by joints, in the order \(A\), \(B\), \(C\). Every member force (green) is drawn pulling away from the joint, which assumes tension. Direction cosines are \((0.6,\,0.8)\) for all diagonals. A joint equation uses the value already found at the previous joint.</div>
+  <div class="note">
+    <p><strong>Assumed coordinates.</strong> The position of \(D\) is not dimensioned on the exam. An earlier brief suggested \(D(3,0)\), directly above \(E\). That would make \(ED\) horizontal, which does not match the printed figure. The figure shows \(D\) on the straight line from \(E\) to \(C\), directly below \(B\) at mid-height, so this page assumes (m) \(E(0,0)\), \(A(0,4)\), \(B(3,4)\), \(C(6,4)\), \(D(3,2)\). All results below are for that geometry.</p>
+  </div>
 
   <div class="solution-box">
     <h3>Strategy</h3>
-    <p><strong>Method 1: sections.</strong> Find the reactions. Then cut at \(x=3.75~\text{m}\). A vertical line at that position crosses the top chord \(BD\) (\(x=1.50\) to \(4.50\)), the diagonal \(CD\) (\(x=3.00\) to \(4.50\)) and the bottom chord \(CE\) (\(x=3.00\) to \(6.00\)), and nothing else. Keep the left part, which has the support reactions and the loads at \(B\). All diagonals run \(1.50~\text{m}\) across and \(2.00~\text{m}\) up over a length of \(2.50~\text{m}\), so their direction cosines are \((0.6,\,0.8)\). Choose the three equations to give one unknown each:</p>
-    <ul>
-      <li>About \(C\): \(CE\) and \(CD\) pass through \(C\), so only \(F_{BD}\) appears.</li>
-      <li>About \(D\): \(BD\) and \(CD\) pass through \(D\), so only \(F_{CE}\) appears.</li>
-      <li>\(\sum F_y=0\): both chords are horizontal, so only \(F_{CD}\) appears.</li>
-    </ul>
-    <p>\(\sum F_x=0\) is kept as a check.</p>
-    <p><strong>Method 2: joints, to verify \(F_{CD}\).</strong> Member \(CD\) is not at the pin, so start at \(A\) (two unknowns, \(AB\) and \(AC\)), then \(B\) (with \(F_{AB}\) known, the unknowns are \(F_{BC}\) and \(F_{BD}\)), then \(C\) (with \(F_{AC}\) and \(F_{BC}\) known, the unknowns are \(F_{CD}\) and \(F_{CE}\)). Three joints reach \(CD\). This is a good check because it uses none of the section equations.</p>
-
+    <p>Joint \(C\) has only two members, so start at the loaded tip with no reactions needed. Work \(C\), \(B\), \(D\); reactions follow from joints \(E\) and \(A\). Let \(s=\sqrt{13}=3.606\); diagonals have direction \((3,2)/s\) in magnitude.</p>
     <h3>Solution</h3>
-    <p><strong>Reactions.</strong> Moments about \(A\) (CCW positive). The \(6.00~\text{kN}\) rightward load acts \(2.00~\text{m}\) above \(A\), so it gives a clockwise moment:</p>
+    <p><strong>Joint \(C\)</strong> (\(BC\) to the left; \(DC\) toward \(D\), direction \((-3,-2)/s\)).</p>
     \[
-    \begin{aligned}
-    \sum M_A &= G_y(9.00) - 6.00(1.50) - 10.0(4.50) - 8.00(7.50) - 6.00(2.00) = 0\\
-    G_y &= \frac{9.00+45.0+60.0+12.0}{9.00} = \frac{126}{9.00} = 14.0~\text{kN (up)}.
-    \end{aligned}
+    -2-\tfrac{2}{s}F_{DC}=0\Rightarrow F_{DC}=-\sqrt{13}=-3.61~\text{kN (C)},\qquad -F_{BC}-\tfrac{3}{s}F_{DC}=0\Rightarrow F_{BC}=3.00~\text{kN (T)}.
     \]
+    <p><strong>Joint \(B\)</strong> (\(BD\) straight down).</p>
     \[
-    \begin{aligned}
-    \sum F_y &= A_y + 14.0 - 6.00 - 10.0 - 8.00 = 0 \;\Rightarrow\; A_y = 10.0~\text{kN (up)},\\
-    \sum F_x &= A_x + 6.00 = 0 \;\Rightarrow\; A_x = -6.00~\text{kN}\;\text{(acts left)}.
-    \end{aligned}
+    -F_{AB}+3.00=0\Rightarrow F_{AB}=3.00~\text{kN (T)},\qquad -3-F_{BD}=0\Rightarrow F_{BD}=-3.00~\text{kN (C)}.
     \]
-
-    <p><strong>Method 1, section on the left part.</strong> Forces on the left part: \(A_x=6.00~\text{kN}\) to the left, \(A_y=10.0~\text{kN}\) up, the two loads at \(B\), and the cut forces, assumed tension. \(F_{BD}\) and \(F_{CE}\) pull to the right. \(F_{CD}\) pulls toward \(D\) along \((0.6,\,0.8)\).</p>
-
-    <p><em>Moments about \(C\)</em> \((3.00,\,0)\). Here \(A_y\) is \(3.00~\text{m}\) to the left and gives a clockwise moment. \(A_x\) acts along the line through \(C\) and gives none. At \(B\), the downward load has lever arm \(1.50~\text{m}\) to the left (counterclockwise), and the rightward load acts \(2.00~\text{m}\) above \(C\) (clockwise). The top-chord force acts \(2.00~\text{m}\) above \(C\) and pulls right, clockwise for a tensile value:</p>
+    <p><strong>Joint \(D\)</strong> (\(BD\) up, \(AD\) along \((-3,2)/s\), \(DC\) along \((3,2)/s\), \(DE\) along \((-3,-2)/s\)).</p>
     \[
-    \begin{aligned}
-    \sum M_C &= -10.0(3.00) + 6.00(1.50) - 6.00(2.00) - F_{BD}(2.00) = 0\\
-    -30.0 + 9.00 - 12.0 &= 2.00\,F_{BD} \;\Rightarrow\; F_{BD} = -16.5~\text{kN}.
-    \end{aligned}
+    F_{AD}+F_{DE}=-\sqrt{13},\qquad F_{AD}-F_{DE}=\tfrac52\sqrt{13}
+    \;\Rightarrow\;
+    F_{AD}=\tfrac34\sqrt{13}=2.70~\text{kN (T)},\quad F_{DE}=-\tfrac74\sqrt{13}=-6.31~\text{kN (C)}.
     \]
-
-    <p><em>Moments about \(D\)</em> \((4.50,\,2.00)\). \(A\) is \(4.50~\text{m}\) left of and \(2.00~\text{m}\) below \(D\). \(A_y\) gives a clockwise moment \(-10.0(4.50)\). \(A_x\) points left at a point below \(D\), which is also clockwise: \(-6.00(2.00)\). The downward load at \(B\) is \(3.00~\text{m}\) to the left of \(D\) (counterclockwise) and the rightward load acts along the line through \(D\) (no moment). The bottom-chord force acts \(2.00~\text{m}\) below \(D\) and pulls right, counterclockwise for a tensile value:</p>
-    \[
-    \begin{aligned}
-    \sum M_D &= -10.0(4.50) - 6.00(2.00) + 6.00(3.00) + F_{CE}(2.00) = 0\\
-    -45.0 - 12.0 + 18.0 &= -2.00\,F_{CE} \;\Rightarrow\; F_{CE} = +19.5~\text{kN}.
-    \end{aligned}
-    \]
-
-    <p><em>Vertical forces.</em> Only \(A_y\), the downward load at \(B\) and the vertical part of \(F_{CD}\) act vertically:</p>
-    \[
-    \sum F_y = 10.0 - 6.00 + 0.8\,F_{CD} = 0 \;\Rightarrow\; F_{CD} = -\frac{4.00}{0.8} = -5.00~\text{kN}.
-    \]
-
-    <p><strong>Method 2, joints (check of \(F_{CD}\)).</strong></p>
-
-    <p><em>Joint \(A\).</em> The member \(AB\) leaves along \((0.6,\,0.8)\) and \(AC\) along \((1,\,0)\):</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 10.0 + 0.8\,F_{AB} = 0 \;\Rightarrow\; F_{AB} = -12.5~\text{kN},\\
-    \sum F_x &= -6.00 + 0.6\,F_{AB} + F_{AC} = 0 \;\Rightarrow\; F_{AC} = 6.00 + 7.50 = 13.5~\text{kN}.
-    \end{aligned}
-    \]
-
-    <p><em>Joint \(B\).</em> Directions leaving \(B\): \(BA\) along \((-0.6,\,-0.8)\), \(BC\) along \((0.6,\,-0.8)\), \(BD\) along \((1,\,0)\). The loads are \(6.00~\text{kN}\) down and \(6.00~\text{kN}\) to the right:</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= -0.8\,F_{AB} - 0.8\,F_{BC} - 6.00 = 10.0 - 0.8\,F_{BC} - 6.00 = 0 \;\Rightarrow\; F_{BC} = 5.00~\text{kN},\\
-    \sum F_x &= -0.6\,F_{AB} + 0.6\,F_{BC} + F_{BD} + 6.00 = 7.50 + 3.00 + 6.00 + F_{BD} = 0 \;\Rightarrow\; F_{BD} = -16.5~\text{kN}.
-    \end{aligned}
-    \]
-
-    <p><em>Joint \(C\)</em> (no external load). Directions leaving \(C\): \(CA\) along \((-1,\,0)\), \(CB\) along \((-0.6,\,0.8)\), \(CD\) along \((0.6,\,0.8)\), \(CE\) along \((1,\,0)\):</p>
-    \[
-    \begin{aligned}
-    \sum F_y &= 0.8\,F_{BC} + 0.8\,F_{CD} = 0 \;\Rightarrow\; F_{CD} = -F_{BC} = -5.00~\text{kN},\\
-    \sum F_x &= -F_{AC} - 0.6\,F_{BC} + 0.6\,F_{CD} + F_{CE} = -13.5 - 3.00 - 3.00 + F_{CE} = 0 \;\Rightarrow\; F_{CE} = 19.5~\text{kN}.
-    \end{aligned}
-    \]
-
-    <h3>Answer</h3>
-    <div class="answerbox">\[
-    \boxed{F_{BD}=16.5~\text{kN (C)}},\qquad
-    \boxed{F_{CD}=5.00~\text{kN (C)}},\qquad
-    \boxed{F_{CE}=19.5~\text{kN (T)}}
-    \]
-    <p style="margin-bottom:0.2rem;">Reactions: \(A_x=6.00~\text{kN}\) (left), \(A_y=10.0~\text{kN}\) (up), \(G_y=14.0~\text{kN}\) (up). The method of joints gives \(F_{CD}=5.00~\text{kN (C)}\) independently, so the two methods agree.</p></div>
-
-    <h3>Sanity check</h3>
-    <p><strong>The two methods agree.</strong> Joints give \(F_{CD}=-5.00~\text{kN}\), the same as the section. As a bonus, the joint walk also returns \(F_{BD}=-16.5~\text{kN}\) (at \(B\)) and \(F_{CE}=+19.5~\text{kN}\) (at \(C\)), matching the other two section results. Three values matching from different equation sets is strong evidence that the reactions and the geometry are right.</p>
-    <p><strong>Horizontal balance (unused section equation).</strong> On the left part,</p>
-    \[
-    \sum F_x = -6.00 + 6.00 + F_{BD} + F_{CE} + 0.6\,F_{CD} = 0 + (-16.5) + 19.5 - 3.00 = 0.
-    \]
-    <p><strong>Physical sense.</strong> The top chord is squeezed and the bottom chord is stretched, as in a beam in bending. The diagonal \(CD\) is in compression. The left part has a net \(10.0-6.00=4.00~\text{kN}\) upward from the supports and the load at \(B\), so the cut diagonal must supply a downward component on it. A diagonal that rises to the right from the cut can only do that by pushing, which is compression. (In the previous example the diagonal sloped down to the right and was in tension.)</p>
-
-    <p><strong>Comparison of the methods.</strong></p>
+    <p><strong>Reactions.</strong> \(ED\) in compression pushes \(E\) with \((-5.25,-3.50)\), so \(E_x=5.25~\text{kN}\) (right), \(E_y=3.50~\text{kN}\) (up). At \(A\), \(AB\) (T) pulls with \((+3.00,0)\) and \(AD\) (T) with \((+2.25,-1.50)\), so \(A_x=5.25~\text{kN}\) (left), \(A_y=1.50~\text{kN}\) (up).</p>
     <table>
-      <caption style="display:none">Sections versus joints</caption>
-      <thead><tr><th scope="col"></th><th scope="col">Sections</th><th scope="col">Joints</th></tr></thead>
+      <caption style="display:none">Example 6 member forces</caption>
+      <thead><tr><th scope="col">Member</th><th scope="col">Force (kN)</th><th scope="col">Type</th></tr></thead>
       <tbody>
-        <tr><td>Work here</td><td>3 equations, 3 members</td><td>6 equations, 3 joints, 6 members</td></tr>
-        <tr><td>Best when</td><td>only a few members are needed, especially far from the supports</td><td>every member is needed, or the member sits next to a support</td></tr>
-        <tr><td>Main risk</td><td>a bad cut (more than three unknowns) or a wrong moment arm</td><td>an early slip propagates to every later joint</td></tr>
-        <tr><td>Strength</td><td>the answer does not depend on the other members</td><td>systematic, a joint can be checked by closing its force polygon</td></tr>
+        <tr><td>\(AB\)</td><td>3.00</td><td>T</td></tr>
+        <tr><td>\(BC\)</td><td>3.00</td><td>T</td></tr>
+        <tr><td>\(BD\)</td><td>3.00</td><td>C</td></tr>
+        <tr><td>\(AD\)</td><td>2.70 (\(\tfrac34\sqrt{13}\))</td><td>T</td></tr>
+        <tr><td>\(DC\)</td><td>3.61 (\(\sqrt{13}\))</td><td>C</td></tr>
+        <tr><td>\(DE\)</td><td>6.31 (\(\tfrac74\sqrt{13}\))</td><td>C</td></tr>
       </tbody>
     </table>
-    <p>Use a section when the target is a handful of members deep in the truss. Use joints when you need the whole set of member forces or the target is within two or three joints of a support. On an exam, getting a member by one method and confirming it by the other, as here, is the cleanest way to catch a reaction or sign error.</p>
+    <h3>Part (b): determinacy</h3>
+    <p>\(m=6\) members, \(r=4\) reaction components (two pins), \(n=5\) joints:</p>
+    \[ m+r=10=2n=10\;\Rightarrow\;\text{statically determinate}. \]
+    <p>The ten joint equations were independent (no leftover equations or unknowns), so the truss is also stable.</p>
+    <p><strong>Check.</strong> Moments about \(A\): \(E_x\) at \(4~\text{m}\) below \(A\) gives \(+21~\text{kN·m}\); the loads give \(-3(3)-2(6)=-21\). Sum \(=0\). Vertical: \(1.50+3.50=5.00=3+2\). A full solve of the ten joint equations agrees.</p>
+    <p><strong>Citation note.</strong> The file is named <code>Exam3-2024.pdf</code> but its printed header reads “Exam 4 (Date: Dec 5, 2024)”. Confirm the exam number before citing publicly. The only solution PDF in that folder is dated Dec 8, 2025 and covers a different problem, so it is not a key for this truss.</p>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{A_x=5.25~\text{kN}\ (\leftarrow),\ A_y=1.50~\text{kN}\ (\uparrow),\ E_x=5.25~\text{kN}\ (\rightarrow),\ E_y=3.50~\text{kN}\ (\uparrow);\quad m+r=2n} \]
   </div>
 </section>
 
-  <div class="download-box">
-    📥 <a href="./MECH223_Solved_Examples_Ch6.pdf" download>Download the PDF version (with all figures)</a>
-  </div>
-
-  <p class="footer">Staged for Canvas after instructor approval. Independent numerical check: 20/20 passed 2026-11-05.</p>
+  <p class="footer">Rebuilt 2026-11-05. Verification passed. PR unmerged.</p>
 
 </article>
 
