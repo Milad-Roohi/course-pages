@@ -1,285 +1,464 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta name="robots" content="noindex, nofollow">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MECH 223 · Solved Examples Ch 3–4 (from assigned HW)</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
-<style>
-  :root {
-    --ink: #1a1a1a;
-    --muted: #444;
-    --rule: #b31b1b;
-    --paper: #fbfaf4;
-    --panel: #f4f1e8;
-    --line: #d8d2c4;
-  }
-  * { box-sizing: border-box; }
-  html { font-size: 18px; scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
-      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
-    line-height: 1.62;
-    font-kerning: normal;
-    text-rendering: optimizeLegibility;
-  }
-  .article { max-width: 46rem; margin: 0 auto; padding: 2.2rem 1.4rem 3.5rem; }
-  .kicker {
-    font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
-    color: var(--rule); margin: 0 0 0.35rem;
-  }
-  h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.25; margin: 0 0 0.4rem; }
-  .subtitle { color: var(--muted); font-style: italic; margin: 0 0 1.1rem; }
-  hr.top { border: 0; border-top: 2.2px solid var(--rule); margin: 0 0 1.25rem; }
-  h2 {
-    font-size: 1.18rem; font-weight: 700; margin: 2.4rem 0 0.55rem;
-    padding-bottom: 0.18rem; border-bottom: 0.6px solid var(--line);
-  }
-  h3 { font-size: 1.02rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
-  p, li { margin: 0 0 0.72rem; }
-  ol, ul { padding-left: 1.35rem; }
-  .level { color: var(--muted); font-style: italic; margin-top: -0.2rem; }
-  .problem-box {
-    background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--rule);
-    padding: 1rem 1.2rem; margin: 1rem 0 1.5rem;
-  }
-  .solution-box {
-    background: var(--panel); border: 1px solid var(--line);
-    padding: 1rem 1.2rem; margin: 1rem 0 1.5rem;
-  }
-  .notice {
-    background: #fff4e5; border: 1px solid #e0b36a; border-left: 4px solid #b36b00;
-    padding: 0.8rem 1.1rem; margin: 1.2rem 0; font-size: 0.97rem;
-  }
-  .flag { color: #8a1c1c; }
-  .download-box {
-    background: #e8f4f8; border: 1px solid #b3d9e8; border-radius: 4px;
-    padding: 1rem 1.2rem; margin: 1.5rem 0; text-align: center;
-  }
-  .download-box a { color: #0B3D91; font-weight: 700; text-decoration: none; }
-  .download-box a:hover { text-decoration: underline; }
-  .note {
-    background: #fff; border: 1px dashed var(--line); border-radius: 3px;
-    padding: 0.7rem 1rem; margin: 0.8rem 0 1rem; font-size: 0.93rem; color: var(--muted);
-  }
-  .note .note-label { color: var(--rule); font-weight: 700; font-size: 0.82rem;
-    text-transform: uppercase; letter-spacing: 0.03em; }
-  .answer-box {
-    background: #fff; border: 1px solid var(--rule); border-radius: 3px;
-    padding: 0.7rem 1.1rem; margin: 0.8rem 0 1rem;
-  }
-  .sanity { border-top: 0.6px solid var(--line); margin-top: 1rem; padding-top: 0.6rem; }
-  .toc { background: var(--panel); border: 1px solid var(--line); padding: 0.8rem 1.2rem 0.3rem; margin: 1.2rem 0; }
-  .toc ol { margin: 0.2rem 0 0.4rem; }
-  .toc li { margin: 0 0 0.25rem; }
-  .toc a { color: #0B3D91; text-decoration: none; }
-  .toc a:hover { text-decoration: underline; }
-  .katex { font-size: 1.05em; }
-  .katex-display { margin: 0.8em 0; overflow-x: auto; overflow-y: hidden; }
-  strong { font-weight: 700; }
-  .step-label { color: var(--rule); font-weight: 700; }
-  table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1rem; font-size: 0.92rem; background: #fff; }
-  th, td { border: 0.6px solid var(--line); padding: 0.42rem 0.55rem; text-align: left; vertical-align: top; }
-  th { background: var(--panel); font-weight: 700; }
-  .footer-note { font-size: 0.88rem; color: var(--muted); border-top: 0.6px solid var(--line); margin-top: 2.5rem; padding-top: 0.8rem; }
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  renderMathInElement(document.body, {
-    delimiters: [
-      {left: "$$", right: "$$", display: true},
-      {left: "$", right: "$", display: false}
-    ],
-    throwOnError: false
-  });
-});
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.13" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Engineering Statics: Chapters 3-4 Solved Examples</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
-
-<div class="article">
-
-<div class="kicker">MECH 223 · Engineering Statics</div>
-<h1>MECH 223 · Solved Examples Ch 3–4 (from assigned HW)</h1>
-<p class="subtitle">Fall 2026 · 8 worked examples drawn from assigned homework</p>
-<hr class="top">
-
-<div class="notice">
-  <strong>Important.</strong> The full tagged PDF, with the source figure crops, is <strong>Canvas-only</strong> (Drive path). This public page has <strong>text solutions and source citations only</strong>. It contains no homework figure images (copyright caution), so sketch each problem yourself from the description before reading the solution.
-</div>
-
-<p><strong>How to use these.</strong> Read only <em>Problem</em>, sketch it, and try it. Then compare with the Strategy and Solution. Every example is an assigned course problem, and every answer matches the posted key (HW5_S, GHW5_S, Solution-HW6). Where a key has a typo or ambiguity, it is flagged.</p>
-<p><strong>Conventions.</strong> Counterclockwise (CCW) moments are positive in 2D unless stated; $\vec M = \vec r \times \vec F$.</p>
-
-<div class="toc">
-<strong>Examples</strong>
-<ol>
-  <li><a href="#ex1">Minimum distance for a required moment</a> (HW5 Q1)</li>
-  <li><a href="#ex2">Moments of a crate's weight about a bottom point</a> (HW5 Q2)</li>
-  <li><a href="#ex3">Collars on perpendicular rods joined by a wire</a> (HW5 Q3)</li>
-  <li><a href="#ex4">Bent plate: equivalent force–couple system</a> (GHW5 Q1)</li>
-  <li><a href="#ex5">Two couples replaced by one</a> (GHW5 Q2)</li>
-  <li><a href="#ex6">Moment of a slanted force about the base of a boom</a> (HW6 Q1)</li>
-  <li><a href="#ex7">Reactions on a beam welded to an L-shaped member</a> (HW6 Q2)</li>
-  <li><a href="#ex8">Reactions on member ABC with roller, hinge, and pulley loads</a> (HW6 Q3)</li>
-</ol>
-</div>
-
-<h2 id="ex1">Example 1 · Minimum Distance for a Required Moment</h2>
-<p><span class="step-label">Source:</span> Individual Homework 5, Q1 (Canvas 20760; key HW5_S). Ch. 3, moment of a force about a point.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> A force with a moment of $840\ \text{N·m}$ about D is required to straighten the fence post CD. The capacity of winch puller AB is $2100\ \text{N}$. Determine the minimum distance $d$ that creates the specified moment about D.</p>
-<p>(Figure described in words: D is at the origin on the ground; the post top C is at $(0.25,\,0.90)\ \text{m}$; the cable runs from C down to ground point E at $x=-d$.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> The moment about D is the tension times the perpendicular distance $p$ from D to the cable line. Express $p$ in terms of $d$ with a cross product, set $M_D=840\ \text{N·m}$ at the maximum tension, and solve. A larger $d$ gives a larger lever arm, so the equality gives the minimum $d$.</p>
-<p><span class="step-label">Key equations.</span></p>
-$$p=\frac{0.90\,d}{\sqrt{(d+0.25)^2+0.90^2}},\qquad M_D=T\,p=2100\,\frac{0.90\,d}{\sqrt{(d+0.25)^2+0.90^2}}$$
-$$0.16\left[(d+0.25)^2+0.90^2\right]=0.81\,d^2\;\Longrightarrow\;0.65\,d^2-0.08\,d-0.1396=0$$
-<div class="answer-box">$$\boxed{d=0.529\ \text{m}}$$</div>
-<p class="sanity"><strong>Check.</strong> With $d=0.529$: $\sqrt{0.779^2+0.81}\approx1.19$, so $p\approx0.40\ \text{m}$ and $M_D\approx 2100(0.40)=840\ \text{N·m}$.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches HW5_S: $d=0.529\ \text{m}$ (same quadratic, positive root).</div>
-
-<h2 id="ex2">Example 2 · Moments of a Crate's Weight About a Bottom Point</h2>
-<p><span class="step-label">Source:</span> Individual Homework 5, Q2 (Canvas 20760; key HW5_S). Ch. 3, moment of a force and smallest force for a given moment.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> A crate of mass $60\ \text{kg}$ is held in position. It is $1.4\ \text{m}$ wide and $0.6\ \text{m}$ tall. Point E is on the bottom edge, $1.0\ \text{m}$ from the right end D. Determine (a) the moment of the weight $W$ ($g=9.81\ \text{m/s}^2$) about E; (b) the smallest force at A that creates a moment of equal magnitude and opposite sense about E; (c) the magnitude, sense, and point of application on the bottom of the crate of the smallest vertical force that does the same.</p>
-<p>(Figure described in words: A is the top-left corner, B the top-right, D the bottom-right; the center of gravity is at mid-width.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> $W$ acts at mid-width, so its moment about E is $W$ times the horizontal distance to E. For (b), a force of fixed moment is smallest when its lever arm is largest, so push perpendicular to line EA. For (c), a vertical force's lever arm is its horizontal distance from E, so apply it as far from E as possible, at D.</p>
-<p><span class="step-label">Key equations.</span></p>
-$$W=60(9.81)=588.6\ \text{N},\qquad d_e=0.7-0.4=0.3\ \text{m},\qquad M_E=W\,d_e$$
-$$\vec r_{EA}=(-0.4,\,0.6)\ \text{m},\quad |\vec r_{EA}|=\sqrt{0.52}=0.7211\ \text{m},\qquad F_{\min}=\frac{M_E}{|\vec r_{EA}|},\qquad F_v=\frac{M_E}{1.0}$$
-<div class="answer-box">
-$$\text{(a)}\ \boxed{M_E=176.58\ \text{N·m, clockwise}}$$
-$$\text{(b)}\ \boxed{F_{\min}=244.9\ \text{N at A, perpendicular to EA, down and to the left}}$$
-$$\text{(c)}\ \boxed{F_v=176.58\ \text{N upward, applied at D}}$$
-</div>
-<p class="sanity"><strong>Check.</strong> $244.9(0.7211)\approx176.6$ and $176.58(1.0)=176.58$, both CCW about E. (b) exceeds (c) because its lever arm is shorter.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches HW5_S for all three parts. <span class="flag">Flag:</span> the key's text rounds $|\vec r_{EA}|$ to $0.72\ \text{m}$; the printed $244.9\ \text{N}$ uses the unrounded $0.7211\ \text{m}$ (dividing by exactly $0.72$ gives $245.3\ \text{N}$).</div>
-
-<h2 id="ex3">Example 3 · Collars on Perpendicular Rods Joined by a Wire</h2>
-<p><span class="step-label">Source:</span> Individual Homework 5, Q3 (Canvas 20760; key HW5_S). Ch. 3–4, 3D equilibrium of a particle on a smooth guide.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> Collars A and B are connected by a $25\ \text{in}$ wire and slide freely on frictionless rods. A $90\ \text{lb}$ force $Q$ is applied to collar B. Determine (a) the tension in the wire when $x=12\ \text{in}$, and (b) the force $P$ needed for equilibrium. The vertical distance between the rods is $20\ \text{in}$.</p>
-<p>(Figure described in words: B slides on a vertical rod along $z$ and carries $Q$ upward; A slides on a horizontal rod parallel to $x$ and carries $P$ along that rod.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> Use the wire-length constraint to find the height $z$ of B. Each smooth rod can only push perpendicular to itself, so along each rod only the wire component and the applied force matter. Balance B along its rod for $T$, then A along its rod for $P$.</p>
-<p><span class="step-label">Key equations.</span> With $A=(x,20,0)$ and $B=(0,0,z)$:</p>
-$$L^2=x^2+20^2+z^2\;\Rightarrow\;z=\sqrt{25^2-12^2-20^2}=9\ \text{in}$$
-$$\text{B: } Q-T\frac{z}{L}=0\;\Rightarrow\;T=\frac{QL}{z}=\frac{90(25)}{9},\qquad \text{A: } P-T\frac{x}{L}=0\;\Rightarrow\;P=250\cdot\frac{12}{25}$$
-<div class="answer-box">$$\boxed{T=250\ \text{lb}}\qquad\boxed{P=120\ \text{lb}}$$</div>
-<p class="sanity"><strong>Check.</strong> Direction ratios $(12,20,9)/25$ satisfy $12^2+20^2+9^2=625=25^2$. $T_z=250(9/25)=90\ \text{lb}=Q$ and $T_x=250(12/25)=120\ \text{lb}=P$.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches HW5_S: $T=250\ \text{lb}$, $P=120\ \text{lb}$.</div>
-
-<h2 id="ex4">Example 4 · Bent Plate: Equivalent Force–Couple System</h2>
-<p><span class="step-label">Source:</span> Group Homework 5, Q1 (Canvas 20760; key GHW5_S). Ch. 3, equivalent force–couple systems in 3D.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> A bent plate has a vertical part in the y-z plane (height $120\ \text{mm}$, width $60\ \text{mm}$) and a horizontal part in the x-y plane extending a distance $L$ along $+x$ from the junction C. Corner B is at the top of the vertical part; corner E is at the free end of the horizontal part. A force $\vec F_1=(50,\,80,\,F_z)\ \text{N}$ and a couple $\vec M_1=(M_x,\,20,\,-10)\ \text{N·m}$ act at E. The system is replaced by an equivalent force–couple system $(\vec F_2,\vec M_2)$ at B, with $(M_2)_z=0$, $(M_2)_y=1.5\ \text{N·m}$, $(M_2)_x=-8\ \text{N·m}$. Determine (a) $L$, (b) $F_z$ and $M_x$, (c) $\vec F_2$ and $\vec M_2$.</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> Moving the system from E to B leaves the force unchanged and adds the moment of $\vec F_1$ about B. The three given components of $\vec M_2$ give three scalar equations for $L$, $F_z$, $M_x$, solved in the order $z$, $y$, $x$.</p>
-<p><span class="step-label">Key equations.</span> Following the key's coordinates, $B=(0,0.12,0)$ and $E=(L,0,0)$ m, so $\vec r_{BE}=(L,-0.12,0)$ m.</p>
-$$\vec M_2=\vec M_1+\vec r_{BE}\times\vec F_1=\bigl(M_x-0.12F_z,\;20-LF_z,\;-10+80L+6\bigr)\ \text{N·m}$$
-$$(M_2)_z=0:\ 80L-4=0\Rightarrow L=0.05\ \text{m};\qquad (M_2)_y=1.5:\ F_z=\frac{18.5}{0.05}=370\ \text{N};\qquad (M_2)_x=-8:\ M_x=-8+0.12(370)$$
-<div class="answer-box">
-$$\boxed{L=50\ \text{mm}}\qquad\boxed{F_z=370\ \text{N}}\qquad\boxed{M_x=36.4\ \text{N·m}}$$
-$$\boxed{\vec F_2=(50,\,80,\,370)\ \text{N}}\qquad\boxed{\vec M_2=(-8,\,1.5,\,0)\ \text{N·m}}$$
-</div>
-<p class="sanity"><strong>Check.</strong> $-10+80(0.05)+6=0$; $20-0.05(370)=1.5$; $36.4-0.12(370)=-8$.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches GHW5_S for every result. <span class="flag">Flag (geometry):</span> the problem text and figure put the $120\ \text{mm}$ height along $z$, but GHW5_S places B at $(0,0.12,0)$. The numbers above follow the key; with B at $(0,0,0.12)$ the cross product would change. Clarify before reuse.</div>
-
-<h2 id="ex5">Example 5 · Two Couples Replaced by One Equivalent Couple</h2>
-<p><span class="step-label">Source:</span> Group Homework 5, Q2 (Canvas 20760; key GHW5_S). Ch. 3, couple moments in 3D.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> Couple 1: two $80\ \text{N}$ forces along $z$, $+z$ at $A(0.1,\,0.2,\,0.3)$ m and $-z$ at $B(0.1,\,-0.2,\,0.3)$ m. Couple 2: two $60\ \text{N}$ forces along $x$, $+x$ at $C(-0.2,\,0.1,\,0)$ m and $-x$ at $D(0.2,\,0.1,\,0.2)$ m. Replace them with a single equivalent couple; find its magnitude and the unit vector along its axis. (Given by coordinates only; no figure.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> Compute each couple as $\vec M=\vec r\times\vec F$, with $\vec r$ running from the $-\vec F$ point to the $+\vec F$ point. Couple moments are free vectors, so add them and normalize.</p>
-<p><span class="step-label">Key equations.</span></p>
-$$\vec M_1=(0,\,0.4,\,0)\times(0,0,80)=(32,0,0),\qquad \vec M_2=(-0.4,\,0,\,-0.2)\times(60,0,0)=(0,-12,0)\ \text{N·m}$$
-$$\vec M=(32,-12,0)\ \text{N·m},\qquad |\vec M|=\sqrt{32^2+12^2},\qquad \hat u=\frac{\vec M}{|\vec M|}$$
-<div class="answer-box">$$\boxed{\vec M=(32,\,-12,\,0)\ \text{N·m},\quad |\vec M|=34.18\ \text{N·m},\quad \hat u=(0.936,\,-0.351,\,0)}$$</div>
-<p class="sanity"><strong>Check.</strong> $0.936^2+0.351^2\approx1$. Couple 1 alone is $80(0.4)=32$; couple 2 alone is $60(0.2)=12$ (only the $0.2\ \text{m}$ z-offset is perpendicular to the force line).</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Agrees with GHW5_S numerically. <span class="flag">Flag (typo in key):</span> the key's text once writes “$+F_1=90\hat k$” (90 vs 80). Its calculation correctly uses $80\ \text{N}$, and $(32,0,0)$ requires 80.</div>
-
-<h2 id="ex6">Example 6 · Moment of a Slanted Force About the Base of a Boom</h2>
-<p><span class="step-label">Source:</span> Individual Homework 6, Q1 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 3, moment by components (Varignon).</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> Calculate the magnitude of the moment about point O due to the applied force. (Figure described in words: the boom base is O; A is $4\ \text{m}$ above O and $2\ \text{m}$ to the right; a $600\ \text{N}$ force acts at A, $40^\circ$ below the horizontal, down and to the right.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> Resolve the force into horizontal and vertical components at A and take each one's moment about O using its perpendicular distance. Both tend to rotate the boom clockwise, so they add.</p>
-<p><span class="step-label">Key equations.</span></p>
-$$F_x=600\cos40^\circ\approx459.6\ \text{N},\qquad F_y=600\sin40^\circ\approx385.7\ \text{N}$$
-$$M_O=F_x(4)+F_y(2)=1838.4+771.4$$
-<div class="answer-box">$$\boxed{M_O\approx2610\ \text{N·m (clockwise)}}$$</div>
-<p class="sanity"><strong>Check.</strong> Upper bound $600\sqrt{4^2+2^2}\approx2683\ \text{N·m}$; the result is just below it because the force is nearly perpendicular to OA.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6: $2610\ \text{N·m}$. <span class="flag">Note:</span> the key rounds components to $460\ \text{N}$ and $386\ \text{N}$ (giving 2612) and reports 2610; unrounded values give $2609.8$.</div>
-
-<h2 id="ex7">Example 7 · Reactions on a Beam Welded to an L-Shaped Member</h2>
-<p><span class="step-label">Source:</span> Individual Homework 6, Q2 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 4, 2D rigid-body equilibrium.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> Beam AB is welded at C to member CDE and carries the loading shown. Determine the support reactions at A and B. (Figure described in words: A is a pin, B is a roller; a $5\ \text{kN}$ force acts downward at E; a $9\ \text{kN·m}$ clockwise couple acts on CDE; the dimension line reads $3\ \text{m}$ from A to the line of the $5\ \text{kN}$ force and $5\ \text{m}$ from there to B.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> Take the free body of the whole welded assembly. The pin gives $A_x,A_y$; the roller gives only $B_y$. Take moments about B to find $A_y$ directly, then use the force equations. The couple is a free vector, so its location does not matter.</p>
-<p><span class="step-label">Key equations.</span> (Clockwise positive about B.)</p>
-$$\sum M_B=0:\ 8A_y-5(5)+9=0\Rightarrow A_y=2\ \text{kN}$$
-$$\sum F_x=0:\ A_x=0,\qquad \sum F_y=0:\ B_y-5+2=0\Rightarrow B_y=3\ \text{kN}$$
-<div class="answer-box">$$\boxed{A_x=0}\qquad\boxed{A_y=2\ \text{kN}\ \uparrow}\qquad\boxed{B_y=3\ \text{kN}\ \uparrow}$$</div>
-<p class="sanity"><strong>Check.</strong> Moments about A: $8(3)-5(3)-9=0$; vertical forces: $2+3=5\ \text{kN}$.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6. <span class="flag">Flag (dimensions):</span> the figure's dimension line breaks under the $5\ \text{kN}$ force at E, not at C; the key uses $5\ \text{m}$ from that line to B. The result is unaffected because the couple is a free vector and the vertical leg adds no moment.</div>
-
-<h2 id="ex8">Example 8 · Reactions on Member ABC with Roller, Hinge, and Pulley Loads</h2>
-<p><span class="step-label">Source:</span> Individual Homework 6, Q3 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 4, 2D rigid-body equilibrium.</p>
-<div class="problem-box">
-<p><strong>Problem.</strong> Member ABC is connected at A to a roller support and at B to a hinged support. Determine the reactions at A and B. (Figure described in words: A is on a $30^\circ$ incline with a $60\ \text{cm}$ leg AB; a $300\ \text{N}$ cable tension pulls upward at D; a $200\ \text{N}$ weight hangs from a pulley of radius $10\ \text{cm}$ at C. Horizontal distances from B: $25\ \text{cm}$ to D, a further $25\ \text{cm}$ to E, a further $30\ \text{cm}$ to C.)</p>
-</div>
-<div class="solution-box">
-<p><span class="step-label">Strategy.</span> The roller at A pushes perpendicular to its surface (one unknown $F_A$); the hinge gives $B_x,B_y$. Take moments about B so the hinge forces drop out, then use the two force equations. Per the key's FBD, $F_A$ is perpendicular to AB (which makes $60^\circ$ with the horizontal), acts down and to the left, and has a $60\ \text{cm}$ lever arm. The $200\ \text{N}$ cable leaves the right side of the pulley, so its arm is $25+25+30+10=90\ \text{cm}$.</p>
-<p><span class="step-label">Key equations.</span> (Arms in cm, so the moment equation is in N·cm.)</p>
-$$\sum M_B=0:\ 60F_A+300(25)-200(90)=0\Rightarrow F_A=\frac{18000-7500}{60}=175\ \text{N}$$
-$$\sum F_x=0:\ B_x-175\cos60^\circ=0\Rightarrow B_x=87.5\ \text{N}$$
-$$\sum F_y=0:\ B_y-175\sin60^\circ-200+300=0\Rightarrow B_y=51.55\ \text{N}$$
-<div class="answer-box">$$\boxed{F_A=175\ \text{N}}\qquad\boxed{B_x=87.5\ \text{N}\ \rightarrow}\qquad\boxed{B_y=51.55\ \text{N}\ \uparrow}$$</div>
-<p class="sanity"><strong>Check.</strong> Moments about A (cm from B, $A\approx(-51.96,\,30)$) give $+5.30\times10^{3}$ (hinge), $+2.309\times10^{4}$ ($300\ \text{N}$), $-2.839\times10^{4}$ ($200\ \text{N}$), summing to zero within rounding.</p>
-</div>
-<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6. The key is from the Fall 2025 offering (Canvas 8480); its figure values match Fall 2026 HW6 Q3.</div>
-
-<h2>Summary of Answers</h2>
-<table>
-<tr><th>#</th><th>Source</th><th>Key result</th></tr>
-<tr><td>1</td><td>HW5 Q1</td><td>$d=0.529\ \text{m}$</td></tr>
-<tr><td>2</td><td>HW5 Q2</td><td>$M_E=176.58\ \text{N·m}$ CW; $F_{\min}=244.9\ \text{N}$; $F_v=176.58\ \text{N}$ up at D</td></tr>
-<tr><td>3</td><td>HW5 Q3</td><td>$T=250\ \text{lb}$; $P=120\ \text{lb}$</td></tr>
-<tr><td>4</td><td>GHW5 Q1</td><td>$L=50\ \text{mm}$; $F_z=370\ \text{N}$; $M_x=36.4\ \text{N·m}$; $\vec F_2=(50,80,370)$; $\vec M_2=(-8,1.5,0)$</td></tr>
-<tr><td>5</td><td>GHW5 Q2</td><td>$\vec M=(32,-12,0)$; $|\vec M|=34.18\ \text{N·m}$; $\hat u=(0.936,-0.351,0)$</td></tr>
-<tr><td>6</td><td>HW6 Q1</td><td>$M_O\approx2610\ \text{N·m}$</td></tr>
-<tr><td>7</td><td>HW6 Q2</td><td>$A_x=0$, $A_y=2\ \text{kN}$, $B_y=3\ \text{kN}$</td></tr>
-<tr><td>8</td><td>HW6 Q3</td><td>$F_A=175\ \text{N}$, $B_x=87.5\ \text{N}$, $B_y=51.55\ \text{N}$</td></tr>
-</table>
-
-<p class="footer-note">Rebuilt 2026-11-05 · Independent check 8/8 · PR staged, unmerged. Problem statements are paraphrased from course homework; figures are intentionally omitted from this public page.</p>
-
-</div>
+<header id="title-block-header">
+<h1 class="title">Engineering Statics: Chapters 3-4 Solved Examples</h1>
+</header>
+<h1 class="unnumbered" id="example-1">Example 1</h1>
+<p>A bent rod is fixed to a wall at its left end. Place the origin <span
+class="math inline">O</span> at the wall, with <span
+class="math inline">x</span> to the right and <span
+class="math inline">y</span> upward. The rod runs horizontally for <span
+class="math inline">4\ \mathrm{m}</span> to a bend, then continues for
+<span class="math inline">3\ \mathrm{m}</span> along a line <span
+class="math inline">30^\circ</span> below the horizontal. Four forces
+act on the rod: a <span class="math inline">50\ \mathrm{N}</span> force
+downward at <span class="math inline">x=2\ \mathrm{m}</span>; a <span
+class="math inline">60\ \mathrm{N}</span> force in the <span
+class="math inline">+x</span> direction at the bend (<span
+class="math inline">x=4\ \mathrm{m}</span>); and, at the free end, a
+<span class="math inline">20\ \mathrm{N}</span> force in the <span
+class="math inline">+x</span> direction and a <span
+class="math inline">40\ \mathrm{N}</span> force downward.</p>
+<p><strong>Find</strong> the resultant moment of the four forces about
+<span class="math inline">O</span>.</p>
+<p><strong>Sign convention.</strong> Counterclockwise (CCW) moments are
+positive. A force produces a moment <span
+class="math inline">M=F\,d</span>, where <span
+class="math inline">d</span> is the perpendicular distance from <span
+class="math inline">O</span> to the line of action. Each line of action
+may be extended, so <span class="math inline">d</span> is measured to
+the extended line.</p>
+<p><strong>Geometry of the free end.</strong> The end of the rod is at
+<span class="math display">x_e = 4+3\cos30^\circ = 6.598\
+\mathrm{m},\qquad
+y_e = -3\sin30^\circ = -1.5\ \mathrm{m}.</span></p>
+<p><strong>Moment of each force about <span
+class="math inline">O</span>.</strong></p>
+<ul>
+<li><p><span class="math inline">50\ \mathrm{N}</span> (down, <span
+class="math inline">d=2\ \mathrm{m}</span>): the force at <span
+class="math inline">x&gt;0</span> pointing down turns the rod clockwise,
+so <span class="math inline">M=-50(2)=-100\ \mathrm{N\cdot
+m}</span>.</p></li>
+<li><p><span class="math inline">60\ \mathrm{N}</span> (along <span
+class="math inline">+x</span>): its line of action is the <span
+class="math inline">x</span>-axis and passes through <span
+class="math inline">O</span>, so <span class="math inline">d=0</span>
+and <span class="math inline">M=0</span>.</p></li>
+<li><p><span class="math inline">20\ \mathrm{N}</span> (along <span
+class="math inline">+x</span>): the line of action lies <span
+class="math inline">3\sin30^\circ=1.5\ \mathrm{m}</span> below <span
+class="math inline">O</span>. A rightward force below the pivot turns
+the rod CCW, so <span class="math inline">M=+20(3\sin30^\circ)=+30\
+\mathrm{N\cdot m}</span>.</p></li>
+<li><p><span class="math inline">40\ \mathrm{N}</span> (down): the line
+of action is at <span class="math inline">x_e=4+3\cos30^\circ</span>
+from <span class="math inline">O</span>, so <span
+class="math inline">M=-40(4+3\cos30^\circ)=-263.9\ \mathrm{N\cdot
+m}</span> (clockwise).</p></li>
+</ul>
+<p><strong>Sum of moments.</strong> <span
+class="math display">\begin{align*}
+(M_R)_O &amp;= \sum Fd \\
+&amp;= -50(2)+60(0)+20(3\sin30^\circ)-40(4+3\cos30^\circ)\\
+&amp;= -100+0+30-263.9 = -333.9\ \mathrm{N\cdot m}
+\end{align*}</span> The negative sign means the net turning effect is
+clockwise.</p>
+<p><span class="math display">\boxed{(M_R)_O \approx 334\ \mathrm{N\cdot
+m}\ \text{clockwise}\ (-334\ \mathrm{N\cdot m}\ \text{CCW
+positive})}</span></p>
+<h1 class="unnumbered" id="example-2">Example 2</h1>
+<p>Two parallel forces of equal magnitude act on a gear of radius <span
+class="math inline">0.2\ \mathrm{m}</span> with center <span
+class="math inline">O</span>. Each force has magnitude <span
+class="math inline">F=600\ \mathrm{N}</span> and the forces point in
+opposite directions. The first acts at the right-hand end of the
+horizontal diameter and points down and to the left, <span
+class="math inline">30^\circ</span> below the horizontal. The second
+acts at the bottom end of the vertical diameter and points up and to the
+right, <span class="math inline">30^\circ</span> above the
+horizontal.</p>
+<p><strong>Find</strong> the magnitude and direction of the couple
+moment acting on the gear.</p>
+<p><strong>Approach.</strong> The two forces are equal, opposite and
+parallel, so they sum to zero and form a couple. The couple moment is a
+free vector: its value does not depend on the point about which moments
+are taken. Take moments about the center <span
+class="math inline">O</span> with CCW positive.</p>
+<p><strong>Resolve each force into components.</strong> <span
+class="math display">F\cos30^\circ = 600\cos30^\circ = 519.6\
+\mathrm{N},\qquad
+F\sin30^\circ = 600\sin30^\circ = 300\ \mathrm{N}.</span></p>
+<p><strong>Moment about <span class="math inline">O</span>.</strong>
+Each force acts at a distance <span class="math inline">0.2\
+\mathrm{m}</span> from <span class="math inline">O</span> along an
+axis.</p>
+<ul>
+<li><p>The force at the right end of the horizontal diameter: its
+horizontal component passes through <span class="math inline">O</span>
+and gives no moment. Its vertical component (<span
+class="math inline">300\ \mathrm{N}</span>, downward) acts <span
+class="math inline">0.2\ \mathrm{m}</span> to the right of <span
+class="math inline">O</span> and turns the gear clockwise: <span
+class="math inline">-(600\sin30^\circ)(0.2)</span>.</p></li>
+<li><p>The force at the bottom end of the vertical diameter: its
+vertical component passes through <span class="math inline">O</span> and
+gives no moment. Its horizontal component (<span
+class="math inline">519.6\ \mathrm{N}</span>, rightward) acts <span
+class="math inline">0.2\ \mathrm{m}</span> below <span
+class="math inline">O</span> and turns the gear counterclockwise: <span
+class="math inline">+(600\cos30^\circ)(0.2)</span>.</p></li>
+</ul>
+<p><span class="math display">\begin{align*}
+M &amp;= \sum M_O = (600\cos30^\circ)(0.2)-(600\sin30^\circ)(0.2)\\
+&amp;= 103.9-60.0 = 43.9\ \mathrm{N\cdot m}
+\end{align*}</span></p>
+<p><strong>Check.</strong> Taking moments about a different point, such
+as the point where the first force is applied, gives the same <span
+class="math inline">43.9\ \mathrm{N\cdot m}</span>. Equivalently, <span
+class="math inline">M=Fd</span> with perpendicular separation <span
+class="math inline">d=M/F=0.0732\ \mathrm{m}</span> between the two
+lines of action. The positive sign confirms a counterclockwise
+sense.</p>
+<p><span class="math display">\boxed{M = 43.9\ \mathrm{N\cdot m},\
+\text{counterclockwise (directed out of the page)}}</span></p>
+<h1 class="unnumbered" id="example-3">Example 3</h1>
+<p>A horizontal member is fixed to a wall at the left end <span
+class="math inline">O</span>, with <span class="math inline">x</span> to
+the right and <span class="math inline">y</span> upward. The loads on it
+are:</p>
+<ul>
+<li><p>a <span class="math inline">750\ \mathrm{N}</span> downward force
+at <span class="math inline">1.25\ \mathrm{m}</span> from <span
+class="math inline">O</span>;</p></li>
+<li><p>a <span class="math inline">500\ \mathrm{N}</span> force applied
+at <span class="math inline">x=2.5\ \mathrm{m}</span> at the top of a
+short vertical post, <span class="math inline">1\ \mathrm{m}</span>
+above the member, directed up and to the right along a <span
+class="math inline">3</span>–<span class="math inline">4</span>–<span
+class="math inline">5</span> slope (horizontal : vertical : hypotenuse
+<span class="math inline">=3:4:5</span>);</p></li>
+<li><p>at the right end, two horizontal <span class="math inline">200\
+\mathrm{N}</span> forces on a vertical post, <span
+class="math inline">1\ \mathrm{m}</span> apart: the upper one points
+left and the lower one points right.</p></li>
+</ul>
+<p><strong>Find</strong> the equivalent resultant force (magnitude and
+direction) and the couple moment acting at <span
+class="math inline">O</span>.</p>
+<p><strong>Force summation.</strong> The two <span
+class="math inline">200\ \mathrm{N}</span> forces are equal and
+opposite, so their vector sum is zero and they contribute only a couple.
+The <span class="math inline">500\ \mathrm{N}</span> force has
+components <span class="math inline">\tfrac35(500)</span> horizontally
+and <span class="math inline">\tfrac45(500)</span> vertically. <span
+class="math display">\begin{align*}
+(F_R)_x &amp;= \sum F_x = \tfrac35(500) = 300\ \mathrm{N}\
+(\rightarrow)\\
+(F_R)_y &amp;= \sum F_y = \tfrac45(500)-750 = -350\ \mathrm{N} = 350\
+\mathrm{N}\ (\downarrow)
+\end{align*}</span> <span class="math display">\begin{align*}
+F_R &amp;= \sqrt{(F_R)_x^2+(F_R)_y^2} = \sqrt{300^2+350^2} = 461.0\
+\mathrm{N}\\
+\theta &amp;= \tan^{-1}\!\left(\frac{350}{300}\right) = 49.4^\circ
+\quad\text{(below the $+x$ axis)}
+\end{align*}</span></p>
+<p><strong>Moment summation about <span
+class="math inline">O</span></strong> (CCW positive). The couple of the
+two <span class="math inline">200\ \mathrm{N}</span> forces is <span
+class="math inline">200(1)=200\ \mathrm{N\cdot m}</span>
+counterclockwise (the upper force points left and the lower points
+right), and it may be added directly because a couple moment is a free
+vector. For the <span class="math inline">500\ \mathrm{N}</span> force,
+the vertical component <span class="math inline">400\ \mathrm{N}</span>
+acts <span class="math inline">2.5\ \mathrm{m}</span> from <span
+class="math inline">O</span> (CCW) and the horizontal component <span
+class="math inline">300\ \mathrm{N}</span> acts <span
+class="math inline">1\ \mathrm{m}</span> above <span
+class="math inline">O</span> (CW). <span
+class="math display">\begin{align*}
+(M_R)_O &amp;= \sum M_O + \sum M\\
+&amp;= 400(2.5)-300(1)-750(1.25)+200\\
+&amp;= 1000-300-937.5+200 = -37.5\ \mathrm{N\cdot m}
+\end{align*}</span> The negative sign indicates a clockwise couple.</p>
+<p><span class="math display">\boxed{\begin{aligned} F_R&amp;=461\
+\mathrm{N},\quad\theta=49.4^\circ\ \text{below }+x\\ (M_R)_O&amp;=37.5\
+\mathrm{N\cdot m}\ \text{clockwise}\end{aligned}}</span> Components:
+<span class="math inline">(F_R)_x = 300\ \mathrm{N}\rightarrow</span>,
+<span class="math inline">(F_R)_y = 350\ \mathrm{N}\downarrow</span>,
+both acting at <span class="math inline">O</span>.</p>
+<h1 class="unnumbered" id="example-4">Example 4</h1>
+<p>A horizontal beam (weight neglected) has a rocker support at its left
+end <span class="math inline">A</span> and a pin support at its right
+end <span class="math inline">B</span>, with <span
+class="math inline">A</span> and <span class="math inline">B</span>
+<span class="math inline">7\ \mathrm{m}</span> apart. The pin at <span
+class="math inline">B</span> lies on the beam centerline. The loads
+are:</p>
+<ul>
+<li><p>a <span class="math inline">600\ \mathrm{N}</span> force pointing
+down and to the right at <span class="math inline">45^\circ</span> below
+the horizontal, applied <span class="math inline">2\ \mathrm{m}</span>
+from <span class="math inline">A</span> at a point <span
+class="math inline">0.2\ \mathrm{m}</span> above the beam
+centerline;</p></li>
+<li><p>a <span class="math inline">100\ \mathrm{N}</span> downward force
+at point <span class="math inline">D</span>, <span
+class="math inline">3\ \mathrm{m}</span> to the right of the <span
+class="math inline">600\ \mathrm{N}</span> force’s point of application
+(<span class="math inline">5\ \mathrm{m}</span> from <span
+class="math inline">A</span>);</p></li>
+<li><p>a <span class="math inline">200\ \mathrm{N}</span> downward force
+at <span class="math inline">B</span>, <span class="math inline">2\
+\mathrm{m}</span> to the right of <span
+class="math inline">D</span>.</p></li>
+</ul>
+<p><strong>Find</strong> the horizontal and vertical components of the
+reaction at the pin <span class="math inline">B</span> and the vertical
+reaction of the rocker <span class="math inline">A</span>.</p>
+<p><strong>Free-body diagram.</strong> The rocker can push only
+perpendicular to its surface, so it supplies a vertical force <span
+class="math inline">A_y</span> (upward). The pin supplies <span
+class="math inline">B_x</span> and <span class="math inline">B_y</span>;
+assume <span class="math inline">B_x</span> points left and <span
+class="math inline">B_y</span> points up. The <span
+class="math inline">600\ \mathrm{N}</span> force is replaced by
+components <span class="math display">600\cos45^\circ = 424.26\
+\mathrm{N}\ (\rightarrow),\qquad 600\sin45^\circ = 424.26\ \mathrm{N}\
+(\downarrow).</span></p>
+<p><strong>Equilibrium.</strong> Sum forces in <span
+class="math inline">x</span> (right positive): <span
+class="math display">\sum F_x=0:\quad 600\cos45^\circ - B_x = 0
+\;\Rightarrow\; B_x = 424.26\ \mathrm{N}\ \text{(leftward, as
+assumed)}.</span> Sum moments about <span class="math inline">B</span>
+(CCW positive) to eliminate <span class="math inline">B_x</span> and
+<span class="math inline">B_y</span>. The downward forces left of <span
+class="math inline">B</span> turn the beam CCW about <span
+class="math inline">B</span>; the <span class="math inline">0.2\
+\mathrm{m}</span> offset of the horizontal component gives a clockwise
+term, and <span class="math inline">A_y</span> (upward, left of <span
+class="math inline">B</span>) is clockwise: <span
+class="math display">\begin{align*}
+\sum M_B = 0:\quad &amp;
+100(2)+(600\sin45^\circ)(5)-(600\cos45^\circ)(0.2)-A_y(7)=0\\
+&amp; 200+2121.3-84.85-7A_y=0\\
+&amp; A_y = \frac{2236.47}{7} = 319.495\ \mathrm{N}\approx 319\
+\mathrm{N}
+\end{align*}</span> Sum forces in <span class="math inline">y</span> (up
+positive), using the unrounded <span class="math inline">A_y</span>:
+<span class="math display">\begin{align*}
+\sum F_y=0:\quad &amp; A_y - 600\sin45^\circ-100-200+B_y=0\\
+&amp; B_y = 424.26+300-319.495 = 404.77\ \mathrm{N}\approx 405\
+\mathrm{N}
+\end{align*}</span></p>
+<p><strong>Check.</strong> Summing moments about <span
+class="math inline">A</span> with the computed reactions, and also about
+<span class="math inline">D</span>, gives zero, as do <span
+class="math inline">\sum F_x</span> and <span class="math inline">\sum
+F_y</span>. All three reactions came out positive, matching the assumed
+directions.</p>
+<p><span class="math display">\boxed{B_x = 424\ \mathrm{N}\
+\text{(left)},\quad A_y = 319\ \mathrm{N}\ \text{(up)},\quad B_y = 405\
+\mathrm{N}\ \text{(up)}}</span></p>
 </body>
 </html>
