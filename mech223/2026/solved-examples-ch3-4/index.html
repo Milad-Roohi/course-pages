@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MECH 223 · Solved Examples — Chapters 3 &amp; 4 (Exam 2 review)</title>
+<title>MECH 223 · Solved Examples Ch 3–4 (from assigned HW)</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
@@ -54,6 +54,11 @@
     background: var(--panel); border: 1px solid var(--line);
     padding: 1rem 1.2rem; margin: 1rem 0 1.5rem;
   }
+  .notice {
+    background: #fff4e5; border: 1px solid #e0b36a; border-left: 4px solid #b36b00;
+    padding: 0.8rem 1.1rem; margin: 1.2rem 0; font-size: 0.97rem;
+  }
+  .flag { color: #8a1c1c; }
   .download-box {
     background: #e8f4f8; border: 1px solid #b3d9e8; border-radius: 4px;
     padding: 1rem 1.2rem; margin: 1.5rem 0; text-align: center;
@@ -104,569 +109,176 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="article">
 
 <div class="kicker">MECH 223 · Engineering Statics</div>
-<h1>MECH 223 · Solved Examples — Chapters 3 &amp; 4 (Exam 2 review)</h1>
-<p class="subtitle">Fall 2026 · Set A · 10 fully worked examples</p>
+<h1>MECH 223 · Solved Examples Ch 3–4 (from assigned HW)</h1>
+<p class="subtitle">Fall 2026 · 8 worked examples drawn from assigned homework</p>
 <hr class="top">
 
-<div class="download-box">
-  📥 <a href="./MECH223_Solved_Examples_Ch3-4.pdf" download>Download PDF version (with all figures)</a>
+<div class="notice">
+  <strong>Important.</strong> The full tagged PDF, with the source figure crops, is <strong>Canvas-only</strong> (Drive path). This public page has <strong>text solutions and source citations only</strong>. It contains no homework figure images (copyright caution), so sketch each problem yourself from the description before reading the solution.
 </div>
 
-<p><strong>How to use these.</strong> Try each example yourself after reading only <em>Given / Find</em> and the figure. Then compare with the Strategy and Solution. Figures are described in words on this page; the PDF has the full drawings.</p>
-<p><strong>Sign convention used throughout:</strong> $x$ to the right, $y$ up, counterclockwise (CCW) moments positive. In 2D, the moment of a force at position $(x,y)$ is $M = xF_y - yF_x$.</p>
+<p><strong>How to use these.</strong> Read only <em>Problem</em>, sketch it, and try it. Then compare with the Strategy and Solution. Every example is an assigned course problem, and every answer matches the posted key (HW5_S, GHW5_S, Solution-HW6). Where a key has a typo or ambiguity, it is flagged.</p>
+<p><strong>Conventions.</strong> Counterclockwise (CCW) moments are positive in 2D unless stated; $\vec M = \vec r \times \vec F$.</p>
 
 <div class="toc">
 <strong>Examples</strong>
 <ol>
-  <li><a href="#ex1">Moment of a single force about a point</a> (Ch. 3, easy)</li>
-  <li><a href="#ex2">Couple versus moment of a force</a> (Ch. 3, easy–medium)</li>
-  <li><a href="#ex3">Equivalent force–couple system</a> (Ch. 3, medium)</li>
-  <li><a href="#ex4">Simply supported beam: pin, roller, a load and a couple</a> (Ch. 4, medium)</li>
-  <li><a href="#ex5">L-shaped bracket with a pin and a wall roller</a> (Ch. 4, medium–hard)</li>
-  <li><a href="#ex6">Rigid beam on a pin and an inclined roller</a> (Ch. 4, medium–hard)</li>
-  <li><a href="#ex7">Boom with a pulley, a rope and a support cable</a> (Ch. 4, exam-level)</li>
-  <li><a href="#ex8">Two-force and three-force members</a> (Ch. 4, medium)</li>
-  <li><a href="#ex9">Bent bar with a pin, a link, a couple and two forces</a> (Ch. 4, exam-level)</li>
-  <li><a href="#ex10">3D equilibrium: a plate on a ball-and-socket and three cables</a> (Ch. 4, exam-level)</li>
+  <li><a href="#ex1">Minimum distance for a required moment</a> (HW5 Q1)</li>
+  <li><a href="#ex2">Moments of a crate's weight about a bottom point</a> (HW5 Q2)</li>
+  <li><a href="#ex3">Collars on perpendicular rods joined by a wire</a> (HW5 Q3)</li>
+  <li><a href="#ex4">Bent plate: equivalent force–couple system</a> (GHW5 Q1)</li>
+  <li><a href="#ex5">Two couples replaced by one</a> (GHW5 Q2)</li>
+  <li><a href="#ex6">Moment of a slanted force about the base of a boom</a> (HW6 Q1)</li>
+  <li><a href="#ex7">Reactions on a beam welded to an L-shaped member</a> (HW6 Q2)</li>
+  <li><a href="#ex8">Reactions on member ABC with roller, hinge, and pulley loads</a> (HW6 Q3)</li>
 </ol>
 </div>
 
-<!-- ================================================================ -->
-<h2 id="ex1">1. Moment of a single force about a point</h2>
-<p class="level">Level: easy. Chapter 3. Target confusion: a moment depends on <strong>which point</strong> you take it about.</p>
-
-<h3>Given / Find</h3>
+<h2 id="ex1">Example 1 · Minimum Distance for a Required Moment</h2>
+<p><span class="step-label">Source:</span> Individual Homework 5, Q1 (Canvas 20760; key HW5_S). Ch. 3, moment of a force about a point.</p>
 <div class="problem-box">
-<p>A bracket is pinned to a wall at $A$. A cable pulls on the bracket at $B$, which is $0.400~\text{m}$ to the right of and $0.300~\text{m}$ above $A$. The cable force is $\mathbf F=(150\,\mathbf i-200\,\mathbf j)~\text{N}$.</p>
-<p><strong>Find:</strong> (a) the moment of $\mathbf F$ about $A$; (b) the moment of the same force about point $C$, which is $0.400~\text{m}$ to the right of $A$ on the same horizontal line as $A$.</p>
+<p><strong>Problem.</strong> A force with a moment of $840\ \text{N·m}$ about D is required to straighten the fence post CD. The capacity of winch puller AB is $2100\ \text{N}$. Determine the minimum distance $d$ that creates the specified moment about D.</p>
+<p>(Figure described in words: D is at the origin on the ground; the post top C is at $(0.25,\,0.90)\ \text{m}$; the cable runs from C down to ground point E at $x=-d$.)</p>
 </div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Bracket pinned to a wall at $A$. Point $B$ is $0.400~\text{m}$ right and $0.300~\text{m}$ above $A$. A $250~\text{N}$ cable force acts at $B$, pointing right and down with components $150~\text{N}$ (right) and $200~\text{N}$ (down). Point $C$ lies $0.400~\text{m}$ right of $A$ on the line through $A$.<br>
-<em>Free-body diagram:</em> the cable force is shown as components $F_x=150$ N and $F_y=200$ N at $B$. The unknown pin reactions $A_x$, $A_y$ pass through $A$, so they contribute zero moment about $A$. Position vector $\mathbf r_{B/A}$ runs from $A$ to $B$.</div>
-
 <div class="solution-box">
-<h3>Strategy</h3>
-<p>The moment of a force about a point is $\mathbf M_O=\mathbf r\times\mathbf F$, where $\mathbf r$ runs from the point to <em>any</em> point on the line of action of the force. In 2D this is $M=xF_y-yF_x$ with $(x,y)$ the components of $\mathbf r$. We will compute it, then verify with $M=Fd$ using the perpendicular distance. Repeating with a second point shows the result changes with the point.</p>
-
-<h3>Solution</h3>
-<p><strong>(a) About $A$.</strong> $\mathbf r_{B/A}=(0.400\,\mathbf i+0.300\,\mathbf j)~\text{m}$.</p>
-$$\begin{aligned}
-M_A &= x F_y - y F_x = (0.400)(-200) - (0.300)(150)\\
-    &= -80.0 - 45.0 = -125~\text{N·m}.
-\end{aligned}$$
-<p>The negative sign means clockwise.</p>
-<p><em>Check with $M=Fd$.</em> The unit vector along $\mathbf F$ is $\mathbf u=(0.6,-0.8)$. The perpendicular distance from $A$ to the line of action is $d=|\mathbf r\times\mathbf u|=|(0.400)(-0.8)-(0.300)(0.6)|=0.500~\text{m}$. Then $|M_A|=Fd=(250)(0.500)=125~\text{N·m}$. ✓</p>
-<p><strong>(b) About $C$.</strong> $\mathbf r_{B/C}=(0\,\mathbf i+0.300\,\mathbf j)~\text{m}$.</p>
-$$M_C = (0)(-200) - (0.300)(150) = -45.0~\text{N·m}.$$
-<p>Here only $F_x$ contributes, since $F_y$ acts along the vertical line through $C$.</p>
+<p><span class="step-label">Strategy.</span> The moment about D is the tension times the perpendicular distance $p$ from D to the cable line. Express $p$ in terms of $d$ with a cross product, set $M_D=840\ \text{N·m}$ at the maximum tension, and solve. A larger $d$ gives a larger lever arm, so the equality gives the minimum $d$.</p>
+<p><span class="step-label">Key equations.</span></p>
+$$p=\frac{0.90\,d}{\sqrt{(d+0.25)^2+0.90^2}},\qquad M_D=T\,p=2100\,\frac{0.90\,d}{\sqrt{(d+0.25)^2+0.90^2}}$$
+$$0.16\left[(d+0.25)^2+0.90^2\right]=0.81\,d^2\;\Longrightarrow\;0.65\,d^2-0.08\,d-0.1396=0$$
+<div class="answer-box">$$\boxed{d=0.529\ \text{m}}$$</div>
+<p class="sanity"><strong>Check.</strong> With $d=0.529$: $\sqrt{0.779^2+0.81}\approx1.19$, so $p\approx0.40\ \text{m}$ and $M_D\approx 2100(0.40)=840\ \text{N·m}$.</p>
 </div>
+<div class="note"><span class="note-label">Match to key</span> Matches HW5_S: $d=0.529\ \text{m}$ (same quadratic, positive root).</div>
 
+<h2 id="ex2">Example 2 · Moments of a Crate's Weight About a Bottom Point</h2>
+<p><span class="step-label">Source:</span> Individual Homework 5, Q2 (Canvas 20760; key HW5_S). Ch. 3, moment of a force and smallest force for a given moment.</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> A crate of mass $60\ \text{kg}$ is held in position. It is $1.4\ \text{m}$ wide and $0.6\ \text{m}$ tall. Point E is on the bottom edge, $1.0\ \text{m}$ from the right end D. Determine (a) the moment of the weight $W$ ($g=9.81\ \text{m/s}^2$) about E; (b) the smallest force at A that creates a moment of equal magnitude and opposite sense about E; (c) the magnitude, sense, and point of application on the bottom of the crate of the smallest vertical force that does the same.</p>
+<p>(Figure described in words: A is the top-left corner, B the top-right, D the bottom-right; the center of gravity is at mid-width.)</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> $W$ acts at mid-width, so its moment about E is $W$ times the horizontal distance to E. For (b), a force of fixed moment is smallest when its lever arm is largest, so push perpendicular to line EA. For (c), a vertical force's lever arm is its horizontal distance from E, so apply it as far from E as possible, at D.</p>
+<p><span class="step-label">Key equations.</span></p>
+$$W=60(9.81)=588.6\ \text{N},\qquad d_e=0.7-0.4=0.3\ \text{m},\qquad M_E=W\,d_e$$
+$$\vec r_{EA}=(-0.4,\,0.6)\ \text{m},\quad |\vec r_{EA}|=\sqrt{0.52}=0.7211\ \text{m},\qquad F_{\min}=\frac{M_E}{|\vec r_{EA}|},\qquad F_v=\frac{M_E}{1.0}$$
 <div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{M_A = 125~\text{N·m clockwise}}\qquad \boxed{M_C = 45.0~\text{N·m clockwise}}$$
+$$\text{(a)}\ \boxed{M_E=176.58\ \text{N·m, clockwise}}$$
+$$\text{(b)}\ \boxed{F_{\min}=244.9\ \text{N at A, perpendicular to EA, down and to the left}}$$
+$$\text{(c)}\ \boxed{F_v=176.58\ \text{N upward, applied at D}}$$
 </div>
+<p class="sanity"><strong>Check.</strong> $244.9(0.7211)\approx176.6$ and $176.58(1.0)=176.58$, both CCW about E. (b) exceeds (c) because its lever arm is shorter.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches HW5_S for all three parts. <span class="flag">Flag:</span> the key's text rounds $|\vec r_{EA}|$ to $0.72\ \text{m}$; the printed $244.9\ \text{N}$ uses the unrounded $0.7211\ \text{m}$ (dividing by exactly $0.72$ gives $245.3\ \text{N}$).</div>
 
-<div class="sanity"><p><strong>Sanity check.</strong> The same force gives two different moments because the moment arm changed ($0.500~\text{m}$ about $A$, $0.180~\text{m}$ about $C$, since $45.0/250=0.180$). Both are clockwise, which matches the picture: the force pushes $B$ down and to the right, rotating the bracket clockwise about either point.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex2">2. Couple versus moment of a force</h2>
-<p class="level">Level: easy–medium. Chapter 3. Target confusion: the moment of a force depends on the point; the moment of a couple does not.</p>
-
-<h3>Given / Find</h3>
+<h2 id="ex3">Example 3 · Collars on Perpendicular Rods Joined by a Wire</h2>
+<p><span class="step-label">Source:</span> Individual Homework 5, Q3 (Canvas 20760; key HW5_S). Ch. 3–4, 3D equilibrium of a particle on a smooth guide.</p>
 <div class="problem-box">
-<p>Two vertical forces act on a plate. $\mathbf F_1=+120~\text{N}\,\mathbf j$ acts at $D=(0.600,\,0.200)~\text{m}$ and $\mathbf F_2=-120~\text{N}\,\mathbf j$ acts at $E=(0.150,\,0.350)~\text{m}$, with coordinates measured from the origin $O$. Let $G=(0.300,\,-0.100)~\text{m}$ be another reference point.</p>
-<p><strong>Find:</strong> (a) the net force and net moment of the pair about $O$; (b) the net moment of the pair about $G$; (c) the moment of $\mathbf F_1$ <em>alone</em> about $O$ and about $G$.</p>
+<p><strong>Problem.</strong> Collars A and B are connected by a $25\ \text{in}$ wire and slide freely on frictionless rods. A $90\ \text{lb}$ force $Q$ is applied to collar B. Determine (a) the tension in the wire when $x=12\ \text{in}$, and (b) the force $P$ needed for equilibrium. The vertical distance between the rods is $20\ \text{in}$.</p>
+<p>(Figure described in words: B slides on a vertical rod along $z$ and carries $Q$ upward; A slides on a horizontal rod parallel to $x$ and carries $P$ along that rod.)</p>
 </div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-A plate with two parallel, equal, opposite vertical forces of $120~\text{N}$ each. $F_1$ acts upward at $D$ and $F_2$ acts downward at $E$. The two lines of action are $0.450~\text{m}$ apart horizontally. $O$ is the origin and $G$ is a second reference point below the plate center.<br>
-<em>Free-body diagram:</em> only the two applied forces $\mathbf F_1$ and $\mathbf F_2=-\mathbf F_1$ are shown, with the position vectors $\mathbf r_{D/O}$, $\mathbf r_{E/O}$ (from $O$) and $\mathbf r_{D/G}$, $\mathbf r_{E/G}$ (from $G$).</div>
-
 <div class="solution-box">
-<h3>Strategy</h3>
-<p>Compute $\sum\mathbf M=\sum\mathbf r\times\mathbf F$ about $O$ and then about $G$, and compare. Because the forces are equal and opposite, the position vectors should combine into the single vector $\mathbf r_{D/E}$ and the reference point should drop out. Contrast this with one force alone, whose moment changes with the point.</p>
+<p><span class="step-label">Strategy.</span> Use the wire-length constraint to find the height $z$ of B. Each smooth rod can only push perpendicular to itself, so along each rod only the wire component and the applied force matter. Balance B along its rod for $T$, then A along its rod for $P$.</p>
+<p><span class="step-label">Key equations.</span> With $A=(x,20,0)$ and $B=(0,0,z)$:</p>
+$$L^2=x^2+20^2+z^2\;\Rightarrow\;z=\sqrt{25^2-12^2-20^2}=9\ \text{in}$$
+$$\text{B: } Q-T\frac{z}{L}=0\;\Rightarrow\;T=\frac{QL}{z}=\frac{90(25)}{9},\qquad \text{A: } P-T\frac{x}{L}=0\;\Rightarrow\;P=250\cdot\frac{12}{25}$$
+<div class="answer-box">$$\boxed{T=250\ \text{lb}}\qquad\boxed{P=120\ \text{lb}}$$</div>
+<p class="sanity"><strong>Check.</strong> Direction ratios $(12,20,9)/25$ satisfy $12^2+20^2+9^2=625=25^2$. $T_z=250(9/25)=90\ \text{lb}=Q$ and $T_x=250(12/25)=120\ \text{lb}=P$.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches HW5_S: $T=250\ \text{lb}$, $P=120\ \text{lb}$.</div>
 
-<h3>Solution</h3>
-<p><strong>(a)</strong> Net force: $\mathbf F_1+\mathbf F_2=\mathbf 0$. About $O$, with $M=xF_y-yF_x$ and $F_x=0$:</p>
-$$\begin{aligned}
-M_O &= x_D F_{1y} + x_E F_{2y} = (0.600)(120) + (0.150)(-120)\\
-    &= 72.0 - 18.0 = +54.0~\text{N·m}\ (\text{CCW}).
-\end{aligned}$$
-<p><strong>(b)</strong> About $G$: $\mathbf r_{D/G}=(0.300,\,0.300)$ m and $\mathbf r_{E/G}=(-0.150,\,0.450)$ m.</p>
-$$M_G = (0.300)(120) + (-0.150)(-120) = 36.0 + 18.0 = +54.0~\text{N·m}.$$
-<p><strong>General reason.</strong> For any point $P$,</p>
-$$\mathbf M_P=\mathbf r_{D/P}\times\mathbf F_1+\mathbf r_{E/P}\times(-\mathbf F_1)=(\mathbf r_{D/P}-\mathbf r_{E/P})\times\mathbf F_1=\mathbf r_{D/E}\times\mathbf F_1,$$
-<p>which does not contain $P$. Also $|M|=Fd=(120)(0.450)=54.0~\text{N·m}$, with $d$ the perpendicular distance between the two lines of action.</p>
-<p><strong>(c)</strong> Force $\mathbf F_1$ alone:</p>
-$$M_O^{(F_1)} = (0.600)(120) = +72.0~\text{N·m},\qquad M_G^{(F_1)} = (0.300)(120) = +36.0~\text{N·m}.$$
+<h2 id="ex4">Example 4 · Bent Plate: Equivalent Force–Couple System</h2>
+<p><span class="step-label">Source:</span> Group Homework 5, Q1 (Canvas 20760; key GHW5_S). Ch. 3, equivalent force–couple systems in 3D.</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> A bent plate has a vertical part in the y-z plane (height $120\ \text{mm}$, width $60\ \text{mm}$) and a horizontal part in the x-y plane extending a distance $L$ along $+x$ from the junction C. Corner B is at the top of the vertical part; corner E is at the free end of the horizontal part. A force $\vec F_1=(50,\,80,\,F_z)\ \text{N}$ and a couple $\vec M_1=(M_x,\,20,\,-10)\ \text{N·m}$ act at E. The system is replaced by an equivalent force–couple system $(\vec F_2,\vec M_2)$ at B, with $(M_2)_z=0$, $(M_2)_y=1.5\ \text{N·m}$, $(M_2)_x=-8\ \text{N·m}$. Determine (a) $L$, (b) $F_z$ and $M_x$, (c) $\vec F_2$ and $\vec M_2$.</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> Moving the system from E to B leaves the force unchanged and adds the moment of $\vec F_1$ about B. The three given components of $\vec M_2$ give three scalar equations for $L$, $F_z$, $M_x$, solved in the order $z$, $y$, $x$.</p>
+<p><span class="step-label">Key equations.</span> Following the key's coordinates, $B=(0,0.12,0)$ and $E=(L,0,0)$ m, so $\vec r_{BE}=(L,-0.12,0)$ m.</p>
+$$\vec M_2=\vec M_1+\vec r_{BE}\times\vec F_1=\bigl(M_x-0.12F_z,\;20-LF_z,\;-10+80L+6\bigr)\ \text{N·m}$$
+$$(M_2)_z=0:\ 80L-4=0\Rightarrow L=0.05\ \text{m};\qquad (M_2)_y=1.5:\ F_z=\frac{18.5}{0.05}=370\ \text{N};\qquad (M_2)_x=-8:\ M_x=-8+0.12(370)$$
+<div class="answer-box">
+$$\boxed{L=50\ \text{mm}}\qquad\boxed{F_z=370\ \text{N}}\qquad\boxed{M_x=36.4\ \text{N·m}}$$
+$$\boxed{\vec F_2=(50,\,80,\,370)\ \text{N}}\qquad\boxed{\vec M_2=(-8,\,1.5,\,0)\ \text{N·m}}$$
+</div>
+<p class="sanity"><strong>Check.</strong> $-10+80(0.05)+6=0$; $20-0.05(370)=1.5$; $36.4-0.12(370)=-8$.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches GHW5_S for every result. <span class="flag">Flag (geometry):</span> the problem text and figure put the $120\ \text{mm}$ height along $z$, but GHW5_S places B at $(0,0.12,0)$. The numbers above follow the key; with B at $(0,0,0.12)$ the cross product would change. Clarify before reuse.</div>
 
+<h2 id="ex5">Example 5 · Two Couples Replaced by One Equivalent Couple</h2>
+<p><span class="step-label">Source:</span> Group Homework 5, Q2 (Canvas 20760; key GHW5_S). Ch. 3, couple moments in 3D.</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> Couple 1: two $80\ \text{N}$ forces along $z$, $+z$ at $A(0.1,\,0.2,\,0.3)$ m and $-z$ at $B(0.1,\,-0.2,\,0.3)$ m. Couple 2: two $60\ \text{N}$ forces along $x$, $+x$ at $C(-0.2,\,0.1,\,0)$ m and $-x$ at $D(0.2,\,0.1,\,0.2)$ m. Replace them with a single equivalent couple; find its magnitude and the unit vector along its axis. (Given by coordinates only; no figure.)</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> Compute each couple as $\vec M=\vec r\times\vec F$, with $\vec r$ running from the $-\vec F$ point to the $+\vec F$ point. Couple moments are free vectors, so add them and normalize.</p>
+<p><span class="step-label">Key equations.</span></p>
+$$\vec M_1=(0,\,0.4,\,0)\times(0,0,80)=(32,0,0),\qquad \vec M_2=(-0.4,\,0,\,-0.2)\times(60,0,0)=(0,-12,0)\ \text{N·m}$$
+$$\vec M=(32,-12,0)\ \text{N·m},\qquad |\vec M|=\sqrt{32^2+12^2},\qquad \hat u=\frac{\vec M}{|\vec M|}$$
+<div class="answer-box">$$\boxed{\vec M=(32,\,-12,\,0)\ \text{N·m},\quad |\vec M|=34.18\ \text{N·m},\quad \hat u=(0.936,\,-0.351,\,0)}$$</div>
+<p class="sanity"><strong>Check.</strong> $0.936^2+0.351^2\approx1$. Couple 1 alone is $80(0.4)=32$; couple 2 alone is $60(0.2)=12$ (only the $0.2\ \text{m}$ z-offset is perpendicular to the force line).</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Agrees with GHW5_S numerically. <span class="flag">Flag (typo in key):</span> the key's text once writes “$+F_1=90\hat k$” (90 vs 80). Its calculation correctly uses $80\ \text{N}$, and $(32,0,0)$ requires 80.</div>
+
+<h2 id="ex6">Example 6 · Moment of a Slanted Force About the Base of a Boom</h2>
+<p><span class="step-label">Source:</span> Individual Homework 6, Q1 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 3, moment by components (Varignon).</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> Calculate the magnitude of the moment about point O due to the applied force. (Figure described in words: the boom base is O; A is $4\ \text{m}$ above O and $2\ \text{m}$ to the right; a $600\ \text{N}$ force acts at A, $40^\circ$ below the horizontal, down and to the right.)</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> Resolve the force into horizontal and vertical components at A and take each one's moment about O using its perpendicular distance. Both tend to rotate the boom clockwise, so they add.</p>
+<p><span class="step-label">Key equations.</span></p>
+$$F_x=600\cos40^\circ\approx459.6\ \text{N},\qquad F_y=600\sin40^\circ\approx385.7\ \text{N}$$
+$$M_O=F_x(4)+F_y(2)=1838.4+771.4$$
+<div class="answer-box">$$\boxed{M_O\approx2610\ \text{N·m (clockwise)}}$$</div>
+<p class="sanity"><strong>Check.</strong> Upper bound $600\sqrt{4^2+2^2}\approx2683\ \text{N·m}$; the result is just below it because the force is nearly perpendicular to OA.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6: $2610\ \text{N·m}$. <span class="flag">Note:</span> the key rounds components to $460\ \text{N}$ and $386\ \text{N}$ (giving 2612) and reports 2610; unrounded values give $2609.8$.</div>
+
+<h2 id="ex7">Example 7 · Reactions on a Beam Welded to an L-Shaped Member</h2>
+<p><span class="step-label">Source:</span> Individual Homework 6, Q2 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 4, 2D rigid-body equilibrium.</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> Beam AB is welded at C to member CDE and carries the loading shown. Determine the support reactions at A and B. (Figure described in words: A is a pin, B is a roller; a $5\ \text{kN}$ force acts downward at E; a $9\ \text{kN·m}$ clockwise couple acts on CDE; the dimension line reads $3\ \text{m}$ from A to the line of the $5\ \text{kN}$ force and $5\ \text{m}$ from there to B.)</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> Take the free body of the whole welded assembly. The pin gives $A_x,A_y$; the roller gives only $B_y$. Take moments about B to find $A_y$ directly, then use the force equations. The couple is a free vector, so its location does not matter.</p>
+<p><span class="step-label">Key equations.</span> (Clockwise positive about B.)</p>
+$$\sum M_B=0:\ 8A_y-5(5)+9=0\Rightarrow A_y=2\ \text{kN}$$
+$$\sum F_x=0:\ A_x=0,\qquad \sum F_y=0:\ B_y-5+2=0\Rightarrow B_y=3\ \text{kN}$$
+<div class="answer-box">$$\boxed{A_x=0}\qquad\boxed{A_y=2\ \text{kN}\ \uparrow}\qquad\boxed{B_y=3\ \text{kN}\ \uparrow}$$</div>
+<p class="sanity"><strong>Check.</strong> Moments about A: $8(3)-5(3)-9=0$; vertical forces: $2+3=5\ \text{kN}$.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6. <span class="flag">Flag (dimensions):</span> the figure's dimension line breaks under the $5\ \text{kN}$ force at E, not at C; the key uses $5\ \text{m}$ from that line to B. The result is unaffected because the couple is a free vector and the vertical leg adds no moment.</div>
+
+<h2 id="ex8">Example 8 · Reactions on Member ABC with Roller, Hinge, and Pulley Loads</h2>
+<p><span class="step-label">Source:</span> Individual Homework 6, Q3 (Canvas 20760; key Solution-HW6, Canvas 8480, Fall 2025). Ch. 4, 2D rigid-body equilibrium.</p>
+<div class="problem-box">
+<p><strong>Problem.</strong> Member ABC is connected at A to a roller support and at B to a hinged support. Determine the reactions at A and B. (Figure described in words: A is on a $30^\circ$ incline with a $60\ \text{cm}$ leg AB; a $300\ \text{N}$ cable tension pulls upward at D; a $200\ \text{N}$ weight hangs from a pulley of radius $10\ \text{cm}$ at C. Horizontal distances from B: $25\ \text{cm}$ to D, a further $25\ \text{cm}$ to E, a further $30\ \text{cm}$ to C.)</p>
+</div>
+<div class="solution-box">
+<p><span class="step-label">Strategy.</span> The roller at A pushes perpendicular to its surface (one unknown $F_A$); the hinge gives $B_x,B_y$. Take moments about B so the hinge forces drop out, then use the two force equations. Per the key's FBD, $F_A$ is perpendicular to AB (which makes $60^\circ$ with the horizontal), acts down and to the left, and has a $60\ \text{cm}$ lever arm. The $200\ \text{N}$ cable leaves the right side of the pulley, so its arm is $25+25+30+10=90\ \text{cm}$.</p>
+<p><span class="step-label">Key equations.</span> (Arms in cm, so the moment equation is in N·cm.)</p>
+$$\sum M_B=0:\ 60F_A+300(25)-200(90)=0\Rightarrow F_A=\frac{18000-7500}{60}=175\ \text{N}$$
+$$\sum F_x=0:\ B_x-175\cos60^\circ=0\Rightarrow B_x=87.5\ \text{N}$$
+$$\sum F_y=0:\ B_y-175\sin60^\circ-200+300=0\Rightarrow B_y=51.55\ \text{N}$$
+<div class="answer-box">$$\boxed{F_A=175\ \text{N}}\qquad\boxed{B_x=87.5\ \text{N}\ \rightarrow}\qquad\boxed{B_y=51.55\ \text{N}\ \uparrow}$$</div>
+<p class="sanity"><strong>Check.</strong> Moments about A (cm from B, $A\approx(-51.96,\,30)$) give $+5.30\times10^{3}$ (hinge), $+2.309\times10^{4}$ ($300\ \text{N}$), $-2.839\times10^{4}$ ($200\ \text{N}$), summing to zero within rounding.</p>
+</div>
+<div class="note"><span class="note-label">Match to key</span> Matches Solution-HW6. The key is from the Fall 2025 offering (Canvas 8480); its figure values match Fall 2026 HW6 Q3.</div>
+
+<h2>Summary of Answers</h2>
 <table>
-<thead><tr><th></th><th>About $O$</th><th>About $G$</th></tr></thead>
-<tbody>
-<tr><td>$\mathbf F_1$ alone</td><td>$+72.0$ N·m</td><td>$+36.0$ N·m</td></tr>
-<tr><td>$\mathbf F_2$ alone</td><td>$-18.0$ N·m</td><td>$+18.0$ N·m</td></tr>
-<tr><td><strong>Pair (couple)</strong></td><td><strong>$+54.0$ N·m</strong></td><td><strong>$+54.0$ N·m</strong></td></tr>
-</tbody>
+<tr><th>#</th><th>Source</th><th>Key result</th></tr>
+<tr><td>1</td><td>HW5 Q1</td><td>$d=0.529\ \text{m}$</td></tr>
+<tr><td>2</td><td>HW5 Q2</td><td>$M_E=176.58\ \text{N·m}$ CW; $F_{\min}=244.9\ \text{N}$; $F_v=176.58\ \text{N}$ up at D</td></tr>
+<tr><td>3</td><td>HW5 Q3</td><td>$T=250\ \text{lb}$; $P=120\ \text{lb}$</td></tr>
+<tr><td>4</td><td>GHW5 Q1</td><td>$L=50\ \text{mm}$; $F_z=370\ \text{N}$; $M_x=36.4\ \text{N·m}$; $\vec F_2=(50,80,370)$; $\vec M_2=(-8,1.5,0)$</td></tr>
+<tr><td>5</td><td>GHW5 Q2</td><td>$\vec M=(32,-12,0)$; $|\vec M|=34.18\ \text{N·m}$; $\hat u=(0.936,-0.351,0)$</td></tr>
+<tr><td>6</td><td>HW6 Q1</td><td>$M_O\approx2610\ \text{N·m}$</td></tr>
+<tr><td>7</td><td>HW6 Q2</td><td>$A_x=0$, $A_y=2\ \text{kN}$, $B_y=3\ \text{kN}$</td></tr>
+<tr><td>8</td><td>HW6 Q3</td><td>$F_A=175\ \text{N}$, $B_x=87.5\ \text{N}$, $B_y=51.55\ \text{N}$</td></tr>
 </table>
-</div>
 
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{\mathbf F_{\text{net}}=\mathbf 0,\quad M_O=M_G=54.0~\text{N·m CCW}}$$
-<p>$\mathbf F_1$ alone: $72.0~\text{N·m}$ about $O$ and $36.0~\text{N·m}$ about $G$ (both CCW).</p>
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> The couple moment equals force $\times$ perpendicular separation ($120\times0.450=54.0$ N·m) no matter where you compute it, so it is a free vector. A single force has no such property; its moment changed from $72.0$ to $36.0$ N·m when only the reference point moved.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex3">3. Equivalent force–couple system</h2>
-<p class="level">Level: medium. Chapter 3. HW6-style equivalent system.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A horizontal bar has $A$ at its left end. Loads act on it as follows (positions measured from $A$):</p>
-<ul>
-  <li>$\mathbf F_1=(0,\,-300)~\text{N}$ at $(0.500,\,0)~\text{m}$;</li>
-  <li>$\mathbf F_2=(160,\,-120)~\text{N}$ at $(1.20,\,0.300)~\text{m}$ (on a short bracket above the bar);</li>
-  <li>$\mathbf F_3=(0,\,+180)~\text{N}$ at $(2.00,\,0)~\text{m}$;</li>
-  <li>a pure couple $C=90.0~\text{N·m}$, clockwise.</li>
-</ul>
-<p><strong>Find:</strong> (a) the equivalent force–couple system at $A$; (b) the equivalent system at $B$, the right end at $(2.00,\,0)$; (c) the point on the bar where the resultant force alone, with no couple, is equivalent to the original system.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Horizontal bar from $A$ (left) to $B$ (right, $2.00~\text{m}$ from $A$). $F_1=300~\text{N}$ acts downward $0.500~\text{m}$ from $A$. $F_2=200~\text{N}$ (components $160~\text{N}$ right, $120~\text{N}$ down) acts at the top of a bracket $1.20~\text{m}$ from $A$ and $0.300~\text{m}$ above the bar. $F_3=180~\text{N}$ acts upward at $B$. A $90.0~\text{N·m}$ clockwise couple also acts on the bar. Horizontal dimensions are $0.500$, $0.700$ and $0.800~\text{m}$ in sequence.<br>
-<em>Equivalent system at $A$:</em> the resultant $\mathbf R$ (components $R_x=160~\text{N}$ right and $R_y=240~\text{N}$ down, magnitude $288~\text{N}$) acts at $A$ together with a clockwise couple $M_A=72.0~\text{N·m}$.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p>Two systems are equivalent if they have the same resultant force and the same total moment about one point (and hence about all points). So: sum the forces to get $\mathbf R$; sum the moments of every force <em>and</em> the couple about $A$ to get $M_A$. Couples add directly to the moment sum without needing a position vector. To move the system to another point, use $\mathbf M_B=\mathbf M_A+\mathbf r_{A/B}\times\mathbf R$.</p>
-
-<h3>Solution</h3>
-<p><strong>Resultant force.</strong></p>
-$$\begin{aligned}
-R_x &= 0 + 160 + 0 = 160~\text{N},\\
-R_y &= -300 - 120 + 180 = -240~\text{N},\\
-R &= \sqrt{160^2+240^2}=288~\text{N},\qquad \theta=\tan^{-1}\frac{240}{160}=56.3^\circ \text{ below the } +x\text{-axis}.
-\end{aligned}$$
-<p><strong>Moment about $A$</strong> ($M=xF_y-yF_x$, CCW positive):</p>
-$$\begin{aligned}
-M_{1}&=(0.500)(-300) - 0 = -150~\text{N·m},\\
-M_{2}&=(1.20)(-120)-(0.300)(160) = -144-48.0=-192~\text{N·m},\\
-M_{3}&=(2.00)(180)-0 = +360~\text{N·m},\\
-M_{C}&=-90.0~\text{N·m}\quad(\text{couple, clockwise}).
-\end{aligned}$$
-$$M_A=-150-192+360-90.0=-72.0~\text{N·m}\quad(\text{clockwise}).$$
-<p><strong>(b) Move to $B$.</strong> $\mathbf r_{A/B}=(-2.00,\,0)$ m, so $\mathbf r_{A/B}\times\mathbf R = (-2.00)(-240)-0=+480~\text{N·m}$:</p>
-$$M_B=-72.0+480=+408~\text{N·m}\ (\text{CCW}),\qquad \mathbf R\text{ unchanged}.$$
-<p><strong>(c) Single force with no couple.</strong> Place $\mathbf R$ at $(x,0)$ on the bar so its moment about $A$ equals $M_A$:</p>
-$$x\,R_y=M_A\;\Rightarrow\; x(-240)=-72.0\;\Rightarrow\; x=0.300~\text{m}.$$
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{\text{At }A:\ \mathbf R=(160\,\mathbf i-240\,\mathbf j)~\text{N}\ (288~\text{N at }56.3^\circ\text{ below }+x),\ \ M_A=72.0~\text{N·m clockwise}}$$
-$$\boxed{\text{At }B:\ \mathbf R\text{ same},\ M_B=408~\text{N·m CCW}}\qquad \boxed{\text{Single resultant: }\mathbf R\text{ acting at }x=0.300~\text{m from }A}$$
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> Placing $\mathbf R$ alone at $x=0.300$ m gives moment $0.300\times(-240)=-72.0$ N·m about $A$, matching $M_A$, and moment $(0.300-2.00)(-240)=+408$ N·m about $B$, matching part (b). The two descriptions agree at both points, as equivalent systems must.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex4">4. Simply supported beam: pin, roller, a load and a couple</h2>
-<p class="level">Level: medium. Chapter 4. Target confusion: <strong>why</strong> a pin gives two reaction components and a roller only one, and how the moment center removes unknowns.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A horizontal beam $AB$ is $4.00~\text{m}$ long. It is held by a <strong>pin at $A$</strong> and a <strong>roller at $B$</strong> that rests on a horizontal surface. A $500~\text{N}$ force with components $300~\text{N}$ to the right and $400~\text{N}$ downward acts on the beam $1.50~\text{m}$ from $A$. A $400~\text{N·m}$ counterclockwise couple is applied to the beam at $3.00~\text{m}$ from $A$. Treat the beam weight as negligible.</p>
-<p><strong>Find:</strong> the support reactions at $A$ and $B$.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Beam $AB$, $4.00~\text{m}$ long, on a pin at $A$ (left) and a roller at $B$ (right, free to roll horizontally). The $500~\text{N}$ force acts $1.50~\text{m}$ from $A$ and points right and down, with components $300~\text{N}$ and $400~\text{N}$. A $400~\text{N·m}$ counterclockwise couple acts on the beam $3.00~\text{m}$ from $A$. Horizontal dimensions are $1.50$, $1.50$ and $1.00~\text{m}$ in sequence.<br>
-<em>Free-body diagram:</em> supports removed. Assumed reactions: $A_x$ to the right and $A_y$ upward at the pin, and only a vertical $B_y$ at the roller. The solution will show that $A_x$ comes out negative, i.e. it really points left.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>Reactions come from what the support blocks.</strong></p>
-<ul>
-  <li><em>Pin at $A$.</em> It stops the beam point from moving in <em>any</em> direction in the plane, so it can push or pull both horizontally and vertically: two unknowns, $A_x$ and $A_y$.</li>
-  <li><em>Roller at $B$.</em> It stops motion only into or away from the surface it sits on, and lets the beam slide along it. The surface is horizontal, so the reaction is vertical only: one unknown, $B_y$. There is no horizontal reaction at $B$.</li>
-</ul>
-<p>That is three unknowns for three planar equations ($\sum F_x=0$, $\sum F_y=0$, $\sum M=0$), so the beam is statically determinate.</p>
-<p><strong>Choose the moment center to kill unknowns.</strong> Taking moments about $A$ removes $A_x$ and $A_y$, since both pass through $A$. That leaves $B_y$ as the only unknown in one equation. The $300~\text{N}$ component acts along the beam axis through $A$, so it has no moment about $A$. The couple enters the moment sum as its full value $+400~\text{N·m}$, wherever on the beam it is applied (a couple is a free vector, as in Example 2). Then use the force equations for $A_x$ and $A_y$, and check with a moment sum about $B$.</p>
-
-<h3>Solution</h3>
-<p><strong>Moments about $A$</strong> (CCW positive; only the vertical $400~\text{N}$ component, $B_y$ and the couple contribute):</p>
-$$\begin{aligned}
-\sum M_A &= B_y(4.00) - (400)(1.50) + 400 = 0\\
-4.00\,B_y &= 600 - 400 = 200 \;\Rightarrow\; B_y = +50.0~\text{N}.
-\end{aligned}$$
-<p><strong>Horizontal forces:</strong></p>
-$$\sum F_x = A_x + 300 = 0 \;\Rightarrow\; A_x = -300~\text{N}.$$
-<p>The negative sign means the pin pushes the beam to the <em>left</em>.</p>
-<p><strong>Vertical forces:</strong></p>
-$$\sum F_y = A_y + B_y - 400 = 0 \;\Rightarrow\; A_y = 400 - 50.0 = +350~\text{N}.$$
-<p><strong>Pin reaction as one vector:</strong> $A=\sqrt{300^2+350^2}=461~\text{N}$, directed $\tan^{-1}(350/300)=49.4^\circ$ above the $-x$ direction (up and to the left).</p>
-<p><strong>Independent check, moments about $B$.</strong> Now $B_y$ drops out. With $r$ measured from $B$:</p>
-$$\sum M_B = -A_y(4.00) + (400)(2.50) + 400 = -1400 + 1000 + 400 = 0.\ \checkmark$$
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{A_x = 300~\text{N (to the left)}},\qquad \boxed{A_y = 350~\text{N (up)}},\qquad \boxed{B_y = 50.0~\text{N (up)}}$$
-<p>Equivalently the pin force is $461~\text{N}$ at $49.4^\circ$ above the $-x$ axis. There is no horizontal force at the roller.</p>
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> Net horizontal: the pin's $300~\text{N}$ to the left cancels the applied $300~\text{N}$ to the right. Net vertical: $350+50.0=400~\text{N}$ up balances the $400~\text{N}$ down. Physically, the downward load alone would give a $600~\text{N·m}$ clockwise moment about $A$ that $B_y$ must resist, but the counterclockwise couple already supplies $400~\text{N·m}$ of it, which is why $B_y$ is small. Because $B_y>0$ the roller is being pushed on, as a roller requires. If a calculation had produced a negative $B_y$, the roller would have to <em>pull</em> on the beam, which it cannot do, and the beam would lift off.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex5">5. L-shaped bracket with a pin and a wall roller</h2>
-<p class="level">Level: medium–hard. Chapter 4. Target confusion: the free-body-diagram workflow when the supports are of <strong>different types</strong> and the roller is on a <strong>vertical</strong> surface.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>An L-shaped bracket is mounted against a vertical wall. Its vertical arm is $1.20~\text{m}$ tall and its horizontal arm sticks out $1.50~\text{m}$ from the wall. The bracket is held by a <strong>pin at $A$</strong> at the top of the vertical arm and a <strong>roller at $C$</strong> at the bottom corner, where the wheel rolls on the wall. A $500~\text{N}$ force acts at the end $D$ of the horizontal arm, with components $300~\text{N}$ to the right (away from the wall) and $400~\text{N}$ downward. Neglect the bracket weight.</p>
-<p><strong>Find:</strong> all the support reactions at $A$ and $C$.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-L-shaped bracket against a vertical wall (left). The pin $A$ joins the top of the vertical arm to the wall. The roller $C$ is at the bottom corner, a wheel touching the wall. The vertical arm is $1.20~\text{m}$ long and the horizontal arm $1.50~\text{m}$. A $500~\text{N}$ force acts at the free end $D$, pointing right and down with components $300~\text{N}$ (away from the wall) and $400~\text{N}$ (down).<br>
-<em>Free-body diagram:</em> wall removed. The pin at $A$ becomes two components $A_x$ (assumed right) and $A_y$ (assumed up). The roller at $C$ rolls on a <em>vertical</em> wall, so it can only push horizontally: a single $C_x$, assumed to the right (away from the wall, the only direction a roller can push). The applied force is shown with its components.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p>A reliable workflow for any support mix:</p>
-<ol>
-  <li><strong>Isolate</strong> the bracket and sketch only the bracket.</li>
-  <li><strong>Replace each support by what it blocks.</strong> Pin → two components ($A_x,A_y$). Roller on a vertical wall → one horizontal force ($C_x$), because the wheel is free to roll up and down the wall but cannot move into it or away from it.</li>
-  <li><strong>Draw the known load</strong> with its components, and count: three unknowns ($A_x$, $A_y$, $C_x$), three equations.</li>
-  <li><strong>Moment center at the pin $A$.</strong> Both $A_x$ and $A_y$ pass through $A$, so $\sum M_A=0$ contains only $C_x$ and the applied force.</li>
-  <li><strong>Force sums</strong> give $A_x$ and $A_y$.</li>
-  <li><strong>Check</strong> with a moment sum about a different point, here $C$.</li>
-</ol>
-<p>Use $M=xF_y-yF_x$ with the position vector measured <em>from the moment center</em> to the point where the force acts. Place the origin at $C$: then $A=(0,\,1.20)$ m, $C=(0,\,0)$ and $D=(1.50,\,0)$ m.</p>
-
-<h3>Solution</h3>
-<p><strong>Moments about $A$.</strong> Here $\mathbf r_{C/A}=(0,\,-1.20)$ m and $\mathbf r_{D/A}=(1.50,\,-1.20)$ m.</p>
-$$\begin{aligned}
-M_{C_x} &= x F_y - y F_x = (0)(0) - (-1.20)(C_x) = +1.20\,C_x,\\
-M_{F} &= (1.50)(-400) - (-1.20)(300) = -600 + 360 = -240~\text{N·m}.
-\end{aligned}$$
-$$\sum M_A = 1.20\,C_x - 240 = 0 \;\Rightarrow\; C_x = +200~\text{N}.$$
-<p>The positive sign agrees with the assumed direction: the wheel pushes away from the wall, as it must.</p>
-<p><strong>Horizontal and vertical forces:</strong></p>
-$$\begin{aligned}
-\sum F_x &= A_x + C_x + 300 = 0 \;\Rightarrow\; A_x = -200 - 300 = -500~\text{N},\\
-\sum F_y &= A_y - 400 = 0 \;\Rightarrow\; A_y = +400~\text{N}.
-\end{aligned}$$
-<p>The pin pulls the bracket <em>toward</em> the wall with $500~\text{N}$ and holds it up with $400~\text{N}$. As one vector, $A=\sqrt{500^2+400^2}=640~\text{N}$, directed $\tan^{-1}(400/500)=38.7^\circ$ above the $-x$ direction.</p>
-<p><strong>Independent check, moments about $C$.</strong> With $\mathbf r_{A/C}=(0,\,1.20)$ m and $\mathbf r_{D/C}=(1.50,\,0)$ m:</p>
-$$\sum M_C = \underbrace{-(1.20)(A_x)}_{+600} + \underbrace{(0)(A_y)}_{0} + \underbrace{(1.50)(-400)}_{-600} = 0.\ \checkmark$$
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{C_x = 200~\text{N (to the right, away from the wall)}}$$
-$$\boxed{A_x = 500~\text{N (to the left)}},\qquad \boxed{A_y = 400~\text{N (up)}}\quad(A=640~\text{N at }38.7^\circ\text{ above }-x).$$
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> The horizontal forces balance: $-500+200+300=0$. The $500~\text{N}$ force at $D$ tries to rotate the bracket clockwise about the wall, pulling the top away from the wall and pushing the bottom in. The wall's reactions oppose this: the pin pulls the top in and the roller pushes the bottom out. Taken about $A$, the applied force has a net $240~\text{N·m}$ clockwise moment, and $C_x=200~\text{N}$ acting $1.20~\text{m}$ below $A$ supplies the $240~\text{N·m}$ counterclockwise moment that balances it. Also, $C_x$ had to be positive; a negative value would have meant the wheel was being pulled into the wall, which a roller cannot do.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex6">6. Rigid beam on a pin and an inclined roller</h2>
-<p class="level">Level: medium–hard. Chapter 4. Target confusion: the direction of a reaction is set by <strong>what the support blocks</strong>, not by whatever direction looks convenient.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A rigid horizontal beam $AB$ is $3.00~\text{m}$ long. It is held by a <strong>pin at $A$</strong> and by a <strong>frictionless roller at $B$</strong> that rests on a smooth incline. The incline rises $3$ units for every $4$ horizontal units ($\theta=36.9^\circ$ above the horizontal), going up toward the right. The beam carries a $800~\text{N}$ weight acting at $1.20~\text{m}$ from $A$ (the load, with the beam's own weight included).</p>
-<p><strong>Find:</strong> the reaction at the roller $B$ (magnitude and direction) and the pin reaction components at $A$.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Horizontal beam $AB$, $3.00~\text{m}$ long, pinned at $A$ (left) and resting on a roller at $B$ (right). The roller sits on a smooth incline that rises $3$ units vertically per $4$ horizontally, so the surface makes an angle of $36.9^\circ$ with the horizontal. An $800~\text{N}$ weight acts downward $1.20~\text{m}$ from $A$, and $B$ is $1.80~\text{m}$ beyond it.<br>
-<em>Free-body diagram:</em> at the pin, assumed components $A_x$ (right) and $A_y$ (up). At the roller, a <em>single</em> force $N_B$ perpendicular to the incline, pointing away from it (up and to the left), along the unit normal $\hat{\mathbf n}=(-0.6,\,0.8)$, which is perpendicular to the incline direction $(0.8,\,0.6)$.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>What each support blocks.</strong></p>
-<ul>
-  <li><em>Pin at $A$:</em> blocks translation in both directions, so two components $A_x$, $A_y$.</li>
-  <li><em>Roller at $B$ on a smooth incline:</em> blocks motion <em>into</em> the incline and nothing along it, because the wheel rolls freely along the surface and there is no friction. So the reaction is purely <strong>perpendicular to the incline</strong>: one unknown magnitude $N_B$ along a known direction. It is not vertical, and it has a horizontal component.</li>
-</ul>
-<p>The incline direction is $(4,3)/5=(0.8,\,0.6)$. A perpendicular unit vector is $(-3,4)/5=(-0.6,\,0.8)$, chosen to point away from the solid incline (a roller can push, not pull). Thus</p>
-$$\mathbf N_B = N_B\,(-0.6\,\mathbf i + 0.8\,\mathbf j).$$
-<p>The unknowns are $A_x$, $A_y$, $N_B$: three unknowns, three equations. Moments about $A$ remove $A_x$ and $A_y$ and leave only $N_B$, so solve for $N_B$ first, then use the force sums.</p>
-
-<h3>Solution</h3>
-<p><strong>Moments about $A$.</strong> $B$ is at $\mathbf r_{B/A}=(3.00,\,0)$ m. The force $N_B$ has components $(-0.6N_B,\;0.8N_B)$. Its horizontal component acts along the beam line and has no moment; only the vertical component does. The weight acts at $x=1.20$ m.</p>
-$$\begin{aligned}
-\sum M_A &= (3.00)(0.8\,N_B) - (1.20)(800) = 0\\
-2.40\,N_B &= 960 \;\Rightarrow\; N_B = 400~\text{N}.
-\end{aligned}$$
-<p>So the components at $B$ are $N_{Bx}=-0.6(400)=-240~\text{N}$ and $N_{By}=0.8(400)=+320~\text{N}$.</p>
-<p><strong>Force sums:</strong></p>
-$$\begin{aligned}
-\sum F_x &= A_x + N_{Bx} = A_x - 240 = 0 \;\Rightarrow\; A_x = +240~\text{N},\\
-\sum F_y &= A_y + N_{By} - 800 = A_y + 320 - 800 = 0 \;\Rightarrow\; A_y = +480~\text{N}.
-\end{aligned}$$
-<p>The pin force is $A=\sqrt{240^2+480^2}=537~\text{N}$ at $\tan^{-1}(480/240)=63.4^\circ$ above the $+x$ axis.</p>
-<p><strong>Independent check, moments about $B$.</strong> Now $A_x$ and $N_B$ drop out (their lines pass through $B$ or along the beam):</p>
-$$\sum M_B = -(3.00)(A_y) + (1.80)(800) = -1440 + 1440 = 0.\ \checkmark$$
-<p><strong>What if the roller is drawn vertical?</strong> If we pretended $B$ sat on a flat floor, we would take $B_y$ vertical: $\sum M_A$ gives $3.00B_y=960$, so $B_y=320~\text{N}$ and $\sum F_x$ gives $A_x=0$. Both are wrong. The incline pushes the beam toward the <em>left</em> with $240~\text{N}$, and the pin must push back to the right with $240~\text{N}$.</p>
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{N_B = 400~\text{N, perpendicular to the incline, up and to the left}}\quad(N_{Bx}=-240~\text{N},\ N_{By}=+320~\text{N})$$
-$$\boxed{A_x = 240~\text{N (to the right)}},\qquad \boxed{A_y = 480~\text{N (up)}}\quad(A=537~\text{N at }63.4^\circ\text{ above }+x).$$
-<p>The normal direction makes an angle of $36.9^\circ$ with the vertical, the same as the incline angle with the horizontal.</p>
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> Vertical: $480+320=800~\text{N}$, matching the weight. Horizontal: the incline's $240~\text{N}$ push to the left is cancelled by the pin's $240~\text{N}$ to the right. Reasonableness: the weight is $40\%$ of the way along the beam, so a straight-up support at $B$ would carry about $40\%$ of $800$, i.e. $320~\text{N}$, and the vertical component of $N_B$ is exactly that. The extra horizontal part arises purely because the roller's reaction is tilted by the incline. As required, $N_B>0$ (pushing away from the incline surface).</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex7">7. Boom with a pulley, a rope and a support cable</h2>
-<p class="level">Level: exam-level. Chapter 4. Target confusion: a rope over an ideal pulley pulls with the <strong>same tension on both sides</strong>, and when the pulley is bolted to the body, <strong>both rope segments</strong> act on that body.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A horizontal boom $AB$ is $4.00~\text{m}$ long and is pinned to a wall at $A$. Its own weight is negligible. A frictionless pulley of negligible radius is mounted at the free end $B$. A rope is tied to the wall at point $E$, which is $3.00~\text{m}$ below $A$. The rope runs up to the pulley at $B$, passes over it, and carries a hanging weight $W=450~\text{N}$ on its other end, which hangs at rest. A separate support cable runs from point $D$ on the boom, $3.00~\text{m}$ from $A$, to a wall point $C$ that is $4.00~\text{m}$ above $A$.</p>
-<p><strong>Find:</strong> (a) the tension $T$ in the support cable $DC$; (b) the pin reaction at $A$ (components, magnitude and direction).</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-A horizontal boom $AB$, $4.00~\text{m}$ long, pinned to a wall at $A$ (left). A frictionless pulley is mounted at the free end $B$. A rope is tied to the wall at $E$, $3.00~\text{m}$ below $A$, runs up to the pulley, passes over it, and hangs straight down carrying a $450~\text{N}$ weight. A support cable joins $D$ on the boom ($3.00~\text{m}$ from $A$) to $C$ on the wall, $4.00~\text{m}$ above $A$.<br>
-<em>Free-body diagram:</em> boom and pulley together. The cable at $D$ gives one force $T$ along $DC$ (up and toward the wall). Because the pulley is part of the body, <em>both</em> rope segments are drawn at $B$: one pulls straight down with $450~\text{N}$ (the hanging side) and the other pulls toward $E$ (down and toward the wall) with the same $450~\text{N}$. Unknowns: $T$, $A_x$, $A_y$.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>Ideal pulley.</strong> The hanging weight is at rest, so the rope tension on that side equals $W=450~\text{N}$. A frictionless pulley changes the rope's direction but not its tension, so the segment running to $E$ also carries $450~\text{N}$. This is a <em>known</em> force, not an unknown.</p>
-<p><strong>Choice of body.</strong> Take the boom and pulley as one rigid body. The rope touches the pulley on two sides, so two rope forces act at $B$. Each pulls <em>along the rope, away from the body</em>. The support cable pulls along $DC$. The pin gives $A_x$ and $A_y$. The unknowns are $T$, $A_x$, $A_y$: three unknowns, three equations.</p>
-<p><strong>Directions.</strong> From $D(3,0)$ to $C(0,4)$ the vector is $(-3,4)$, length $5$, so the cable direction is $(-0.6,\,0.8)$. From $B(4,0)$ to $E(0,-3)$ the vector is $(-4,-3)$, length $5$, so the rope direction is $(-0.8,\,-0.6)$.</p>
-<p><strong>Order.</strong> Moments about $A$ eliminate $A_x$ and $A_y$ and give $T$ at once. Then the force sums give $A_x$ and $A_y$.</p>
-
-<h3>Solution</h3>
-<p><strong>Forces at the pulley.</strong> Hanging segment: $(0,\,-450)$ N. Segment toward $E$: $450\,(-0.8,\,-0.6)=(-360,\,-270)$ N. Both act at $B$.</p>
-<p><strong>Moments about $A$</strong> (use $M=xF_y-yF_x$; every force acts on the line $y=0$, so only vertical components matter):</p>
-$$\begin{aligned}
-\sum M_A &= (3.00)(0.8\,T) + (4.00)(-270) + (4.00)(-450) = 0\\
-2.40\,T &= 1080 + 1800 = 2880 \;\Rightarrow\; T = 1200~\text{N}.
-\end{aligned}$$
-<p><strong>Force sums.</strong> The cable force is $T(-0.6,\,0.8)=(-720,\,+960)$ N.</p>
-$$\begin{aligned}
-\sum F_x &= A_x - 720 - 360 = 0 \;\Rightarrow\; A_x = +1080~\text{N},\\
-\sum F_y &= A_y + 960 - 270 - 450 = 0 \;\Rightarrow\; A_y = -240~\text{N}.
-\end{aligned}$$
-<p>The negative sign means $A_y$ acts <em>downward</em>, opposite to the arrow assumed on the FBD. Then</p>
-$$A=\sqrt{1080^2+240^2}=1106~\text{N},\qquad \tan^{-1}\!\left(\frac{240}{1080}\right)=12.5^\circ\ \text{below the }+x\text{ axis}.$$
-<p><strong>Independent check, moments about $B$.</strong> Now $A_x$ and the three forces at $B$ drop out, leaving $A_y$ at lever arm $4.00~\text{m}$ (to the left) and $T$ at $1.00~\text{m}$ (to the left):</p>
-$$\sum M_B = (-4.00)(A_y) + (-1.00)(960) = (-4.00)(-240) - 960 = 960 - 960 = 0.\ \checkmark$$
-<p><strong>Common mistake: leaving out the rope to $E$.</strong> If only the weight is drawn at $B$, the moment equation becomes $2.40\,T=1800$, giving $T=750~\text{N}$, which is $450~\text{N}$ too low. The rope runs over the pulley and <em>also</em> pulls on the body, so both segments belong on the FBD.</p>
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{T = 1200~\text{N}}$$
-$$\boxed{A_x = 1080~\text{N (to the right)}},\qquad \boxed{A_y = 240~\text{N (downward)}}\quad(A=1106~\text{N at }12.5^\circ\text{ below }+x).$$
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> Vertical balance: $-240+960-270-450=0$. Horizontal balance: $1080-720-360=0$. The moment check about $B$ used different unknowns and also closed. Reasonableness: the downward pull at $B$ totals $270+450=720~\text{N}$ at a $4.00~\text{m}$ arm, while the cable acts at only $3.00~\text{m}$, so its vertical component must be $720\times 4/3=960~\text{N}$; dividing by the direction factor $0.8$ gives $T=1200~\text{N}$, as found. $A_y$ points down because the cable's upward pull ($960~\text{N}$) exceeds the $720~\text{N}$ of downward rope pull, so the pin must pull the boom down by the difference, $240~\text{N}$.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex8">8. Two-force and three-force members</h2>
-<p class="level">Level: medium. Chapter 4. Target confusion: a member loaded at <strong>exactly two points</strong> carries a force along the line joining them, and a member loaded at <strong>exactly three points</strong> has force lines that meet at one point.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p><strong>Part (a), two-force member.</strong> A horizontal beam $AD$ is pinned to a wall at $A$. A straight link $BC$ is pinned to the beam at $B$ and pinned to the wall at $C$. The link is weightless and carries no load between its pins. The beam is $5.00~\text{m}$ long. Point $B$ is $3.00~\text{m}$ from $A$ along the beam, and $C$ is $4.00~\text{m}$ directly below $A$. A load $P=600~\text{N}$ acts downward at $D$. <strong>Find:</strong> the force in link $BC$ (say whether it is in tension or compression) and the pin reaction at $A$.</p>
-<p><strong>Part (b), three-force member.</strong> A uniform bar $AB$ is $4.00~\text{m}$ long and weighs $600~\text{N}$. It is pinned to a wall at $A$ and held horizontal by a cable attached at $B$ and tied to the wall at point $C$, which is $3.00~\text{m}$ above $A$. <strong>Find:</strong> the point where the three force lines of action meet, the direction of the pin force at $A$, and the magnitudes of the cable tension and the pin force.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-<strong>Part (a).</strong> Beam $AD$ ($5.00~\text{m}$) is pinned to the wall at $A$. Link $BC$ is pinned to the beam at $B$, $3.00~\text{m}$ from $A$, and to the wall at $C$, $4.00~\text{m}$ below $A$, so the link rises $3$ to the right for every $4$ up. A $600~\text{N}$ load pulls straight down at $D$, $2.00~\text{m}$ beyond $B$. <em>FBDs:</em> the beam carries $P$ at $D$, pin components $A_x$, $A_y$ at $A$, and one force $F$ at $B$ along the link (drawn as tension). The link has only two forces on it, both of magnitude $F$, equal, opposite and along $BC$.<br><br>
-<strong>Part (b).</strong> Uniform bar $AB$, $4.00~\text{m}$ long, pinned to the wall at $A$ and held horizontal by a cable from its end $B$ to the wall at $C$, $3.00~\text{m}$ above $A$. The $600~\text{N}$ weight acts at the midpoint $G$, $2.00~\text{m}$ from each end. <em>FBD:</em> three forces on the bar: the weight $W$ (vertical through $G$), the cable tension $T$ at $B$ (along $BC$) and the pin reaction $R_A$ at $A$ (direction unknown at first). The lines of action of $W$ and $T$ cross at $P$, $2.00~\text{m}$ from the wall and $1.50~\text{m}$ above the bar. The line of $R_A$ must also pass through $P$.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>Two-force member.</strong> If a rigid body is in equilibrium with forces at only two points, the two forces must be equal in magnitude, opposite in direction and collinear. The only line that joins the two points is the line through them. So a straight, weightless link that is pinned at both ends and carries no load in between has a force along its own axis, with magnitude $F$ at both ends. That removes the four pin-component unknowns at $B$ and $C$ and replaces them with one number.</p>
-<p><strong>Three-force member.</strong> Suppose a body is in equilibrium under three forces whose lines of action are not all parallel. Take the point where two of the lines intersect. The moment of those two forces about that point is zero, so the moment of the third must also be zero. A nonzero force has zero moment about a point only if its line of action passes through that point. Hence the three lines are <em>concurrent</em>. (If two of the forces are parallel, the third must be parallel to them too, since the three forces sum to zero.) Concurrency gives the <em>direction</em> of an unknown force for free.</p>
-<p><strong>Plan.</strong> In (a), use the link direction $(3,4)/5=(0.6,\,0.8)$ to write the link force on the beam with a single unknown, then take moments about $A$. In (b), find the point $P$, take the pin force along $AP$, and close the force triangle.</p>
-
-<h3>Solution</h3>
-<p><strong>Part (a).</strong> The force the link exerts on the beam at $B$ lies along $BC$. Assume tension, so the link pulls the beam toward $C$, direction $(-0.6,\,-0.8)$: components $(-0.6F,\,-0.8F)$.</p>
-<p><strong>Moments about $A$</strong> (only the vertical components have lever arms along the beam):</p>
-$$\begin{aligned}
-\sum M_A &= (3.00)(-0.8F) + (5.00)(-600) = 0\\
--2.40F &= 3000 \;\Rightarrow\; F = -1250~\text{N}.
-\end{aligned}$$
-<p>The negative sign means the link is in <strong>compression</strong>: it pushes the beam at $B$ with $1250~\text{N}$ in the direction $(0.6,\,0.8)$, that is, $(+750,\,+1000)$ N.</p>
-<p><strong>Force sums on the beam:</strong></p>
-$$\begin{aligned}
-\sum F_x &= A_x + 750 = 0 \;\Rightarrow\; A_x = -750~\text{N},\\
-\sum F_y &= A_y + 1000 - 600 = 0 \;\Rightarrow\; A_y = -400~\text{N}.
-\end{aligned}$$
-<p>The pin force is $A=\sqrt{750^2+400^2}=850~\text{N}$, pointing left and down at $\tan^{-1}(400/750)=28.1^\circ$ below the $-x$ axis.</p>
-<p><strong>Check, moments about $B$:</strong> $(-3.00)(A_y)+(2.00)(-600)=(-3.00)(-400)-1200=0.\ \checkmark$</p>
-<p><strong>Without the two-force idea,</strong> the link would need its own FBD with pin components at both $B$ and $C$: six unknowns and six equations. With it, the beam alone has three unknowns and three equations.</p>
-
-<p><strong>Part (b).</strong> The weight acts at the midpoint, so its line is the vertical $x=2.00~\text{m}$. The cable line passes through $B(4,0)$ and $C(0,3)$. At $x=2.00~\text{m}$ it is at height $y=\tfrac{3}{4}(4-2)=1.50~\text{m}$. So the lines meet at $P=(2.00,\;1.50)$ m.</p>
-<p>The line of the pin force passes through $A(0,0)$ and $P$, so its direction is $(2.00,\,1.50)/2.50=(0.8,\,0.6)$, which is $36.9^\circ$ above the $+x$ axis. The force must point up and to the right (toward $P$) to balance the weight, so $\mathbf R_A=R\,(0.8,\,0.6)$ with $R>0$. The cable force on the bar is $\mathbf T=T(-0.8,\,0.6)$ and the weight is $(0,-600)$ N.</p>
-$$\begin{aligned}
-\sum F_x &= 0.8R - 0.8T = 0 \;\Rightarrow\; R = T,\\
-\sum F_y &= 0.6R + 0.6T - 600 = 0 \;\Rightarrow\; 1.2\,T = 600 \;\Rightarrow\; T = R = 500~\text{N}.
-\end{aligned}$$
-<p>The components are $R_x=400$ N (right) and $R_y=300$ N (up).</p>
-<p><strong>Independent check, moments about $A$:</strong> $(4.00)(0.6\times 500)+(2.00)(-600)=1200-1200=0.\ \checkmark$ The pin force passes through $A$ and contributes nothing.</p>
-<p><strong>Why concurrency helped.</strong> A pin normally has two unknown components, so the bar has three unknowns. Concurrency fixes the pin force's direction, leaving two unknown magnitudes, and the two force-sum equations settle them without a moment equation.</p>
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-<p><strong>Part (a).</strong></p>
-$$\boxed{F_{BC} = 1250~\text{N (compression)}},\qquad \boxed{A = 850~\text{N}}\quad(A_x=750~\text{N left},\ A_y=400~\text{N down;}\ 28.1^\circ\text{ below the }-x\text{ axis}).$$
-<p><strong>Part (b).</strong></p>
-$$\boxed{T = 500~\text{N}},\qquad \boxed{R_A = 500~\text{N at }36.9^\circ\text{ above the }+x\text{ axis}}\quad(R_x=400~\text{N right},\ R_y=300~\text{N up}),$$
-<p>with the three lines of action meeting at $P=(2.00,\,1.50)$ m.</p>
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> <strong>(a)</strong> Vertical balance on the beam: $-400+1000-600=0$. Horizontal: $-750+750=0$. Notice also that the beam in (a) is itself a three-force member (pin, link, load). The link force line through $B$ in the direction $(0.6,\,0.8)$ meets the load line $x=5.00~\text{m}$ at $y=\tfrac{4}{3}(2.00)=2.67~\text{m}$, and the line from $A$ to $(5.00,\,2.67)$ has slope $0.533=400/750$, the same as the pin force found above. The concurrency test agrees with the algebra. Reasonableness: the load is $5.00~\text{m}$ out and the link's vertical push acts at only $3.00~\text{m}$, so the link force's vertical part must exceed $600~\text{N}$, and $1000~\text{N}$ does.</p>
-<p><strong>(b)</strong> Vertical: $300+300=600~\text{N}$ matches the weight. Horizontal: $400$ right at $A$ and $400$ left from the cable. Reasonableness: the cable and pin force make equal angles with the vertical, which is why $T=R$, and each carries half the weight in the vertical direction. Both have positive values, consistent with the assumed senses.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex9">9. Bent bar with a pin, a link, a couple and two forces</h2>
-<p class="level">Level: exam-level. Chapter 4. Target confusion: with <strong>several loads</strong> on one body, the FBD must show <em>every</em> one of them, a couple adds its moment <strong>with no lever arm</strong>, and a pinned two-force link counts as <strong>one</strong> unknown, not two.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A bent bar $ABC$ has a horizontal leg $AB$ of length $4.00~\text{m}$ and a vertical leg $BC$ of length $3.00~\text{m}$ hanging down from $B$. Its weight is negligible. The bar is pinned to a wall at $A$. A straight, weightless link $CE$ is pinned to the bar at $C$ and pinned to the same wall at $E$, which is $6.00~\text{m}$ below $A$. Three loads act on the bar: a downward force of $800~\text{N}$ at the midpoint $G$ of $AB$, a horizontal force of $500~\text{N}$ pointing right at $C$, and a couple of magnitude $1300~\text{N·m}$ acting counterclockwise on the bar.</p>
-<p><strong>Find:</strong> (a) the force in link $CE$, and whether it is in tension or compression; (b) the pin reaction at $A$ (components, magnitude and direction).</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Bent bar $ABC$ pinned to the wall at $A$ (left). Leg $AB$ is $4.00~\text{m}$ long and leg $BC$ drops $3.00~\text{m}$. Link $CE$ joins $C$ to the wall pin at $E$, $6.00~\text{m}$ below $A$. Loads: $800~\text{N}$ down at the midpoint $G$ of $AB$; $500~\text{N}$ to the right at $C$; a $1300~\text{N·m}$ couple shown as a counterclockwise arc.<br>
-<em>Free-body diagram:</em> bar alone. Known loads include the couple $M_0$ (a free moment, not tied to any point). Unknowns: pin components $A_x$, $A_y$, and the link force $F$ at $C$, drawn as if the link were in tension (pulling the bar down and toward the wall). The link force lies along $CE$, which falls $3$ for every $4$ it runs to the left.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>Link.</strong> Link $CE$ is weightless, loaded only at its two pins, so it is a two-force member. Its force on the bar acts along $CE$. From $C(4,-3)$ to $E(0,-6)$ the vector is $(-4,-3)$, length $5$, so the unit vector is $(-0.8,\,-0.6)$. The link adds <em>one</em> unknown, $F$.</p>
-<p><strong>Body and unknowns.</strong> Take the bent bar alone. The unknowns are $A_x$, $A_y$ and $F$: three unknowns, and the planar problem has three equations ($\sum F_x$, $\sum F_y$, $\sum M$).</p>
-<p><strong>Moment center.</strong> Take moments about $A$. Both pin components pass through $A$ and drop out, so one equation gives $F$. Then the two force sums give $A_x$ and $A_y$.</p>
-<p><strong>Couple.</strong> A couple contributes the same moment about every point, equal to its own magnitude, with sign from its rotation sense. It appears in $\sum M$ but <em>never</em> in $\sum F_x$ or $\sum F_y$.</p>
-<p><strong>Moment of each force about $A$</strong> ($M=xF_y-yF_x$, with $(x,y)$ measured from $A$, CCW positive): the link force at $C(4,-3)$ has components $(-0.8F,\,-0.6F)$; the $800~\text{N}$ load acts at $(2,0)$; the $500~\text{N}$ force acts at $(4,-3)$.</p>
-
-<h3>Solution</h3>
-<p><strong>Moments about $A$:</strong></p>
-$$\begin{aligned}
-\sum M_A &= \underbrace{(4)(-0.6F)-(-3)(-0.8F)}_{\text{link force}}
- + \underbrace{(2)(-800)}_{800~\text{N load}}
- + \underbrace{-(-3)(500)}_{500~\text{N force}}
- + \underbrace{1300}_{\text{couple}} = 0\\
- &= -4.80F - 1600 + 1500 + 1300 = 0\\
- 4.80F &= 1200 \;\Rightarrow\; F = 250~\text{N}.
-\end{aligned}$$
-<p>$F$ is positive, so the link is in <strong>tension</strong>, as assumed. Its force on the bar is $250(-0.8,\,-0.6)=(-200,\,-150)$ N.</p>
-<p><strong>Force sums:</strong></p>
-$$\begin{aligned}
-\sum F_x &= A_x - 200 + 500 = 0 \;\Rightarrow\; A_x = -300~\text{N},\\
-\sum F_y &= A_y - 150 - 800 = 0 \;\Rightarrow\; A_y = +950~\text{N}.
-\end{aligned}$$
-<p>The negative $A_x$ means the pin pushes the bar to the <em>left</em>. Then</p>
-$$A=\sqrt{300^2+950^2}=996~\text{N},\qquad \tan^{-1}\!\left(\frac{950}{300}\right)=72.5^\circ\ \text{above the }-x\text{ axis}.$$
-<p><strong>Independent check, moments about $C$.</strong> The link force drops out. Measured from $C$, point $A$ is at $(-4,\,+3)$ and the $800~\text{N}$ load acts at $(-2,\,+3)$. The $500~\text{N}$ force acts at $C$ itself:</p>
-$$\begin{aligned}
-\sum M_C &= \underbrace{(-4)(950)-(3)(-300)}_{\text{pin at }A}
- + \underbrace{(-2)(-800)}_{800~\text{N}} + 0_{(500~\text{N at }C)} + 1300\\
- &= -3800 + 900 + 1600 + 1300 = 0.\ \checkmark
-\end{aligned}$$
-<p><strong>Common mistakes.</strong> (i) Multiplying the couple by a distance. It is already a moment of $1300~\text{N·m}$. (ii) Drawing the link with pin components at both $C$ and $E$: that adds three unneeded unknowns and an unsolvable system. (iii) Dropping the $500~\text{N}$ force from $\sum M_A$. Its line of action is $3.00~\text{m}$ <em>below</em> $A$, and a rightward push there turns the bar counterclockwise, contributing $+1500~\text{N·m}$.</p>
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{F_{CE} = 250~\text{N (tension)}}$$
-$$\boxed{A_x = 300~\text{N (to the left)}},\qquad \boxed{A_y = 950~\text{N (upward)}}\quad(A=996~\text{N at }72.5^\circ\text{ above the }-x\text{ axis}).$$
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> Horizontal balance: $-300-200+500=0$. Vertical balance: $950-150-800=0$. The moment check about $C$ used a different set of unknowns and also closed. Reasonableness: the link pulls the bar <em>down and toward the wall</em>, so $A_y$ must exceed the $800~\text{N}$ load, and $950~\text{N}$ does, by exactly the $150~\text{N}$ vertical part of the link force. The pin pushes left because the $500~\text{N}$ push to the right is larger than the $200~\text{N}$ pull toward the wall from the link. Finally, about $A$ the counterclockwise moments are the couple and the $500~\text{N}$ force ($1300+1500=2800~\text{N·m}$) and the clockwise ones are the $800~\text{N}$ load and the link ($1600+1200=2800~\text{N·m}$), so they balance.</p></div>
-
-<!-- ================================================================ -->
-<h2 id="ex10">10. 3D equilibrium: a plate on a ball-and-socket and three cables</h2>
-<p class="level">Level: exam-level. Chapter 4. Target confusion: in 3D there are <strong>six</strong> equations and a cable force must be written as a <strong>magnitude times a unit vector</strong>; a moment about a well-chosen <strong>axis</strong> removes several unknowns at once.</p>
-
-<h3>Given / Find</h3>
-<div class="problem-box">
-<p>A thin, rigid, rectangular plate $ABCD$ lies horizontally. With origin at $A$ and axes $x$ (along $AB$), $y$ (along $AD$) and $z$ (vertically up), the corners are $A(0,0,0)$, $B(4,0,0)$, $C(4,3,0)$ and $D(0,3,0)$, in meters. The weight of the plate is negligible. The plate is held by a ball-and-socket joint at $A$ and by three cables:</p>
-<ul>
-<li>cable $BG$ is vertical, from $B$ up to $G(4,0,3)$;</li>
-<li>cable $DE$ is vertical, from $D$ up to $E(0,3,3)$;</li>
-<li>cable $CE$ runs from $C$ up to the same anchor $E(0,3,3)$.</li>
-</ul>
-<p>A force $\mathbf P=(600\,\mathbf i-900\,\mathbf k)~\text{N}$ acts on the plate at the point $(3,2,0)$ m.</p>
-<p><strong>Find:</strong> the three cable tensions $T_B$, $T_D$, $T_C$ and the reaction at $A$ in vector form.</p>
-</div>
-
-<div class="note"><span class="note-label">Figure (see PDF for drawing)</span><br>
-Oblique view. The plate $ABCD$ is horizontal; $x$ runs to the right, $y$ runs away from the viewer, and $z$ is up (a right-handed set). The ball-and-socket is at $A$. Cables $BG$ and $DE$ are vertical ($3.00~\text{m}$ long). Cable $CE$ goes from $C$ to the same anchor $E$ as cable $DE$: $4.00~\text{m}$ toward the $-x$ direction and $3.00~\text{m}$ up. The force $\mathbf P$ acts at $(3,2,0)$ m with components $600~\text{N}$ in $+x$ and $900~\text{N}$ in $-z$.<br>
-<em>Free-body diagram:</em> the plate with the known force $\mathbf P$ and six unknowns. At $A$ the ball-and-socket supplies three components $A_x$, $A_y$, $A_z$ (drawn in their positive senses). Each cable can only pull, so $T_B$, $T_D$, $T_C$ are drawn toward their anchors: straight up at $B$ and $D$, and up and toward the $-x$ direction at $C$ along $CE$.</div>
-
-<div class="solution-box">
-<h3>Strategy</h3>
-<p><strong>Unknowns and equations.</strong> A ball-and-socket gives three force components and each cable gives one tension, so there are six unknowns. In 3D, $\sum\mathbf F=\mathbf 0$ and $\sum\mathbf M=\mathbf 0$ give six scalar equations. Six equations, six unknowns.</p>
-<p><strong>Cable direction.</strong> Write each cable force as (tension)$\times$(unit vector from the plate toward the anchor):</p>
-<ul>
-<li>$BG$ and $DE$: unit vector $\mathbf k$;</li>
-<li>$CE$: from $C(4,3,0)$ to $E(0,3,3)$ the vector is $(-4,0,3)$, length $5$, so the unit vector is $(-0.8,\,0,\,0.6)$.</li>
-</ul>
-<p><strong>Moment center and axes.</strong> Take moments about $A$ with $\mathbf M_A=\sum \mathbf r\times\mathbf F=\mathbf 0$. The ball-and-socket force passes through $A$, so none of $A_x,A_y,A_z$ appear. Each component of this vector equation is a moment about an axis through $A$. Choosing the axis well removes more unknowns:</p>
-<ul>
-<li>the $z$-axis through $A$: a vertical force has no moment about a vertical axis, so the two vertical cables drop out and only $T_C$ and $\mathbf P$ remain;</li>
-<li>the $x$-axis is the line $AB$. It passes through <em>two</em> unknown forces, the ball-and-socket at $A$ and the cable at $B$, so the moments of $A_x,A_y,A_z$ and $T_B$ about it are all zero, leaving only $T_D$ and $T_C$.</li>
-</ul>
-<p>The force sums then give the ball-and-socket reaction.</p>
-
-<h3>Solution</h3>
-<p><strong>Position vectors from $A$</strong> (m): $\mathbf r_B=4\mathbf i$, $\mathbf r_C=4\mathbf i+3\mathbf j$, $\mathbf r_D=3\mathbf j$, $\mathbf r_P=3\mathbf i+2\mathbf j$.</p>
-<p><strong>Forces on the plate</strong> (N): $\mathbf T_B=T_B\mathbf k$, $\mathbf T_D=T_D\mathbf k$, $\mathbf T_C=T_C(-0.8\,\mathbf i+0.6\,\mathbf k)$, $\mathbf P=600\,\mathbf i-900\,\mathbf k$, and $\mathbf A=A_x\mathbf i+A_y\mathbf j+A_z\mathbf k$.</p>
-<p><strong>Moment of each force about $A$</strong> (using $\mathbf i\times\mathbf j=\mathbf k$, $\mathbf j\times\mathbf k=\mathbf i$, $\mathbf k\times\mathbf i=\mathbf j$, so $\mathbf i\times\mathbf k=-\mathbf j$):</p>
-$$\begin{aligned}
-\mathbf r_B\times\mathbf T_B &= (4\mathbf i)\times(T_B\mathbf k) = -4T_B\,\mathbf j,\\
-\mathbf r_D\times\mathbf T_D &= (3\mathbf j)\times(T_D\mathbf k) = 3T_D\,\mathbf i,\\
-\mathbf r_C\times\mathbf T_C &= (4\mathbf i+3\mathbf j)\times T_C(-0.8\,\mathbf i+0.6\,\mathbf k) = T_C\,(1.8\,\mathbf i-2.4\,\mathbf j+2.4\,\mathbf k),\\
-\mathbf r_P\times\mathbf P &= (3\mathbf i+2\mathbf j)\times(600\,\mathbf i-900\,\mathbf k) = -1800\,\mathbf i+2700\,\mathbf j-1200\,\mathbf k.
-\end{aligned}$$
-<p>Adding them and setting each component of $\sum\mathbf M_A$ to zero:</p>
-$$\begin{aligned}
-\sum M_z:&\quad 2.4\,T_C-1200=0 &&\Rightarrow\ T_C=500~\text{N},\\
-\sum M_x:&\quad 3\,T_D+1.8\,T_C-1800=0 &&\Rightarrow\ 3T_D=1800-900\ \Rightarrow\ T_D=300~\text{N},\\
-\sum M_y:&\quad -4\,T_B-2.4\,T_C+2700=0 &&\Rightarrow\ 4T_B=2700-1200\ \Rightarrow\ T_B=375~\text{N}.
-\end{aligned}$$
-<p>The $\sum M_x$ line above is the moment about the axis $AB$ through two unknowns ($A$ and $B$). Notice that $A_x,A_y,A_z$ and $T_B$ never appear in it.</p>
-<p><strong>Force sums.</strong> With $\mathbf T_C=500(-0.8,\,0,\,0.6)=(-400,\,0,\,300)$ N:</p>
-$$\begin{aligned}
-\sum F_x &= A_x - 400 + 600 = 0 \;\Rightarrow\; A_x = -200~\text{N},\\
-\sum F_y &= A_y = 0 \;\Rightarrow\; A_y = 0,\\
-\sum F_z &= A_z + 375 + 300 + 300 - 900 = 0 \;\Rightarrow\; A_z = -75~\text{N}.
-\end{aligned}$$
-<p>So $\mathbf A=(-200\,\mathbf i-75\,\mathbf k)$ N, and $|\mathbf A|=\sqrt{200^2+75^2}=214~\text{N}$.</p>
-<p><strong>Independent check, moment about the line $BC$</strong> (the axis through $B$ parallel to $y$, which contains the points of application of $T_B$ and $T_C$, so both drop out). Measured from $B$, $A$ is at $(-4,0,0)$, $D$ at $(-4,3,0)$ and the load point at $(-1,2,0)$. The $y$-components are</p>
-$$\begin{aligned}
-\sum M_{BC} &= \underbrace{4A_z}_{\text{ball at }A} + \underbrace{4T_D}_{\text{cable }DE} + \underbrace{(-900)}_{\mathbf P}\\
- &= 4(-75) + 4(300) - 900 = -300 + 1200 - 900 = 0.\ \checkmark
-\end{aligned}$$
-<p>This equation used the reaction and a tension found from different equations, so it tests the whole solution.</p>
-<p><strong>Common mistakes.</strong> (i) Treating cable $CE$ as vertical. It has a $-0.8$ horizontal part, and that part alone supplies the moment about $z$ that fixes $T_C$. (ii) A sign slip in $\mathbf i\times\mathbf k=-\mathbf j$. (iii) Using 2D thinking: with only $\sum F_x$, $\sum F_y$ and one moment, the problem cannot be solved.</p>
-</div>
-
-<div class="answer-box">
-<h3 style="margin-top:0">Answer</h3>
-$$\boxed{T_B = 375~\text{N}},\qquad \boxed{T_D = 300~\text{N}},\qquad \boxed{T_C = 500~\text{N}}$$
-$$\boxed{\mathbf A = (-200\,\mathbf i + 0\,\mathbf j - 75\,\mathbf k)~\text{N}}\quad(|\mathbf A|=214~\text{N}:\ 200~\text{N toward }-x,\ 75~\text{N downward}).$$
-</div>
-
-<div class="sanity"><p><strong>Sanity check.</strong> All three tensions are positive, consistent with cables that can only pull. Vertical balance: the cables supply $375+300+0.6(500)=975~\text{N}$ upward against the $900~\text{N}$ downward part of $\mathbf P$, so the ball-and-socket must supply $75~\text{N}$ <em>downward</em>, matching $A_z=-75~\text{N}$. Horizontal balance: $\mathbf P$ pushes $600~\text{N}$ toward $+x$, cable $CE$ pulls $400~\text{N}$ toward $-x$, and the socket supplies the remaining $200~\text{N}$ toward $-x$. No force has a $y$-component, so $A_y=0$ is expected. The moment check about the line $BC$ closed with a different combination of unknowns.</p></div>
-
-<p class="footer-note">Staged for Canvas after instructor approval. Independent numerical check: 18/18 passed on 2026-11-05.</p>
+<p class="footer-note">Rebuilt 2026-11-05 · Independent check 8/8 · PR staged, unmerged. Problem statements are paraphrased from course homework; figures are intentionally omitted from this public page.</p>
 
 </div>
 </body>
