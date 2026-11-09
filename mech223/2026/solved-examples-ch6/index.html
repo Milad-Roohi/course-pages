@@ -1,547 +1,384 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.13" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Engineering Statics: Chapter 6 Solved Examples</title>
-  <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      color: light-dark(#1a1a1a, #fdfdfd);
-      background-color: #fdfdfd;
-      background-color: light-dark(#fdfdfd, #1a1a1a);
-      color-scheme: light dark;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        color-scheme: light only;
-      }
-      html, body, pre, code {
-        background-color: transparent;
-      }
-      body, a, a:visited, blockquote {
-        color: black;
-      }
-      pre, code {
-        padding: 0;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a, a:visited {
-      color: inherit;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid;
-      border-color: #e6e6e6;
-      border-color: light-dark(#e6e6e6, #4c4c4c);
-      color: #606060;
-      color: light-dark(#606060, #b6b6b6);
-    }
-    code {
-      white-space: pre-wrap;
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid currentColor;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid currentColor;
-      border-bottom: 1px solid currentColor;
-    }
-    th {
-      border-top: 1px solid currentColor;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-  </style>
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Solved Examples Ch 6 (Trusses &amp; Frames)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+  .article { max-width: 46rem; margin: 0 auto; padding: 2.2rem 1.4rem 3.5rem; }
+  .kicker {
+    font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--rule); margin: 0 0 0.35rem;
+  }
+  h1 { font-size: 1.55rem; font-weight: 700; line-height: 1.25; margin: 0 0 0.4rem; }
+  .subtitle { color: var(--muted); font-style: italic; margin: 0 0 1.1rem; }
+  hr.top { border: 0; border-top: 2.2px solid var(--rule); margin: 0 0 1.25rem; }
+  h2 {
+    font-size: 1.18rem; font-weight: 700; margin: 2.4rem 0 0.55rem;
+    padding-bottom: 0.18rem; border-bottom: 0.6px solid var(--line);
+  }
+  h3 { font-size: 1.02rem; font-weight: 700; margin: 1.2rem 0 0.4rem; }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  .level { color: var(--muted); font-style: italic; margin: 0 0 0.6rem; }
+  .problem-box {
+    background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--rule);
+    padding: 1rem 1.2rem; margin: 1rem 0 1.2rem;
+  }
+  .solution-box {
+    background: var(--panel); border: 1px solid var(--line);
+    padding: 1rem 1.2rem; margin: 1rem 0 1.5rem;
+  }
+  .solution-box h3:first-child, .problem-box p:last-child { margin-top: 0; }
+  .download-box {
+    background: #e8f4f8; border: 1px solid #b3d9e8; border-radius: 4px;
+    padding: 1rem 1.2rem; margin: 1.5rem 0; text-align: center;
+  }
+  .download-box a { color: #0B3D91; font-weight: 700; text-decoration: none; }
+  .download-box a:hover { text-decoration: underline; }
+  .note {
+    background: var(--panel); border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem; margin: 0.9rem 0 1.1rem;
+  }
+  .note.fig { background: #fff; }
+  .note.fig .figtag { font-weight: 700; color: var(--rule); }
+  .eqbox {
+    background: #fff; border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem; margin: 0.8rem 0 1rem; overflow-x: auto;
+  }
+  .answerbox {
+    background: #fff; border: 1.5px solid var(--rule);
+    padding: 0.5rem 0.85rem; margin: 0.8rem 0 1rem; overflow-x: auto;
+  }
+  .katex { font-size: 1.05em; }
+  .katex-display { margin: 0.7em 0; overflow-x: auto; overflow-y: hidden; }
+  strong { font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1rem; font-size: 0.92rem; background: #fff; }
+  th, td { border: 0.6px solid var(--line); padding: 0.42rem 0.55rem; text-align: left; vertical-align: top; }
+  th { background: var(--panel); font-weight: 700; }
+  ul.toc { list-style: none; padding-left: 0; }
+  ul.toc li { margin-bottom: 0.3rem; }
+  ul.toc a { color: #0B3D91; text-decoration: none; }
+  ul.toc a:hover { text-decoration: underline; }
+  .footer { margin-top: 2.2rem; color: var(--muted); font-size: 0.88rem; border-top: 0.6px solid var(--line); padding-top: 0.8rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+</style>
 </head>
 <body>
-<header id="title-block-header">
-<h1 class="title">Engineering Statics: Chapter 6 Solved Examples</h1>
-</header>
-<h1 class="unnumbered" id="example-1">Example 1</h1>
-<p>A truss consists of three pin-connected members <span
-class="math inline">AB</span>, <span class="math inline">BC</span>, and
-<span class="math inline">CA</span> forming a right triangle. Member
-<span class="math inline">AC</span> is horizontal and <span
-class="math inline">2\ \mathrm{m}</span> long, with a pin support at
-<span class="math inline">A</span> and a roller support at <span
-class="math inline">C</span> (the roller can exert only a vertical
-force). Joint <span class="math inline">B</span> is <span
-class="math inline">2\ \mathrm{m}</span> directly above <span
-class="math inline">A</span>, so member <span
-class="math inline">BC</span> makes <span
-class="math inline">45^\circ</span> with the horizontal at <span
-class="math inline">C</span>. A horizontal <span
-class="math inline">500\ \mathrm{N}</span> force acts to the right at
-<span class="math inline">B</span>. Determine the force in each member
-and state whether it is in tension or compression. Also find the support
-reactions at <span class="math inline">A</span> and <span
-class="math inline">C</span>.</p>
-<p><strong>Plan.</strong> Use the method of joints, starting at <span
-class="math inline">B</span> because it has one known force and only two
-unknown member forces. Every member force is assumed to be tension,
-meaning it pulls on the joint along the member, away from the joint. A
-negative result then means compression. Take <span
-class="math inline">+x</span> to the right and <span
-class="math inline">+y</span> upward.</p>
-<p><strong>Joint <span class="math inline">B</span>.</strong> Member
-<span class="math inline">BA</span> pulls <span
-class="math inline">B</span> straight down. Member <span
-class="math inline">BC</span> pulls <span class="math inline">B</span>
-toward <span class="math inline">C</span>, which is to the right and
-downward at <span class="math inline">45^\circ</span>. <span
-class="math display">\begin{aligned}
-\sum F_x&amp;=0:&amp; 500+F_{BC}\cos45^\circ&amp;=0
-&amp;&amp;\Rightarrow F_{BC}=-707.1\ \mathrm{N}\\
-\sum F_y&amp;=0:&amp; -F_{BA}-F_{BC}\sin45^\circ&amp;=0
-&amp;&amp;\Rightarrow F_{BA}=-(-707.1)(0.7071)=+500\ \mathrm{N}
-\end{aligned}</span> The negative sign for <span
-class="math inline">F_{BC}</span> means that member is in
-compression.</p>
-<p><strong>Joint <span class="math inline">C</span>.</strong> Member
-<span class="math inline">CB</span> pulls <span
-class="math inline">C</span> up and to the left at <span
-class="math inline">45^\circ</span>, member <span
-class="math inline">CA</span> pulls <span class="math inline">C</span>
-to the left, and the roller reaction <span
-class="math inline">C_y</span> acts vertically. <span
-class="math display">\begin{aligned}
-\sum F_x&amp;=0:&amp; -F_{CA}-F_{BC}\cos45^\circ&amp;=0
-&amp;&amp;\Rightarrow F_{CA}=+500\ \mathrm{N}\\
-\sum F_y&amp;=0:&amp; C_y+F_{BC}\sin45^\circ&amp;=0
-&amp;&amp;\Rightarrow C_y=+500\ \mathrm{N}\ (\text{up})
-\end{aligned}</span></p>
-<p><strong>Joint <span class="math inline">A</span>.</strong> Member
-<span class="math inline">AB</span> pulls <span
-class="math inline">A</span> up and member <span
-class="math inline">AC</span> pulls <span class="math inline">A</span>
-to the right. Assume <span class="math inline">A_x</span> points right
-and <span class="math inline">A_y</span> points up. <span
-class="math display">\begin{aligned}
-\sum F_x&amp;=0:&amp; F_{CA}+A_x&amp;=0 &amp;&amp;\Rightarrow A_x=-500\
-\mathrm{N}\\
-\sum F_y&amp;=0:&amp; F_{BA}+A_y&amp;=0 &amp;&amp;\Rightarrow A_y=-500\
-\mathrm{N}
-\end{aligned}</span> The negative signs mean <span
-class="math inline">A_x</span> points left and <span
-class="math inline">A_y</span> points down.</p>
-<p><strong>Check.</strong> For the whole truss, taking counterclockwise
-moments about <span class="math inline">A</span> as positive, <span
-class="math inline">C_y(2)-500(2)=500(2)-1000=0</span>, and <span
-class="math inline">\sum F_y=500-500=0</span>.</p>
-<p><span class="math display">\boxed{F_{BC}=707.1\ \mathrm{N}\
-\text{(C)}},\quad
-\boxed{F_{BA}=500\ \mathrm{N}\ \text{(T)}},\quad
-\boxed{F_{CA}=500\ \mathrm{N}\ \text{(T)}}</span> <span
-class="math display">\boxed{A_x=500\ \mathrm{N}\ \leftarrow},\quad
-\boxed{A_y=500\ \mathrm{N}\ \downarrow},\quad
-\boxed{C_y=500\ \mathrm{N}\ \uparrow}</span></p>
-<h1 class="unnumbered" id="example-2">Example 2</h1>
-<p>A pin-connected truss has joints <span class="math inline">A</span>,
-<span class="math inline">B</span>, <span class="math inline">C</span>,
-and <span class="math inline">D</span> along its bottom chord, spaced
-<span class="math inline">4\ \mathrm{m}</span> apart, so <span
-class="math inline">AD=12\ \mathrm{m}</span>. Joints <span
-class="math inline">G</span> and <span class="math inline">E</span> are
-on the top chord, <span class="math inline">3\ \mathrm{m}</span>
-directly above <span class="math inline">B</span> and <span
-class="math inline">C</span> respectively. The members are <span
-class="math inline">AB</span>, <span class="math inline">BC</span>,
-<span class="math inline">CD</span>, <span
-class="math inline">AG</span>, <span class="math inline">GE</span>,
-<span class="math inline">ED</span>, <span
-class="math inline">GB</span>, <span class="math inline">EC</span>, and
-<span class="math inline">GC</span>. The truss has a pin support at
-<span class="math inline">A</span> and a roller support at <span
-class="math inline">D</span>. A <span class="math inline">1200\
-\mathrm{N}</span> force acts downward at <span
-class="math inline">C</span>, and a <span class="math inline">400\
-\mathrm{N}</span> force acts horizontally to the right at <span
-class="math inline">E</span>. A section line <span
-class="math inline">a</span>–<span class="math inline">a</span> passes
-through members <span class="math inline">GE</span>, <span
-class="math inline">GC</span>, and <span class="math inline">BC</span>
-only. Determine the forces in members <span
-class="math inline">GE</span>, <span class="math inline">GC</span>, and
-<span class="math inline">BC</span>, and state whether each is in
-tension or compression.</p>
-<p><strong>Support reactions.</strong> The section method needs the
-external reactions first. For the whole truss, assume <span
-class="math inline">A_x</span> points right and <span
-class="math inline">A_y</span> and <span class="math inline">D_y</span>
-point up. Counterclockwise moments are positive. The <span
-class="math inline">400\ \mathrm{N}</span> force acts <span
-class="math inline">3\ \mathrm{m}</span> above <span
-class="math inline">A</span>, and the <span class="math inline">1200\
-\mathrm{N}</span> force acts <span class="math inline">8\
-\mathrm{m}</span> to the right of <span class="math inline">A</span>.
-<span class="math display">\begin{aligned}
-\sum F_x&amp;=0:&amp; 400+A_x&amp;=0 &amp;&amp;\Rightarrow A_x=-400\
-\mathrm{N}\ (\text{left})\\
-\sum M_A&amp;=0:&amp; -1200(8)-400(3)+D_y(12)&amp;=0
-&amp;&amp;\Rightarrow D_y=900\ \mathrm{N}\\
-\sum F_y&amp;=0:&amp; A_y-1200+900&amp;=0 &amp;&amp;\Rightarrow A_y=300\
-\mathrm{N}
-\end{aligned}</span></p>
-<p><strong>Free-body diagram.</strong> Cut along <span
-class="math inline">a</span>–<span class="math inline">a</span> and keep
-the left portion, since all of its external forces are known: <span
-class="math inline">A_x=400\ \mathrm{N}</span> to the left and <span
-class="math inline">A_y=300\ \mathrm{N}</span> up. Assume each cut
-member is in tension, so each force pulls away from the left portion.
-<span class="math inline">F_{GE}</span> and <span
-class="math inline">F_{BC}</span> act to the right. <span
-class="math inline">F_{GC}</span> acts along <span
-class="math inline">GC</span>, which has a <span
-class="math inline">3</span>–<span class="math inline">4</span>–<span
-class="math inline">5</span> slope, down and to the right, so its
-components are <span class="math inline">\tfrac45F_{GC}</span> and <span
-class="math inline">\tfrac35F_{GC}</span>.</p>
-<p><strong>Equilibrium.</strong> Moments about <span
-class="math inline">G</span> eliminate <span
-class="math inline">F_{GE}</span> and <span
-class="math inline">F_{GC}</span>, because both lines of action pass
-through <span class="math inline">G</span>. Here <span
-class="math inline">A_y</span> has a <span class="math inline">4\
-\mathrm{m}</span> arm and tends to turn the portion clockwise, <span
-class="math inline">A_x</span> has a <span class="math inline">3\
-\mathrm{m}</span> arm and also tends to turn it clockwise, and <span
-class="math inline">F_{BC}</span> lies <span class="math inline">3\
-\mathrm{m}</span> below <span class="math inline">G</span> and tends to
-turn it counterclockwise. <span class="math display">\begin{aligned}
-\sum M_G&amp;=0:&amp; -300(4)-400(3)+F_{BC}(3)&amp;=0
-&amp;&amp;\Rightarrow F_{BC}=+800\ \mathrm{N}
-\end{aligned}</span> Moments about <span class="math inline">C</span>
-eliminate <span class="math inline">F_{GC}</span> and <span
-class="math inline">F_{BC}</span>, because both pass through <span
-class="math inline">C</span>. Then <span class="math inline">A_y</span>
-has an <span class="math inline">8\ \mathrm{m}</span> arm (clockwise),
-<span class="math inline">A_x</span> has zero arm, and <span
-class="math inline">F_{GE}</span> lies <span class="math inline">3\
-\mathrm{m}</span> above <span class="math inline">C</span> and acts to
-the right (clockwise). <span class="math display">\begin{aligned}
-\sum M_C&amp;=0:&amp; -300(8)-F_{GE}(3)&amp;=0 &amp;&amp;\Rightarrow
-F_{GE}=-800\ \mathrm{N}
-\end{aligned}</span> Since <span class="math inline">F_{GE}</span> and
-<span class="math inline">F_{BC}</span> have no vertical components, a
-vertical force sum gives <span class="math inline">F_{GC}</span>
-directly. <span class="math display">\begin{aligned}
-\sum F_y&amp;=0:&amp; 300-\tfrac35F_{GC}&amp;=0 &amp;&amp;\Rightarrow
-F_{GC}=+500\ \mathrm{N}
-\end{aligned}</span> <strong>Check.</strong> <span
-class="math inline">\sum
-F_x=-400+F_{BC}+F_{GE}+\tfrac45F_{GC}=-400+800-800+400=0</span>. A
-positive result means tension and a negative result means
-compression.</p>
-<p><span class="math display">\boxed{F_{BC}=800\ \mathrm{N}\
-\text{(T)}},\quad
-\boxed{F_{GE}=800\ \mathrm{N}\ \text{(C)}},\quad
-\boxed{F_{GC}=500\ \mathrm{N}\ \text{(T)}}</span></p>
-<h1 class="unnumbered" id="example-3">Example 3</h1>
-<p>A pin-connected roof truss has joints <span
-class="math inline">A</span>, <span class="math inline">B</span>, <span
-class="math inline">C</span>, <span class="math inline">D</span>, and
-<span class="math inline">E</span> along its horizontal bottom chord,
-spaced <span class="math inline">4\ \mathrm{m}</span> apart, so <span
-class="math inline">AE=16\ \mathrm{m}</span>. The truss has a pin
-support at <span class="math inline">A</span> and a roller support at
-<span class="math inline">E</span>. Top joint <span
-class="math inline">G</span> is <span class="math inline">6\
-\mathrm{m}</span> above <span class="math inline">C</span>, and top
-joint <span class="math inline">F</span> is <span class="math inline">4\
-\mathrm{m}</span> above <span class="math inline">D</span>. Diagonal
-<span class="math inline">CF</span> therefore makes <span
-class="math inline">45^\circ</span> with the horizontal. A <span
-class="math inline">5\ \mathrm{kN}</span> load acts downward at <span
-class="math inline">C</span> and a <span class="math inline">3\
-\mathrm{kN}</span> load acts downward at <span
-class="math inline">D</span>. A section line <span
-class="math inline">a</span>–<span class="math inline">a</span> passes
-through members <span class="math inline">GF</span>, <span
-class="math inline">CF</span>, and <span class="math inline">CD</span>
-only. Determine the force in member <span class="math inline">CF</span>
-and state whether it is in tension or compression.</p>
-<p><strong>Reactions.</strong> With <span class="math inline">A</span>
-at the origin, <span class="math inline">x</span> to the right, and
-counterclockwise moments positive: <span
-class="math display">\begin{aligned}
-\sum M_A&amp;=0:&amp; -5(8)-3(12)+E_y(16)&amp;=0 &amp;&amp;\Rightarrow
-E_y=4.75\ \mathrm{kN}\\
-\sum F_y&amp;=0:&amp; A_y-5-3+4.75&amp;=0 &amp;&amp;\Rightarrow
-A_y=3.25\ \mathrm{kN}
-\end{aligned}</span></p>
-<p><strong>Free-body diagram.</strong> Cut along <span
-class="math inline">a</span>–<span class="math inline">a</span> and keep
-the right portion, which contains <span class="math inline">D</span>,
-<span class="math inline">E</span>, and <span
-class="math inline">F</span>. It carries the <span
-class="math inline">3\ \mathrm{kN}</span> load at <span
-class="math inline">D</span> and the <span class="math inline">4.75\
-\mathrm{kN}</span> reaction at <span class="math inline">E</span>. The
-three unknowns are <span class="math inline">F_{GF}</span>, <span
-class="math inline">F_{CF}</span>, and <span
-class="math inline">F_{CD}</span>. Moments about a suitable point <span
-class="math inline">O</span> will remove two of them.</p>
-<p><strong>Choosing <span class="math inline">O</span>.</strong> Member
-<span class="math inline">GF</span> drops <span class="math inline">2\
-\mathrm{m}</span> over each <span class="math inline">4\
-\mathrm{m}</span> of horizontal run. To reach the level of the bottom
-chord from <span class="math inline">F</span>, it must drop <span
-class="math inline">4\ \mathrm{m}</span> more, which takes <span
-class="math inline">8\ \mathrm{m}</span> of horizontal run. Hence line
-<span class="math inline">GF</span> meets the bottom-chord line at <span
-class="math inline">O</span>, <span class="math inline">8\
-\mathrm{m}</span> to the right of <span class="math inline">D</span> and
-<span class="math inline">4\ \mathrm{m}</span> beyond <span
-class="math inline">E</span>. Lines <span class="math inline">GF</span>
-and <span class="math inline">CD</span> both pass through <span
-class="math inline">O</span>, so only <span
-class="math inline">F_{CF}</span> and the loads appear in <span
-class="math inline">\sum M_O=0</span>.</p>
-<p>Assume <span class="math inline">CF</span> is in compression, so on
-the right portion it pushes up and to the right at <span
-class="math inline">45^\circ</span>. Slide <span
-class="math inline">F_{CF}</span> along its line to <span
-class="math inline">C</span> and resolve it there. The horizontal
-component lies along the bottom-chord line through <span
-class="math inline">O</span> and has zero moment. The vertical component
-<span class="math inline">F_{CF}\sin45^\circ</span> has a <span
-class="math inline">12\ \mathrm{m}</span> arm to <span
-class="math inline">O</span> and turns the portion clockwise. The <span
-class="math inline">3\ \mathrm{kN}</span> load (<span
-class="math inline">8\ \mathrm{m}</span> arm) turns it counterclockwise,
-and the <span class="math inline">4.75\ \mathrm{kN}</span> reaction
-(<span class="math inline">4\ \mathrm{m}</span> arm) turns it clockwise.
-<span class="math display">\begin{aligned}
-\sum M_O&amp;=0:&amp; -F_{CF}\sin45^\circ(12)+3(8)-4.75(4)&amp;=0\\
-F_{CF}&amp;=\frac{24-19}{12\sin45^\circ}=\frac{5}{8.485}=0.589\
-\mathrm{kN}
-\end{aligned}</span> The positive result confirms that the assumed
-compression is correct.</p>
-<p><strong>Check.</strong> Moments about <span
-class="math inline">F</span> eliminate <span
-class="math inline">F_{GF}</span> and <span
-class="math inline">F_{CF}</span>, which both pass through <span
-class="math inline">F</span>, and the vertical <span
-class="math inline">3\ \mathrm{kN}</span> load, which also passes
-through <span class="math inline">F</span>. This leaves <span
-class="math inline">4.75(4)-F_{CD}(4)=0</span>, so <span
-class="math inline">F_{CD}=4.75\ \mathrm{kN}</span> (T). The force
-balances <span class="math inline">\sum F_x=0</span> and <span
-class="math inline">\sum F_y=0</span> on the right portion then give
-<span class="math inline">F_{GF}=4.845\ \mathrm{kN}</span> (C), and both
-sums reduce to zero.</p>
-<p><span class="math display">\boxed{F_{CF}=0.589\ \mathrm{kN}\
-\text{(C)}}</span></p>
-<h1 class="unnumbered" id="example-4">Example 4</h1>
-<p>A load of <span class="math inline">600\ \mathrm{N}</span> hangs from
-the hook of frictionless pulley <span class="math inline">A</span>. One
-continuous weightless cable runs over pulleys <span
-class="math inline">A</span>, <span class="math inline">B</span>, and
-<span class="math inline">C</span>, and its free end is pulled downward
-by a force <span class="math inline">P</span>. Pulley <span
-class="math inline">C</span> hangs from a fixed ceiling support. Pulley
-<span class="math inline">B</span> is joined to the pin of <span
-class="math inline">C</span> by a short connecting cable, which is a
-two-force member carrying a tension <span class="math inline">T</span>.
-The cable arrangement puts three vertical cable segments on <span
-class="math inline">A</span> pulling upward, two vertical segments on
-<span class="math inline">B</span> pulling downward, and two vertical
-segments on <span class="math inline">C</span> pulling downward (one of
-them is the free end). The weights of the pulleys and cable are
-neglected. Determine the cable tension <span
-class="math inline">P</span> needed to support the <span
-class="math inline">600\ \mathrm{N}</span> load, the connecting-cable
-tension <span class="math inline">T</span>, and the ceiling support
-force <span class="math inline">R</span> on pulley <span
-class="math inline">C</span>.</p>
-<p><strong>Free-body diagrams.</strong> Draw each pulley separately,
-including its pin and the piece of cable touching it. The cable is
-continuous over frictionless pulleys, so its tension is the same value
-<span class="math inline">P</span> everywhere. The connecting cable
-between <span class="math inline">B</span> and <span
-class="math inline">C</span> has an unknown tension <span
-class="math inline">T</span>. It pulls <span
-class="math inline">B</span> upward and pulls <span
-class="math inline">C</span> downward, an equal and opposite pair. The
-ceiling exerts an upward force <span class="math inline">R</span> on
-<span class="math inline">C</span>. Take upward as positive for <span
-class="math inline">\sum F_y</span>.</p>
-<p><strong>Pulley <span class="math inline">A</span>.</strong> Three
-cable segments pull upward, and the load pulls downward. <span
-class="math display">\begin{aligned}
-\sum F_y&amp;=0:&amp; 3P-600&amp;=0 &amp;&amp;\Rightarrow P=200\
-\mathrm{N}
-\end{aligned}</span></p>
-<p><strong>Pulley <span class="math inline">B</span>.</strong> The
-connecting cable pulls upward with <span class="math inline">T</span>,
-and two cable segments pull downward with <span
-class="math inline">P</span> each. <span
-class="math display">\begin{aligned}
-\sum F_y&amp;=0:&amp; T-2P&amp;=0 &amp;&amp;\Rightarrow T=2(200)=400\
-\mathrm{N}
-\end{aligned}</span></p>
-<p><strong>Pulley <span class="math inline">C</span>.</strong> The
-ceiling force <span class="math inline">R</span> acts upward. Two cable
-segments pull downward with <span class="math inline">P</span> each, and
-the connecting cable pulls downward with <span
-class="math inline">T</span>. <span class="math display">\begin{aligned}
-\sum F_y&amp;=0:&amp; R-2P-T&amp;=0 &amp;&amp;\Rightarrow
-R=2(200)+400=800\ \mathrm{N}
-\end{aligned}</span></p>
-<p><strong>Check.</strong> Take all three pulleys together as one
-system. The external forces are the ceiling force <span
-class="math inline">R</span> upward, the <span class="math inline">600\
-\mathrm{N}</span> load downward, and the free-end force <span
-class="math inline">P</span> downward. This gives <span
-class="math inline">R=600+P=800\ \mathrm{N}</span>, which agrees.</p>
-<p><span class="math display">\boxed{P=200\ \mathrm{N}},\quad
-\boxed{T=400\ \mathrm{N}\ \text{(tension)}},\quad
-\boxed{R=800\ \mathrm{N}\ \uparrow}</span></p>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Engineering Statics · Chapter 6</p>
+  <h1>MECH 223 · Solved Examples Ch 6 (Trusses &amp; Frames)</h1>
+  <p class="subtitle">Fall 2026 · six worked examples (trusses &amp; frames)</p>
+  <hr class="top">
+
+  <div class="note"><p><strong>Practice packet.</strong> Six worked truss and frame examples for self-study. Figures are described in words; sketch each setup before reading the solution.</p></div>
+<div class="note">
+    <p><strong>Conventions.</strong> Right and up are positive. Counterclockwise (CCW) moments are positive. A member force is <strong>tension (T)</strong> if positive (it pulls on the joints at its ends) and <strong>compression (C)</strong> if negative (it pushes on them). In joint equations, a tensile force acts on a joint <em>toward</em> the other end of the member. Numbers are rounded to three significant figures.</p>
+    <p><strong>Key status.</strong> Each example says whether a typed or published key exists. Where none exists, it is marked <em>independently solved</em>, and the result was also confirmed by solving the full set of joint (or member) equations numerically.</p>
+  </div>
+
+  <h2 style="margin-top:1.6rem;">Contents</h2>
+  <ul class="toc">
+    <li><a href="#ex1">1. Wall-pin truss: reactions and joint forces, zero vertical reaction at C</a></li>
+    <li><a href="#ex2">2. Bridge truss: members GB and GF, members GB and GF</a></li>
+    <li><a href="#ex3">3. Deck truss by sections: JI and EI, members JI and EI</a></li>
+    <li><a href="#ex4">4. Truss support reactions, two methods (course-pages worked example)</a></li>
+    <li><a href="#ex5">5. Pulley frame: reactions at C, force at C</a></li>
+    <li><a href="#ex6">6. Cantilever truss: determinacy and member forces and determinacy</a></li>
+  </ul>
+
+<!-- ======================= EXAMPLE 1 ======================= -->
+<section id="ex1">
+  <h2>1. Truss on two wall pins: zero vertical reaction at C</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p>Determine the force in each member and state T or C. <em>Hint: the vertical component of force at \(C\) must be zero. Why?</em></p>
+    <p>Joint \(A\) carries \(6~\text{kN}\) down and joint \(E\) carries \(8~\text{kN}\) down. The truss is pinned to a wall at \(C\) (top) and \(D\) (bottom), \(2~\text{m}\) apart vertically. \(AE=1.5~\text{m}\), \(ED=2~\text{m}\), \(B\) lies directly above \(E\), and \(BC\) is horizontal. Members: \(AB, AE, ED, BE, BC, BD\).</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Strategy</h3>
+    <p>Only the horizontal member \(BC\) reaches \(C\), and a two-force member pushes or pulls only along its axis, so \(C_y=0\). Moments about \(D\) give \(C_x\); then walk joints \(A\), \(E\), \(B\), and keep \(D\) as a check.</p>
+    <h3>Solution</h3>
+    <p>Coordinates (m), origin at \(A\): \(A(0,0)\), \(E(1.5,0)\), \(D(3.5,0)\), \(B(1.5,2)\), \(C(3.5,2)\). Member \(AB\) has length \(2.5~\text{m}\), direction cosines \((0.6,\,0.8)\). Member \(BD\) is at \(45^\circ\).</p>
+    \[
+    \begin{aligned}
+    \sum M_D &= 6(3.5)+8(2)-C_x(2)=0 \Rightarrow C_x=18.5~\text{kN (right)},\\
+    \sum F_x &= C_x+D_x=0 \Rightarrow D_x=18.5~\text{kN (left)},\\
+    \sum F_y &= D_y-6-8=0 \Rightarrow D_y=14.0~\text{kN (up)}.
+    \end{aligned}
+    \]
+    <p><strong>Joint \(A\).</strong></p>
+    \[
+    0.8F_{AB}-6=0\Rightarrow F_{AB}=7.50~\text{kN (T)},\qquad 0.6(7.50)+F_{AE}=0\Rightarrow F_{AE}=-4.50~\text{kN (C)}.
+    \]
+    <p><strong>Joint \(E\).</strong> \(AE\) pulls \(E\) toward \(A\), so it enters as \(-F_{AE}\).</p>
+    \[
+    -F_{AE}+F_{ED}=0\Rightarrow F_{ED}=-4.50~\text{kN (C)},\qquad F_{BE}-8=0\Rightarrow F_{BE}=8.00~\text{kN (T)}.
+    \]
+    <p><strong>Joint \(B\).</strong></p>
+    \[
+    \begin{aligned}
+    \sum F_y &= -0.8(7.50)-8.00-\tfrac{\sqrt2}{2}F_{BD}=0 \Rightarrow F_{BD}=-14\sqrt2=-19.8~\text{kN (C)},\\
+    \sum F_x &= -0.6(7.50)+F_{BC}+\tfrac{\sqrt2}{2}(-19.8)=0 \Rightarrow F_{BC}=4.5+14=18.5~\text{kN (T)}.
+    \end{aligned}
+    \]
+    <p><strong>Check at joint \(D\).</strong> \(ED\) (C) pushes \(D\) right with \(4.50\); \(BD\) (C) pushes along \(B\to D\) with \((+14,-14)\); the pin gives \((-18.5,+14)\). Sum in \(x\): \(4.5+14-18.5=0\). Sum in \(y\): \(-14+14=0\). Count: \(m+r=6+4=10=2n\) with \(n=5\), determinate.</p>
+  </div>
+
+  <div class="answerbox">
+    <table>
+      <caption style="display:none">Example 1 member forces</caption>
+      <thead><tr><th scope="col">Member</th><th scope="col">Force (kN)</th><th scope="col">Type</th></tr></thead>
+      <tbody>
+        <tr><td>\(AB\)</td><td>7.50</td><td>T</td></tr>
+        <tr><td>\(AE\)</td><td>4.50</td><td>C</td></tr>
+        <tr><td>\(ED\)</td><td>4.50</td><td>C</td></tr>
+        <tr><td>\(BE\)</td><td>8.00</td><td>T</td></tr>
+        <tr><td>\(BC\)</td><td>18.5</td><td>T</td></tr>
+        <tr><td>\(BD\)</td><td>19.8 (\(14\sqrt2\))</td><td>C</td></tr>
+      </tbody>
+    </table>
+    \[ \boxed{C_y=0,\quad C_x=18.5~\text{kN}\ (\rightarrow),\quad D_x=18.5~\text{kN}\ (\leftarrow),\quad D_y=14.0~\text{kN}\ (\uparrow)} \]
+  </div>
+</section>
+
+<!-- ======================= EXAMPLE 2 ======================= -->
+<section id="ex2">
+  <h2>2. Bridge truss: members GB and GF</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p>Find the force in members \(GB\) and \(GF\) and state T or C. Pin at \(A\), roller at \(D\), span \(AD=10+4+4+10=28~\text{ft}\), truss height \(10~\text{ft}\). Bottom joints \(A, B, C, D\) at \(x=0,10,18,28\); top joints \(G, F, E\) at \(x=10,14,18\). \(600~\text{lb}\) down at \(B\) and \(800~\text{lb}\) down at \(C\).</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Strategy</h3>
+    <p>Get the reactions. Joint \(A\) has two unknown members (\(AG\), \(AB\)). Joint \(G\) then has three members (\(GA\), \(GB\), \(GF\)) with \(GA\) known, so two equations give \(GB\) and \(GF\).</p>
+    <h3>Solution</h3>
+    \[
+    \begin{aligned}
+    \sum M_A &= D_y(28)-600(10)-800(18)=0 \Rightarrow D_y=\tfrac{20400}{28}=728.6~\text{lb},\\
+    \sum F_y &= 0 \Rightarrow A_y=1400-728.6=671.4~\text{lb},\qquad A_x=0.
+    \end{aligned}
+    \]
+    <p><strong>Joint \(A\)</strong> (\(AG\) rises at \(45^\circ\)).</p>
+    \[
+    671.4+\tfrac{\sqrt2}{2}F_{AG}=0\Rightarrow F_{AG}=-949.5~\text{lb (C)},\qquad F_{AB}+\tfrac{\sqrt2}{2}(-949.5)=0\Rightarrow F_{AB}=671.4~\text{lb (T)}.
+    \]
+    <p><strong>Joint \(G\).</strong> \(GA\) in compression pushes \(G\) up and right with \((+671.4,+671.4)\). \(GB\) hangs straight down; \(GF\) runs right along the top chord.</p>
+    \[
+    671.4-F_{GB}=0\Rightarrow F_{GB}=671.4~\text{lb (T)},\qquad 671.4+F_{GF}=0\Rightarrow F_{GF}=-671.4~\text{lb (C)}.
+    \]
+    <p><strong>Sense check.</strong> The top chord of a simply supported truss under downward loads is in compression, and a vertical member hanging a loaded lower joint from the top is in tension. A full solve of all 14 joint equations (11 members, 3 reactions) agrees.</p>
+    <div class="note"><p><strong>Sign flag.</strong> An earlier draft of this set listed \(GB\) as compression and \(GF\) as tension. The magnitudes match, but the labels are reversed relative to the derivation above: the vertical component of the compressive force in \(GA\) must be balanced by a downward pull from \(GB\), so \(GB\) is in tension. This page uses the derived signs.</p></div>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{F_{GB}=671~\text{lb (T)},\quad F_{GF}=671~\text{lb (C)}}\qquad (A_x=0,\ A_y=671~\text{lb},\ D_y=729~\text{lb}) \]
+  </div>
+</section>
+
+<!-- ======================= EXAMPLE 3 ======================= -->
+<section id="ex3">
+  <h2>3. Bridge deck truss: members JI and EI</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p>Find the force in members \(EI\) and \(JI\) and state T or C. Six panels of \(9~\text{ft}\) (total \(54~\text{ft}\)), height \(12~\text{ft}\), pin at \(A\), roller at \(G\). Top joints \(A\) to \(G\) at \(x=0,9,\dots,54\); bottom joints \(L,K,J,I,H\) at \(x=9,18,27,36,45\). Loads: \(4000~\text{lb}\) down at \(B\), \(8000~\text{lb}\) at \(C\), \(5000~\text{lb}\) at \(F\).</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Strategy</h3>
+    <p>A section between \(D\) and \(E\) cuts exactly three members (\(DE\), \(EJ\), \(JI\)). A moment equation about \(E\) isolates \(JI\). \(EI\) is not cut, so finish with joint \(E\), where \(DE\) and \(EF\) are both horizontal and one vertical equation gives \(EI\).</p>
+    <h3>Solution</h3>
+    <p>Diagonals have run 9 and rise 12, so they are 3-4-5 members with direction cosines \((0.6,\,0.8)\).</p>
+    \[
+    \begin{aligned}
+    \sum M_A &= G_y(54)-4000(9)-8000(18)-5000(45)=0 \Rightarrow G_y=\tfrac{405\,000}{54}=7500~\text{lb},\\
+    A_y &= 17\,000-7500=9500~\text{lb},\qquad A_x=0.
+    \end{aligned}
+    \]
+    <p><strong>Section, right free body</strong> (\(E,F,G,H,I\); assume all cut members in tension). \(DE\) and \(EJ\) pass through \(E\):</p>
+    \[
+    \sum M_E=G_y(18)-5000(9)-T_{JI}(12)=0\Rightarrow 135\,000-45\,000=12\,T_{JI}\Rightarrow F_{JI}=7500~\text{lb (T)}.
+    \]
+    <p>Vertical equation on the same free body (\(EJ\) pulls toward \(J\), vertical component \(-0.8F_{EJ}\)):</p>
+    \[
+    7500-5000-0.8F_{EJ}=0\Rightarrow F_{EJ}=3125~\text{lb (T)}.
+    \]
+    <p><strong>Joint \(E\).</strong></p>
+    \[
+    \sum F_y=-F_{EI}-0.8(3125)=0\Rightarrow F_{EI}=-2500~\text{lb (C)}.
+    \]
+    <p><strong>Check.</strong> \(\sum F_x=0\) on the free body gives \(F_{DE}=-9375~\text{lb}\) (C): top chord in compression, bottom chord in tension. Count: \(m+r=21+3=24=2n\) with \(n=12\). A full solve of the 24 joint equations gives \(F_{JI}=+7500\) and \(F_{EI}=-2500~\text{lb}\).</p>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{F_{JI}=7500~\text{lb (T)},\quad F_{EI}=2500~\text{lb (C)}}\qquad (A_x=0,\ A_y=9500~\text{lb},\ G_y=7500~\text{lb}) \]
+  </div>
+</section>
+
+<!-- ======================= EXAMPLE 4 ======================= -->
+<section id="ex4">
+  <h2>4. Truss support reactions, two methods</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p>Find the reactions. \(A\) is a pin (\(A_x\), \(A_y\)); \(B\) is a rocker (\(B_y\) only). Origin at \(A\): \(B\) at \(x=6~\text{m}\). A \(6~\text{kN}\) load acts down at \(x=2\), an \(8~\text{kN}\) load acts down at \(x=4\), and a \(5~\text{kN}\) load acts horizontally to the right at the top joint, \(2~\text{m}\) above \(A\). The member layout does not affect the reactions.</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Method 1: equations of equilibrium</h3>
+    \[
+    \begin{aligned}
+    \sum F_x &= A_x+5=0 \Rightarrow A_x=-5~\text{kN (5 kN left)},\\
+    \sum M_A &= B_y(6)-6(2)-8(4)-5(2)=0 \Rightarrow B_y=\tfrac{54}{6}=9~\text{kN},\\
+    \sum F_y &= A_y+9-6-8=0 \Rightarrow A_y=5~\text{kN}.
+    \end{aligned}
+    \]
+    <h3>Method 2: equivalent force-couple system at \(A\)</h3>
+    <p>Replace the three loads by one force and one couple at \(A\):</p>
+    \[
+    \mathbf F_R=(5\,\mathbf i-14\,\mathbf j)~\text{kN},\qquad M_{R_A}=-6(2)-8(4)-5(2)=-54~\text{kN·m}.
+    \]
+    <p>The supports must cancel this exactly. The pin cancels the horizontal part, so \(A_x=-5\); \(A_y+B_y=14\); only \(B_y\), acting \(6~\text{m}\) from \(A\), cancels the couple: \(6B_y=54\), so \(B_y=9\) and \(A_y=5~\text{kN}\).</p>
+    <p><strong>Why they agree.</strong> The two methods are the same three equations: horizontal \(A_x+5=0\), vertical \(A_y+B_y-14=0\), rotation \(6B_y-54=0\). The \(5~\text{kN}\) load and \(A_x\) are equal, opposite, parallel and \(2~\text{m}\) apart, so they form a \(10~\text{kN·m}\) clockwise couple that the vertical reactions must counter.</p>
+    <p><strong>Check.</strong> Moments about \(B\): \(-5(6)+6(4)+8(2)-5(2)=-30+24+16-10=0\).</p>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{A_x=5~\text{kN}\ (\leftarrow),\quad A_y=5~\text{kN}\ (\uparrow),\quad B_y=9~\text{kN}\ (\uparrow)} \]
+  </div>
+</section>
+
+<!-- ======================= EXAMPLE 5 ======================= -->
+<section id="ex5">
+  <h2>5. Frame with a pulley: force at C</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p>Find the horizontal and vertical components of the force at \(C\) that member \(ABC\) exerts on member \(CEF\). The frame is pinned at \(A\) and on a roller at \(F\). Pins \(B\), \(C\), \(E\) join members \(ABC\), \(BED\), \(CEF\). A pulley of radius \(1~\text{ft}\) sits on pin \(D\) at the end of \(BED\). A cable runs from a ring on \(CEF\), horizontally to the top of the pulley, around it, and down, with \(300~\text{lb}\) tension on the hanging side.</p>
+    <p>Coordinates (ft), origin at \(A\): \(A(0,0)\), \(B(3,4)\), \(C(6,8)\), \(E(6,4)\), \(F(6,0)\), \(D(9,4)\); the ring is on \(CEF\) at \((6,5)\).</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Strategy</h3>
+    <p>Three members and three pins give nine equations in nine unknowns (two components at each of \(A,B,C,E\), plus \(F_y\)). The cable pulls the pulley with \(300~\text{lb}\) along each segment leaving it, so pin \(D\) carries \(300~\text{lb}\) left and \(300~\text{lb}\) down. The same cable also pulls the <em>ring</em> on \(CEF\) with \(300~\text{lb}\) to the right. That load is easy to miss and is required for \(E_x\).</p>
+    <h3>Solution</h3>
+    <p><strong>Member \(BED\)</strong> (loads at \(D\): \(300\) left, \(300\) down).</p>
+    \[
+    \begin{aligned}
+    \sum M_B &= E_y(3)-300(6)=0 \Rightarrow E_y=600~\text{lb},\\
+    \sum F_y &= B_y+600-300=0 \Rightarrow B_y=-300~\text{lb (300 lb down at B)},\\
+    \sum F_x &= B_x+E_x-300=0. \quad (1)
+    \end{aligned}
+    \]
+    <p><strong>Member \(CEF\)</strong> (at \(E\): \(-E_x\), \(-600\) from \(BED\); \(300~\text{lb}\) right at the ring). Moments about \(C\) remove \(C_x\), \(C_y\) and the vertical forces on \(x=6\):</p>
+    \[
+    \sum M_C=300(3)-E_x(4)=0\Rightarrow E_x=225~\text{lb},\qquad \sum F_x=C_x-225+300=0\Rightarrow C_x=-75~\text{lb}.
+    \]
+    <p>From (1): \(B_x=300-225=75~\text{lb}\).</p>
+    <p><strong>Member \(ABC\)</strong> (at \(B\): \((-75,+300)\); at \(C\): \((+75,-C_y)\)). Moments about \(A\):</p>
+    \[
+    3(300)-4(-75)+6(-C_y)-8(75)=0\Rightarrow 900+300-6C_y-600=0\Rightarrow C_y=100~\text{lb}.
+    \]
+    <p><strong>Independent check.</strong> Whole frame, moments about \(A\), cable counted once as \(300~\text{lb}\) down at \(x=10\): \(6F_y=3000\), \(F_y=500~\text{lb}\). Member \(CEF\) vertical: \(C_y-600+F_y=0\Rightarrow C_y=100\). Member \(ABC\): \(A_y=-200~\text{lb}\), \(A_x=0\); and \(A_y+F_y=300\), equal to the hanging load.</p>
+    <p><strong>Match to the key.</strong> The typed instructor key gives \(E_y=600\), \(B_y=300\), \(E_x=225\), \(B_x=75\), \(C_x=75\), \(C_y=100~\text{lb}\). All agree.</p>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{\text{ABC on CEF at C:}\quad C_x=75~\text{lb}\ (\leftarrow),\quad C_y=100~\text{lb}\ (\uparrow)} \]
+  </div>
+</section>
+
+<!-- ======================= EXAMPLE 6 ======================= -->
+<section id="ex6">
+  <h2>6. Cantilever truss from a wall: all member forces and determinacy</h2>
+<div class="problem-box">
+    <h3>Given / Find</h3>
+    <p><strong>(a)</strong> Find the force in each member and state T or C. <strong>(b)</strong> Decide whether the truss is statically determinate (\(m+r=2n\)) or indeterminate (\(m+r>2n\)).</p>
+    <p>Pins at \(A\) (top) and \(E\) (bottom) on a wall, \(4~\text{m}\) apart. Top chord \(A\)–\(B\)–\(C\), \(3~\text{m}+3~\text{m}\). Loads: \(3~\text{kN}\) down at \(B\), \(2~\text{kN}\) down at \(C\). Members: \(AB, BC, BD, AD, ED, DC\).</p>
+  </div>
+
+  <div class="note">
+    <p><strong>Assumed coordinates.</strong> The position of \(D\) is not dimensioned on the exam. An earlier brief suggested \(D(3,0)\), directly above \(E\). That would make \(ED\) horizontal, which does not match the printed figure. The figure shows \(D\) on the straight line from \(E\) to \(C\), directly below \(B\) at mid-height, so this page assumes (m) \(E(0,0)\), \(A(0,4)\), \(B(3,4)\), \(C(6,4)\), \(D(3,2)\). All results below are for that geometry.</p>
+  </div>
+
+  <div class="solution-box">
+    <h3>Strategy</h3>
+    <p>Joint \(C\) has only two members, so start at the loaded tip with no reactions needed. Work \(C\), \(B\), \(D\); reactions follow from joints \(E\) and \(A\). Let \(s=\sqrt{13}=3.606\); diagonals have direction \((3,2)/s\) in magnitude.</p>
+    <h3>Solution</h3>
+    <p><strong>Joint \(C\)</strong> (\(BC\) to the left; \(DC\) toward \(D\), direction \((-3,-2)/s\)).</p>
+    \[
+    -2-\tfrac{2}{s}F_{DC}=0\Rightarrow F_{DC}=-\sqrt{13}=-3.61~\text{kN (C)},\qquad -F_{BC}-\tfrac{3}{s}F_{DC}=0\Rightarrow F_{BC}=3.00~\text{kN (T)}.
+    \]
+    <p><strong>Joint \(B\)</strong> (\(BD\) straight down).</p>
+    \[
+    -F_{AB}+3.00=0\Rightarrow F_{AB}=3.00~\text{kN (T)},\qquad -3-F_{BD}=0\Rightarrow F_{BD}=-3.00~\text{kN (C)}.
+    \]
+    <p><strong>Joint \(D\)</strong> (\(BD\) up, \(AD\) along \((-3,2)/s\), \(DC\) along \((3,2)/s\), \(DE\) along \((-3,-2)/s\)).</p>
+    \[
+    F_{AD}+F_{DE}=-\sqrt{13},\qquad F_{AD}-F_{DE}=\tfrac52\sqrt{13}
+    \;\Rightarrow\;
+    F_{AD}=\tfrac34\sqrt{13}=2.70~\text{kN (T)},\quad F_{DE}=-\tfrac74\sqrt{13}=-6.31~\text{kN (C)}.
+    \]
+    <p><strong>Reactions.</strong> \(ED\) in compression pushes \(E\) with \((-5.25,-3.50)\), so \(E_x=5.25~\text{kN}\) (right), \(E_y=3.50~\text{kN}\) (up). At \(A\), \(AB\) (T) pulls with \((+3.00,0)\) and \(AD\) (T) with \((+2.25,-1.50)\), so \(A_x=5.25~\text{kN}\) (left), \(A_y=1.50~\text{kN}\) (up).</p>
+    <table>
+      <caption style="display:none">Example 6 member forces</caption>
+      <thead><tr><th scope="col">Member</th><th scope="col">Force (kN)</th><th scope="col">Type</th></tr></thead>
+      <tbody>
+        <tr><td>\(AB\)</td><td>3.00</td><td>T</td></tr>
+        <tr><td>\(BC\)</td><td>3.00</td><td>T</td></tr>
+        <tr><td>\(BD\)</td><td>3.00</td><td>C</td></tr>
+        <tr><td>\(AD\)</td><td>2.70 (\(\tfrac34\sqrt{13}\))</td><td>T</td></tr>
+        <tr><td>\(DC\)</td><td>3.61 (\(\sqrt{13}\))</td><td>C</td></tr>
+        <tr><td>\(DE\)</td><td>6.31 (\(\tfrac74\sqrt{13}\))</td><td>C</td></tr>
+      </tbody>
+    </table>
+    <h3>Part (b): determinacy</h3>
+    <p>\(m=6\) members, \(r=4\) reaction components (two pins), \(n=5\) joints:</p>
+    \[ m+r=10=2n=10\;\Rightarrow\;\text{statically determinate}. \]
+    <p>The ten joint equations were independent (no leftover equations or unknowns), so the truss is also stable.</p>
+    <p><strong>Check.</strong> Moments about \(A\): \(E_x\) at \(4~\text{m}\) below \(A\) gives \(+21~\text{kN·m}\); the loads give \(-3(3)-2(6)=-21\). Sum \(=0\). Vertical: \(1.50+3.50=5.00=3+2\). A full solve of the ten joint equations agrees.</p>
+    <p><strong>Citation note.</strong> The file is named <code>Exam3-2024.pdf</code> but its printed header reads “Exam 4 (Date: Dec 5, 2024)”. Confirm the exam number before citing publicly. The only solution PDF in that folder is dated Dec 8, 2025 and covers a different problem, so it is not a key for this truss.</p>
+  </div>
+
+  <div class="answerbox">
+    \[ \boxed{A_x=5.25~\text{kN}\ (\leftarrow),\ A_y=1.50~\text{kN}\ (\uparrow),\ E_x=5.25~\text{kN}\ (\rightarrow),\ E_y=3.50~\text{kN}\ (\uparrow);\quad m+r=2n} \]
+  </div>
+</section>
+
+  <p class="footer">Rebuilt 2026-11-05. Verification passed. PR unmerged.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
 </body>
 </html>
