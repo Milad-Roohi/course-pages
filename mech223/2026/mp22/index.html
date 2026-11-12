@@ -118,9 +118,26 @@
   }
   .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
   .stepbox li { margin-bottom: 0.45rem; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
   @media print {
     body { background: #fff; }
     .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
   .quote {
@@ -185,6 +202,30 @@
     <li>One of you said the material makes sense so far but is worried it will suddenly get much harder.</li>
   </ul>
 
+  <h2>1. Where to cut in the method of sections</h2>
+  <p><strong>Theme:</strong> Two of you asked how to decide where to place a cut in the method of sections. One of you also asked why, after a cut, one member was found with a moment equation and another was not.</p>
+  <p>Start from the member you were asked about, because the cut has to pass through it. Then slice the truss completely in two, crossing as few other members as you can. Three unknown members is the limit, because one piece of the truss gives you three equilibrium equations.</p>
+
+  <div class="stepbox">
+    <p><strong>Placing the cut</strong></p>
+    <ol>
+      <li>Name the member force you want. The cut goes through that member.</li>
+      <li>Carry the cut all the way across so the truss separates into two pieces. It does not have to be a straight line.</li>
+      <li>Cross no more than three members whose forces are unknown.</li>
+      <li>Keep the piece with fewer loads and reactions on it. Either piece gives the same answers.</li>
+      <li>On the piece you keep, draw each cut member as a force pulling away from the piece (tension). A negative answer means compression.</li>
+    </ol>
+  </div>
+
+  <h3>After the cut: moment or force sum?</h3>
+  <p>A moment equation is a way to make two of the three unknowns disappear. To find one cut member, look at where the lines of the <em>other two</em> cut members cross and take moments there. Both of them pass through that point, so neither appears in the equation.</p>
+  <p>That trick needs a crossing point. When the other two cut members are parallel, as the top and bottom chords of a truss often are, their lines never meet. So for the third member you sum forces perpendicular to the parallel pair instead, and those two drop out of that equation. That is why, in the worked example below, one member comes from a moment and another does not.</p>
+
+  <figure id="fig-section-cut">
+    <img src="img/mp22-fig1-section-cut.svg" width="1400" height="1024" alt="A six-panel Pratt truss, 18 m long and 3 m tall, with a pin at A and a roller at G. Downward loads of 10 kN, 15 kN, and 10 kN act at B, C, and E. A dashed cut labeled a-a crosses members IJ, ID, and CD. Below, the free-body diagram of the left piece shows support components Ax and Ay, the loads at B and C, and the cut-member forces FIJ, FID, and FCD drawn pointing away from the cut. Point I is marked as the moment center, where the lines of FIJ and FID meet.">
+    <figcaption><strong>Figure 1.</strong> A separate illustration of where to cut, not the worked truss used later on this page (that example has joints \(A\)–\(H\) and loads in kips). Here the dashed cut \(a\)–\(a\) crosses three members: \(IJ\), \(ID\), and \(CD\). The lines of \(F_{IJ}\) and \(F_{ID}\) meet at \(I\), so a moment about \(I\) isolates \(F_{CD}\).</figcaption>
+  </figure>
+
   <h2>The truss used on this page</h2>
   <p>Four panels, each 8 ft wide and 6 ft tall, so every diagonal is the hypotenuse of a 6-8-10 triangle (slope 3-4-5). Pin at \(A\), roller at \(E\). Loads are in kips (1 kip = 1000 lb).</p>
   <pre class="sketch" role="img" aria-label="Truss sketch. Bottom joints A, B, C, D, E from left to right, 8 feet apart. Top joints F, G, H directly above B, C, D, 6 feet up. Diagonals A to F, F to C, C to H, H to E. Verticals B to F, C to G, D to H. Pin at A, roller at E. 6 kips down at B, 12 kips down at C, 8 kips to the right at H.">
@@ -205,25 +246,6 @@ pin     |       |               roller
     </tbody>
   </table>
   <p>Members: bottom chord \(AB\), \(BC\), \(CD\), \(DE\); top chord \(FG\), \(GH\); verticals \(BF\), \(CG\), \(DH\); diagonals \(AF\), \(FC\), \(CH\), \(HE\). The reactions, worked out in Section 2, are \(A_x = 8\) kips to the left, \(A_y = 9\) kips up, and \(E_y = 9\) kips up.</p>
-
-  <h2>1. Where to cut in the method of sections</h2>
-  <p><strong>Theme:</strong> Two of you asked how to decide where to place a cut in the method of sections. One of you also asked why, after a cut, one member was found with a moment equation and another was not.</p>
-  <p>Start from the member you were asked about, because the cut has to pass through it. Then slice the truss completely in two, crossing as few other members as you can. Three unknown members is the limit, because one piece of the truss gives you three equilibrium equations.</p>
-
-  <div class="stepbox">
-    <p><strong>Placing the cut</strong></p>
-    <ol>
-      <li>Name the member force you want. The cut goes through that member.</li>
-      <li>Carry the cut all the way across so the truss separates into two pieces. It does not have to be a straight line.</li>
-      <li>Cross no more than three members whose forces are unknown.</li>
-      <li>Keep the piece with fewer loads and reactions on it. Either piece gives the same answers.</li>
-      <li>On the piece you keep, draw each cut member as a force pulling away from the piece (tension). A negative answer means compression.</li>
-    </ol>
-  </div>
-
-  <h3>After the cut: moment or force sum?</h3>
-  <p>A moment equation is a way to make two of the three unknowns disappear. To find one cut member, look at where the lines of the <em>other two</em> cut members cross and take moments there. Both of them pass through that point, so neither appears in the equation.</p>
-  <p>That trick needs a crossing point. When the other two cut members are parallel, as the top and bottom chords are here, their lines never meet. So for the third member you sum forces perpendicular to the parallel pair instead, and those two drop out of that equation. That is why one member came from a moment and another did not.</p>
 
   <h3>Worked example: forces in \(FG\), \(BC\), and \(FC\)</h3>
   <p>All three members sit in the panel between \(B\) and \(C\), so cut vertically through that panel. The cut crosses \(FG\), \(FC\), and \(BC\): three unknowns. Keep the left piece (joints \(A\), \(B\), \(F\)). The forces on it are \(A_x = 8\) kips left, \(A_y = 9\) kips up, the 6-kip load at \(B\), and the three cut-member forces, each drawn as tension. Take counterclockwise as positive.</p>
@@ -303,6 +325,11 @@ pin     |       |               roller
   <p>Yes, you assume, and the sign of the answer tells you whether you guessed right. On the whole truss, the forces are the applied loads and the support reactions. Inside the truss, each member pulls or pushes on the joint at each of its ends, and the joint acts back on the member with an equal and opposite force.</p>
   <p>One habit removes most of the bookkeeping: <strong>draw every unknown member force as tension</strong>, an arrow leaving the joint along the member. A positive answer is tension. A negative answer is compression. When you move to the next joint, draw that member as tension again and carry the signed value into the equations.</p>
 
+  <figure id="fig-joint-convention">
+    <img src="img/mp22-fig2-joint-convention.svg" width="1400" height="1331" alt="An isolated pin joint A with three member stubs running toward B, C, and D. The member forces FAB, FAC, and FAD are drawn pulling away from the joint. A downward load P acts at A. A small x-y axis and a note that tension is assumed, with a negative result meaning compression, appear at the lower right.">
+    <figcaption><strong>Figure 2.</strong> Sign convention at a generic joint (this is not joint \(A\) of the worked truss). Draw each unknown member force pointing away from the joint (tension). A negative answer means the member is in compression.</figcaption>
+  </figure>
+
   <h3>Worked example: joints \(A\), \(B\), and \(F\)</h3>
   <p><strong>Joint \(A\).</strong> Forces: the reactions (8 kips left, 9 kips up), \(F_{AB}\) to the right, and \(F_{AF}\) up and to the right along the 3-4-5 slope.</p>
   <div class="eqbox">\[
@@ -349,6 +376,11 @@ pin     |       |               roller
     <li><strong>Frame.</strong> At least one member is a multi-force member. A frame can still contain two-force members, and they still carry only a collinear pair of forces.</li>
   </ul>
   <p>So yes: for the pin-connected structures in this course, each member of a frame is one or the other. Find the two-force members first, because each one turns a two-component pin force into a single unknown with a known line of action. Wednesday introduced these categories. Full frame analysis, member by member, comes later in the term.</p>
+
+  <figure id="fig-two-force-vs-multi">
+    <img src="img/mp22-fig3-two-force-vs-multi.svg" width="1400" height="789" alt="Side-by-side comparison. On the left, a straight pinned link AB with equal, opposite, and collinear forces F at its ends. On the right, an L-shaped member pinned at B and C, with a downward load P at midspan of the top arm and pin-force components Bx, By, Cx, and Cy.">
+    <figcaption><strong>Figure 3.</strong> Two-force versus multi-force members (a comparison sketch, not the frame worked later on this page). A two-force member carries only a collinear pair of forces at its ends. A multi-force member has forces at three or more points, so a pin on it generally has two components.</figcaption>
+  </figure>
 
   <h3>Worked example: one frame, both kinds of member</h3>
   <p>Horizontal beam \(ABC\) is 6 ft long and pinned to a wall at \(A\). Strut \(BD\) is pinned to the beam at \(B\), 4 ft from \(A\), and to the wall at \(D\), 3 ft directly below \(A\). A 300-lb load acts downward at the free end \(C\). Neglect the weights of the members.</p>
