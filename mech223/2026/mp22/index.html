@@ -123,153 +123,310 @@
     .article { max-width: none; padding: 0; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .quote {
+    margin: 0.7rem 0 0.9rem;
+    padding: 0.1rem 0 0.1rem 0.9rem;
+    border-left: 3px solid var(--line);
+    font-style: italic;
+    color: var(--muted);
+  }
+  .quote p { margin: 0 0 0.45rem; }
+  .quote p:last-child { margin-bottom: 0; }
+  pre.sketch {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", Menlo, Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  details { margin: 0 0 1rem; }
+  summary { cursor: pointer; font-weight: 700; }
 </style>
 </head>
 <body>
 <article class="article">
   <p class="kicker">MECH 223-002 · Fall 2026 · Week 12</p>
   <h1>Muddiest Point 22 study guide</h1>
-  <p class="subtitle">Analysis of structures — trusses and structure types. Wednesday, Nov 11.</p>
+  <p class="subtitle">Wednesday, Nov 11. Analysis of structures: trusses, the method of sections, and where frames fit.</p>
   <hr class="top">
 
-  <p>This page follows your Wednesday comments (MP22, 21 submissions, 21 with text). Week 12 focuses on analysis of structures: how trusses, frames, and machines differ, then equilibrium of trusses using the method of joints. About 12 of you wrote that the lecture was clear. The rest asked about where forces act, keeping force directions straight on FBDs, how frames fit into the picture, and how to stay steady as the material builds. Many Canvas replies were cut off mid-sentence in the download; if your full question is missing below, post on Canvas or come by office hours.</p>
+  <p>This page answers your Wednesday comments (MP22, 21 responses). Twelve of you said the lecture was clear. The other nine asked about six things, listed below. One small truss carries Sections 1 to 3, so you can watch the reactions, a section cut, and the joints all agree with each other.</p>
 
   <h2>Snapshot</h2>
   <table>
     <caption class="sr-only">MP22 theme counts by section</caption>
     <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section below</th></tr></thead>
     <tbody>
-      <tr><td>Where forces act / locating forces</td><td>1</td><td>1</td></tr>
-      <tr><td>Tracking force directions</td><td>1</td><td>2</td></tr>
-      <tr><td>How frames work (vs trusses)</td><td>1</td><td>3</td></tr>
-      <tr><td>Anxiety about difficulty ahead</td><td>1</td><td>4</td></tr>
+      <tr><td>Where to cut in the method of sections</td><td>2</td><td>1</td></tr>
+      <tr><td>After a cut: a moment for one member, not for another</td><td>1</td><td>1</td></tr>
+      <tr><td>\(\sum F\) or \(\sum M\) for truss reactions</td><td>1</td><td>2</td></tr>
+      <tr><td>Assumed directions of forces at joints</td><td>1</td><td>3</td></tr>
+      <tr><td>Two-force members, truss members, and frames</td><td>2</td><td>4</td></tr>
+      <tr><td>Writing the equations for the forces</td><td>1</td><td>5</td></tr>
+      <tr><td>Waiting for it to get hard</td><td>1</td><td>6</td></tr>
       <tr><td>Clear / no muddy point</td><td>12</td><td>—</td></tr>
-      <tr><td>Truncated / unclear comments</td><td>5</td><td>—</td></tr>
     </tbody>
   </table>
 
-  <h2>What you told us Wednesday (summarized)</h2>
-  <p>21 text responses. Summarized, not quoted, because this copy is posted on the open web.</p>
-  <ul class="comments">
-    <li>About 12 of you said nothing was confusing or that the lecture was clear.</li>
-    <li>One of you was unsure how to determine <em>where</em> forces act (truncated in Canvas).</li>
-    <li>One of you found it hard to keep track of force directions (truncated).</li>
-    <li>One of you asked how frames work (truncated).</li>
-    <li>One of you wrote that things make sense now but you are waiting for the difficulty to spike suddenly.</li>
-    <li>Several responses ended mid-word; we cannot recover the full text from the survey export.</li>
-  </ul>
+  <h2>The truss used on this page</h2>
+  <p>Four panels, each 8 ft wide and 6 ft tall, so every diagonal is the hypotenuse of a 6-8-10 triangle (slope 3-4-5). Pin at \(A\), roller at \(E\). Loads are in kips (1 kip = 1000 lb).</p>
+  <pre class="sketch" role="img" aria-label="Truss sketch. Bottom joints A, B, C, D, E from left to right, 8 feet apart. Top joints F, G, H directly above B, C, D, 6 feet up. Diagonals A to F, F to C, C to H, H to E. Verticals B to F, C to G, D to H. Pin at A, roller at E. 6 kips down at B, 12 kips down at C, 8 kips to the right at H.">
+        F-------G-------H --&gt; 8 kips
+      / | \     |     / | \
+    /   |   \   |   /   |   \
+  /     |     \ | /     |     \
+A-------B-------C-------D-------E
+pin     |       |               roller
+        v       v
+      6 kips  12 kips</pre>
+  <table>
+    <caption class="sr-only">Joint coordinates of the example truss</caption>
+    <thead><tr><th scope="col">Joint</th><th scope="col">\(A\)</th><th scope="col">\(B\)</th><th scope="col">\(C\)</th><th scope="col">\(D\)</th><th scope="col">\(E\)</th><th scope="col">\(F\)</th><th scope="col">\(G\)</th><th scope="col">\(H\)</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">\(x\) (ft)</th><td>0</td><td>8</td><td>16</td><td>24</td><td>32</td><td>8</td><td>16</td><td>24</td></tr>
+      <tr><th scope="row">\(y\) (ft)</th><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>6</td><td>6</td><td>6</td></tr>
+    </tbody>
+  </table>
+  <p>Members: bottom chord \(AB\), \(BC\), \(CD\), \(DE\); top chord \(FG\), \(GH\); verticals \(BF\), \(CG\), \(DH\); diagonals \(AF\), \(FC\), \(CH\), \(HE\). The reactions, worked out in Section 2, are \(A_x = 8\) kips to the left, \(A_y = 9\) kips up, and \(E_y = 9\) kips up.</p>
 
-  <h2>1. Where forces act</h2>
-  <p>Every equilibrium equation ties a force to a <strong>line of action</strong> and, for moments, to a <strong>perpendicular distance</strong> from that line to your reference point. In this week’s truss work, the main locations are straightforward once the diagram is labeled.</p>
-  <ul>
-    <li><strong>Applied loads</strong> act at the point shown (often a joint where members meet).</li>
-    <li><strong>Support reactions</strong> act at the support (pin, roller, or link) as drawn on the truss.</li>
-    <li><strong>Member forces at a joint</strong> act at that joint, directed along the member.</li>
-    <li>A <strong>two-force member</strong> has forces only at its two ends; those two forces are equal, opposite, and collinear along the member.</li>
-  </ul>
-  <p>For a moment about point \(O\), use the shortest distance from \(O\) to the line of action:</p>
-  <div class="eqbox">\[
-  M_O = F\,d_\perp
-  \]</div>
-  <p>where \(d_\perp\) is perpendicular to the force’s line of action, not along the member unless the geometry makes those the same.</p>
-
-  <div class="note">
-    <p><strong>Distributed load reminder (only if it appears on your diagram):</strong> a uniform load over length \(L\) can be replaced by a single force equal to the total load, acting at the centroid (\(L/2\) from one end for a uniform rectangle). That is a location rule, not the focus of this week’s joint method.</p>
+  <h2>1. Where to cut in the method of sections</h2>
+  <div class="quote">
+    <p>“I was confused on how to determine where to cut the truss when using the method of sectioning.”</p>
+    <p>“Today's lecture was pretty good and easy to understand. The one part that I felt like had me stuck would be when analyzing trusts determining where one should place the cut on their diagram.”</p>
+    <p>“The muddiest point was how, after cutting a truss, we found the value in kips for a beam using a moment, and for another beam we didn't.”</p>
   </div>
-
-  <h3>Worked example: locating actions and a moment arm</h3>
-  <p>Joint \(B\) is 2.0 m to the right of pin \(A\) and at the same elevation. A horizontal member carries a 180 N force drawn at \(B\) pointing to the right (along the top chord). Find the moment of this force about \(A\).</p>
-  <p>The line of action is the horizontal line through \(B\) (\(y = 0\)). Point \(A\) lies on that line, so \(d_\perp = 0\) and</p>
-  <div class="eqbox">\[
-  M_A = 0
-  \]</div>
-  <p>Now suppose the same 180 N horizontal force acts at joint \(C\), which is 2.0 m to the right of \(B\) and 1.5 m <em>above</em> the chord. The line of action is still horizontal, now through elevation \(y = 1.5\) m. From \(A\), the perpendicular distance to that line is 1.5 m:</p>
-  <div class="eqbox">\[
-  M_A = (180\ \text{N})(1.5\ \text{m}) = 270\ \text{N}{\cdot}\text{m}
-  \]</div>
-  <p>Sign depends on your choice of positive rotation; magnitude is what confirms whether the moment is zero or not.</p>
-
-  <p><strong>Self-check:</strong> A 120 N downward load is applied at joint \(D\) directly above \(A\), 1.2 m higher. What is \(d_\perp\) for \(\sum M_A\) using that vertical force?</p>
-  <details><summary>Answer</summary>\(d_\perp = 0\) because the line of action passes through \(A\), so the load produces no moment about \(A\) (only a vertical force in \(\sum F_y\)).</details>
-
-  <h2>2. Tracking force directions</h2>
-  <p>Truss analysis is bookkeeping on top of Newton’s laws. Pick a consistent \(+x\) and \(+y\) on every figure. For each unknown, draw an arrow in an assumed direction. For a member, assume <strong>tension</strong> (arrow pulls the joint along the member) or <strong>compression</strong>; a negative algebraic result flips the actual sense. At a joint, the force the member exerts on the joint is opposite to the force the joint exerts on the member.</p>
+  <p>Start from the member you were asked about, because the cut has to pass through it. Then slice the truss (trusses, plural) completely in two, crossing as few other members as you can. Three unknown members is the limit, because one piece of the truss gives you three equilibrium equations.</p>
 
   <div class="stepbox">
-    <p><strong>Method of joints — minimal workflow</strong></p>
+    <p><strong>Placing the cut</strong></p>
     <ol>
-      <li>Solve global equilibrium for external reactions if needed.</li>
-      <li>Isolate one joint with at most two unknown member forces (when possible).</li>
-      <li>Draw all member forces on the joint FBD before writing equations.</li>
-      <li>Write \(\sum F_x = 0\), \(\sum F_y = 0\).</li>
-      <li>Move to the next joint; reuse solved member forces with opposite direction on the adjacent joint.</li>
+      <li>Name the member force you want. The cut goes through that member.</li>
+      <li>Carry the cut all the way across so the truss separates into two pieces. It does not have to be a straight line.</li>
+      <li>Cross no more than three members whose forces are unknown.</li>
+      <li>Keep the piece with fewer loads and reactions on it. Either piece gives the same answers.</li>
+      <li>On the piece you keep, draw each cut member as a force pulling away from the piece (tension). A negative answer means compression.</li>
     </ol>
   </div>
 
-  <h3>Worked example: symmetric joint with a downward load</h3>
-  <p>At joint \(J\), two identical members meet and slope <strong>upward</strong> at \(60^\circ\) above the horizontal (one toward each support). A 500 N load acts downward at \(J\). Assume both members are in tension as drawn (each pulls on \(J\) toward its support). By symmetry the member forces have equal magnitude \(F\).</p>
-  <p>Each tensile force has an upward vertical component \(F\sin 60^\circ\). With \(+y\) upward:</p>
+  <h3>After the cut: moment or force sum?</h3>
+  <p>A moment equation is a way to make two of the three unknowns disappear. To find one cut member, look at where the lines of the <em>other two</em> cut members cross and take moments there. Both of them pass through that point, so neither appears in the equation.</p>
+  <p>That trick needs a crossing point. When the other two cut members are parallel, as the top and bottom chords are here, their lines never meet. So for the third member you sum forces perpendicular to the parallel pair instead, and those two drop out of that equation. That is why one member came from a moment and another did not.</p>
+
+  <h3>Worked example: forces in \(FG\), \(BC\), and \(FC\)</h3>
+  <p>All three members sit in the panel between \(B\) and \(C\), so cut vertically through that panel. The cut crosses \(FG\), \(FC\), and \(BC\): three unknowns. Keep the left piece (joints \(A\), \(B\), \(F\)). The forces on it are \(A_x = 8\) kips left, \(A_y = 9\) kips up, the 6-kip load at \(B\), and the three cut-member forces, each drawn as tension. Take counterclockwise as positive.</p>
+  <p><strong>\(FG\): moments about \(C\)</strong>, where \(FC\) and \(BC\) cross. \(A_x\) also passes through \(C\).</p>
   <div class="eqbox">\[
-  \sum F_y = 2F\sin 60^\circ - 500\ \text{N} = 0
-  \quad\Rightarrow\quad
-  F = \frac{500}{2\sin 60^\circ} \approx 288.7\ \text{N}\ (\text{tension})
+  \sum M_C = -(9)(16) + (6)(8) - F_{FG}(6) = 0
+  \quad\Rightarrow\quad F_{FG} = -16\ \text{kips}
+  \quad (16\ \text{kips, compression})
   \]</div>
-  <p>\(\sum F_x = 0\) is satisfied automatically for this symmetric layout. Had you assumed compression and obtained a negative \(F\), you would switch the arrow direction and report compression with the positive magnitude.</p>
+  <p><strong>\(BC\): moments about \(F\)</strong>, where \(FG\) and \(FC\) cross. The 6-kip load is directly below \(F\), so it has no moment arm.</p>
+  <div class="eqbox">\[
+  \sum M_F = -(9)(8) - (8)(6) + F_{BC}(6) = 0
+  \quad\Rightarrow\quad F_{BC} = 20\ \text{kips}
+  \quad (\text{tension})
+  \]</div>
+  <p><strong>\(FC\): no moment this time.</strong> The other two cut members, \(FG\) and \(BC\), are both horizontal and never cross. They also have no vertical component, so sum forces vertically. \(FC\) pulls on the left piece down and to the right along its 3-4-5 slope.</p>
+  <div class="eqbox">\[
+  \sum F_y = 9 - 6 - \tfrac{3}{5}F_{FC} = 0
+  \quad\Rightarrow\quad F_{FC} = 5\ \text{kips}
+  \quad (\text{tension})
+  \]</div>
+  <p>The equation not yet used is the check:</p>
+  <div class="eqbox">\[
+  \sum F_x = -8 + (-16) + 20 + \tfrac{4}{5}(5) = 0 \ \checkmark
+  \]</div>
 
-  <p><strong>Self-check:</strong> A joint has two members sloping <strong>upward</strong> at \(45^\circ\) to the horizontal (symmetric) and a 400 N downward load. With the same tension assumption, what is \(F\) in each member?</p>
-  <details><summary>Answer</summary>\(F = 400/(2\sin 45^\circ) \approx 283\) N tension.</details>
+  <p><strong>Self-check:</strong> Find the forces in \(GH\), \(CH\), and \(CD\). Where do you cut, and which piece do you keep?</p>
+  <details><summary>Answer</summary>
+    <p>Cut through the panel between \(C\) and \(D\) and keep the right piece (joints \(D\), \(E\), \(H\)), which carries only \(E_y\) and the 8-kip load. Moments about \(C\): \((9)(16) - (8)(6) + F_{GH}(6) = 0\), so \(F_{GH} = -16\) kips (16 kips, compression). Moments about \(H\): \((9)(8) - F_{CD}(6) = 0\), so \(F_{CD} = 12\) kips (tension). The chords are parallel, so use \(\sum F_y = 9 - \tfrac{3}{5}F_{CH} = 0\), giving \(F_{CH} = 15\) kips (tension).</p>
+  </details>
 
-  <h2>3. How frames work (and how they differ from trusses)</h2>
-  <p>Wednesday introduced three structure types. Truss joint work is what you practice now; full frame analysis (cutting multi-force members and using \(\sum M\)) comes later in the term. Still, the vocabulary matters so you do not treat every pin-connected structure as a pure truss.</p>
+  <h2>2. \(\sum F\) or \(\sum M\) for truss reactions?</h2>
+  <div class="quote">
+    <p>“When finding the reactions in a truss when do we find the sum of forces and when do we find the sum of the moment? We use both to solve for the different forces correct?”</p>
+  </div>
+  <p>Correct, you use both. For reactions, the whole truss is one rigid body with three equations: \(\sum F_x = 0\), \(\sum F_y = 0\), and \(\sum M = 0\). A pin and a roller give three unknowns, so each equation has a job. What you choose is the order, and the best first move is usually a moment equation about the pin.</p>
 
+  <div class="stepbox">
+    <p><strong>A reliable order</strong></p>
+    <ol>
+      <li>\(\sum M = 0\) about the pin. Both pin components pass through it, so the roller reaction is the only unknown.</li>
+      <li>\(\sum F_y = 0\) for the vertical pin component.</li>
+      <li>\(\sum F_x = 0\) for the horizontal pin component.</li>
+      <li>Check with \(\sum M = 0\) about a different point.</li>
+    </ol>
+  </div>
+
+  <h3>Worked example: reactions for the truss above</h3>
+  <p>Draw the whole truss as one body. Assume \(A_x\) to the right, and \(A_y\) and \(E_y\) up. Counterclockwise is positive. The 8-kip load at \(H\) acts 6 ft above \(A\) and turns the truss clockwise about \(A\).</p>
+  <div class="eqbox">\[
+  \sum M_A = E_y(32) - (6)(8) - (12)(16) - (8)(6) = 0
+  \quad\Rightarrow\quad E_y = \frac{288}{32} = 9\ \text{kips}
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y + 9 - 6 - 12 = 0
+  \quad\Rightarrow\quad A_y = 9\ \text{kips}
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_x = A_x + 8 = 0
+  \quad\Rightarrow\quad A_x = -8\ \text{kips}
+  \quad (8\ \text{kips to the left})
+  \]</div>
+  <p>Check with moments about \(E\), which was not used:</p>
+  <div class="eqbox">\[
+  \sum M_E = -(9)(32) + (6)(24) + (12)(16) - (8)(6) = 0 \ \checkmark
+  \]</div>
+
+  <div class="note">
+    <p><strong>The same choice at each stage.</strong> Whole truss: three equations, and a moment about the pin comes first. A cut piece: three equations, with a moment about the crossing point of two cut members when there is one (Section 1). A single joint: only \(\sum F_x\) and \(\sum F_y\), because every force passes through the joint and a moment equation there says nothing.</p>
+  </div>
+
+  <p><strong>Self-check:</strong> Remove the 8-kip load at \(H\) and keep the two vertical loads. What are the reactions?</p>
+  <details><summary>Answer</summary>
+    <p>\(\sum M_A = E_y(32) - (6)(8) - (12)(16) = 0\) gives \(E_y = 7.5\) kips. Then \(A_y = 18 - 7.5 = 10.5\) kips and \(A_x = 0\).</p>
+  </details>
+
+  <h2>3. Assumed directions at joints</h2>
+  <div class="quote">
+    <p>“I found it hard to keep track of the directions of the forces. We're looking at the forces acting on a rigid body and then the reactions of that right? For members, are we just to assume the direction of the reaction force at each joint?”</p>
+  </div>
+  <p>Yes, you assume, and the sign of the answer tells you whether you guessed right. On the whole truss, the forces are the applied loads and the support reactions. Inside the truss, each member pulls or pushes on the joint at each of its ends, and the joint acts back on the member with an equal and opposite force.</p>
+  <p>One habit removes most of the bookkeeping: <strong>draw every unknown member force as tension</strong>, an arrow leaving the joint along the member. A positive answer is tension. A negative answer is compression. When you move to the next joint, draw that member as tension again and carry the signed value into the equations.</p>
+
+  <h3>Worked example: joints \(A\), \(B\), and \(F\)</h3>
+  <p><strong>Joint \(A\).</strong> Forces: the reactions (8 kips left, 9 kips up), \(F_{AB}\) to the right, and \(F_{AF}\) up and to the right along the 3-4-5 slope.</p>
+  <div class="eqbox">\[
+  \sum F_y = 9 + \tfrac{3}{5}F_{AF} = 0
+  \quad\Rightarrow\quad F_{AF} = -15\ \text{kips}
+  \quad (15\ \text{kips, compression})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_x = -8 + F_{AB} + \tfrac{4}{5}(-15) = 0
+  \quad\Rightarrow\quad F_{AB} = 20\ \text{kips}
+  \quad (\text{tension})
+  \]</div>
+  <p>The tension guess for \(AF\) was wrong, and the minus sign reported it. Nothing needs redrawing.</p>
+  <p><strong>Joint \(B\).</strong> Vertically there are only \(F_{BF}\) up and the 6-kip load down, so \(F_{BF} = 6\) kips (tension). Horizontally, \(F_{BC} = F_{AB} = 20\) kips (tension).</p>
+  <p><strong>Joint \(F\).</strong> Draw all four members as tension: \(AF\) down-left, \(BF\) straight down, \(FC\) down-right, \(FG\) to the right. Substitute \(F_{AF} = -15\) with its sign.</p>
+  <div class="eqbox">\[
+  \sum F_y = -\tfrac{3}{5}(-15) - 6 - \tfrac{3}{5}F_{FC} = 0
+  \quad\Rightarrow\quad F_{FC} = 5\ \text{kips}
+  \quad (\text{tension})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_x = -\tfrac{4}{5}(-15) + \tfrac{4}{5}(5) + F_{FG} = 0
+  \quad\Rightarrow\quad F_{FG} = -16\ \text{kips}
+  \quad (16\ \text{kips, compression})
+  \]</div>
+  <p>These are the same \(F_{BC}\), \(F_{FC}\), and \(F_{FG}\) the section cut gave in Section 1. Joints and sections are two routes to the same forces.</p>
+
+  <div class="note">
+    <p><strong>Reading the arrows.</strong> A member in tension pulls on the joints at both of its ends. A member in compression pushes on both. If you prefer to redraw a compression member with its arrow pointing into the joint, use the positive magnitude from then on. Pick one of the two habits and do not mix them within a problem.</p>
+  </div>
+
+  <p><strong>Self-check:</strong> Solve joint \(E\) for \(F_{HE}\) and \(F_{DE}\).</p>
+  <details><summary>Answer</summary>
+    <p>With both drawn as tension: \(\sum F_y = 9 + \tfrac{3}{5}F_{HE} = 0\) gives \(F_{HE} = -15\) kips (15 kips, compression). \(\sum F_x = -F_{DE} - \tfrac{4}{5}(-15) = 0\) gives \(F_{DE} = 12\) kips (tension).</p>
+  </details>
+
+  <h2>4. Two-force members, truss members, and frames</h2>
+  <div class="quote">
+    <p>“The muddiest point was what 2 force member is compared to a truss member is, and are these the only two types of members that can be within a frame.”</p>
+    <p>“The way frames work was a little muddy”</p>
+  </div>
+  <p>A truss member and a two-force member are not two different things: every truss member <em>is</em> a two-force member. The pair to compare is two-force and multi-force, and counting where forces act on a member tells you which one you have.</p>
+  <ul>
+    <li><strong>Two-force member.</strong> Forces act at only two points, the end connections. For equilibrium those two forces must be equal, opposite, and along the line joining the two points. A straight truss member is exactly this, so its force runs along the member: tension or compression, one unknown.</li>
+    <li><strong>Multi-force member.</strong> Forces act at three or more points, and they are not all concurrent or collinear. A pin on a multi-force member generally carries two unknown components.</li>
+    <li><strong>Truss.</strong> Every member is a two-force member.</li>
+    <li><strong>Frame.</strong> At least one member is a multi-force member. A frame can still contain two-force members, and they still carry only a collinear pair of forces.</li>
+  </ul>
+  <p>So yes: for the pin-connected structures in this course, each member of a frame is one or the other. Find the two-force members first, because each one turns a two-component pin force into a single unknown with a known line of action. Wednesday introduced these categories. Full frame analysis, member by member, comes later in the term.</p>
+
+  <h3>Worked example: one frame, both kinds of member</h3>
+  <p>Horizontal beam \(ABC\) is 6 ft long and pinned to a wall at \(A\). Strut \(BD\) is pinned to the beam at \(B\), 4 ft from \(A\), and to the wall at \(D\), 3 ft directly below \(A\). A 300-lb load acts downward at the free end \(C\). Neglect the weights of the members.</p>
+  <ul>
+    <li><strong>Strut \(BD\):</strong> forces at its two end pins only, so it is a two-force member. Its force acts along the line \(DB\), a 3-4-5 slope (4 ft across, 3 ft up, 5 ft long).</li>
+    <li><strong>Beam \(ABC\):</strong> forces at \(A\), \(B\), and \(C\), so it is a multi-force member. The pin at \(A\) has two components, \(A_x\) and \(A_y\).</li>
+  </ul>
+  <p>Draw the beam alone. Assume the strut pushes on it at \(B\), up and to the right, with magnitude \(F_{BD}\). Assume \(A_x\) to the right and \(A_y\) up.</p>
+  <div class="eqbox">\[
+  \sum M_A = \tfrac{3}{5}F_{BD}(4) - (300)(6) = 0
+  \quad\Rightarrow\quad F_{BD} = 750\ \text{lb}
+  \quad (\text{compression})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_x = A_x + \tfrac{4}{5}(750) = 0
+  \quad\Rightarrow\quad A_x = -600\ \text{lb}
+  \quad (600\ \text{lb to the left})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = A_y + \tfrac{3}{5}(750) - 300 = 0
+  \quad\Rightarrow\quad A_y = -150\ \text{lb}
+  \quad (150\ \text{lb down})
+  \]</div>
+  <p>Two things to notice. Treating \(BD\) as a two-force member left three unknowns for three equations; with separate \(B_x\) and \(B_y\) the beam alone would have had four. And the force at \(A\) (600 lb left, 150 lb down) does not point along the beam, which is what a multi-force member looks like.</p>
+
+  <p><strong>Self-check:</strong> Change the load at \(C\) to 200 lb. Find \(F_{BD}\), \(A_x\), and \(A_y\).</p>
+  <details><summary>Answer</summary>
+    <p>\(F_{BD} = (200)(6)\big/\big(\tfrac{3}{5}\cdot 4\big) = 500\) lb (compression). \(A_x = -400\) lb (400 lb to the left). \(A_y = 200 - 300 = -100\) lb (100 lb down).</p>
+  </details>
+
+  <h2>5. Writing the equations for the forces</h2>
+  <div class="quote">
+    <p>“The lecture today was good. I am struggling a little bit with figuring out the equations for the forces, but with practice I hope to get a better understanding.”</p>
+  </div>
+  <p>Every equation on this page came from the same place: a free-body diagram and \(\sum F_x = 0\), \(\sum F_y = 0\), \(\sum M = 0\). What changes from step to step is only what you isolate.</p>
   <table>
-    <caption class="sr-only">Structure categories</caption>
-    <thead>
-      <tr><th scope="col">Type</th><th scope="col">Member model</th><th scope="col">Typical statics treatment</th></tr>
-    </thead>
+    <caption class="sr-only">Which free-body diagram gives which equations</caption>
+    <thead><tr><th scope="col">What you isolate</th><th scope="col">Equations you get</th><th scope="col">What you solve for</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>Truss</strong></td>
-        <td>Members are two-force: loads only at ends, axial force along the member</td>
-        <td>Method of joints (and sections later)</td>
-      </tr>
-      <tr>
-        <td><strong>Frame</strong></td>
-        <td>At least one <strong>multi-force member</strong> (three or more forces, not all concurrent or collinear)</td>
-        <td>Reactions on the whole frame, then separate FBDs per member; pin forces often have two components</td>
-      </tr>
-      <tr>
-        <td><strong>Machine</strong></td>
-        <td>Designed with moving parts that transmit or modify forces</td>
-        <td>Same FBD ideas with kinematic links in mind</td>
-      </tr>
+      <tr><td>Whole truss</td><td>\(\sum F_x\), \(\sum F_y\), \(\sum M\)</td><td>Support reactions (up to three)</td></tr>
+      <tr><td>One joint</td><td>\(\sum F_x\), \(\sum F_y\)</td><td>Up to two member forces</td></tr>
+      <tr><td>One piece after a cut</td><td>\(\sum F_x\), \(\sum F_y\), \(\sum M\)</td><td>Up to three cut-member forces</td></tr>
     </tbody>
   </table>
+  <p>For an inclined member, take the components from the member's own geometry. If it runs \(a\) across and \(b\) up, its length is \(L = \sqrt{a^2 + b^2}\) and</p>
+  <div class="eqbox">\[
+  F_x = F\,\frac{a}{L}, \qquad F_y = F\,\frac{b}{L}
+  \]</div>
+  <p>On this page \(a = 8\), \(b = 6\), \(L = 10\), which is where every \(\tfrac{4}{5}\) and \(\tfrac{3}{5}\) came from. No angle is needed.</p>
+  <p>Practice is the right plan. A good first set: finish the example truss on your own and compare with the full list.</p>
+  <details><summary>All member forces for the example truss</summary>
+    <table>
+      <caption class="sr-only">Member forces in the example truss</caption>
+      <thead><tr><th scope="col">Member</th><th scope="col">Force (kips)</th><th scope="col">Member</th><th scope="col">Force (kips)</th></tr></thead>
+      <tbody>
+        <tr><td>\(AB\)</td><td>20 T</td><td>\(AF\)</td><td>15 C</td></tr>
+        <tr><td>\(BC\)</td><td>20 T</td><td>\(FC\)</td><td>5 T</td></tr>
+        <tr><td>\(CD\)</td><td>12 T</td><td>\(CH\)</td><td>15 T</td></tr>
+        <tr><td>\(DE\)</td><td>12 T</td><td>\(HE\)</td><td>15 C</td></tr>
+        <tr><td>\(FG\)</td><td>16 C</td><td>\(BF\)</td><td>6 T</td></tr>
+        <tr><td>\(GH\)</td><td>16 C</td><td>\(CG\)</td><td>0</td></tr>
+        <tr><td></td><td></td><td>\(DH\)</td><td>0</td></tr>
+      </tbody>
+    </table>
+    <p>T = tension, C = compression. Joint \(C\) makes a good final check: with these values, both \(\sum F_x\) and \(\sum F_y\) come out to zero there.</p>
+  </details>
 
-  <p>Even inside a frame, identify two-force members first. They still carry a single axial force. A pin on a multi-force bar is not automatically “one unknown at angle \(\theta\)”; you may need \(F_x\) and \(F_y\) unless you know the link is a two-force member.</p>
-
-  <h3>Worked example: spot two-force vs multi-force</h3>
-  <p>Pin-connected layout: horizontal bar \(AB\) is 2.0 m long, pinned at wall \(A\) and at \(B\). Vertical strut \(BC\) is 1.5 m long, pinned at \(B\) and at ground \(C\). A 200 N downward load acts on \(AB\) at its midpoint \(M\) (1.0 m from \(A\)).</p>
+  <h2>6. Waiting for it to get hard</h2>
+  <div class="quote">
+    <p>“i think this is making sense but im waiting for the moment it randomly gets so hard i get lost”</p>
+  </div>
+  <p>It making sense now is real evidence, so keep it. And the jump you are bracing for is rarely random. The method of sections and, later, frames use the same three equations you already trust. What grows is the number of arrows on the page and the number of choices about what to isolate.</p>
+  <p>When a problem does feel like a wall, the cause is usually one step back: a free-body diagram missing a force, or an equation written before the directions were settled. That gives you something specific to do.</p>
   <ul>
-    <li><strong>Member \(BC\):</strong> forces only at the end pins \(B\) and \(C\), with no load between them → two-force. The force in \(BC\) is a single axial unknown along the strut (tension or compression).</li>
-    <li><strong>Member \(AB\):</strong> pin at \(A\), the midspan load at \(M\), and the strut force at \(B\) → forces at three points → <strong>multi-force member</strong>. On this bar, a pin force is not automatically a single axial unknown; the pin at \(A\) has two components. At \(B\), once you have identified \(BC\) as two-force, the force from the strut on \(AB\) acts along \(BC\).</li>
+    <li>Work two or three problems on several days of the week, and not all of them the night before they are due.</li>
+    <li>Before any equation, say which body you isolated and count its unknowns.</li>
+    <li>End each problem with the unused equation as a check, as in Sections 1 and 2.</li>
+    <li>Ask at the first step that feels like guessing: office hours, Canvas, or recitation with Efe. A small question now is easier than a large one in two weeks.</li>
   </ul>
-  <p>For global equilibrium you still find external reactions from an FBD of the entire assembly. For a full member-by-member solution you would draw \(AB\) and \(BC\) separately; that detailed frame workflow is not Wednesday’s main path, but the classification above is.</p>
 
-  <p><strong>Self-check:</strong> A straight rod \(DE\) has pins only at \(D\) and \(E\) and no loads between them. Is it two-force?</p>
-  <details><summary>Answer</summary>Yes. Only pin forces at the ends, so the rod carries a collinear axial pair of forces.</details>
-
-  <h2>4. When the course gets harder — staying steady</h2>
-  <p>One of you wrote that things make sense now but you expect to get lost when the difficulty jumps. That is a fair worry in statics: trusses lean on the same equilibrium ideas as earlier chapters, but there are more arrows on the page and more algebra chains.</p>
-  <ul>
-    <li>Work a few problems across several days instead of one long cram session.</li>
-    <li>When a joint FBD feels messy, pause and re-label directions before you solve.</li>
-    <li>Ask early: Canvas, office hours, or recitation with Efe while the step is still small.</li>
-    <li>If you notice pattern-memorizing without knowing why an equation applies, treat that as a signal to slow down and redraw the FBD.</li>
-  </ul>
-  <p>The next skills (sections, frames in depth, machines) all reuse \(\sum F = 0\) and \(\sum M = 0\). Solid joint bookkeeping now saves rework later.</p>
-
-  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 12, 2026. Questions? Office hours or Canvas.</p>
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page updated Nov 12, 2026. Questions? Office hours or Canvas.</p>
 
 </article>
 
