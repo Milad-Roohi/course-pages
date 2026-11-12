@@ -132,6 +132,7 @@
   }
   .quote p { margin: 0 0 0.45rem; }
   .quote p:last-child { margin-bottom: 0; }
+  .comments li { margin-bottom: 0.55rem; }
   pre.sketch {
     font-family: "Latin Modern Mono", "Latin Modern Mono 10", Menlo, Consolas, "Courier New", monospace;
     font-size: 0.8rem;
@@ -171,6 +172,19 @@
     </tbody>
   </table>
 
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>21 text responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>12 of you said nothing was confusing or that the lecture was clear.</li>
+    <li>Two of you asked how to decide where to place a cut in the method of sections.</li>
+    <li>One of you asked why, after a cut, one member was found with a moment equation and another was not.</li>
+    <li>One of you asked when to use a force sum and when to use a moment sum for the support reactions, and whether both are used.</li>
+    <li>One of you asked whether we assume the direction of each member or reaction force at a joint, and how to keep those directions straight.</li>
+    <li>Two of you asked how a two-force member compares with a truss member, whether those are the only member types in a frame, and how frames work.</li>
+    <li>One of you said the force equations still take practice.</li>
+    <li>One of you said the material makes sense so far but is worried it will suddenly get much harder.</li>
+  </ul>
+
   <h2>The truss used on this page</h2>
   <p>Four panels, each 8 ft wide and 6 ft tall, so every diagonal is the hypotenuse of a 6-8-10 triangle (slope 3-4-5). Pin at \(A\), roller at \(E\). Loads are in kips (1 kip = 1000 lb).</p>
   <pre class="sketch" role="img" aria-label="Truss sketch. Bottom joints A, B, C, D, E from left to right, 8 feet apart. Top joints F, G, H directly above B, C, D, 6 feet up. Diagonals A to F, F to C, C to H, H to E. Verticals B to F, C to G, D to H. Pin at A, roller at E. 6 kips down at B, 12 kips down at C, 8 kips to the right at H.">
@@ -193,12 +207,8 @@ pin     |       |               roller
   <p>Members: bottom chord \(AB\), \(BC\), \(CD\), \(DE\); top chord \(FG\), \(GH\); verticals \(BF\), \(CG\), \(DH\); diagonals \(AF\), \(FC\), \(CH\), \(HE\). The reactions, worked out in Section 2, are \(A_x = 8\) kips to the left, \(A_y = 9\) kips up, and \(E_y = 9\) kips up.</p>
 
   <h2>1. Where to cut in the method of sections</h2>
-  <div class="quote">
-    <p>“I was confused on how to determine where to cut the truss when using the method of sectioning.”</p>
-    <p>“Today's lecture was pretty good and easy to understand. The one part that I felt like had me stuck would be when analyzing trusts determining where one should place the cut on their diagram.”</p>
-    <p>“The muddiest point was how, after cutting a truss, we found the value in kips for a beam using a moment, and for another beam we didn't.”</p>
-  </div>
-  <p>Start from the member you were asked about, because the cut has to pass through it. Then slice the truss (trusses, plural) completely in two, crossing as few other members as you can. Three unknown members is the limit, because one piece of the truss gives you three equilibrium equations.</p>
+  <p><strong>Theme:</strong> Two of you asked how to decide where to place a cut in the method of sections. One of you also asked why, after a cut, one member was found with a moment equation and another was not.</p>
+  <p>Start from the member you were asked about, because the cut has to pass through it. Then slice the truss completely in two, crossing as few other members as you can. Three unknown members is the limit, because one piece of the truss gives you three equilibrium equations.</p>
 
   <div class="stepbox">
     <p><strong>Placing the cut</strong></p>
@@ -246,9 +256,7 @@ pin     |       |               roller
   </details>
 
   <h2>2. \(\sum F\) or \(\sum M\) for truss reactions?</h2>
-  <div class="quote">
-    <p>“When finding the reactions in a truss when do we find the sum of forces and when do we find the sum of the moment? We use both to solve for the different forces correct?”</p>
-  </div>
+  <p><strong>Theme:</strong> One of you asked when to use a force sum and when to use a moment sum for the support reactions, and whether both are used.</p>
   <p>Correct, you use both. For reactions, the whole truss is one rigid body with three equations: \(\sum F_x = 0\), \(\sum F_y = 0\), and \(\sum M = 0\). A pin and a roller give three unknowns, so each equation has a job. What you choose is the order, and the best first move is usually a moment equation about the pin.</p>
 
   <div class="stepbox">
@@ -291,9 +299,7 @@ pin     |       |               roller
   </details>
 
   <h2>3. Assumed directions at joints</h2>
-  <div class="quote">
-    <p>“I found it hard to keep track of the directions of the forces. We're looking at the forces acting on a rigid body and then the reactions of that right? For members, are we just to assume the direction of the reaction force at each joint?”</p>
-  </div>
+  <p><strong>Theme:</strong> One of you asked whether we assume the direction of each member or reaction force at a joint, and how to keep those directions straight.</p>
   <p>Yes, you assume, and the sign of the answer tells you whether you guessed right. On the whole truss, the forces are the applied loads and the support reactions. Inside the truss, each member pulls or pushes on the joint at each of its ends, and the joint acts back on the member with an equal and opposite force.</p>
   <p>One habit removes most of the bookkeeping: <strong>draw every unknown member force as tension</strong>, an arrow leaving the joint along the member. A positive answer is tension. A negative answer is compression. When you move to the next joint, draw that member as tension again and carry the signed value into the equations.</p>
 
@@ -334,10 +340,7 @@ pin     |       |               roller
   </details>
 
   <h2>4. Two-force members, truss members, and frames</h2>
-  <div class="quote">
-    <p>“The muddiest point was what 2 force member is compared to a truss member is, and are these the only two types of members that can be within a frame.”</p>
-    <p>“The way frames work was a little muddy”</p>
-  </div>
+  <p><strong>Theme:</strong> Two of you asked how a two-force member compares with a truss member, whether those are the only member types in a frame, and how frames work.</p>
   <p>A truss member and a two-force member are not two different things: every truss member <em>is</em> a two-force member. The pair to compare is two-force and multi-force, and counting where forces act on a member tells you which one you have.</p>
   <ul>
     <li><strong>Two-force member.</strong> Forces act at only two points, the end connections. For equilibrium those two forces must be equal, opposite, and along the line joining the two points. A straight truss member is exactly this, so its force runs along the member: tension or compression, one unknown.</li>
@@ -377,9 +380,7 @@ pin     |       |               roller
   </details>
 
   <h2>5. Writing the equations for the forces</h2>
-  <div class="quote">
-    <p>“The lecture today was good. I am struggling a little bit with figuring out the equations for the forces, but with practice I hope to get a better understanding.”</p>
-  </div>
+  <p><strong>Theme:</strong> One of you said the force equations still take practice.</p>
   <p>Every equation on this page came from the same place: a free-body diagram and \(\sum F_x = 0\), \(\sum F_y = 0\), \(\sum M = 0\). What changes from step to step is only what you isolate.</p>
   <table>
     <caption class="sr-only">Which free-body diagram gives which equations</caption>
@@ -414,9 +415,7 @@ pin     |       |               roller
   </details>
 
   <h2>6. Waiting for it to get hard</h2>
-  <div class="quote">
-    <p>“i think this is making sense but im waiting for the moment it randomly gets so hard i get lost”</p>
-  </div>
+  <p><strong>Theme:</strong> One of you said the material makes sense so far but is worried it will suddenly get much harder.</p>
   <p>It making sense now is real evidence, so keep it. And the jump you are bracing for is rarely random. The method of sections and, later, frames use the same three equations you already trust. What grows is the number of arrows on the page and the number of choices about what to isolate.</p>
   <p>When a problem does feel like a wall, the cause is usually one step back: a free-body diagram missing a force, or an equation written before the directions were settled. That gives you something specific to do.</p>
   <ul>
