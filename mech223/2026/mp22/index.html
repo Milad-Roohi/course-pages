@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 22 study guide (Wed Nov 11)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 12</p>
+  <h1>Muddiest Point 22 study guide</h1>
+  <p class="subtitle">Analysis of structures — trusses and structure types. Wednesday, Nov 11.</p>
+  <hr class="top">
+
+  <p>This page follows your Wednesday comments (MP22, 21 submissions, 21 with text). Week 12 focuses on analysis of structures: how trusses, frames, and machines differ, then equilibrium of trusses using the method of joints. About 12 of you wrote that the lecture was clear. The rest asked about where forces act, keeping force directions straight on FBDs, how frames fit into the picture, and how to stay steady as the material builds. Many Canvas replies were cut off mid-sentence in the download; if your full question is missing below, post on Canvas or come by office hours.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP22 theme counts by section</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section below</th></tr></thead>
+    <tbody>
+      <tr><td>Where forces act / locating forces</td><td>1</td><td>1</td></tr>
+      <tr><td>Tracking force directions</td><td>1</td><td>2</td></tr>
+      <tr><td>How frames work (vs trusses)</td><td>1</td><td>3</td></tr>
+      <tr><td>Anxiety about difficulty ahead</td><td>1</td><td>4</td></tr>
+      <tr><td>Clear / no muddy point</td><td>12</td><td>—</td></tr>
+      <tr><td>Truncated / unclear comments</td><td>5</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>21 text responses. Summarized, not quoted, because this copy is posted on the open web.</p>
+  <ul class="comments">
+    <li>About 12 of you said nothing was confusing or that the lecture was clear.</li>
+    <li>One of you was unsure how to determine <em>where</em> forces act (truncated in Canvas).</li>
+    <li>One of you found it hard to keep track of force directions (truncated).</li>
+    <li>One of you asked how frames work (truncated).</li>
+    <li>One of you wrote that things make sense now but you are waiting for the difficulty to spike suddenly.</li>
+    <li>Several responses ended mid-word; we cannot recover the full text from the survey export.</li>
+  </ul>
+
+  <h2>1. Where forces act</h2>
+  <p>Every equilibrium equation ties a force to a <strong>line of action</strong> and, for moments, to a <strong>perpendicular distance</strong> from that line to your reference point. In this week’s truss work, the main locations are straightforward once the diagram is labeled.</p>
+  <ul>
+    <li><strong>Applied loads</strong> act at the point shown (often a joint where members meet).</li>
+    <li><strong>Support reactions</strong> act at the support (pin, roller, or link) as drawn on the truss.</li>
+    <li><strong>Member forces at a joint</strong> act at that joint, directed along the member.</li>
+    <li>A <strong>two-force member</strong> has forces only at its two ends; those two forces are equal, opposite, and collinear along the member.</li>
+  </ul>
+  <p>For a moment about point \(O\), use the shortest distance from \(O\) to the line of action:</p>
+  <div class="eqbox">\[
+  M_O = F\,d_\perp
+  \]</div>
+  <p>where \(d_\perp\) is perpendicular to the force’s line of action, not along the member unless the geometry makes those the same.</p>
+
+  <div class="note">
+    <p><strong>Distributed load reminder (only if it appears on your diagram):</strong> a uniform load over length \(L\) can be replaced by a single force equal to the total load, acting at the centroid (\(L/2\) from one end for a uniform rectangle). That is a location rule, not the focus of this week’s joint method.</p>
+  </div>
+
+  <h3>Worked example: locating actions and a moment arm</h3>
+  <p>Joint \(B\) is 2.0 m to the right of pin \(A\) and at the same elevation. A horizontal member carries a 180 N force drawn at \(B\) pointing to the right (along the top chord). Find the moment of this force about \(A\).</p>
+  <p>The line of action is the horizontal line through \(B\) (\(y = 0\)). Point \(A\) lies on that line, so \(d_\perp = 0\) and</p>
+  <div class="eqbox">\[
+  M_A = 0
+  \]</div>
+  <p>Now suppose the same 180 N horizontal force acts at joint \(C\), which is 2.0 m to the right of \(B\) and 1.5 m <em>above</em> the chord. The line of action is still horizontal, now through elevation \(y = 1.5\) m. From \(A\), the perpendicular distance to that line is 1.5 m:</p>
+  <div class="eqbox">\[
+  M_A = (180\ \text{N})(1.5\ \text{m}) = 270\ \text{N}{\cdot}\text{m}
+  \]</div>
+  <p>Sign depends on your choice of positive rotation; magnitude is what confirms whether the moment is zero or not.</p>
+
+  <p><strong>Self-check:</strong> A 120 N downward load is applied at joint \(D\) directly above \(A\), 1.2 m higher. What is \(d_\perp\) for \(\sum M_A\) using that vertical force?</p>
+  <details><summary>Answer</summary>\(d_\perp = 0\) because the line of action passes through \(A\), so the load produces no moment about \(A\) (only a vertical force in \(\sum F_y\)).</details>
+
+  <h2>2. Tracking force directions</h2>
+  <p>Truss analysis is bookkeeping on top of Newton’s laws. Pick a consistent \(+x\) and \(+y\) on every figure. For each unknown, draw an arrow in an assumed direction. For a member, assume <strong>tension</strong> (arrow pulls the joint along the member) or <strong>compression</strong>; a negative algebraic result flips the actual sense. At a joint, the force the member exerts on the joint is opposite to the force the joint exerts on the member.</p>
+
+  <div class="stepbox">
+    <p><strong>Method of joints — minimal workflow</strong></p>
+    <ol>
+      <li>Solve global equilibrium for external reactions if needed.</li>
+      <li>Isolate one joint with at most two unknown member forces (when possible).</li>
+      <li>Draw all member forces on the joint FBD before writing equations.</li>
+      <li>Write \(\sum F_x = 0\), \(\sum F_y = 0\).</li>
+      <li>Move to the next joint; reuse solved member forces with opposite direction on the adjacent joint.</li>
+    </ol>
+  </div>
+
+  <h3>Worked example: symmetric joint with a downward load</h3>
+  <p>At joint \(J\), two identical members meet and slope <strong>upward</strong> at \(60^\circ\) above the horizontal (one toward each support). A 500 N load acts downward at \(J\). Assume both members are in tension as drawn (each pulls on \(J\) toward its support). By symmetry the member forces have equal magnitude \(F\).</p>
+  <p>Each tensile force has an upward vertical component \(F\sin 60^\circ\). With \(+y\) upward:</p>
+  <div class="eqbox">\[
+  \sum F_y = 2F\sin 60^\circ - 500\ \text{N} = 0
+  \quad\Rightarrow\quad
+  F = \frac{500}{2\sin 60^\circ} \approx 288.7\ \text{N}\ (\text{tension})
+  \]</div>
+  <p>\(\sum F_x = 0\) is satisfied automatically for this symmetric layout. Had you assumed compression and obtained a negative \(F\), you would switch the arrow direction and report compression with the positive magnitude.</p>
+
+  <p><strong>Self-check:</strong> A joint has two members sloping <strong>upward</strong> at \(45^\circ\) to the horizontal (symmetric) and a 400 N downward load. With the same tension assumption, what is \(F\) in each member?</p>
+  <details><summary>Answer</summary>\(F = 400/(2\sin 45^\circ) \approx 283\) N tension.</details>
+
+  <h2>3. How frames work (and how they differ from trusses)</h2>
+  <p>Wednesday introduced three structure types. Truss joint work is what you practice now; full frame analysis (cutting multi-force members and using \(\sum M\)) comes later in the term. Still, the vocabulary matters so you do not treat every pin-connected structure as a pure truss.</p>
+
+  <table>
+    <caption class="sr-only">Structure categories</caption>
+    <thead>
+      <tr><th scope="col">Type</th><th scope="col">Member model</th><th scope="col">Typical statics treatment</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Truss</strong></td>
+        <td>Members are two-force: loads only at ends, axial force along the member</td>
+        <td>Method of joints (and sections later)</td>
+      </tr>
+      <tr>
+        <td><strong>Frame</strong></td>
+        <td>At least one <strong>multi-force member</strong> (three or more forces, not all concurrent or collinear)</td>
+        <td>Reactions on the whole frame, then separate FBDs per member; pin forces often have two components</td>
+      </tr>
+      <tr>
+        <td><strong>Machine</strong></td>
+        <td>Designed with moving parts that transmit or modify forces</td>
+        <td>Same FBD ideas with kinematic links in mind</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Even inside a frame, identify two-force members first. They still carry a single axial force. A pin on a multi-force bar is not automatically “one unknown at angle \(\theta\)”; you may need \(F_x\) and \(F_y\) unless you know the link is a two-force member.</p>
+
+  <h3>Worked example: spot two-force vs multi-force</h3>
+  <p>Pin-connected layout: horizontal bar \(AB\) is 2.0 m long, pinned at wall \(A\) and at \(B\). Vertical strut \(BC\) is 1.5 m long, pinned at \(B\) and at ground \(C\). A 200 N downward load acts on \(AB\) at its midpoint \(M\) (1.0 m from \(A\)).</p>
+  <ul>
+    <li><strong>Member \(BC\):</strong> forces only at the end pins \(B\) and \(C\), with no load between them → two-force. The force in \(BC\) is a single axial unknown along the strut (tension or compression).</li>
+    <li><strong>Member \(AB\):</strong> pin at \(A\), the midspan load at \(M\), and the strut force at \(B\) → forces at three points → <strong>multi-force member</strong>. On this bar, a pin force is not automatically a single axial unknown; the pin at \(A\) has two components. At \(B\), once you have identified \(BC\) as two-force, the force from the strut on \(AB\) acts along \(BC\).</li>
+  </ul>
+  <p>For global equilibrium you still find external reactions from an FBD of the entire assembly. For a full member-by-member solution you would draw \(AB\) and \(BC\) separately; that detailed frame workflow is not Wednesday’s main path, but the classification above is.</p>
+
+  <p><strong>Self-check:</strong> A straight rod \(DE\) has pins only at \(D\) and \(E\) and no loads between them. Is it two-force?</p>
+  <details><summary>Answer</summary>Yes. Only pin forces at the ends, so the rod carries a collinear axial pair of forces.</details>
+
+  <h2>4. When the course gets harder — staying steady</h2>
+  <p>One of you wrote that things make sense now but you expect to get lost when the difficulty jumps. That is a fair worry in statics: trusses lean on the same equilibrium ideas as earlier chapters, but there are more arrows on the page and more algebra chains.</p>
+  <ul>
+    <li>Work a few problems across several days instead of one long cram session.</li>
+    <li>When a joint FBD feels messy, pause and re-label directions before you solve.</li>
+    <li>Ask early: Canvas, office hours, or recitation with Efe while the step is still small.</li>
+    <li>If you notice pattern-memorizing without knowing why an equation applies, treat that as a signal to slow down and redraw the FBD.</li>
+  </ul>
+  <p>The next skills (sections, frames in depth, machines) all reuse \(\sum F = 0\) and \(\sum M = 0\). Solid joint bookkeeping now saves rework later.</p>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 12, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
