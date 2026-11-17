@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 23 study guide (Mon Nov 16)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  pre.sketch {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", Menlo, Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  details { margin: 0 0 1rem; }
+  summary { cursor: pointer; font-weight: 700; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 13</p>
+  <h1>Muddiest Point 23 study guide</h1>
+  <p class="subtitle">Monday, Nov 16. Chapter 6: frames and machines.</p>
+  <hr class="top">
+
+  <p>This page follows Monday’s Muddiest Point (11 responses). Seven of you said the lecture was clear. Four questions grouped into the themes below. The vocabulary matches class: a <strong>truss</strong> is pin-connected and every member is a two-force member; a <strong>frame</strong> is pin-connected but has at least one multi-force member; a <strong>machine</strong> is a set of rigid parts that move relative to each other and transmit or modify forces.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP23 theme counts</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section</th></tr></thead>
+    <tbody>
+      <tr><td>Machines — what to isolate and how pieces connect</td><td>1</td><td>1</td></tr>
+      <tr><td>Frame analysis — \(\sum M\) with \(\sum F\) on a multi-force member</td><td>1</td><td>2</td></tr>
+      <tr><td>Choosing the moment center</td><td>1</td><td>2</td></tr>
+      <tr><td>Joint equilibrium — known member to unknown neighbor</td><td>1</td><td>3</td></tr>
+      <tr><td>Clear / no muddy point</td><td>7</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Monday (summarized)</h2>
+  <p>Summarized, not quoted, because this page is on the open web.</p>
+  <ul class="comments">
+    <li>Seven of you said nothing was confusing, or that Monday was clear.</li>
+    <li>One of you said the machines segment at the end of class was hard to connect to the earlier material.</li>
+    <li>One of you asked how to combine moment and force sums when analyzing a frame member.</li>
+    <li>One of you asked where to take \(\sum M\) when several unknowns appear at once.</li>
+    <li>One of you asked whether a known tension in one member can be used to get the force in a neighbor at a joint.</li>
+  </ul>
+
+  <h2>1. Machines — one rigid piece at a time</h2>
+  <p>A machine changes how forces pass through a tool: a small input at the handle can become a large grip at the jaw. The analysis does not start with one diagram for the whole device.</p>
+  <p>Break the device into separate <strong>rigid pieces</strong> at pins and contacts. Draw one free-body diagram per piece. Label every interaction: pins generally exert equal-and-opposite pairs on the two pieces (Newton’s third law). Find <strong>two-force members</strong> first; each one carries a single axial force along the line joining its two pins. Then solve the piece with the fewest unknowns and pass known pin forces to the next piece.</p>
+
+  <div class="stepbox">
+    <p><strong>Machine workflow</strong></p>
+    <ol>
+      <li>Identify rigid bodies (handle, links, jaw, slider, …).</li>
+      <li>Mark two-force links; their forces act along the member line.</li>
+      <li>Pick the piece with the smallest unknown count (often the input link).</li>
+      <li>On each piece: \(\sum F_x = 0\), \(\sum F_y = 0\), \(\sum M = 0\).</li>
+      <li>At shared pins, copy the interaction force onto the neighbor with opposite direction.</li>
+    </ol>
+  </div>
+
+  <h3>Worked example: crank and slider</h3>
+  <p>Sizes are in millimeters and forces in newtons. Pin \(O\) is fixed to the frame. Crank \(OA\) is 40 mm along \(+x\). Connecting rod \(AB\) is 60 mm and joins \(A\) to pin \(B\). At \(B\) a slider runs in a vertical guide at \(x = 88\) mm. You push down on the crank at \(A\) with 80 N. Find the rod force and the vertical output at the slider.</p>
+  <pre class="sketch">        B ●——— guide (vertical slot at x = 88 mm)
+          |\
+          | \  rod AB, 60 mm (3-4-5 slope)
+          |  \
+    O ●===● A     crank OA = 40 mm horizontal
+   fixed      ↓ 80 N at A</pre>
+  <p>From \(O\) to \(A\) is 40 mm; from \(A\) to \(B\) is 48 mm right and 36 mm up, so \(AB\) is a 3-4-5 triangle. The rod is a <strong>two-force member</strong>: one unknown \(F_{AB}\) along \(AB\). The crank is multi-force: reactions \(O_x\), \(O_y\) at the fixed pin and the rod force at \(A\).</p>
+  <p><strong>Crank \(OA\).</strong> Assume the rod is in tension, so it pulls on the crank at \(A\) toward \(B\). With unit vector \((0.8,\,0.6)\) along \(A \to B\), that pull is \((0.8 F_{AB},\,0.6 F_{AB})\). Take counterclockwise moments positive about \(O\). The 80 N load at \(A\) turns the crank clockwise.</p>
+  <div class="eqbox">\[
+  \sum M_O = -(40)(80) + (40)(0.6 F_{AB}) = 0
+  \quad\Rightarrow\quad F_{AB} = \frac{3200}{24} = 133.3\ \text{N}
+  \quad (\text{tension})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_x = O_x + 0.8(133.3) = 0 \Rightarrow O_x = -106.7\ \text{N}
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = O_y + 0.6(133.3) - 80 = 0 \Rightarrow O_y = 0
+  \]</div>
+  <p><strong>Slider at \(B\).</strong> The rod pushes on the slider with the opposite of the force it exerts on the crank at \(A\): \((-106.7,\,-80.0)\) N. The guide can only supply a horizontal reaction \(N\). Vertical equilibrium gives the output force \(Q\) (up on the slider).</p>
+  <div class="eqbox">\[
+  \sum F_x = N - 106.7 = 0 \Rightarrow N = 106.7\ \text{N}
+  \qquad
+  \sum F_y = Q - 80 = 0 \Rightarrow Q = 80\ \text{N}
+  \]</div>
+  <p>For this geometry the output equals the input magnitude; a different crank angle or rod length would change that ratio. The pattern does not: split the machine, use two-force members where you can, and let pin forces chain from one piece to the next.</p>
+
+  <p><strong>Self-check:</strong> Keep the same geometry but push with 120 N at \(A\). What are \(F_{AB}\), \(O_x\), and \(Q\)?</p>
+  <details><summary>Answer</summary>
+    <p>\(\sum M_O = -(40)(120) + 24 F_{AB} = 0\) gives \(F_{AB} = 200\) N (tension). Then \(O_x = -160\) N, \(O_y = 0\), and \(Q = 120\) N.</p>
+  </details>
+
+  <h2>2. Frames — \(\sum M\), \(\sum F\), and where to take the moment</h2>
+  <p>On a <strong>multi-force member</strong> of a frame, \(\sum F_x\), \(\sum F_y\), and \(\sum M\) are three tools on the same free-body diagram, not three different topics. You still get only three independent equations per isolated body.</p>
+  <p>Pick a moment center where as many unknown forces as possible pass through their lines of action—often a pin shared by several members. \(\sum M = 0\) about that pin can eliminate two unknowns at once. Use \(\sum F_x\) and \(\sum F_y\) for what is left. Two-force members in the frame still carry collinear forces at their ends; label them with one unknown along the member line.</p>
+
+  <h3>Worked example: bent frame member with a strut</h3>
+  <p>Lengths are in feet and forces in pounds. Joint \(A\) is a pin on a vertical wall. Member \(ABC\) is bent: \(AB\) is 6 ft horizontal to \(B\), then \(BC\) is 4 ft straight down to \(C\). A 500-lb downward load acts at \(C\). Strut \(BD\) is pin-connected at \(B\) and at wall point \(D\), which is 3 ft below \(A\) on the same wall. Neglect member weights.</p>
+  <pre class="sketch">  wall
+    A ●———————● B
+    |           |\
+    | 3 ft      | \  strut BD (6 ft along slope 2:1)
+    D ●         |  \
+                |   ● C  ← 500 lb down
+                +—— 4 ft ——+</pre>
+  <p>\(BD\) is a two-force member. Its line runs from \(D(0,-3)\) to \(B(6,0)\): length \(3\sqrt{5}\) ft, with direction from \(D\) toward \(B\) as \((6/(\!3\sqrt{5}),\,3/(\!3\sqrt{5})) = (2/\sqrt{5},\,1/\sqrt{5})\). The bent beam \(ABC\) is multi-force: pin reactions \(A_x\), \(A_y\) at \(A\), strut force at \(B\), and the 500-lb load at \(C\).</p>
+  <p><strong>Step 1 — \(\sum M\) about pin \(B\).</strong> The strut force at \(B\) acts through \(B\), so it drops out. The 500-lb load is vertically below \(B\) with moment arm 4 ft. Only \(A_y\) is left:</p>
+  <div class="eqbox">\[
+  \sum M_B = A_y(6) - (500)(4) = 0
+  \quad\Rightarrow\quad A_y = \frac{2000}{6} = 333.3\ \text{lb}
+  \]</div>
+  <p><strong>Step 2 — \(\sum M\) about \(A\).</strong> Both \(A_x\) and \(A_y\) pass through \(A\). The load has moment arm 6 ft. For strut force \(F_{BD}\) (compression: strut pushes on the beam toward \(D\)), the moment arm about \(A\) is the horizontal distance from the line of action to \(A\), which gives coefficient \(18/\!3\sqrt{5}\) ft per newton of \(F_{BD}\).</p>
+  <div class="eqbox">\[
+  \sum M_A = -(500)(6) + F_{BD}\frac{18}{3\sqrt{5}} = 0
+  \quad\Rightarrow\quad F_{BD} = 1118\ \text{lb}
+  \quad (\text{compression})
+  \]</div>
+  <p><strong>Step 3 — \(\sum F_x\) and \(\sum F_y\) on \(ABC\).</strong> Compression on the beam at \(B\) pushes along \((2/\sqrt{5},\,1/\sqrt{5})\).</p>
+  <div class="eqbox">\[
+  \sum F_x = A_x + \frac{2}{\sqrt{5}}(1118) = 0
+  \quad\Rightarrow\quad A_x = -1000\ \text{lb}
+  \quad (1000\ \text{lb to the left})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = 333.3 + \frac{1}{\sqrt{5}}(1118) - 500 = 0
+  \quad\Rightarrow\quad A_y\ \text{checks}
+  \]</div>
+  <p>Notice the order: moment about the pin with the most unknowns passing through it first, then a second moment or the force sums. On a frame, bending of the physical bar is not modeled here; you are finding pin and axial forces from rigid-body equilibrium.</p>
+
+  <p><strong>Self-check:</strong> If the load at \(C\) is 300 lb instead of 500 lb, find \(A_y\) first from \(\sum M_B\).</p>
+  <details><summary>Answer</summary>
+    <p>\(A_y = (300)(4)/6 = 200\) lb.</p>
+  </details>
+
+  <h2>3. Joint equilibrium — from one known member to its neighbors</h2>
+  <p>Once the force in one member meeting at a pin is known, you can find neighbors at that pin using \(\sum F_x = 0\) and \(\sum F_y = 0\) at the joint. Resolve the known force into components (sine and cosine of the member angle are fine). Draw the other unknowns as tension along their member lines. There is no separate shortcut that skips equilibrium: each unknown still needs its equation from a joint or from an isolated member.</p>
+
+  <h3>Worked example: three members at a pin</h3>
+  <p>Forces are in newtons. Pin \(P\) joins three straight members. Member \(PA\) runs 60° above the horizontal to the left of \(P\). Member \(PB\) is horizontal to the right. Member \(PC\) is vertical downward. You are told \(F_{PA} = 300\) N in tension (drawn pulling away from \(P\) along \(PA\)).</p>
+  <p>Unit vector along \(PA\) (from \(P\) toward \(A\), up-left): \((-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2})\). The tension arrow on the joint is</p>
+  <div class="eqbox">\[
+  \vec F_{PA} = 300\left(-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2}\right)
+  = (-150,\; 259.8)\ \text{N}
+  \]</div>
+  <p>Let \(F_{PB}\) and \(F_{PC}\) be unknown magnitudes drawn in tension along \(+x\) and \(-y\).</p>
+  <div class="eqbox">\[
+  \sum F_x = -150 + F_{PB} = 0
+  \quad\Rightarrow\quad F_{PB} = 150\ \text{N}
+  \quad (\text{tension})
+  \]</div>
+  <div class="eqbox">\[
+  \sum F_y = 259.8 - F_{PC} = 0
+  \quad\Rightarrow\quad F_{PC} = 259.8\ \text{N}
+  \quad (\text{tension})
+  \]</div>
+  <p>All three answers came out positive, so the tension assumption was consistent. A negative result would mean compression for that member.</p>
+
+  <div class="note">
+    <p><strong>Pin versus member.</strong> At a pin, every attached member exerts a force on the joint. Multi-force frame members can have several forces on one body, but at the pin itself you are still writing joint equilibrium in \(x\) and \(y\). Two-force members only contribute forces along their axes.</p>
+  </div>
+
+  <p><strong>Self-check:</strong> Same joint, but \(F_{PA} = 300\) N is known to be compression (arrow into the joint along \(PA\)). What changes?</p>
+  <details><summary>Answer</summary>
+    <p>Flip the sign on the \(PA\) components: use \((+150,\,-259.8)\) N. Then \(F_{PB} = -150\) N (150 N compression) and \(F_{PC} = -259.8\) N (compression on \(PC\)).</p>
+  </details>
+
+  <h2>Definitions worth keeping straight</h2>
+  <ul>
+    <li><strong>Two-force member.</strong> Loads only at the two end pins; the forces are equal, opposite, and along the line joining the pins.</li>
+    <li><strong>Truss.</strong> Every member is a two-force member.</li>
+    <li><strong>Frame.</strong> At least one multi-force member; pins on multi-force members generally have two unknown force components.</li>
+    <li><strong>Machine.</strong> Parts move relative to each other; analyze each rigid piece separately and match pin forces at connections.</li>
+  </ul>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 17, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
