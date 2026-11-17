@@ -223,41 +223,44 @@
   <p>Pick a moment center where as many unknown forces as possible pass through their lines of action—often a pin shared by several members. \(\sum M = 0\) about that pin can eliminate two unknowns at once. Use \(\sum F_x\) and \(\sum F_y\) for what is left. Two-force members in the frame still carry collinear forces at their ends; label them with one unknown along the member line.</p>
 
   <h3>Worked example: bent frame member with a strut</h3>
-  <p>Lengths are in feet and forces in pounds. Joint \(A\) is a pin on a vertical wall. Member \(ABC\) is bent: \(AB\) is 6 ft horizontal to \(B\), then \(BC\) is 4 ft straight down to \(C\). A 500-lb downward load acts at \(C\). Strut \(BD\) is pin-connected at \(B\) and at wall point \(D\), which is 3 ft below \(A\) on the same wall. Neglect member weights.</p>
+  <p>Lengths are in feet and forces in pounds. Joint \(A\) is a pin on a vertical wall. Member \(ABC\) is bent: \(AB\) is 6 ft horizontal to \(B\), then \(BC\) runs 3 ft to the right and 4 ft down to \(C\) (length 5 ft). A 500-lb downward load acts at \(C\). Strut \(BD\) is pin-connected at \(B\) and at wall point \(D\), which is 3 ft below \(A\) on the same wall. Neglect member weights.</p>
   <pre class="sketch">  wall
-    A ●———————● B
-    |           |\
-    | 3 ft      | \  strut BD (6 ft along slope 2:1)
-    D ●         |  \
-                |   ● C  ← 500 lb down
-                +—— 4 ft ——+</pre>
-  <p>\(BD\) is a two-force member. Its line runs from \(D(0,-3)\) to \(B(6,0)\): length \(3\sqrt{5}\) ft, with direction from \(D\) toward \(B\) as \((6/(\!3\sqrt{5}),\,3/(\!3\sqrt{5})) = (2/\sqrt{5},\,1/\sqrt{5})\). The bent beam \(ABC\) is multi-force: pin reactions \(A_x\), \(A_y\) at \(A\), strut force at \(B\), and the 500-lb load at \(C\).</p>
-  <p><strong>Step 1 — \(\sum M\) about pin \(B\).</strong> The strut force at \(B\) acts through \(B\), so it drops out. The 500-lb load is vertically below \(B\) with moment arm 4 ft. Only \(A_y\) is left:</p>
+    A ●———— 6 ft ————● B
+    |                 |\
+    | 3 ft            | \  strut BD (3√5 ft)
+    D ●               |  \
+         4 ft ↓       |   \
+                      |    ● C
+                 3 ft +———+    ↓ 500 lb</pre>
+  <p>\(BD\) is a two-force member. Its line runs from \(D(0,-3)\) to \(B(6,0)\): length \(3\sqrt{5}\) ft, with direction from \(D\) toward \(B\) as \((2/\sqrt{5},\,1/\sqrt{5})\). The bent beam \(ABC\) is multi-force: pin reactions \(A_x\), \(A_y\) at \(A\), strut force at \(B\), and the 500-lb load at \(C\). Because \(C\) is offset to the right of the vertical through \(B\), the load has a nonzero moment about \(B\).</p>
+  <p><strong>Step 1 — \(\sum M\) about pin \(B\).</strong> The strut force at \(B\) acts through \(B\), so it drops out. The 500-lb load at \(C\) is 3 ft horizontally from the vertical through \(B\), so its moment arm about \(B\) is 3 ft. Reaction \(A_y\) at \(A\) has moment arm 6 ft about \(B\). Take counterclockwise positive:</p>
   <div class="eqbox">\[
-  \sum M_B = A_y(6) - (500)(4) = 0
-  \quad\Rightarrow\quad A_y = \frac{2000}{6} = 333.3\ \text{lb}
+  \sum M_B = -6A_y - (500)(3) = 0
+  \quad\Rightarrow\quad A_y = -250\ \text{lb}
+  \quad (250\ \text{lb downward on the beam})
   \]</div>
-  <p><strong>Step 2 — \(\sum M\) about \(A\).</strong> Both \(A_x\) and \(A_y\) pass through \(A\). The load has moment arm 6 ft. For strut force \(F_{BD}\) (compression: strut pushes on the beam toward \(D\)), the moment arm about \(A\) is the horizontal distance from the line of action to \(A\), which gives coefficient \(18/\!3\sqrt{5}\) ft per newton of \(F_{BD}\).</p>
+  <p>A negative \(A_y\) means the wall pulls down on the beam (reaction opposite to a conventional upward arrow). That is consistent with the load tending to rotate the frame clockwise about \(B\).</p>
+  <p><strong>Step 2 — \(\sum M\) about \(A\).</strong> Both \(A_x\) and \(A_y\) pass through \(A\). The load’s line of action is 9 ft to the right of the wall. For strut force \(F_{BD}\) (compression: strut pushes on the beam toward \(D\)), the line of action is 6 ft horizontally from \(A\), contributing \(\sum M_A\) coefficient \(6/\sqrt{5}\) ft per pound of \(F_{BD}\).</p>
   <div class="eqbox">\[
-  \sum M_A = -(500)(6) + F_{BD}\frac{18}{3\sqrt{5}} = 0
-  \quad\Rightarrow\quad F_{BD} = 1118\ \text{lb}
+  \sum M_A = -(500)(9) + \frac{6}{\sqrt{5}}\,F_{BD} = 0
+  \quad\Rightarrow\quad F_{BD} = 750\sqrt{5} = 1677\ \text{lb}
   \quad (\text{compression})
   \]</div>
-  <p><strong>Step 3 — \(\sum F_x\) and \(\sum F_y\) on \(ABC\).</strong> Compression on the beam at \(B\) pushes along \((2/\sqrt{5},\,1/\sqrt{5})\).</p>
+  <p><strong>Step 3 — \(\sum F_x\) and \(\sum F_y\) on \(ABC\).</strong> With \(F_{BD}\) in compression, the interaction on the beam at \(B\) resolves to \(2F_{BD}/\sqrt{5}\) to the right and \(F_{BD}/\sqrt{5}\) upward along the strut line.</p>
   <div class="eqbox">\[
-  \sum F_x = A_x + \frac{2}{\sqrt{5}}(1118) = 0
-  \quad\Rightarrow\quad A_x = -1000\ \text{lb}
-  \quad (1000\ \text{lb to the left})
+  \sum F_x = A_x + \frac{2}{\sqrt{5}}(1677) = 0
+  \quad\Rightarrow\quad A_x = -1500\ \text{lb}
+  \quad (1500\ \text{lb to the left})
   \]</div>
   <div class="eqbox">\[
-  \sum F_y = 333.3 + \frac{1}{\sqrt{5}}(1118) - 500 = 0
-  \quad\Rightarrow\quad A_y\ \text{checks}
+  \sum F_y = -250 + \frac{1677}{\sqrt{5}} - 500 = -250 + 750 - 500 = 0
+  \quad\Rightarrow\quad \sum F_y\ \text{checks}
   \]</div>
   <p>Notice the order: moment about the pin with the most unknowns passing through it first, then a second moment or the force sums. On a frame, bending of the physical bar is not modeled here; you are finding pin and axial forces from rigid-body equilibrium.</p>
 
   <p><strong>Self-check:</strong> If the load at \(C\) is 300 lb instead of 500 lb, find \(A_y\) first from \(\sum M_B\).</p>
   <details><summary>Answer</summary>
-    <p>\(A_y = (300)(4)/6 = 200\) lb.</p>
+    <p>\(-6A_y - (300)(3) = 0\) gives \(A_y = -150\) lb (150 lb downward).</p>
   </details>
 
   <h2>3. Joint equilibrium — from one known member to its neighbors</h2>
