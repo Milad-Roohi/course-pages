@@ -198,15 +198,22 @@
   </div>
 
   <h2>2. Worked example: plate with a rectangular cutout</h2>
-  <p>Sizes are in millimeters. The outer plate is \(20 \times 12\) mm with the origin at the lower-left corner. A \(4 \times 3\) mm rectangular slot is cut with its lower-left corner at \((14,\,4)\) mm, so removed material sits toward the upper-right of the plate.</p>
-  <pre class="sketch">  y
-  12 +----------------------+
-     |                  +---+  slot 4×3
-   8 |                  |   |
-     |    20 × 12 plate |   |
-     |                  +---+
-   0 +----------------------+ x
-     0        14    18    20</pre>
+  <p>Sizes are in millimeters. The outer plate is \(20 \times 12\) mm with the origin at the lower-left corner. A \(4 \times 3\) mm rectangular slot is cut with its lower-left corner at \((14,\,4)\) mm, so the removed material sits on the right side of the plate, centered at \((16,\,5.5)\) mm, just below mid-height.</p>
+  <pre class="sketch">    y
+ 12 +---------------------------------------+
+    |                                       |
+    |                                       |
+    |   20 × 12 plate                       |
+    |                                       |
+  7 |                           +-------+   |
+    |                           |       |   |  slot 4×3
+    |                           |       |   |
+  4 |                           +-------+   |
+    |                                       |
+    |                                       |
+    |                                       |
+  0 +---------------------------------------+ x
+    0                           14      18  20</pre>
 
   <table>
     <caption class="sr-only">Composite centroid table</caption>
@@ -225,11 +232,11 @@
   \qquad
   \bar{y} = \frac{Q_x}{A} = \frac{1374}{228} = 6.03\ \text{mm}
   \]</div>
-  <p><strong>Sanity:</strong> Removing mass from the upper-right pulls the centroid left and slightly upward from the geometric center \((10,\,6)\) mm. The point \((9.68,\,6.03)\) stays inside the outer rectangle. \(Q_x\) and \(Q_y\) about axes through \((\bar{x},\,\bar{y})\) are both zero for the combined shape.</p>
+  <p><strong>Sanity:</strong> Removing area to the right of and just below the plate center \((10,\,6)\) mm pulls the centroid left and slightly up. The point \((9.68,\,6.03)\) stays inside the outer rectangle. \(Q_x\) and \(Q_y\) about axes through \((\bar{x},\,\bar{y})\) are both zero for the combined shape.</p>
 
   <p><strong>Self-check:</strong> Same outer plate, but the slot is \(3 \times 3\) mm with lower-left at \((15,\,5)\) mm. Without computing decimals, does \(\bar{x}\) move left or right compared with a solid plate?</p>
   <details><summary>Answer</summary>
-    <p>The removed square sits even farther right; \(\bar{x}\) moves <strong>left</strong> of 10 mm (and \(\bar{y}\) shifts upward because material is removed above the mid-height).</p>
+    <p>The removed square is centered at \((16.5,\,6.5)\) mm, right of center, so \(\bar{x}\) moves <strong>left</strong> of 10 mm. Its center is also slightly above mid-height, so \(\bar{y}\) drops just below 6 mm. (Numbers: \(\bar{x} \approx 9.75\) mm, \(\bar{y} \approx 5.98\) mm.)</p>
   </details>
 
   <h2>3. \(Q\) about the centroidal axis — and a T-section preview</h2>
@@ -242,14 +249,17 @@
   <p>In shear, you will use \(Q\) for only the area on <em>one side</em> of a cut, measured about the neutral axis (through the centroid). That partial area has a <em>nonzero</em> first moment even though the full section’s moment about the NA is zero.</p>
 
   <h3>Short example: symmetric T-section</h3>
-  <p>Dimensions in inches. Web: \(2 \times 6\) in (vertical). Flange: \(10 \times 2\) in on top, centered on the web. Place the origin at the bottom center of the web so \(\bar{x} = 1\) in by symmetry.</p>
-  <pre class="sketch">       10 in flange
-    +------------------+
-    |                  |
-    +--------+---------+
-             | 2 in web
-             |
-             +  6 in tall</pre>
+  <p>Dimensions in inches. Web: \(2 \times 6\) in (vertical). Flange: \(10 \times 2\) in on top, centered on the web. Place the origin at the bottom center of the web, so \(\bar{x} = 0\) by symmetry and only \(\bar{y}\) needs work.</p>
+  <pre class="sketch"> 8 +-------------------+
+   |                   |   flange 10 × 2
+ 6 +-------+---+-------+
+           |   |
+           |   |
+           |   |   web 2 × 6
+           |   |
+           |   |
+ 0         +---+
+             0   (x = 0 on the web centerline; y up, in)</pre>
 
   <table>
     <thead><tr><th>Part</th><th>\(A_i\) (in\(^2\))</th><th>\(\bar{y}_i\) (in)</th><th>\(\bar{y}_i A_i\)</th></tr></thead>
@@ -283,7 +293,7 @@
     <li><strong>First moment \(Q_x\), \(Q_y\).</strong> \(\int y\,dA\) and \(\int x\,dA\); link to \(\bar{x}\), \(\bar{y}\) through division by \(A\).</li>
     <li><strong>Centroid.</strong> \(\bar{x} = Q_y/A\), \(\bar{y} = Q_x/A\); first moment about a centroidal axis is zero.</li>
     <li><strong>Composite part.</strong> Sum \(\bar{x}_i A_i\) and \(\bar{y}_i A_i\); holes as negative \(A_i\).</li>
-    <li><strong>Shear \(Q\) (preview).</strong> First moment of the area on one side of a cut about the neutral axis—not the same as \(Q_x\) for the whole section unless you are at the centroid with the full area.</li>
+    <li><strong>Shear \(Q\) (preview).</strong> First moment of the area on one side of a cut about the neutral axis. The whole section has zero first moment about that axis; the partial area does not.</li>
   </ul>
 
   <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 19, 2026. Questions? Office hours or Canvas.</p>
