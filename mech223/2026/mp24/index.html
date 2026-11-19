@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 24 study guide (Wed Nov 18)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  pre.sketch {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", Menlo, Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    line-height: 1.25;
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  details { margin: 0 0 1rem; }
+  summary { cursor: pointer; font-weight: 700; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 13</p>
+  <h1>Muddiest Point 24 study guide</h1>
+  <p class="subtitle">Wednesday, Nov 18. Centroids and the first moment of area.</p>
+  <hr class="top">
+
+  <p>Centroid homework always comes down to area and how that area is spread out in \(x\) and \(y\). The first moment of area is the bookkeeping quantity that captures that spread; divide it by total area and you get the centroid. This page follows Wednesday’s Muddiest Point (five responses). Only a few of you got to this one because the Week 13 module appeared late in the day, so the count is small—not a signal that the room was lost.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP24 theme counts</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section</th></tr></thead>
+    <tbody>
+      <tr><td>Meaning of the first moment of area</td><td>1</td><td>1</td></tr>
+      <tr><td>Composite areas and centroid location</td><td>—</td><td>2</td></tr>
+      <tr><td>\(Q\) about a centroidal axis and shear preview</td><td>—</td><td>3</td></tr>
+      <tr><td>Clear / no muddy point</td><td>3</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Wednesday (summarized)</h2>
+  <p>Summarized, not quoted, because this page is on the open web.</p>
+  <ul class="comments">
+    <li>Three of you said the lecture was clear or that you had no muddy point.</li>
+    <li>One of you asked what the first moment of area means and why it shows up in centroid calculations.</li>
+  </ul>
+
+  <h2>1. First moment of area</h2>
+  <p>Picture a thin flat plate of uniform thickness. The <strong>centroid</strong> is the point where you could balance the plate on a pin—the average position of the material in the plane. To find that point for an irregular or composite shape, engineers use the <strong>first moment of area</strong> (sometimes called the statical moment).</p>
+  <p>About the coordinate axes through the origin:</p>
+  <div class="eqbox">\[
+  Q_x = \int y\,dA = \bar{y}\,A
+  \qquad
+  Q_y = \int x\,dA = \bar{x}\,A
+  \]</div>
+  <p>\(Q_x\) gathers how area is distributed in the \(y\) direction (each strip \(dA\) at height \(y\) contributes \(y\,dA\)). \(Q_y\) does the same for \(x\). Units are length cubed—for example mm\(^3\) or in\(^3\). Sign follows the coordinate: area on the positive side of an axis contributes positive moment about that axis.</p>
+  <p>Divide by total area to locate the centroid:</p>
+  <div class="eqbox">\[
+  \bar{x} = \frac{Q_y}{A}
+  \qquad
+  \bar{y} = \frac{Q_x}{A}
+  \]</div>
+  <p>If you take moments about an axis that <em>passes through the centroid</em>, the first moment of the whole area about that axis is <strong>zero</strong>. That is exactly the statement “the centroid is the point where weighted \(y\) (or \(x\)) balances to zero.” Keep that zero property in mind—it is how you will check answers and how shear \(Q\) is defined later.</p>
+
+  <div class="stepbox">
+    <p><strong>Composite areas</strong></p>
+    <ol>
+      <li>Split the shape into simple parts (rectangles, triangles, circles, …) and <strong>holes</strong> as separate rows.</li>
+      <li>Tabulate \(A_i\), \(\bar{x}_i\), \(\bar{y}_i\), then \(\bar{x}_i A_i\) and \(\bar{y}_i A_i\).</li>
+      <li>Sum: \(A = \sum A_i\), \(Q_y = \sum \bar{x}_i A_i\), \(Q_x = \sum \bar{y}_i A_i\); then \(\bar{x} = Q_y/A\), \(\bar{y} = Q_x/A\).</li>
+      <li>Cutouts enter as <strong>negative area</strong> with the centroid of the removed piece.</li>
+      <li>Exploit symmetry when a shape is mirrored about an axis—the centroid lies on that axis.</li>
+    </ol>
+  </div>
+
+  <div class="note">
+    <p>Later in the course, area moments of inertia use the same \(\int (\text{distance})^2\,dA\) idea, and the parallel-axis theorem shifts \(I\) about the centroid. In Mechanics of Materials, the neutral axis of a beam passes through the centroid of the cross section, and transverse shear stress uses \(Q = \int y\,dA\) for the area on one side of a cut about the neutral axis: \(\tau = VQ/(It)\). Same “moment of distribution,” different question.</p>
+  </div>
+
+  <h2>2. Worked example: plate with a rectangular cutout</h2>
+  <p>Sizes are in millimeters. The outer plate is \(20 \times 12\) mm with the origin at the lower-left corner. A \(4 \times 3\) mm rectangular slot is cut with its lower-left corner at \((14,\,4)\) mm, so removed material sits toward the upper-right of the plate.</p>
+  <pre class="sketch">  y
+  12 +----------------------+
+     |                  +---+  slot 4×3
+   8 |                  |   |
+     |    20 × 12 plate |   |
+     |                  +---+
+   0 +----------------------+ x
+     0        14    18    20</pre>
+
+  <table>
+    <caption class="sr-only">Composite centroid table</caption>
+    <thead>
+      <tr><th>Part</th><th>\(A_i\) (mm\(^2\))</th><th>\(\bar{x}_i\) (mm)</th><th>\(\bar{y}_i\) (mm)</th><th>\(\bar{x}_i A_i\)</th><th>\(\bar{y}_i A_i\)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Full rectangle</td><td>240</td><td>10</td><td>6</td><td>2400</td><td>1440</td></tr>
+      <tr><td>Slot (removed)</td><td>\(-12\)</td><td>16</td><td>5.5</td><td>\(-192\)</td><td>\(-66\)</td></tr>
+      <tr><td><strong>Σ</strong></td><td><strong>228</strong></td><td></td><td></td><td><strong>2208</strong></td><td><strong>1374</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="eqbox">\[
+  \bar{x} = \frac{Q_y}{A} = \frac{2208}{228} = 9.68\ \text{mm}
+  \qquad
+  \bar{y} = \frac{Q_x}{A} = \frac{1374}{228} = 6.03\ \text{mm}
+  \]</div>
+  <p><strong>Sanity:</strong> Removing mass from the upper-right pulls the centroid left and slightly upward from the geometric center \((10,\,6)\) mm. The point \((9.68,\,6.03)\) stays inside the outer rectangle. \(Q_x\) and \(Q_y\) about axes through \((\bar{x},\,\bar{y})\) are both zero for the combined shape.</p>
+
+  <p><strong>Self-check:</strong> Same outer plate, but the slot is \(3 \times 3\) mm with lower-left at \((15,\,5)\) mm. Without computing decimals, does \(\bar{x}\) move left or right compared with a solid plate?</p>
+  <details><summary>Answer</summary>
+    <p>The removed square sits even farther right; \(\bar{x}\) moves <strong>left</strong> of 10 mm (and \(\bar{y}\) shifts upward because material is removed above the mid-height).</p>
+  </details>
+
+  <h2>3. \(Q\) about the centroidal axis — and a T-section preview</h2>
+  <p>For any plane area, the first moment about an axis through the centroid vanishes:</p>
+  <div class="eqbox">\[
+  Q_{x,\,\text{centroidal}} = \int (y - \bar{y})\,dA = 0
+  \qquad
+  Q_{y,\,\text{centroidal}} = \int (x - \bar{x})\,dA = 0
+  \]</div>
+  <p>In shear, you will use \(Q\) for only the area on <em>one side</em> of a cut, measured about the neutral axis (through the centroid). That partial area has a <em>nonzero</em> first moment even though the full section’s moment about the NA is zero.</p>
+
+  <h3>Short example: symmetric T-section</h3>
+  <p>Dimensions in inches. Web: \(2 \times 6\) in (vertical). Flange: \(10 \times 2\) in on top, centered on the web. Place the origin at the bottom center of the web so \(\bar{x} = 1\) in by symmetry.</p>
+  <pre class="sketch">       10 in flange
+    +------------------+
+    |                  |
+    +--------+---------+
+             | 2 in web
+             |
+             +  6 in tall</pre>
+
+  <table>
+    <thead><tr><th>Part</th><th>\(A_i\) (in\(^2\))</th><th>\(\bar{y}_i\) (in)</th><th>\(\bar{y}_i A_i\)</th></tr></thead>
+    <tbody>
+      <tr><td>Web</td><td>12</td><td>3</td><td>36</td></tr>
+      <tr><td>Flange</td><td>20</td><td>7</td><td>140</td></tr>
+      <tr><td><strong>Σ</strong></td><td><strong>32</strong></td><td></td><td><strong>176</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="eqbox">\[
+  \bar{y} = \frac{176}{32} = 5.50\ \text{in}
+  \quad (\text{neutral axis for bending about } x)
+  \]</div>
+  <p>Take the horizontal cut at the NA. <strong>Above</strong> \(y = 5.50\) in: a \(0.5\) in slice of web (\(A = 1\) in\(^2\), centroid at \(5.75\) in) plus the full flange (\(A = 20\) in\(^2\), centroid at \(7\) in).</p>
+  <div class="eqbox">\[
+  Q_{\text{above}} = (5.75 - 5.50)(1) + (7 - 5.50)(20) = 0.25 + 30 = 30.25\ \text{in}^3
+  \]</div>
+  <p><strong>Below</strong> the NA: web from \(y = 0\) to \(5.50\) in, \(A = 11\) in\(^2\), centroid at \(2.75\) in.</p>
+  <div class="eqbox">\[
+  Q_{\text{below}} = (5.50 - 2.75)(11) = 30.25\ \text{in}^3
+  \]</div>
+  <p>The two magnitudes match—required because the full section’s first moment about the NA is zero. In \(\tau = VQ/(It)\), it is \(Q\) for the flange side (or an equivalent slice) that sets how shear stress varies over the depth.</p>
+
+  <p><strong>Self-check:</strong> If the flange were only \(8\) in wide but the web stayed \(2 \times 6\) in, would \(\bar{y}\) move up or down?</p>
+  <details><summary>Answer</summary>
+    <p>Less flange area high on the section lowers the centroid; \(\bar{y}\) moves <strong>down</strong> from 5.50 in.</p>
+  </details>
+
+  <h2>Definitions worth keeping straight</h2>
+  <ul>
+    <li><strong>First moment \(Q_x\), \(Q_y\).</strong> \(\int y\,dA\) and \(\int x\,dA\); link to \(\bar{x}\), \(\bar{y}\) through division by \(A\).</li>
+    <li><strong>Centroid.</strong> \(\bar{x} = Q_y/A\), \(\bar{y} = Q_x/A\); first moment about a centroidal axis is zero.</li>
+    <li><strong>Composite part.</strong> Sum \(\bar{x}_i A_i\) and \(\bar{y}_i A_i\); holes as negative \(A_i\).</li>
+    <li><strong>Shear \(Q\) (preview).</strong> First moment of the area on one side of a cut about the neutral axis—not the same as \(Q_x\) for the whole section unless you are at the centroid with the full area.</li>
+  </ul>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 19, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
