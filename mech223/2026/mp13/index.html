@@ -125,6 +125,29 @@
     .article { max-width: none; padding: 0; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print {
+    figure img { break-inside: avoid; }
+  }
+
 </style>
 </head>
 <body>
@@ -202,6 +225,10 @@
 
   <h3>Worked example</h3>
   <p>The axis runs from \(O(0,0,0)\) to \(B(0,3,4)\) m. A force \(\mathbf{F}=(200\,\mathbf{i}-100\,\mathbf{j}+50\,\mathbf{k})\) N acts at \(A(2,0,0)\) m. Find the moment of \(\mathbf{F}\) about line \(OB\).</p>
+  <figure id="fig-moment-about-OB">
+    <img src="img/mp13-fig-moment-about-OB.svg" width="1300" height="1040" alt="Force F at A(2,0,0) and line OB from origin to B(0,3,4) in 3D.">
+    <figcaption>Moment about line \(OB\): \(\mathbf{F}\) at \(A\), axis through \(O\) and \(B\).</figcaption>
+  </figure>
   <ol>
     <li>Unit vector: \(\overrightarrow{OB}=(0,3,4)\) m, length 5 m, so \(\boldsymbol{\lambda}=(0,\,0.6,\,0.8)\).</li>
     <li>Position vector from a point on the line (\(O\)) to any point on the line of action of \(\mathbf{F}\) (here \(A\)): \(\mathbf{r}=(2,0,0)\) m.</li>

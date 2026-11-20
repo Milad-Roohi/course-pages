@@ -123,6 +123,29 @@
     .article { max-width: none; padding: 0; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print {
+    figure img { break-inside: avoid; }
+  }
+
 </style>
 </head>
 <body>
@@ -262,6 +285,10 @@
   </div>
 
   <h3>Worked example</h3>
+    <figure id="fig-look-down-z">
+    <img src="img/mp14-fig-look-down-z.svg" width="1300" height="764" alt="View down +z: point P(2,0,1) with force F=50 i N.">
+    <figcaption>Looking down the \(z\)-axis: \(\mathbf{F} = 50\mathbf{i}\) N at \(P(2,0,1)\) m.</figcaption>
+  </figure>
   <p>A vertical line runs upward along the \(z\)-axis. \(\boldsymbol{\lambda}=(0,0,1)\). A horizontal force \(\mathbf{F}=(50\,\mathbf{i})\) N acts at \(P(2,0,1)\) m. First find the moment about the \(z\)-axis, then repeat with a second force and determine the sense of rotation.</p>
   <p>Position vector from origin (a point on the \(z\)-axis) to \(P\): \(\mathbf{r}=(2,0,1)\) m.</p>
   <div class="eqbox">\[
@@ -299,6 +326,10 @@
   </div>
 
   <h3>Worked example: full problem</h3>
+    <figure id="fig-beam-cable">
+    <img src="img/mp14-fig-beam-cable.svg" width="1300" height="1003" alt="Beam on x-axis from A to B with cable from C(3,0,0) to D(3,2,1) and 200 N tension.">
+    <figcaption>Beam on the \(x\)-axis; cable from \(C\) to \(D\), \(F = 200\) N.</figcaption>
+  </figure>
   <p>A beam lies along the \(x\)-axis from \(A(0,0,0)\) to \(B(4,0,0)\) m. A cable pulls with force \(F=200\) N at point \(C(3,0,0)\) m. The cable runs from \(C\) to \(D(3,2,1)\) m. Find the moment of the cable force about point \(A\).</p>
   <ol>
     <li><strong>Moment center:</strong> \(A(0,0,0)\).</li>

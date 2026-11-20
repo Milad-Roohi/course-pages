@@ -135,6 +135,23 @@
   }
   details { margin: 0 0 1rem; }
   summary { cursor: pointer; font-weight: 700; }
+  figure { margin: 1rem 0 1.2rem; }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print { figure img { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -186,12 +203,10 @@
 
   <h3>Worked example: crank and slider</h3>
   <p>Sizes are in millimeters and forces in newtons. Pin \(O\) is fixed to the frame. Crank \(OA\) is 40 mm along \(+x\). Connecting rod \(AB\) is 60 mm and joins \(A\) to pin \(B\). At \(B\) a slider runs in a vertical guide at \(x = 88\) mm. You push down on the crank at \(A\) with 80 N. Find the rod force and the vertical output at the slider.</p>
-  <pre class="sketch">        B ●——— guide (vertical slot at x = 88 mm)
-          |\
-          | \  rod AB, 60 mm (3-4-5 slope)
-          |  \
-    O ●===● A     crank OA = 40 mm horizontal
-   fixed      ↓ 80 N at A</pre>
+  <figure id="fig-crank-slider">
+    <img src="img/mp23-fig1-crank-slider.svg" width="1300" height="761" alt="Crank OA 40 mm along +x from fixed pin O, rod AB to slider B in vertical guide at x equals 88 mm, 80 N down at A.">
+    <figcaption>Crank–slider: pin \(O\), crank \(OA = 40\) mm, rod \(AB\), vertical guide at \(B\) (\(x = 88\) mm).</figcaption>
+  </figure>
   <p>From \(O\) to \(A\) is 40 mm; from \(A\) to \(B\) is 48 mm right and 36 mm up, so \(AB\) is a 3-4-5 triangle. The rod is a <strong>two-force member</strong>: one unknown \(F_{AB}\) along \(AB\). The crank is multi-force: reactions \(O_x\), \(O_y\) at the fixed pin and the rod force at \(A\).</p>
   <p><strong>Crank \(OA\).</strong> Assume the rod is in tension, so it pulls on the crank at \(A\) toward \(B\). With unit vector \((0.8,\,0.6)\) along \(A \to B\), that pull is \((0.8 F_{AB},\,0.6 F_{AB})\). Take counterclockwise moments positive about \(O\). The 80 N load at \(A\) turns the crank clockwise.</p>
   <div class="eqbox">\[
@@ -224,14 +239,10 @@
 
   <h3>Worked example: bent frame member with a strut</h3>
   <p>Lengths are in feet and forces in pounds. Joint \(A\) is a pin on a vertical wall. Member \(ABC\) is bent: \(AB\) is 6 ft horizontal to \(B\), then \(BC\) runs 3 ft to the right and 4 ft down to \(C\) (length 5 ft). A 500-lb downward load acts at \(C\). Strut \(BD\) is pin-connected at \(B\) and at wall point \(D\), which is 3 ft below \(A\) on the same wall. Neglect member weights.</p>
-  <pre class="sketch">  wall
-    A ●———— 6 ft ————● B
-    |                 |\
-    | 3 ft            | \  strut BD (3√5 ft)
-    D ●               |  \
-         4 ft ↓       |   \
-                      |    ● C
-                 3 ft +———+    ↓ 500 lb</pre>
+    <figure id="fig-frame-strut">
+    <img src="img/mp23-fig2-frame-strut.svg" width="1300" height="849" alt="Pin A on wall, bent member ABC, strut BD from D on wall to B, 500 lb down at C.">
+    <figcaption>Bent frame \(ABC\) with strut \(BD\) and 500-lb load at \(C\).</figcaption>
+  </figure>
   <p>\(BD\) is a two-force member. Its line runs from \(D(0,-3)\) to \(B(6,0)\): length \(3\sqrt{5}\) ft, with direction from \(D\) toward \(B\) as \((2/\sqrt{5},\,1/\sqrt{5})\). The bent beam \(ABC\) is multi-force: pin reactions \(A_x\), \(A_y\) at \(A\), strut force at \(B\), and the 500-lb load at \(C\). Because \(C\) is offset to the right of the vertical through \(B\), the load has a nonzero moment about \(B\).</p>
   <p><strong>Step 1 — \(\sum M\) about pin \(B\).</strong> The strut force at \(B\) acts through \(B\), so it drops out. The 500-lb load at \(C\) is 3 ft horizontally from the vertical through \(B\), so its moment arm about \(B\) is 3 ft. Reaction \(A_y\) at \(A\) has moment arm 6 ft about \(B\). Take counterclockwise positive:</p>
   <div class="eqbox">\[
@@ -240,7 +251,7 @@
   \quad (250\ \text{lb downward on the beam})
   \]</div>
   <p>A negative \(A_y\) means the wall pulls down on the beam (reaction opposite to a conventional upward arrow). That is consistent with the load tending to rotate the frame clockwise about \(B\).</p>
-  <p><strong>Step 2 — \(\sum M\) about \(A\).</strong> Both \(A_x\) and \(A_y\) pass through \(A\). The load’s line of action is 9 ft to the right of the wall. For strut force \(F_{BD}\) (compression: strut pushes on the beam toward \(D\)), the line of action is 6 ft horizontally from \(A\), contributing \(\sum M_A\) coefficient \(6/\sqrt{5}\) ft per pound of \(F_{BD}\).</p>
+    <p><strong>Step 2 — \(\sum M\) about \(A\).</strong> Both \(A_x\) and \(A_y\) pass through \(A\). The load’s line of action is 9 ft to the right of the wall. For strut force \(F_{BD}\) (compression: the strut pushes on the beam away from \(D\), up and to the right toward \(B\)), the line of action is 6 ft horizontally from \(A\), contributing \(\sum M_A\) coefficient \(6/\sqrt{5}\) ft per pound of \(F_{BD}\).</p>
   <div class="eqbox">\[
   \sum M_A = -(500)(9) + \frac{6}{\sqrt{5}}\,F_{BD} = 0
   \quad\Rightarrow\quad F_{BD} = 750\sqrt{5} = 1677\ \text{lb}
@@ -268,6 +279,10 @@
 
   <h3>Worked example: three members at a pin</h3>
   <p>Forces are in newtons. Pin \(P\) joins three straight members. Member \(PA\) runs 60° above the horizontal to the left of \(P\). Member \(PB\) is horizontal to the right. Member \(PC\) is vertical downward. You are told \(F_{PA} = 300\) N in tension (drawn pulling away from \(P\) along \(PA\)).</p>
+  <figure id="fig-joint-P">
+    <img src="img/mp23-fig3-joint-P.svg" width="1300" height="1127" alt="Pin P with members PA at 60 degrees above horizontal left, PB to the right, PC downward.">
+    <figcaption>Pin \(P\) with members \(PA\), \(PB\), and \(PC\).</figcaption>
+  </figure>
   <p>Unit vector along \(PA\) (from \(P\) toward \(A\), up-left): \((-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2})\). The tension arrow on the joint is</p>
   <div class="eqbox">\[
   \vec F_{PA} = 300\left(-\tfrac{1}{2},\, \tfrac{\sqrt{3}}{2}\right)
