@@ -125,6 +125,29 @@
     .article { max-width: none; padding: 0; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print {
+    figure img { break-inside: avoid; }
+  }
+
 </style>
 </head>
 <body>
@@ -168,7 +191,7 @@
   </ul>
 
   <h2>1. When to use sin vs cos — which angle with which component</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">When to use sin vs cos.</span> · <span class="student-quote">Which angle goes with which component.</span> · <span class="student-quote">Understanding sin/cos with different angles.</span></p>
+  <p><em class="quote">What you asked:</em> When to use sine or cosine, and which angle goes with which component.</p>
 
   <h3>The basic rule</h3>
   <p>When you resolve a force into components:</p>
@@ -218,7 +241,7 @@
   <p>Check: \(\cos^2 60^\circ + \cos^2 45^\circ + \cos^2 60^\circ = 0.25 + 0.5 + 0.25 = 1.0\,\checkmark\)</p>
 
   <h2>2. Turning a 3D image into an FBD and identifying force directions</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">How to go from 3D image to FBD.</span> · <span class="student-quote">Identifying the direction of forces in 3D.</span></p>
+  <p><em class="quote">What you asked:</em> Going from a 3D picture to a free-body diagram, and finding force directions in 3D.</p>
 
   <h3>Step-by-step: 3D image → FBD</h3>
   <div class="stepbox">
@@ -252,7 +275,7 @@
   <p>The negative \(z\)-component means the cable pulls "into the page" (if \(+z\) is out).</p>
 
   <h2>3. How to start 3D problems — which method to use</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">How do I start a 3D problem?</span> · <span class="student-quote">Which method should I use?</span></p>
+  <p><em class="quote">What you asked:</em> How to start a 3D problem and which method to choose.</p>
 
   <h3>The two methods for 3D forces</h3>
   <p>Beer Chapter 2 presents two ways to work with 3D forces:</p>
@@ -288,10 +311,10 @@
   </div>
 
   <h2>4. More 3D worked examples</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">I would like more 3D examples.</span> · <span class="student-quote">More worked examples in 3D.</span></p>
+  <p><em class="quote">What you asked:</em> More worked examples in 3D.</p>
 
   <h3>Example 1: Three cables, one weight</h3>
-  <p>A 200-N weight hangs from three cables. Cable AB runs from \(A(0,0,0)\) to \(B(2,0,3)\). Cable AC runs from \(A\) to \(C(-1,0,2)\). Cable AD runs from \(A\) to \(D(0,-1.5,0)\). Find the tensions \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
+  <p>A 200-N weight hangs from three cables. Cable AB runs from \(A(0,0,0)\) to \(B(2,0,3)\). Cable AC runs from \(A\) to \(C(-1,0,2)\). Cable AD runs from \(A\) to \(D(0,1.5,0)\). Find the tensions \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
 
   <p><strong>Step 1: Find direction vectors.</strong></p>
   <div class="eqbox">\[
@@ -302,9 +325,9 @@
   \mathbf{d}_{AC} &= (-1-0)\mathbf{i} + (0-0)\mathbf{j} + (2-0)\mathbf{k} = -\mathbf{i} + 2\mathbf{k}, \\
   d_{AC} &= \sqrt{1+4} = \sqrt{5} \approx 2.236\text{ m}, \\
   \lambda_{AC} &= -\frac{1}{\sqrt{5}}\mathbf{i} + \frac{2}{\sqrt{5}}\mathbf{k} \approx -0.447\mathbf{i} + 0.894\mathbf{k}. \\[0.8em]
-  \mathbf{d}_{AD} &= (0-0)\mathbf{i} + (-1.5-0)\mathbf{j} + (0-0)\mathbf{k} = -1.5\mathbf{j}, \\
+  \mathbf{d}_{AD} &= (0-0)\mathbf{i} + (1.5-0)\mathbf{j} + (0-0)\mathbf{k} = +1.5\mathbf{j}, \\
   d_{AD} &= 1.5\text{ m}, \\
-  \lambda_{AD} &= -\mathbf{j}.
+  \lambda_{AD} &= +\mathbf{j}.
   \end{aligned}
   \]</div>
 
@@ -313,7 +336,7 @@
   \begin{aligned}
   \mathbf{T}_{AB} &= T_{AB}(0.555\mathbf{i} + 0.832\mathbf{k}), \\
   \mathbf{T}_{AC} &= T_{AC}(-0.447\mathbf{i} + 0.894\mathbf{k}), \\
-  \mathbf{T}_{AD} &= T_{AD}(-\mathbf{j}), \\
+  \mathbf{T}_{AD} &= T_{AD}(+\mathbf{j}), \\
   \mathbf{W} &= -200\mathbf{j}\text{ N}.
   \end{aligned}
   \]</div>
@@ -322,65 +345,35 @@
   <div class="eqbox">\[
   \begin{aligned}
   \Sigma F_x &= 0.555\,T_{AB} - 0.447\,T_{AC} = 0, \\
-  \Sigma F_y &= -T_{AD} - 200 = 0, \\
+  \Sigma F_y &= T_{AD} - 200 = 0, \\
   \Sigma F_z &= 0.832\,T_{AB} + 0.894\,T_{AC} = 0.
   \end{aligned}
   \]</div>
 
   <p><strong>Step 4: Solve.</strong></p>
-  <p>From \(\Sigma F_y\): \(T_{AD} = 200\text{ N}\).</p>
-  <p>From \(\Sigma F_x\): \(T_{AB} = \dfrac{0.447}{0.555}T_{AC} = 0.805\,T_{AC}\).</p>
-  <p>Substitute into \(\Sigma F_z\):</p>
-  <div class="eqbox">\[
-  \begin{aligned}
-  0.832(0.805\,T_{AC}) + 0.894\,T_{AC} &= 0, \\
-  0.670\,T_{AC} + 0.894\,T_{AC} &= 0, \\
-  1.564\,T_{AC} &= 0 \;\Rightarrow\; T_{AC} = 0, \\
-  T_{AB} &= 0.
-  \end{aligned}
-  \]</div>
-  <p>This is a <em>degenerate</em> case: cables AB and AC are coplanar in the \(xz\)-plane and cancel each other. All the load is carried by cable AD. In a real exam problem, the geometry is chosen so all cables carry nonzero tension.</p>
+  <p>From \(\Sigma F_y\): \(T_{AD} - 200 = 0\), so \(T_{AD} = 200\) N (tension along \(+\mathbf{j}\)).</p>
+  <p>Then \(\Sigma F_x\) and \(\Sigma F_z\) become \(0.555\,T_{AB} - 0.447\,T_{AC} = 0\) and \(0.832\,T_{AB} + 0.894\,T_{AC} = 0\). The only solution is \(T_{AB} = T_{AC} = 0\): the horizontal cables are not parallel, so they cannot cancel each other with nonzero tension. The 200-N weight is carried entirely by cable AD.</p>
+  <p>This <em>degenerate</em> layout is useful on purpose: it shows why three non-coplanar, non-parallel cables are needed for a general 3D problem.</p>
 
   <h3>Example 2: Nondegenerate 3D equilibrium</h3>
-  <p>A 150-N weight hangs from three cables. Cable AB: from \(A(0,0,0)\) to \(B(3,0,4)\). Cable AC: from \(A\) to \(C(0,3,4)\). Cable AD: from \(A\) to \(D(-2,0,4)\). Find the tensions.</p>
-
-  <p><strong>Direction vectors:</strong></p>
+  <p>A 150-N weight hangs from particle \(A\) at the origin (\(\mathbf{W} = -150\mathbf{j}\)). Anchors are \(B(-4,4,2)\), \(C(4,4,2)\), and \(D(0,4,-3)\) m, with \(AB = AC = 6\) m and \(AD = 5\) m—the same geometry as the MP09 50-N example.</p>
+  <figure id="fig-three-cables-B">
+    <img src="img/mp10-fig-three-cables-B.svg" width="1300" height="831" alt="150 N weight at origin with three cables to B, C, and D in 3D board view.">
+    <figcaption>Nondegenerate three-cable geometry (\(150\) N weight along \(-\mathbf{j}\)).</figcaption>
+  </figure>
+  <p>Unit vectors: \(\boldsymbol{\lambda}_{AB}=(-\tfrac{2}{3},\tfrac{2}{3},\tfrac{1}{3})\), \(\boldsymbol{\lambda}_{AC}=(\tfrac{2}{3},\tfrac{2}{3},\tfrac{1}{3})\), \(\boldsymbol{\lambda}_{AD}=(0,\,0.8,\,-0.6)\).</p>
   <div class="eqbox">\[
   \begin{aligned}
-  \lambda_{AB} &= \frac{3\mathbf{i}+4\mathbf{k}}{5} = 0.6\mathbf{i} + 0.8\mathbf{k}, \\
-  \lambda_{AC} &= \frac{3\mathbf{j}+4\mathbf{k}}{5} = 0.6\mathbf{j} + 0.8\mathbf{k}, \\
-  \lambda_{AD} &= \frac{-2\mathbf{i}+4\mathbf{k}}{\sqrt{20}} = -\frac{2}{2\sqrt{5}}\mathbf{i} + \frac{4}{2\sqrt{5}}\mathbf{k} = -0.447\mathbf{i} + 0.894\mathbf{k}.
+  \Sigma F_x&=-\tfrac{2}{3}T_{AB}+\tfrac{2}{3}T_{AC}=0,\\
+  \Sigma F_y&=\tfrac{2}{3}T_{AB}+\tfrac{2}{3}T_{AC}+0.8\,T_{AD}-150=0,\\
+  \Sigma F_z&=\tfrac{1}{3}T_{AB}+\tfrac{1}{3}T_{AC}-0.6\,T_{AD}=0.
   \end{aligned}
   \]</div>
-
-  <p><strong>Equilibrium:</strong></p>
-  <div class="eqbox">\[
-  \begin{aligned}
-  \Sigma F_x &= 0.6\,T_{AB} - 0.447\,T_{AD} = 0, \\
-  \Sigma F_y &= 0.6\,T_{AC} - 150 = 0, \\
-  \Sigma F_z &= 0.8\,T_{AB} + 0.8\,T_{AC} + 0.894\,T_{AD} = 0.
-  \end{aligned}
-  \]</div>
-
-  <p><strong>Solve:</strong></p>
-  <p>From \(\Sigma F_y\): \(T_{AC} = \dfrac{150}{0.6} = 250\text{ N}\).</p>
-  <p>From \(\Sigma F_x\): \(T_{AB} = \dfrac{0.447}{0.6}T_{AD} = 0.745\,T_{AD}\).</p>
-  <p>Substitute into \(\Sigma F_z\):</p>
-  <div class="eqbox">\[
-  \begin{aligned}
-  0.8(0.745\,T_{AD}) + 0.8(250) + 0.894\,T_{AD} &= 0, \\
-  0.596\,T_{AD} + 200 + 0.894\,T_{AD} &= 0, \\
-  1.490\,T_{AD} &= -200 \;\Rightarrow\; T_{AD} = -134.2\text{ N}.
-  \end{aligned}
-  \]</div>
-  <p>The negative sign means cable AD is in <em>compression</em>, which is physically impossible for a cable. This indicates the problem geometry is inconsistent or the cable would go slack. In a real exam, the geometry is chosen so all tensions are positive.</p>
-
-  <div class="note">
-    <p><strong>Common mistake:</strong> Forgetting that cables can only pull, never push. If you get a negative tension, either (a) the cable is slack, or (b) you made an algebra error. Check your \(\lambda\) directions and signs carefully.</p>
-  </div>
+  <p><strong>Solve:</strong> \(T_{AB} = T_{AC}\). Then \(\Sigma F_z\) gives \(T_{AD} = \tfrac{10}{9}T_{AB}\) and \(\Sigma F_y\) yields \(T_{AB} = T_{AC} = 67.5\) N, \(T_{AD} = 75\) N (all positive).</p>
+  <div class="note"><p><strong>Check:</strong> \(\Sigma F_y = 45 + 45 + 60 - 150 = 0\), \(\Sigma F_z = 22.5 + 22.5 - 45 = 0\). \(\checkmark\)</p></div>
 
   <h2>5. Parallel points and missing \(\mathbf{i},\mathbf{j},\mathbf{k}\)</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">What about parallel points and when i, j, k are missing?</span></p>
+  <p><em class="quote">What you asked:</em> What to do when points line up or when an \(\mathbf{i}\), \(\mathbf{j}\), or \(\mathbf{k}\) term is missing.</p>
 
   <h3>When a coordinate is zero</h3>
   <p>If a force acts along a line from \(A(x_A, y_A, z_A)\) to \(B(x_B, y_B, z_B)\), the direction vector is:</p>
@@ -398,7 +391,7 @@
   <p>In equilibrium, parallel cables cannot independently support a load — the system is <em>statically indeterminate</em> or the geometry is degenerate. You need at least three <em>non-coplanar</em> cables to balance a 3D load.</p>
 
   <h2>6. Tension in 3D equilibrium</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">Tension in 3D equilibrium problems.</span></p>
+  <p><em class="quote">What you asked:</em> Tension in 3D equilibrium problems.</p>
 
   <h3>What tension means</h3>
   <p>Tension is the <strong>magnitude</strong> of the force in a cable. It is always a <em>scalar</em> (a number with units, like 120 N). The <em>direction</em> is given by the unit vector \(\lambda\). The vector form of the tension is:</p>
@@ -417,7 +410,7 @@
   <p>If you have more than three cables, the system is <em>statically indeterminate</em> (you need additional information, like material properties or deflections). If you have fewer than three cables, the system is either underconstrained (the weight would fall) or the cables are coplanar (degenerate).</p>
 
   <h2>7. Equilibrium when \(y\) and \(z\) components are not zero</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">The last problem had y and z not zero, but it was still in equilibrium. How?</span></p>
+  <p><em class="quote">What you asked:</em> How the last problem could be in equilibrium when some y and z components were not zero.</p>
 
   <h3>What equilibrium means</h3>
   <p>Equilibrium means \(\Sigma\mathbf{F} = \mathbf{0}\), which expands to:</p>
@@ -431,38 +424,25 @@
   <p>Each of these <em>sums</em> must be zero. But that does <strong>not</strong> mean every individual force component is zero!</p>
 
   <h3>Example: two cables pulling up and sideways</h3>
-  <p>A weight of 100 N hangs from two cables. Cable 1 has \(T_1 = 60\text{ N}\) at \(\lambda_1 = 0.6\mathbf{i} + 0.8\mathbf{j}\). Cable 2 has \(T_2 = 80\text{ N}\) at \(\lambda_2 = -0.6\mathbf{i} + 0.8\mathbf{j}\). The weight is \(\mathbf{W} = -100\mathbf{j}\).</p>
-  <p>Components:</p>
+  <p>A 100-N weight (\(\mathbf{W} = -100\mathbf{j}\)) is supported by two cables with \(T_1 = T_2 = 62.5\) N. Cable 1 has direction \(\boldsymbol{\lambda}_1 = (0.6,\,0.8,\,0)\); cable 2 has \(\boldsymbol{\lambda}_2 = (-0.6,\,0.8,\,0)\).</p>
   <div class="eqbox">\[
   \begin{aligned}
-  \mathbf{T}_1 &= 60(0.6\mathbf{i} + 0.8\mathbf{j}) = 36\mathbf{i} + 48\mathbf{j}\text{ N}, \\
-  \mathbf{T}_2 &= 80(-0.6\mathbf{i} + 0.8\mathbf{j}) = -48\mathbf{i} + 64\mathbf{j}\text{ N}, \\
-  \mathbf{W} &= -100\mathbf{j}\text{ N}.
+  \mathbf{T}_1 &= 62.5(0.6\mathbf{i} + 0.8\mathbf{j}) = 37.5\mathbf{i} + 50\mathbf{j}\ \text{N}, \\
+  \mathbf{T}_2 &= 62.5(-0.6\mathbf{i} + 0.8\mathbf{j}) = -37.5\mathbf{i} + 50\mathbf{j}\ \text{N}, \\
+  \mathbf{W} &= -100\mathbf{j}\ \text{N}.
   \end{aligned}
   \]</div>
-  <p>Sum:</p>
   <div class="eqbox">\[
-  \begin{aligned}
-  \Sigma F_x &= 36 + (-48) = -12\text{ N}, \\
-  \Sigma F_y &= 48 + 64 + (-100) = 12\text{ N}.
-  \end{aligned}
+  \Sigma F_x = 37.5 - 37.5 = 0,\qquad \Sigma F_y = 50 + 50 - 100 = 0.
   \]</div>
-  <p>This is <em>not</em> equilibrium (the sums are not zero). Let me adjust: if \(T_2 = 75\text{ N}\), then:</p>
-  <div class="eqbox">\[
-  \begin{aligned}
-  \mathbf{T}_2 &= 75(-0.6\mathbf{i} + 0.8\mathbf{j}) = -45\mathbf{i} + 60\mathbf{j}\text{ N}, \\
-  \Sigma F_x &= 36 + (-45) = -9\text{ N}, \\
-  \Sigma F_y &= 48 + 60 + (-100) = 8\text{ N}.
-  \end{aligned}
-  \]</div>
-  <p>Still not quite right. The point is: <strong>individual components can be nonzero</strong>. What matters is that the <em>sum</em> of all \(x\)-components is zero, the <em>sum</em> of all \(y\)-components is zero, and the <em>sum</em> of all \(z\)-components is zero.</p>
+  <p>Each cable has nonzero \(x\)- and \(y\)-components, but the <strong>sums</strong> vanish. Equilibrium is about the vector sum \(\boldsymbol{\Sigma}\mathbf{F} = \mathbf{0}\), not about every component being zero by itself.</p>
 
   <div class="note">
     <p><strong>Key insight:</strong> In equilibrium, forces <em>balance</em>. If cable 1 pulls to the right (\(+x\)), cable 2 must pull to the left (\(-x\)) by the same amount. If cable 1 pulls up (\(+y\)), the weight pulls down (\(-y\)), and cable 2 must pull up enough to balance. The <em>components</em> of individual forces can be anything; it's the <em>sum</em> that must be zero.</p>
   </div>
 
   <h2>8. Switching equations mid-lecture</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">I was confused when we switched equations mid-lecture.</span></p>
+  <p><em class="quote">What you asked:</em> The switch between equations partway through lecture was confusing.</p>
 
   <h3>Why we switch between methods</h3>
   <p>In Beer Chapter 2, there are two main ways to write 3D force components:</p>

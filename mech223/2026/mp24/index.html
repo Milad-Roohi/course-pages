@@ -121,8 +121,30 @@
   @media print {
     body { background: #fff; }
     .article { max-width: none; padding: 0; }
+    figure img { break-inside: avoid; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print {
+    figure img { break-inside: avoid; }
+  }
   pre.sketch {
     font-family: "Latin Modern Mono", "Latin Modern Mono 10", Menlo, Consolas, "Courier New", monospace;
     font-size: 0.8rem;
@@ -199,21 +221,10 @@
 
   <h2>2. Worked example: plate with a rectangular cutout</h2>
   <p>Sizes are in millimeters. The outer plate is \(20 \times 12\) mm with the origin at the lower-left corner. A \(4 \times 3\) mm rectangular slot is cut with its lower-left corner at \((14,\,4)\) mm, so the removed material sits on the right side of the plate, centered at \((16,\,5.5)\) mm, just below mid-height.</p>
-  <pre class="sketch">    y
- 12 +---------------------------------------+
-    |                                       |
-    |                                       |
-    |   20 × 12 plate                       |
-    |                                       |
-  7 |                           +-------+   |
-    |                           |       |   |  slot 4×3
-    |                           |       |   |
-  4 |                           +-------+   |
-    |                                       |
-    |                                       |
-    |                                       |
-  0 +---------------------------------------+ x
-    0                           14      18  20</pre>
+  <figure id="fig-plate-cutout">
+    <img src="img/mp24-fig1-plate-cutout.svg" width="1300" height="1040" alt="20 by 12 mm plate with a 4 by 3 mm rectangular cutout on the right; origin at lower-left with x and y axes labeled.">
+    <figcaption>Outer \(20 \times 12\) mm plate with a \(4 \times 3\) mm slot whose lower-left corner is at \((14,4)\) mm.</figcaption>
+  </figure>
 
   <table>
     <caption class="sr-only">Composite centroid table</caption>
@@ -250,16 +261,10 @@
 
   <h3>Short example: symmetric T-section</h3>
   <p>Dimensions in inches. Web: \(2 \times 6\) in (vertical). Flange: \(10 \times 2\) in on top, centered on the web. Place the origin at the bottom center of the web, so \(\bar{x} = 0\) by symmetry and only \(\bar{y}\) needs work.</p>
-  <pre class="sketch"> 8 +-------------------+
-   |                   |   flange 10 × 2
- 6 +-------+---+-------+
-           |   |
-           |   |
-           |   |   web 2 × 6
-           |   |
-           |   |
- 0         +---+
-             0   (x = 0 on the web centerline; y up, in)</pre>
+  <figure id="fig-tsection">
+    <img src="img/mp24-fig2-tsection.svg" width="1300" height="1105" alt="Symmetric T-section: 2 by 6 in web and 10 by 2 in flange, origin at bottom center of web.">
+    <figcaption>Symmetric T-section: web \(2 \times 6\) in, flange \(10 \times 2\) in.</figcaption>
+  </figure>
 
   <table>
     <thead><tr><th>Part</th><th>\(A_i\) (in\(^2\))</th><th>\(\bar{y}_i\) (in)</th><th>\(\bar{y}_i A_i\)</th></tr></thead>
@@ -277,6 +282,10 @@
   <div class="eqbox">\[
   Q_{\text{above}} = (5.75 - 5.50)(1) + (7 - 5.50)(20) = 0.25 + 30 = 30.25\ \text{in}^3
   \]</div>
+  <figure id="fig-tsection-Q">
+    <img src="img/mp24-fig3-tsection-Q.svg" width="1300" height="1127" alt="T-section with neutral axis at 5.50 in and shaded area above the NA for first-moment Q_above.">
+    <figcaption>Area above the neutral axis at \(\bar{y} = 5.50\) in used for \(Q_{\text{above}}\).</figcaption>
+  </figure>
   <p><strong>Below</strong> the NA: web from \(y = 0\) to \(5.50\) in, \(A = 11\) in\(^2\), centroid at \(2.75\) in.</p>
   <div class="eqbox">\[
   Q_{\text{below}} = (5.50 - 2.75)(11) = 30.25\ \text{in}^3

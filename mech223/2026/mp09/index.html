@@ -156,6 +156,29 @@
     .plot-fallback { display: block !important; }
   }
   .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+  figure {
+    margin: 1rem 0 1.2rem;
+  }
+  figure img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: #fff;
+    border: 0.6px solid var(--line);
+  }
+  figcaption {
+    font-size: 0.86rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0.35rem;
+  }
+  @media print {
+    figure img { break-inside: avoid; }
+  }
+
 </style>
 </head>
 <body>
@@ -195,7 +218,7 @@
   </ul>
 
   <h2>1. Finding \(\lambda\) from two points in 3D</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">Getting to lambda.</span> · <span class="student-quote">Finding lambda.</span> · <span class="student-quote">The 3D unit vector.</span></p>
+  <p><em class="quote">What you asked:</em> How to get to \(\lambda\), especially the 3D unit vector.</p>
   
   <h3>What \(\lambda\) is</h3>
   <p>\(\lambda\) is the <strong>unit vector along the line of action</strong> of a force. Beer writes \(\mathbf{F}=F\lambda\) (Eq. 2.21). The scalar \(F\) is the magnitude (how strong), and \(\lambda\) is the direction (which way). In 3D, \(\lambda\) has three components that are the <strong>direction cosines</strong>:</p>
@@ -242,7 +265,7 @@
   </div>
 
   <h2>2. Springs and tension in exam problems</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">I had some difficulty incorporating the spring into the equation during the exam question.</span> · <span class="student-quote">The tension and spring problems make sense now.</span></p>
+  <p><em class="quote">What you asked:</em> Bringing the spring into the equations on the exam problem; others said the tension and spring problems now make sense.</p>
 
   <h3>Spring force</h3>
   <p>A linear spring follows Hooke's law (mentioned in Beer Sample Problem 2.5):</p>
@@ -274,7 +297,7 @@
   </div>
 
   <h2>3. Systems of two simultaneous equations</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">Systems of equations and solving two equations at the same time has never been really explained to me in an understandable way before.</span></p>
+  <p><em class="quote">What you asked:</em> Solving two equations at the same time, which some of you said was never explained clearly before.</p>
 
   <h3>Why you need two equations</h3>
   <p>In 2D equilibrium, you have two unknowns (often two tensions, or a tension and an angle). \(\Sigma F_x=0\) gives one equation; \(\Sigma F_y=0\) gives a second. Two equations, two unknowns.</p>
@@ -287,6 +310,10 @@
   </ol>
 
   <h3>Worked example</h3>
+    <figure id="fig-two-cables">
+    <img src="img/mp09-fig-two-cables.svg" width="1300" height="953" alt="Free-body diagram of a ring holding a 100 N weight. Cable 1, tension T1, runs up and to the right at 30 degrees above horizontal; cable 2, tension T2, runs up and to the left at 60 degrees above horizontal.">
+    <figcaption>Two-cable problem: \(T_1\) pulls up and to the right at \(30^\circ\) above horizontal, \(T_2\) up and to the left at \(60^\circ\).</figcaption>
+  </figure>
   <p>A 100-N weight hangs from two cables. Cable 1 makes \(30^\circ\) with the horizontal; cable 2 makes \(60^\circ\). Find \(T_1\) and \(T_2\).</p>
   <div class="eqbox">\[
   \begin{aligned}
@@ -312,7 +339,7 @@
   </div>
 
   <h2>4. Visualizing \(z\) and turning diagrams into equations</h2>
-  <p><em class="quote">What you asked:</em> <span class="student-quote">It would have to be solving and visualizing the z planes and lambda.</span> · <span class="student-quote">I think it was knowing exactly what to put in when calculating sum of the forces in the x direction and y direction.</span> · <span class="student-quote">The muddiest points for me were how to analyze the diagram displayed, represent it into…</span></p>
+  <p><em class="quote">What you asked:</em> Picturing the z direction and \(\lambda\), knowing what goes into the x and y force sums, and turning the given diagram into equations.</p>
 
   <h3>Visualizing \(z\)</h3>
   <p>In our right-handed coordinate system:</p>
@@ -343,30 +370,25 @@
   </div>
 
   <h3>Worked example: 3D particle</h3>
-  <p>A 50-N weight hangs from three cables. Cable AB: \(\lambda_{AB}=0.6\mathbf{i}+0.8\mathbf{k}\); cable AC: \(\lambda_{AC}=-0.8\mathbf{i}+0.6\mathbf{k}\); cable AD: \(\lambda_{AD}=-\mathbf{j}\). Find \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
+  <p>Particle \(A\) is at the origin. Weight \(W = 50\) N acts downward (\(\mathbf{W} = -50\mathbf{j}\)). Cables run to \(B(-4,4,2)\), \(C(4,4,2)\), and \(D(0,4,-3)\) m, with lengths \(AB = AC = 6\) m and \(AD = 5\) m. Unit vectors (from \(A\) toward each anchor) are
+  \(\boldsymbol{\lambda}_{AB}=(-\tfrac{2}{3},\tfrac{2}{3},\tfrac{1}{3})\),
+  \(\boldsymbol{\lambda}_{AC}=(\tfrac{2}{3},\tfrac{2}{3},\tfrac{1}{3})\),
+  \(\boldsymbol{\lambda}_{AD}=(0,\,0.8,\,-0.6)\). Find \(T_{AB}\), \(T_{AC}\), \(T_{AD}\).</p>
+  <figure id="fig-3d-particle">
+    <img src="img/mp09-fig-3d-particle.svg" width="1300" height="831" alt="Particle at origin with weight down, three cables to anchors B, C, and D in 3D.">
+    <figcaption>Three-cable particle in board coordinates (\(+y\) up): weight along \(-\mathbf{j}\), anchors \(B\), \(C\), and \(D\).</figcaption>
+  </figure>
   <div class="eqbox">\[
   \begin{aligned}
-  \mathbf{T}_{AB}&=T_{AB}(0.6\mathbf{i}+0.8\mathbf{k}),\\
-  \mathbf{T}_{AC}&=T_{AC}(-0.8\mathbf{i}+0.6\mathbf{k}),\\
-  \mathbf{T}_{AD}&=T_{AD}(-\mathbf{j}),\\
-  \mathbf{W}&=-50\mathbf{j}\text{ N}.\\[0.5em]
-  \Sigma F_x&=0.6\,T_{AB}-0.8\,T_{AC}=0,\\
-  \Sigma F_y&=-T_{AD}-50=0,\\
-  \Sigma F_z&=0.8\,T_{AB}+0.6\,T_{AC}=0.
+  \Sigma F_x&=-\tfrac{2}{3}T_{AB}+\tfrac{2}{3}T_{AC}=0,\\
+  \Sigma F_y&=\tfrac{2}{3}T_{AB}+\tfrac{2}{3}T_{AC}+0.8\,T_{AD}-50=0,\\
+  \Sigma F_z&=\tfrac{1}{3}T_{AB}+\tfrac{1}{3}T_{AC}-0.6\,T_{AD}=0.
   \end{aligned}
   \]</div>
-  <p><strong>Solve:</strong></p>
-  <div class="eqbox">\[
-  \begin{aligned}
-  \text{From }\Sigma F_y:\quad T_{AD}&=50\text{ N}.\\[0.5em]
-  \text{From }\Sigma F_x:\quad 0.6\,T_{AB}&=0.8\,T_{AC}\;\Rightarrow\;T_{AB}=\frac{4}{3}T_{AC}.\\[0.5em]
-  \text{Plug into }\Sigma F_z:\quad 0.8\left(\frac{4}{3}T_{AC}\right)+0.6\,T_{AC}&=0\\
-  \frac{3.2}{3}T_{AC}+0.6\,T_{AC}&=0\\
-  1.667\,T_{AC}&=0\;\Rightarrow\;T_{AC}=0,\\
-  T_{AB}&=0.
-  \end{aligned}
-  \]</div>
-  <p>This example is <em>degenerate</em> (the two \(xz\)-cables are coplanar and cancel). In a real exam problem the geometry is chosen so you get nonzero tensions.</p>
+  <p><strong>Solve:</strong> From \(\Sigma F_x\), \(T_{AB} = T_{AC}\). Substitute into \(\Sigma F_z\): \(\tfrac{2}{3}T_{AB} = 0.6\,T_{AD}\), so \(T_{AD} = \tfrac{10}{9}T_{AB}\). Then \(\Sigma F_y\) gives \(\tfrac{4}{3}T_{AB} + 0.8(\tfrac{10}{9}T_{AB}) = 50\), hence \(T_{AB} = T_{AC} = 22.5\) N and \(T_{AD} = 25\) N (all positive, tension).</p>
+  <div class="note">
+    <p><strong>Check:</strong> \(\Sigma F_x = 0\), \(\Sigma F_y = 15 + 15 + 20 - 50 = 0\), \(\Sigma F_z = 7.5 + 7.5 - 15 = 0\). \(\checkmark\)</p>
+  </div>
 
   
 
