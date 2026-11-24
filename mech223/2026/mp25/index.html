@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECH 223 · Muddiest Point 25 study guide (Mon Nov 23)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/latin-modern@5.2.5/400-italic.css">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #444;
+    --rule: #b31b1b;
+    --paper: #fbfaf4;
+    --panel: #f4f1e8;
+    --line: #d8d2c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Latin Modern Roman", "Latin Modern Roman 10", "Computer Modern Serif",
+      "STIX Two Text", "Libertinus Serif", "Palatino Linotype", Palatino, "Times New Roman", Times, serif;
+    line-height: 1.62;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+  .article {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.2rem 1.4rem 3.5rem;
+  }
+  .kicker {
+    font-family: "Latin Modern Roman", Palatino, serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin: 0 0 0.35rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 1.1rem;
+  }
+  hr.top {
+    border: 0;
+    border-top: 2.2px solid var(--rule);
+    margin: 0 0 1.25rem;
+  }
+  h2 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin: 1.8rem 0 0.55rem;
+    padding-bottom: 0.18rem;
+    border-bottom: 0.6px solid var(--line);
+  }
+  h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+  }
+  p, li { margin: 0 0 0.72rem; }
+  ol, ul { padding-left: 1.35rem; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+    background: #fff;
+  }
+  th, td {
+    border: 0.6px solid var(--line);
+    padding: 0.42rem 0.55rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: var(--panel); font-weight: 700; }
+  .eqbox {
+    background: #fff;
+    border-left: 3px solid var(--rule);
+    padding: 0.45rem 0.85rem 0.55rem;
+    margin: 0.8rem 0 1rem;
+    overflow-x: auto;
+  }
+  .eqbox .katex-display { margin: 0.35em 0; }
+  code {
+    font-family: "Latin Modern Mono", "Latin Modern Mono 10", "Courier New", monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    padding: 0.05em 0.28em;
+  }
+  .note {
+    background: var(--panel);
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.85rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+  .comments li { margin-bottom: 0.55rem; }
+  .stepbox {
+    background: #fff;
+    border: 0.6px solid var(--line);
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .stepbox ol { margin: 0.4rem 0 0.2rem; padding-left: 1.5rem; }
+  .stepbox li { margin-bottom: 0.45rem; }
+  @media print {
+    body { background: #fff; }
+    .article { max-width: none; padding: 0; }
+  }
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  details { margin: 0 0 1rem; }
+  summary { cursor: pointer; font-weight: 700; }
+</style>
+</head>
+<body>
+<article class="article">
+  <p class="kicker">MECH 223-002 · Fall 2026 · Week 14</p>
+  <h1>Muddiest Point 25 study guide</h1>
+  <p class="subtitle">Monday, Nov 23. Centroids by integration and first moments.</p>
+  <hr class="top">
+
+  <p>When a region is not a rectangle or a standard composite from a table, you locate its centroid by integrating. The hard part is almost always setup: pick a strip element, write \(dA\) (or \(dL\) for a wire), attach the element centroid \((x_{\mathrm{el}}, y_{\mathrm{el}})\), and set limits from your sketch—before you antidifferentiate. This page follows Monday’s Muddiest Point (16 responses). You can work through it on your own over Thanksgiving break; the next live class is Monday, Nov 30.</p>
+
+  <h2>Snapshot</h2>
+  <table>
+    <caption class="sr-only">MP25 theme counts</caption>
+    <thead><tr><th scope="col">Theme</th><th scope="col">\(n\)</th><th scope="col">Section</th></tr></thead>
+    <tbody>
+      <tr><td>Setting up centroid integrals</td><td>≈6</td><td>1, 2</td></tr>
+      <tr><td>Notation and concept links (\(L\) vs \(A\), centroid vs COM)</td><td>≈3</td><td>3</td></tr>
+      <tr><td>Integration setup unease</td><td>≈2</td><td>Start here</td></tr>
+      <tr><td>Request for more practice</td><td>≈1</td><td>6</td></tr>
+      <tr><td>Clear / no muddy point</td><td>1 (+ ~5 positive)</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What you told us Monday (summarized)</h2>
+  <p>Summarized, not quoted, because this page is on the open web.</p>
+  <ul class="comments">
+    <li>Many of you said the lecture was clear; one response said nothing was unclear, and several were positive without a specific muddiest point.</li>
+    <li>Several of you asked how to choose the element, set limits, and tie \(\bar{x}\) and \(\bar{y}\) to the same integration picture.</li>
+    <li>A few wanted the symbols straight—especially \(L\) versus \(A\)—and how centroid relates to center of mass and center of gravity.</li>
+    <li>Some of you can integrate once the integral is written, but setting up \(dA\) or \(dL\) still feels shaky; one response signaled broad confusion.</li>
+    <li>One of you asked for extra practice problems.</li>
+  </ul>
+
+  <div class="note" id="start-here">
+    <p><strong>Start here if the whole topic feels fuzzy.</strong> Read Section 1 through the recipe once. Do Example 1 (Section 2) with the vertical strip only—stop when you have \(A\), \(\bar{x}\), and \(\bar{y}\) as definite integrals, then evaluate. If that works, skim Example 2 for \(dL\). Save the horizontal-strip comparison and Example 3 until a second pass.</p>
+  </div>
+
+  <h2>1. Recipe: centroid of an area by integration</h2>
+  <p>Fix a region in the \(xy\) plane with uniform material. The <strong>centroid</strong> \((\bar{x}, \bar{y})\) is the single point that summarizes the geometry of the area:</p>
+  <div class="eqbox">\[
+  A = \int dA
+  \qquad
+  \bar{x} = \frac{\displaystyle\int x_{\mathrm{el}}\,dA}{\displaystyle A}
+  \qquad
+  \bar{y} = \frac{\displaystyle\int y_{\mathrm{el}}\,dA}{\displaystyle A}
+  \]</div>
+  <p>Those three formulas use <strong>one</strong> choice of area element \(dA\). \(\bar{x}\) and \(\bar{y}\) are not two different “methods”; they are two coordinates of the same point. You do not set up one integral “for \(\bar{x}\)” and a separate rule “for \(\bar{y}\).” You pick \(dA\), identify \((x_{\mathrm{el}}, y_{\mathrm{el}})\) for that strip, and use both \(\bar{x}\) and \(\bar{y}\) formulas with the same \(dA\) and limits.</p>
+  <p>First moments link directly: \(Q_y = \int x_{\mathrm{el}}\,dA = \bar{x}A\) and \(Q_x = \int y_{\mathrm{el}}\,dA = \bar{y}A\).</p>
+
+  <div class="stepbox">
+    <p><strong>Decision recipe</strong></p>
+    <ol>
+      <li><strong>Sketch</strong> the region and label the boundary curves. Mark a typical strip.</li>
+      <li><strong>Choose the element:</strong> vertical strip (\(dA = y\,dx\) if the strip runs from the \(x\)-axis up to the top curve) or horizontal strip (\(dA = x\,dy\) if the strip runs from the \(y\)-axis to the right boundary). Pick whichever makes <strong>one</strong> integral over the natural coordinate—or a single split at a kink—not two unrelated pieces.</li>
+      <li><strong>Write \(dA\)</strong> using the height or width of <em>your</em> strip, expressed in the integration variable.</li>
+      <li><strong>Element centroid:</strong> for a vertical strip from \(y=0\) to \(y=y(x)\), \(x_{\mathrm{el}} = x\) and \(y_{\mathrm{el}} = y(x)/2\). A common mistake is using \(y_{\mathrm{el}} = y(x)\) instead of \(y(x)/2\). For a horizontal strip at height \(y\) with width from the left boundary to the right boundary, \(y_{\mathrm{el}} = y\) and \(x_{\mathrm{el}}\) is at the midpoint of that width.</li>
+      <li><strong>Limits</strong> come from the sketch: the smallest and largest values of the integration variable that sweep the whole region.</li>
+      <li><strong>Integrate</strong> for \(A\), then \(\bar{x}\) and \(\bar{y}\). Check units (area in m\(^2\) implies lengths in meters).</li>
+    </ol>
+  </div>
+
+  <p><strong>Vertical vs horizontal strips.</strong> For a region under one curve \(y = f(x)\) from \(x=a\) to \(x=b\), a vertical strip is usually the fastest path. If the right boundary is a vertical line \(x=b\) and the top is \(y=f(x)\), a horizontal strip needs \(x\) from the curve \(x=g(y)\) to \(x=b\); that is still fine when the top and bottom boundaries are easier to read in \(y\). Either strip choice must give the same \(A\), \(\bar{x}\), and \(\bar{y}\) when set up correctly.</p>
+
+  <h2>2. Example 1: area under a parabola (vertical and horizontal strips)</h2>
+  <p>All lengths in meters. The region lies in the first quadrant, bounded below by the \(x\)-axis, on the right by the line \(x=1\), and above by \(y = 4x^2\). The sketch is a parabolic cap clipped at \(x=1\) (where \(y=4\) m).</p>
+
+  <h3>Vertical strip</h3>
+  <p>At position \(x\), the strip runs from \(y=0\) to \(y=4x^2\). Then \(dA = 4x^2\,dx\), \(x_{\mathrm{el}} = x\), and \(y_{\mathrm{el}} = 2x^2\).</p>
+  <div class="eqbox">\[
+  A = \int_0^1 4x^2\,dx = \frac{4}{3}\ \text{m}^2
+  \]</div>
+  <div class="eqbox">\[
+  \bar{x} = \frac{\displaystyle\int_0^1 x\cdot 4x^2\,dx}{A}
+  = \frac{\displaystyle\int_0^1 4x^3\,dx}{4/3}
+  = \frac{3}{4}\ \text{m}
+  \qquad
+  \bar{y} = \frac{\displaystyle\int_0^1 (2x^2)\cdot 4x^2\,dx}{A}
+  = \frac{\displaystyle\int_0^1 8x^4\,dx}{4/3}
+  = \frac{6}{5} = 1.20\ \text{m}
+  \]</div>
+
+  <h3>Horizontal strip (check on \(\bar{y}\))</h3>
+  <p>For height \(y\) between \(0\) and \(4\), the region spans horizontally from the parabola \(x = \sqrt{y/4}\) to the line \(x=1\). The strip width is \(1 - \sqrt{y/4}\); \(dA = \bigl(1 - \tfrac{\sqrt{y}}{2}\bigr)\,dy\) and \(y_{\mathrm{el}} = y\).</p>
+  <div class="eqbox">\[
+  A = \int_0^4 \left(1 - \frac{\sqrt{y}}{2}\right)dy = \frac{4}{3}\ \text{m}^2
+  \qquad
+  \bar{y} = \frac{\displaystyle\int_0^4 y\left(1 - \frac{\sqrt{y}}{2}\right)dy}{A}
+  = 1.20\ \text{m}
+  \]</div>
+  <p>The horizontal setup reproduces the same area and \(\bar{y}\) as the vertical strip—good evidence that \(y_{\mathrm{el}}\) and the limits were chosen correctly.</p>
+  <p><strong>Sanity:</strong> \(\bar{x}=0.75\) m is between \(0\) and \(1\); \(\bar{y}=1.20\) m is below the top of the region at \(y=4\) m and above mid-height of the “bulk” of the area, which sits nearer the \(x\)-axis because the parabola is flat there.</p>
+
+  <h2>3. Example 2: centroid of a wire along a circular arc (\(L\) vs \(A\))</h2>
+  <p>A thin wire follows a quarter circle of radius \(R = 3\) m centered at the origin, from \((3,0)\) to \((0,3)\). Use arc length \(dL\), <strong>not</strong> area \(dA\):</p>
+  <div class="eqbox">\[
+  L = \int dL
+  \qquad
+  \bar{x} = \frac{\displaystyle\int x\,dL}{L}
+  \qquad
+  \bar{y} = \frac{\displaystyle\int y\,dL}{L}
+  \]</div>
+  <p>With \(x = R\cos\theta\), \(y = R\sin\theta\), and \(dL = R\,d\theta\) for \(\theta\) from \(0\) to \(\pi/2\):</p>
+  <div class="eqbox">\[
+  L = \int_0^{\pi/2} R\,d\theta = \frac{3\pi}{2}\ \text{m}
+  \qquad
+  \bar{x} = \bar{y} = \frac{R^2\int_0^{\pi/2}\cos\theta\,d\theta}{L}
+  = \frac{6}{\pi} \approx 1.91\ \text{m}
+  \]</div>
+  <p><strong>\(L\) vs \(A\) in one line:</strong> line or wire problems integrate \(dL\) and report total length \(L\); area problems integrate \(dA\) and report \(A\). Centroid-of-volume uses \(dV\) and \(V\). The integral skeleton is always “first moment divided by total size,” but the element and symbol change with the geometry type.</p>
+
+  <h2>4. Example 3: area between two curves</h2>
+  <p>In meters, find the centroid of the region between \(y = x\) and \(y = x^2\) in the first quadrant. Intersections: \(x = x^2\) gives \(x=0\) and \(x=1\).</p>
+  <p>Vertical strip at \(x\): height \(h(x) = x - x^2\), so \(dA = (x-x^2)\,dx\), \(x_{\mathrm{el}} = x\), and \(y_{\mathrm{el}} = \dfrac{x + x^2}{2}\).</p>
+  <div class="eqbox">\[
+  A = \int_0^1 (x-x^2)\,dx = \frac{1}{6}\ \text{m}^2
+  \qquad
+  \bar{x} = \frac{\displaystyle\int_0^1 x(x-x^2)\,dx}{A} = \frac{1}{2}\ \text{m}
+  \qquad
+  \bar{y} = \frac{\displaystyle\int_0^1 \tfrac{x+x^2}{2}(x-x^2)\,dx}{A} = 0.40\ \text{m}
+  \]</div>
+  <p>The limits came straight from intersection points—always a reliable way to pin \(x\) or \(y\) when two curves bound the region.</p>
+
+  <h2>5. Notation, concepts, and exams</h2>
+  <ul>
+    <li><strong>Centroid vs center of mass vs center of gravity.</strong> For a uniform plate in a uniform gravity field, all three points coincide. The <em>centroid</em> is purely geometric (\(\int dA\), \(\int x\,dA\), …). Center of mass weights by density; center of gravity weights by \(g\) (or \(\rho g\)). When \(\rho\) and \(g\) are constant, the coordinates match the centroid.</li>
+    <li><strong>Tables vs integration.</strong> Composite shapes from rectangles and circles still use the table method from earlier in the chapter. Integration is for curved boundaries or layouts that do not split cleanly into standard parts.</li>
+    <li><strong>Exams.</strong> Be ready both to set up \(\int x_{\mathrm{el}}\,dA\) and similar integrals in symbols <em>and</em> to evaluate them numerically when arithmetic is part of the question. We are not committing here to a single exam format beyond that.</li>
+  </ul>
+
+  <h2>6. Practice (self-check)</h2>
+  <p>Try these without looking at the earlier examples; click the answers when you are ready.</p>
+
+  <p><strong>Problem A.</strong> Quarter circular <em>disk</em> of radius \(2\) m in the first quadrant (center at origin, bounded by axes and the arc \(x^2+y^2=4\)). Find \(A\) and \(\bar{x}\) (by symmetry, \(\bar{y}=\bar{x}\)).</p>
+  <details><summary>Answer</summary>
+    <p>\(A = \pi R^2/4 = \pi\ \text{m}^2\). In polar form, \(\bar{x} = \dfrac{1}{A}\int_0^{\pi/2}\int_0^2 r\cos\theta\cdot r\,dr\,d\theta = \dfrac{8}{3\pi} \approx 0.849\) m (and the same for \(\bar{y}\)).</p>
+  </details>
+
+  <p><strong>Problem B.</strong> Straight wire from \((0,0)\) to \((3,4)\) m. Find \(L\) and the centroid of the wire.</p>
+  <details><summary>Answer</summary>
+    <p>\(L = 5\) m. A uniform straight segment has its centroid at the midpoint: \((\bar{x},\bar{y}) = (1.50,\,2.00)\) m.</p>
+  </details>
+
+  <p><strong>Problem C.</strong> Region under \(y = 2x\) from \(x=0\) to \(x=2\) m ( \(x\)-axis below). Set up—do not evaluate—\(A\), \(\bar{x}\), and \(\bar{y}\) using a vertical strip and correct \(y_{\mathrm{el}}\).</p>
+  <details><summary>Answer</summary>
+    <p>\(dA = 2x\,dx\), \(x_{\mathrm{el}} = x\), \(y_{\mathrm{el}} = x\) (half the strip height \(y=2x\)). Then \(A = \int_0^2 2x\,dx\), \(\bar{x} = \dfrac{\int_0^2 x\cdot 2x\,dx}{A}\), \(\bar{y} = \dfrac{\int_0^2 x\cdot 2x\,dx}{A}\). (Evaluating gives \(A=4\) m\(^2\), \(\bar{x}=\bar{y}=4/3\) m.)</p>
+  </details>
+
+  <h2>Definitions worth keeping straight</h2>
+  <ul>
+    <li><strong>Area element \(dA\).</strong> Product of strip thickness and strip height/width; limits from the sketch.</li>
+    <li><strong>Line element \(dL\).</strong> Arc length along a curve—often \(dL = \sqrt{(dx/d\theta)^2+(dy/d\theta)^2}\,d\theta\) or \(R\,d\theta\) for a circle.</li>
+    <li><strong>Element centroid \((x_{\mathrm{el}}, y_{\mathrm{el}})\).</strong> Centroid of the thin strip itself, not necessarily on the boundary curve.</li>
+    <li><strong>Same point.</strong> \(\bar{x}\) and \(\bar{y}\) from the same \(dA\) describe one centroid.</li>
+  </ul>
+
+  <p style="margin-top:1.8rem; color:var(--muted); font-size:0.88rem;">Page built Nov 24, 2026. Questions? Office hours or Canvas.</p>
+
+</article>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
+</body>
+</html>
